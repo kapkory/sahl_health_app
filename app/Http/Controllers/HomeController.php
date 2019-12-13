@@ -21,8 +21,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
-        return view('home');
+
+        if (Auth::user()){
+            return $this->authCheck();
+        }else{
+//            return view('home');
+            return redirect('login')->send();
+        }
+    }
+
+    public function authCheck(){
+        $user = Auth::user();
+        $role=$user->role;
+        return redirect($role)->send();
     }
 }

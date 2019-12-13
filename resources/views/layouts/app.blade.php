@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="{{ url('drift/assets/modules/perfect-scrollbar/css/perfect-scrollbar.css') }}">
     <!-- /perfect scrollbar stylesheet -->
 
-    <!-- Load Styles -->    <link rel="stylesheet" href="{{ url('drift/assets/css/semidark-style-1.min.css') }}">
+    <!-- Load Styles -->
+    <link rel="stylesheet" href="{{ url('drift/assets/css/semidark-style-1.min.css') }}">
     <!-- /load styles -->
 
 </head>

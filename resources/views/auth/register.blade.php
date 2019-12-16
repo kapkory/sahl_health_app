@@ -185,12 +185,6 @@
                 </div>
                 <!-- /login content inner -->
 
-                <!-- Login Content Footer -->
-                <div class="dt-login__content-footer">
-                    <a href="page-forgot-password.php">Can’t access your account?</a>
-                </div>
-                <!-- /login content footer -->
-
             </div>
             <!-- /login content section -->
 

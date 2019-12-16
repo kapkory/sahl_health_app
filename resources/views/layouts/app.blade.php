@@ -5,10 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Drift - A fully responsive, HTML5 based admin template">
-    <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, jQuery, web design, CSS3, sass">
     <!-- /meta tags -->
-    <title>Drift - Admin Template</title>
+    <title>Sahl Health </title>
 
     <!-- Site favicon -->
 {{--    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">--}}

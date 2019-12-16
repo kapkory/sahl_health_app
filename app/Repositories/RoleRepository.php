@@ -77,7 +77,8 @@ class RoleRepository
                    $permissions = json_decode($this->user->department->permissions);
                 $allowed = [];
                 foreach($menus->admin as $mnu){
-                    if(in_array($mnu->slug,$permissions))
+                    //add departments
+//                    if(in_array($mnu->slug,$permissions))
                         $allowed[]=$mnu;
                 }
                 $this->authorize($allowed,$menus->guest);

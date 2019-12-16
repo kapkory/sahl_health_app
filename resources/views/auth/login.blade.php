@@ -77,9 +77,35 @@
                         </div>
 
                     </form>
+                    <!-- Form Group -->
+                    <div class="d-flex flex-wrap align-items-center">
+                        <span class="d-inline-block mr-2">Or connect with</span>
 
+                       <div style="clear: left">
+                           <!-- List -->
+                           <ul class="dt-list dt-list-sm dt-list-cm-0 ml-auto">
+                               <li class="dt-list__item">
+                                   <!-- Fab Button -->
+                                   <a href="{{ url('facebook/login') }}" class="btn btn-outline-primary dt-fab-btn size-30">
+                                       <i class="icon icon-facebook icon-xl"></i>
+                                   </a>
+                                   <!-- /fab button -->
+                               </li>
+
+                               <li class="dt-list__item">
+                                   <!-- Fab Button -->
+                                   <a href="{{ url('google/login') }}" class="btn btn-outline-primary dt-fab-btn size-30">
+                                       <i class="icon icon-google-plus icon-xl"></i>
+                                   </a>
+                                   <!-- /fab button -->
+                               </li>
+                           </ul>
+                       </div>
+                        <!-- /list -->
+                    </div>
                 </div>
                 <!-- /login content inner -->
+
 
                 <!-- Login Content Footer -->
                 <div class="dt-login__content-footer">

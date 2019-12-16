@@ -144,7 +144,7 @@
                             <ul class="dt-list dt-list-sm dt-list-cm-0 ml-auto">
                                 <li class="dt-list__item">
                                     <!-- Fab Button -->
-                                    <a href="javascript:void(0)" class="btn btn-outline-primary dt-fab-btn size-30">
+                                    <a href="{{ url('facebook/login') }}" class="btn btn-outline-primary dt-fab-btn size-30">
                                         <i class="icon icon-facebook icon-xl"></i>
                                     </a>
                                     <!-- /fab button -->
@@ -158,21 +158,21 @@
                                     <!-- /fab button -->
                                 </li>
 
-                                <li class="dt-list__item">
-                                    <!-- Fab Button -->
-                                    <a href="javascript:void(0)" class="btn btn-outline-primary dt-fab-btn size-30">
-                                        <i class="icon icon-github icon-xl"></i>
-                                    </a>
-                                    <!-- /fab button -->
-                                </li>
+{{--                                <li class="dt-list__item">--}}
+{{--                                    <!-- Fab Button -->--}}
+{{--                                    <a href="javascript:void(0)" class="btn btn-outline-primary dt-fab-btn size-30">--}}
+{{--                                        <i class="icon icon-github icon-xl"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- /fab button -->--}}
+{{--                                </li>--}}
 
-                                <li class="dt-list__item">
-                                    <!-- Fab Button -->
-                                    <a href="javascript:void(0)" class="btn btn-outline-primary dt-fab-btn size-30">
-                                        <i class="icon icon-twitter icon-xl"></i>
-                                    </a>
-                                    <!-- /fab button -->
-                                </li>
+{{--                                <li class="dt-list__item">--}}
+{{--                                    <!-- Fab Button -->--}}
+{{--                                    <a href="javascript:void(0)" class="btn btn-outline-primary dt-fab-btn size-30">--}}
+{{--                                        <i class="icon icon-twitter icon-xl"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- /fab button -->--}}
+{{--                                </li>--}}
                             </ul>
                             <!-- /list -->
                         </div>

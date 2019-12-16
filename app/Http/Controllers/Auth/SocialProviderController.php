@@ -27,7 +27,7 @@ class SocialProviderController extends Controller
                 $user = $this->createUser($getInfo,$provider);
                 Auth::loginUsingId($user->id);
             }
-            return redirect()->to('complete-registration');
+            return redirect(\auth()->user()->role);
         }
         catch (Exception $e) {
             return 'error';
@@ -41,7 +41,7 @@ class SocialProviderController extends Controller
         $user->email = $getInfo->email;
         if ($provider == 'google')
             $user->google_id = $getInfo->id;
-        
+
         if ($provider == 'facebook')
             $user->facebook_id = $getInfo->id;
         $user->password = bcrypt($password);

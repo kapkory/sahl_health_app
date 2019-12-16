@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('logout',function (){
+   Auth::logout();
+});
 
 Auth::routes();
 
@@ -21,6 +24,7 @@ Route::get('home', 'HomeController@index');
 
 Route::get('logout',function (){
    \Illuminate\Support\Facades\Auth::logout();
+   return redirect('/');
 });
 Route::get('/{provider}/login', 'Auth\SocialProviderController@redirect');
 Route::get('/{provider}/callback', 'Auth\SocialProviderController@callback');

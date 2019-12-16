@@ -8,7 +8,7 @@
     <meta name="description" content="Drift - A fully responsive, HTML5 based admin template">
     <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, jQuery, web design, CSS3, sass">
     <!-- /meta tags -->
-    <title>Drift - Admin Template</title>
+    <title>Sahl Health</title>
 
     <!-- Site favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
@@ -70,145 +70,16 @@
                 <!-- Header toolbar-->
                 <div class="dt-header__toolbar">
 
-                    <!-- Search box -->
-                    <form class="search-box d-none d-lg-block">
-                        <div class="input-group">
-                            <input class="form-control" placeholder="Search in app..." value="" type="search">
-                            <span class="search-icon"><i class="icon icon-search icon-lg"></i></span>
-                            <div class="input-group-append">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">Category
-                                </button>
-
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- /search box -->
-
                     <!-- Header Menu Wrapper -->
                     <div class="dt-nav-wrapper">
-                        <!-- Header Menu -->
-                        <ul class="dt-nav d-lg-none">
-                            <li class="dt-nav__item dt-notification-search dropdown">
 
-                                <!-- Dropdown Link -->
-                                <a href="page-blank.php#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false"> <i class="icon icon-search icon-fw icon-lg"></i> </a>
-                                <!-- /dropdown link -->
-
-                                <!-- Dropdown Option -->
-                                <div class="dropdown-menu">
-
-                                    <!-- Search Box -->
-                                    <form class="search-box right-side-icon">
-                                        <input class="form-control form-control-lg" type="search" placeholder="Search in app...">
-                                        <button type="submit" class="search-icon"><i class="icon icon-search icon-lg"></i></button>
-                                    </form>
-                                    <!-- /search box -->
-
-                                </div>
-                                <!-- /dropdown option -->
-
-                            </li>
-                        </ul>
-                        <!-- /header menu -->
-
-                        <!-- Header Menu -->
-                        <ul class="dt-nav">
-                            <li class="dt-nav__item dt-notification-app dropdown">
-
-                                <!-- Dropdown Link -->
-                                <a href="page-blank.php#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false"> <i class="icon icon-apps icon-sm icon-fw"></i>
-                                    <span>Apps</span> </a>
-                                <!-- /dropdown link -->
-
-                                <!-- Dropdown Option -->
-                                <div class="dropdown-menu ps-custom-scrollbar">
-
-                                    <!-- Apps -->
-                                    <ul class="dt-app-list">
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-account.png" alt="Google Account">
-                                                <span class="dt-app-list__text">Account</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-google.png" alt="Google Search">
-                                                <span class="dt-app-list__text">Search</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-map.png" alt="Google Map">
-                                                <span class="dt-app-list__text">Maps</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-youtube.png" alt="Youtube">
-                                                <span class="dt-app-list__text">YouTube</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-playstore.png" alt="Play Store">
-                                                <span class="dt-app-list__text">Play</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-news.png" alt="Google News">
-                                                <span class="dt-app-list__text">News</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-gmail.png" alt="Google Drive">
-                                                <span class="dt-app-list__text">Gmail</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-drive.png" alt="Google Drive">
-                                                <span class="dt-app-list__text">Drive</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-calendar.png" alt="Calendar">
-                                                <span class="dt-app-list__text">Calendar</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-google-plus.png" alt="Google Plus">
-                                                <span class="dt-app-list__text">Google+</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-translate.png" alt="Translate">
-                                                <span class="dt-app-list__text">Translate</span> </a>
-                                        </li>
-                                        <li class="dt-app-list__item">
-                                            <a href="javascript:void(0)" class="dt-app-list__link">
-                                                <img src="assets/images/icon/icon-photos.png" alt="Photos">
-                                                <span class="dt-app-list__text">Photos</span> </a>
-                                        </li>
-                                    </ul>
-                                    <!-- /apps -->
-
-                                </div>
-                                <!-- /dropdown option -->
-
-                            </li>
-                        </ul>
-                        <!-- /header menu -->
 
                         <!-- Header Menu -->
                         <ul class="dt-nav">
                             <li class="dt-nav__item dt-notification dropdown">
 
                                 <!-- Dropdown Link -->
-                                <a href="page-blank.php#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
+                                <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false"> <i class="icon icon-notification2 icon-fw dt-icon-alert"></i>
                                 </a>
                                 <!-- /dropdown link -->
@@ -476,42 +347,18 @@
                         </ul>
                         <!-- /header menu -->
 
-                        <!-- Header Menu -->
-                        <ul class="dt-nav">
-                            <li class="dt-nav__item dropdown">
 
-                                <!-- Dropdown Link -->
-                                <a href="page-blank.php#" class="dt-nav__link dropdown-toggle" data-toggle="dropdown"
-                                   aria-haspopup="true"
-                                   aria-expanded="false">
-                                    <i class="flag-icon flag-icon-us flag-icon-rounded flag-icon-lg"></i><span>en-uk</span> </a>
-                                <!-- /dropdown link -->
-
-                                <!-- Dropdown Option -->
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="flag-icon flag-icon-in mr-2"></i><span>Hi-In</span> </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="flag-icon flag-icon-cn mr-2"></i><span>Chinese</span> </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="flag-icon flag-icon-es mr-2"></i><span>Spanish</span> </a>
-                                </div>
-                                <!-- /dropdown option -->
-
-                            </li>
-                        </ul>
-                        <!-- /header menu -->
 
                         <!-- Header Menu -->
                         <ul class="dt-nav">
                             <li class="dt-nav__item dropdown">
 
                                 <!-- Dropdown Link -->
-                                <a href="page-blank.php#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper"
+                                <a href="#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img class="dt-avatar size-30" src="assets/images/user-avatar/domnic-harris.jpg" alt="Domnic Harris">
+                                    <img class="dt-avatar size-30" src="{{ url('drift') }}/assets/images/user-avatar/domnic-harris.jpg" alt="Domnic Harris">
                                     <span class="dt-avatar-info d-none d-sm-block">
-                <span class="dt-avatar-name">Bob Hyden</span>
+                <span class="dt-avatar-name">{{ auth()->user()->name }}</span>
               </span> </a>
                                 <!-- /dropdown link -->
 
@@ -526,9 +373,8 @@
                                             @endauth
                                         </span>
                                     </div>
-                                    <a class="dropdown-item" href="javascript:void(0)"> <i class="icon icon-user icon-fw mr-2 mr-sm-1"></i>Account
-                                    </a> <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="icon icon-settings icon-fw mr-2 mr-sm-1"></i>Setting </a>
+                                    <a class="dropdown-item" href="{{ url('user/profile') }}"> <i class="icon icon-user icon-fw mr-2 mr-sm-1"></i>Account
+                                    </a>
                                     <a class="dropdown-item" href="{{ url('logout') }}"> <i class="icon icon-editors icon-fw mr-2 mr-sm-1"></i>Logout
                                     </a>
                                 </div>

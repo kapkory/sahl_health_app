@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kibet
- * Date: 1/8/17
- * Time: 9:42 AM
- */
 
 namespace App\Repositories;
 use App\Models\Core\Settings\DynamicAttribute;
@@ -99,6 +93,7 @@ class FormRepository
         $passwords = ['password','password_confirmation'];
         $selects['short_code_type'] = ['till_number','paybill'];
         $selects['environment'] = ['production','sandbox'];
+        $selects['identification_type'] = ['ID Number','Passport Number','Driving License','Huduma Number'];
         $selects['gender'] = ['Male','Female'];
         $selects['recurring'] = ['yes','no'];
         $selects['profit_by'] = ['commission','fixed_amount'];
@@ -274,7 +269,7 @@ class FormRepository
         $form_string.='</form>';
         return $form_string;
     }
-    
+
     public function countElements($all_elements)
     {
         $count = 0;

@@ -41,6 +41,7 @@
         'modal_title'=>'Personal Details',
         'modal_content'=>Form::autoForm(['name','email','identification_type','identification_number'],'user/profile',null,Auth::user()),
     ])
+
     @include('common.auto_modal',[
         'modal_id'=>'update_password',
         'modal_title'=>'New Password',

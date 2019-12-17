@@ -1,0 +1,256 @@
+{
+    "admin": [
+        {
+            "type": "single",
+            "section": "main",
+            "slug": "view_admin_dashboard",
+            "menus": {
+                "label": "Dashboard",
+                "icon": "dashboard",
+                "url": "admin"
+            },
+            "children": [],
+            "subs": [
+                "chart/list"
+            ],
+            "urls": [
+                "admin",
+                "user/password",
+                "user/default-branch",
+                "user/profile",
+                "user/profile-picture",
+                "email/verify/",
+                "/"
+            ]
+        },
+        {
+            "type": "hidden",
+            "section": "main",
+            "slug": "make_sales",
+            "label": "Point of Sale",
+            "icon": "printer",
+            "main": "admin/sales",
+            "menus": [],
+            "children": [
+                {
+                    "label": "Make Sale",
+                    "url": "admin/sales/new"
+                },
+                {
+                    "label": "Today's Sales",
+                    "url": "admin/sales/today"
+                }
+            ],
+            "subs": [
+                "",
+                "edit",
+                "list",
+                "sale"
+            ],
+            "urls": [
+                ""
+            ]
+        },
+        {
+            "type": "single",
+            "section": "main",
+            "slug": "manage_staff",
+            "menus": {
+                "label": "Staff",
+                "icon": "users4",
+                "url": "admin/users"
+            },
+            "children": [],
+            "subs": [
+                "list",
+                "delete"
+            ],
+            "urls": [
+                ""
+            ]
+        },
+        {
+            "type": "single",
+            "section": "main",
+            "slug": "manage_admin_departments",
+            "menus": {
+                "label": "Departments",
+                "icon": "key",
+                "url": "admin/departments"
+            },
+            "children": [],
+            "subs": [
+                "list",
+                "permissions",
+                "user",
+                "user/remove",
+                "list/users"
+            ],
+            "urls": []
+        }
+    ],
+    "member": [
+        {
+            "type": "single",
+            "slug": "dashboard",
+            "menus": {
+                "label": "Dashboard",
+                "icon": "dashboard",
+                "url": "member"
+            },
+            "children": [],
+            "subs": [
+                "stats/list"
+            ],
+            "urls": [
+                "home",
+                "user/password",
+                "user/profile",
+                "user/profile-picture",
+                "email/verify",
+                ""
+            ]
+        },
+        {
+            "type": "single",
+            "slug": "hospital",
+            "menus": {
+                "label": "Hospitals",
+                "icon": "task-manager",
+                "url": "member"
+            },
+            "children": [],
+            "subs": [
+                "stats/list"
+            ],
+            "urls": [
+                "home",
+                ""
+            ]
+        },
+        {
+            "type": "single",
+            "slug": "settings",
+            "menus": {
+                "label": "Settings",
+                "icon": "contacts-app",
+                "url": "member"
+            },
+            "children": [],
+            "subs": [
+                "stats/list"
+            ],
+            "urls": [
+                "home",
+                "user/password",
+                "user/profile",
+                "user/profile-picture",
+                "email/verify",
+                ""
+            ]
+        },
+        {
+            "type": "hidden",
+            "section": "main",
+            "slug": "make_sales",
+            "label": "Point of Sale",
+            "icon": "editors",
+            "main": "admin/sales",
+            "menus": [],
+            "children": [
+                {
+                    "label": "Make Sale",
+                    "url": "admin/sales/new"
+                },
+                {
+                    "label": "Today's Sales",
+                    "url": "admin/sales/today"
+                }
+            ],
+            "subs": [
+                "",
+                "edit",
+                "list",
+                "sale"
+            ],
+            "urls": [
+                ""
+            ]
+        }
+    ],
+    "sales": [
+        {
+            "type": "single",
+            "section": "main",
+            "slug": "view_admin_dashboard",
+            "menus": {
+                "label": "Dashboard",
+                "icon": "home4",
+                "url": "member"
+            },
+            "children": [],
+            "subs": [
+                "chart/list"
+            ],
+            "urls": [
+                "home",
+                "user/password",
+                "user/default-branch",
+                "user/profile",
+                "user/profile-picture",
+                "email/verify/",
+                "admin/countries/list"
+            ]
+        }
+    ],
+    "guest": [
+    ],
+    "out": [
+        {
+            "slug": "guest_login",
+            "type": "single",
+            "menus": {
+                "label": "Login",
+                "icon": "zmdi-account",
+                "url": "login"
+            },
+            "urls": [
+                "logout",
+                "user/status/online",
+                "plan",
+                "home",
+                "register",
+                "user/register",
+                "user/login",
+                "activate"
+            ]
+        },
+        {
+            "slug": "guest_register",
+            "type": "single",
+            "menus": {
+                "label": "Register",
+                "icon": "zmdi-account-add",
+                "url": "register"
+            }
+        }
+    ],
+    "in": [
+        {
+            "slug": "guest_login",
+            "type": "single",
+            "menus": {
+                "label": "Login",
+                "icon": "zmdi-account",
+                "url": "login"
+            },
+            "urls": [
+                "logout",
+                "user/password",
+                "user/profile",
+                "user/profile-picture",
+                "email/verify/"
+            ]
+        }
+    ]
+}

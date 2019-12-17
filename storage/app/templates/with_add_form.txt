@@ -1,0 +1,31 @@
+@extends('layouts.admin')
+
+@section('page_title')
+    <span class="font-weight-semibold">Home</span> -
+    {umodels}
+@endsection
+@section('bread_crumb')
+    {{--<a href="{{ url(Request::url()) }}" class="breadcrumb-item load-page">{umodels}</a>--}}
+    <span class="breadcrumb-item active">{models}</span>
+@endsection
+@section('title') {umodels} @endsection
+
+@section('content')
+<a href="#{model}_modal" class="btn btn-primary btn-sm clear-form" data-toggle="modal"><i class="zmdi-hc-lg zmdi zmdi-plus"></i> ADD {cmodel}</a>
+    <hr/>
+    @include('common.bootstrap_table_ajax',[
+    'table_headers'=>["id",{model_fields},"action"],
+    'data_url'=>'{route_url}/list',
+    'base_tbl'=>'{models}'
+    ])
+    @include('common.auto_modal',[
+        'modal_id'=>'{model}_modal',
+        'modal_title'=>'{cmodel} FORM',
+        'modal_content'=>Form::autoForm(\App\{model_namespace}::class,"{route_url}")
+    ])
+
+    <script>
+            $('[data-toggle="tooltip"]').tooltip();
+            $(".tooltip").tooltip("hide");
+     </script>
+@endsection

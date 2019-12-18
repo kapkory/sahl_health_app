@@ -12,8 +12,8 @@
             </tr>
 
             <tr>
-                <th>Phone</th>
-                <td>{{ $user->phone }}</td>
+                <th>Phone Number</th>
+                <td>{{ $user->phone_number }}</td>
             </tr>
 
             <tr>

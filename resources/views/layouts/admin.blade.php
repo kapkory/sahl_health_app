@@ -1,3 +1,48 @@
+@if(Request::ajax())
+    @if(isset($_GET['t_optimized']))
+    @yield('t_optimized')
+    @elseif(isset($_GET['ta_optimized']))
+    @yield('ta_optimized')
+    @else
+        <!-- Site Content Wrapper -->
+        <div class="dt-content-wrapper">
+
+            <!-- Site Content -->
+            <div class="dt-content">
+
+                <!-- Page Header -->
+                <div class="dt-page__header">
+                    <h1 class="dt-page__title">@yield('title','Dashboard')</h1>
+                </div>
+                <!-- /page header -->
+
+                <!-- Grid -->
+                <div class="row">
+                    <!-- Grid Item -->
+                    <div class="col-xl-12">
+
+                        @yield('content')
+
+                    </div>
+
+                </div>
+                <!-- /grid -->
+
+            </div>
+            <!-- /site content -->
+
+            <!-- Footer -->
+            <footer class="dt-footer">
+                Copyright Sahl Health © {{ date('Y') }}
+            </footer>
+            <!-- /footer -->
+            <input type="hidden" name="material_page_loaded" value="1">
+
+        </div>
+    @endif
+@include('common.essential_js')
+@else
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,13 +77,13 @@
 <body class="dt-sidebar--fixed dt-header--fixed">
 
 <!-- Loader -->
-<div class="dt-loader-container">
-    <div class="dt-loader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
-        </svg>
-    </div>
-</div>
+{{--<div class="dt-loader-container">--}}
+{{--    <div class="dt-loader">--}}
+{{--        <svg class="circular" viewBox="25 25 50 50">--}}
+{{--            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>--}}
+{{--        </svg>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- /loader -->
 <!-- Root -->
 <div class="dt-root">
@@ -60,7 +105,7 @@
 
                     <!-- Brand logo -->
                     <span class="dt-brand__logo">
-        <a class="dt-brand__logo-link" href="index.php">
+        <a class="dt-brand__logo-link" href="#">
           <img class="dt-brand__logo-img d-none d-sm-inline-block" src="assets/images/logo.png" alt="Drift">
           <img class="dt-brand__logo-symbol d-sm-none" src="assets/images/logo-symbol.png" alt="Drift">
         </a>
@@ -467,7 +512,7 @@
 
                     <!-- Page Header -->
                     <div class="dt-page__header">
-                        <h1 class="dt-page__title">Blank Page</h1>
+                        <h1 class="dt-page__title">@yield('title','Dashboard')</h1>
                     </div>
                     <!-- /page header -->
 
@@ -519,3 +564,4 @@
 @stack('footer-scripts')
 </body>
 </html>
+@endif

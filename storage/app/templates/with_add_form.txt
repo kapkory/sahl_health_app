@@ -1,13 +1,5 @@
 @extends('layouts.admin')
 
-@section('page_title')
-    <span class="font-weight-semibold">Home</span> -
-    {umodels}
-@endsection
-@section('bread_crumb')
-    {{--<a href="{{ url(Request::url()) }}" class="breadcrumb-item load-page">{umodels}</a>--}}
-    <span class="breadcrumb-item active">{models}</span>
-@endsection
 @section('title') {umodels} @endsection
 
 @section('content')
@@ -24,8 +16,4 @@
         'modal_content'=>Form::autoForm(\App\{model_namespace}::class,"{route_url}")
     ])
 
-    <script>
-            $('[data-toggle="tooltip"]').tooltip();
-            $(".tooltip").tooltip("hide");
-     </script>
 @endsection

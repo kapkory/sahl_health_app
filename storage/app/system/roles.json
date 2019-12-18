@@ -46,7 +46,10 @@
             "urls": [
                 "admin/settings/institution_levels/",
                 "admin/settings/institution_levels/list",
-                "admin/settings/institution_levels/delete"
+                "admin/settings/institution_levels/delete",
+                "admin/settings/organization_type/",
+                "admin/settings/organization_type/list",
+                "admin/settings/organization_type/delete"
             ]
         },
         {

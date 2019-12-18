@@ -470,8 +470,12 @@
 
                     <!-- Grid -->
                     <div class="row">
+                        <!-- Grid Item -->
+                        <div class="col-xl-12">
 
-                        @yield('content')
+                         @yield('content')
+
+                        </div>
 
                     </div>
                     <!-- /grid -->

@@ -25,6 +25,11 @@
     <link rel="stylesheet" href="{{ url('drift/assets/css/semidark-style-1.min.css') }}">
     <!-- /load styles -->
 
+    <!-- intlTelInput stylesheet -->
+    <link rel="stylesheet" href="{{ url('drift/assets/modules/intlTelInput/intlTelInput.min.css') }}">
+    <!--  intlTelInput stylesheet -->
+    <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
+
 </head>
 <body class="dt-sidebar--fixed dt-header--fixed">
 
@@ -46,7 +51,6 @@
 <!-- /root -->
 
 <!-- Optional JavaScript -->
-<script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ url('drift/assets/modules/moment/moment.js') }}"></script>
 <script src="{{ url('drift/assets/modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Perfect Scrollbar jQuery -->
@@ -56,9 +60,10 @@
 <!-- masonry script -->
 <script src="{{ url('drift/assets/modules/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
 <script src="{{ url('drift/assets/modules/sweetalert2/dist/sweetalert2.js') }}"></script>
+<script src="{{ url('drift/assets/modules/intlTelInput/intlTelInput.js') }}"></script>
 <script src="{{ url('drift/assets/js/functions.js') }}"></script>
 <script src="{{ url('drift/assets/js/customizer.js') }}"></script><!-- Custom JavaScript -->
 <script src="{{ url('drift/assets/js/script.js') }}"></script>
-
+@yield('scripts')
 </body>
 </html>

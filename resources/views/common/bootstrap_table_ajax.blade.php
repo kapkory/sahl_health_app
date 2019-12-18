@@ -23,8 +23,8 @@ foreach($table_headers as $key=>$header){
     }
 
 }
-$rand_id = str_random(15);
-$random_select_id = str_random();
+$rand_id = \Illuminate\Support\Str::random(15);
+$random_select_id = \Illuminate\Support\Str::random();
 if(request('per_page')){
     $per_page = request('per_page');
 }elseif(!isset($per_page)){

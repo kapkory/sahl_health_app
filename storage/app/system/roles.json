@@ -116,7 +116,7 @@
             "slug": "hospital",
             "menus": {
                 "label": "Hospitals",
-                "icon": "task-manager",
+                "icon": "list",
                 "url": "member"
             },
             "children": [],

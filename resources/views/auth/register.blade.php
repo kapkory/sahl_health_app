@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+  <style>
+      .iti-flag {background-image: url("{{ url('drift/assets/modules/intlTelInput/img/flags.png') }}");}
 
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .iti-flag {background-image: url("{{ url('drift/assets/modules/intlTelInput/img/flags@2x.png') }}");}
+      }
+  </style>
     <!-- Login Container -->
     <div class="dt-login--container">
 
@@ -38,7 +44,7 @@
                 <div class="dt-login__content-inner">
 
                     <!-- Form -->
-                    <form action="{{ route('register') }}" method="post">
+                    <form id="register" action="{{ route('register') }}" method="post">
 
                         <!-- Form Group -->
                         <div class="form-group">
@@ -95,9 +101,10 @@
 
                         <!-- Form Group -->
                         <div class="form-group">
-                            <label  for="phone">Phone Number</label>
-                            <input name="phone_number" required type="text" class="form-control" id="phone" aria-describedby="phone"
-                                   placeholder="+254722000000">
+                            <label for="phone_number">Phone Number (+254712141141)</label>
+{{--                            <div class="row">--}}
+                                &nbsp;&nbsp;<input name="phone_number" required type="tel" class="form-control" id="phone_number" aria-describedby="phone">
+{{--                            </div>--}}
                             @error('phone_number')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -193,4 +200,25 @@
 
     </div>
 
+@endsection
+
+@section('scripts')
+<script>
+    $(function () {
+        const form = document.getElementById('register');
+        const input = form.querySelector('#phone_number');
+        var itil=  window.intlTelInput(input, {
+            "preferredCountries":["KE","UG","TZ"],
+        });
+        $('input[name="phone_number"]').val('+254');
+        input.addEventListener("countrychange", function() {
+            var text = (itil.isValidNumber()) ? "International: " + itil.getNumber() : "Please enter a number below";
+            var textNode = document.createTextNode(text);
+            output.innerHTML = "";
+            output.appendChild(textNode);
+        });
+    });
+
+
+</script>
 @endsection

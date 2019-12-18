@@ -6,6 +6,8 @@ use Illuminate\Console\Command;
 use Artisan;
 use Illuminate\Support\Facades\Storage;
 use File;
+use Illuminate\Support\Str;
+
 class AutoGenerateModel extends Command
 {
     /**
@@ -182,9 +184,9 @@ class AutoGenerateModel extends Command
         $models = null;
         $umodels = null;
         if($model)
-            $models = str_plural($model);
+            $models = Str::plural($model);
         if($umodel)
-            $umodels = str_plural($umodel);
+            $umodels = Str::plural($umodel);
         $new_content = str_replace('{model}',$model,$content);
         $new_content = str_replace('{cmodel}',strtoupper($model),$new_content);
         $new_content = str_replace('{title}',$this->title,$new_content);

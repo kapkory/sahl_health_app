@@ -36,7 +36,7 @@ class FormRepository
 
         $textareas = ['description','answer','more_information','reason','email_message','sms_message','html',
             'comment',"testimonial",'about','address','postal_address','message','invoice_footer',
-            'security_credential','reason_rejected','note','instructions'];
+            'security_credential','facilities','reason_rejected','note','instructions'];
         $selects = [];
         $selects['from_branch'] = [];
         $selects['to_branch'] = [];

@@ -44,7 +44,9 @@
                 "sale"
             ],
             "urls": [
-                ""
+                "admin/settings/institution_levels/",
+                "admin/settings/institution_levels/list",
+                "admin/settings/institution_levels/delete"
             ]
         },
         {

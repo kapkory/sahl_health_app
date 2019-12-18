@@ -53,24 +53,22 @@
         },
         {
             "type": "single",
-            "section": "main",
-            "slug": "manage_staff",
+            "name": "users",
+            "slug": "user_management",
+            "label": "Users",
+            "main": "admin/users",
             "menus": {
-                "label": "Staff",
-                "icon": "users4",
-                "url": "admin/users"
+                "label": "Manage Users",
+                "url": "admin/users",
+                "icon": "contacts-app"
             },
             "children": [],
-            "subs": [
-                "list",
-                "delete"
-            ],
-            "urls": [
-                ""
-            ]
+
+            "subs": ["list", "user/orders/list", "list/userplans","user/deactivate/",  "user/dates", "websites", "user/active/", "user/unsuspend/"],
+            "urls": ["admin/users","admin/users/user","admin/users/user/password", "admin/users/delete", "admin/users/add", "admin/users/members", "admin/users/clients", "admin/users/suspensions", "admin/users/suspensions/list"]
         },
         {
-            "type": "single",
+            "type": "hidden",
             "section": "main",
             "slug": "manage_admin_departments",
             "menus": {

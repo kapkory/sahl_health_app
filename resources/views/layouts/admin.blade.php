@@ -25,6 +25,9 @@
     <!-- Load Styles -->
     <link rel="stylesheet" href="{{ url('drift/assets/css/semidark-style-1.min.css') }}">
     <!-- /load styles -->
+
+    <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
+
 </head>
 <body class="dt-sidebar--fixed dt-header--fixed">
 
@@ -496,7 +499,6 @@
 <!-- /root -->
 
 <!-- Optional JavaScript -->
-<script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ url('drift/assets/modules/moment/moment.js') }}"></script>
 <script src="{{ url('drift/assets/modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Perfect Scrollbar jQuery -->
@@ -510,5 +512,10 @@
 <script src="{{ url('drift/assets/js/customizer.js') }}"></script><!-- Custom JavaScript -->
 <script src="{{ url('drift/assets/js/script.js') }}"></script>
 
+<script src="{{ url('drift/assets/js/jquery.datetimepicker.js') }}"></script>
+<script src="{{ url('drift/assets/js/jquery.form.js') }}"></script>
+<script src="{{ url('drift/assets/js/jquery.history.js') }}"></script>
+@include('common.javascript')
+@stack('footer-scripts')
 </body>
 </html>

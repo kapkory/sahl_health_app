@@ -24,21 +24,17 @@
             ]
         },
         {
-            "type": "hidden",
+            "type": "many",
             "section": "main",
             "slug": "make_sales",
-            "label": "Point of Sale",
-            "icon": "printer",
+            "label": "Settings",
+            "icon": "metrics",
             "main": "admin/sales",
             "menus": [],
             "children": [
                 {
-                    "label": "Make Sale",
-                    "url": "admin/sales/new"
-                },
-                {
-                    "label": "Today's Sales",
-                    "url": "admin/sales/today"
+                    "label": "Core",
+                    "url": "admin/settings"
                 }
             ],
             "subs": [

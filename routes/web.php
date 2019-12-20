@@ -31,6 +31,8 @@ Route::get('/{provider}/callback', 'Auth\SocialProviderController@callback');
 
 Route::get('complete-registration','Auth\RegisterController@completeRegistration');
 
+Route::get('provider','Provider\IndexController@index');
+
 Route::group(['middleware' => ['auth', 'web', 'member']], function () {
 //    Route::get('/', 'HomeController@index');
 //    Route::get('/home', 'HomeController@index')->name('home');

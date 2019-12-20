@@ -24,7 +24,11 @@ class SocialProviderController extends Controller
                 Auth::loginUsingId($existUser->id);
             }
             else {
-                $user = $this->createUser($getInfo,$provider);
+                $role = 'member';
+                if (\request('type') == 'providers')
+                    $role = 'provider';
+
+                $user = $this->createUser($getInfo,$provider,$role);
                 Auth::loginUsingId($user->id);
             }
             return redirect(\auth()->user()->role);
@@ -34,7 +38,7 @@ class SocialProviderController extends Controller
         }
     }
 
-    public function createUser($getInfo,$provider){
+    public function createUser($getInfo,$provider,$role=null){
         $password = Str::random(8);
         $user = new User;
         $user->name = $getInfo->name;

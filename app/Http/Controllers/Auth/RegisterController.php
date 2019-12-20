@@ -48,15 +48,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        if (\request('type')== 'providers')
-            return Validator::make($data, [
-                'first_name' => ['required', 'string', 'max:255'],
-                'last_name' => ['required', 'string', 'max:100'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string'],
-                'dob'=>['required','before:18 years ago'],
-            ]);
-            else
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'string', 'max:13'],
@@ -74,14 +66,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-    if (\request('type') == 'providers')
-        return User::create([
-            'name' => $data['first_name'].' '.$data['last_name'],
-            'email' => $data['email'],
-            'role' => 'provider',
-            'password' => Hash::make($data['password']),
-        ]);
-    else
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

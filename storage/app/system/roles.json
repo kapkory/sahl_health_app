@@ -69,6 +69,20 @@
             "urls": ["admin/users","admin/users/user","admin/users/user/password", "admin/users/delete", "admin/users/add", "admin/users/members", "admin/users/clients", "admin/users/suspensions", "admin/users/suspensions/list"]
         },
         {
+            "type": "single",
+            "name": "institutions",
+            "slug": "institutions",
+            "menus": {
+                "label": "Institutions",
+                "url": "admin/institutions",
+                "icon": "contacts-app"
+            },
+            "children": [],
+
+            "subs": ["list", "user/orders/list", "list/userplans","user/deactivate/",  "user/dates", "websites", "user/active/", "user/unsuspend/"],
+            "urls": ["admin/users","admin/users/user","admin/users/user/password", "admin/users/delete", "admin/users/add", "admin/users/members", "admin/users/clients", "admin/users/suspensions", "admin/users/suspensions/list"]
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "manage_admin_departments",
@@ -177,19 +191,19 @@
             ]
         }
     ],
-    "sales": [
+    "provider": [
         {
             "type": "single",
             "section": "main",
             "slug": "view_admin_dashboard",
             "menus": {
                 "label": "Dashboard",
-                "icon": "home4",
-                "url": "member"
+                "icon": "dashboard",
+                "url": "provider"
             },
             "children": [],
             "subs": [
-                "chart/list"
+                "institution/create"
             ],
             "urls": [
                 "home",

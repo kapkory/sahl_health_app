@@ -221,12 +221,13 @@
             "menus": {
                 "label": "Institution",
                 "icon": "list",
-                "url": "provider"
+                "url": "provider/institutions"
             },
             "children": [],
             "subs": [
                 "institutions",
-                "institutions/list"
+                "institution",
+                "list"
             ],
             "urls": [
                 "home",

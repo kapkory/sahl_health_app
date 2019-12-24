@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title') {umodels} @endsection
+@section('title',{umodels})
 
 @section('content')
 <a href="#{model}_modal" class="btn btn-primary btn-sm clear-form" data-toggle="modal"><i class="zmdi-hc-lg zmdi zmdi-plus"></i> ADD {cmodel}</a>

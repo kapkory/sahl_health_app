@@ -36,14 +36,24 @@
 
                 <!-- Login Content Inner -->
                 <div class="dt-login__content-inner">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="phone_number">Phone Number</label>
+                            <label for="phone_number">Phone Number / Email Address</label>
                                 <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
-
+                                 <small class="text-dark">Enter your phone number starting with country code e.g. +254722000000
+                                 </small>
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

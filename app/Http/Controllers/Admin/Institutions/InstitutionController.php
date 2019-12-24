@@ -24,7 +24,7 @@ class InstitutionController extends Controller
      * store institution
      */
     public function storeInstitution(){
-        request()->validate($this->getValidationFields());
+        request()->validate($this->getValidationFields(['name']));
         $data = \request()->all();
         if(!isset($data['user_id'])) {
             if (Schema::hasColumn('institutions', 'user_id'))

@@ -64,17 +64,22 @@ class InstitutionController extends Controller
      * return institution values
      */
     public function listInstitutions(){
-        $institutions = Institution::where([
-            ['id','>',0]
-        ]);
+        $institutions = Institution::join('institution_levels','institutions.institution_level_id','institution_levels.id')
+            ->join('organization_types','institutions.organization_type_id','organization_types.id')
+        ->where([
+            ['institutions.user_id','=',auth()->id()]
+        ])->select('institutions.*','institution_levels.name as category','organization_types.name as organization_type');
         if(\request('all'))
             return $institutions->get();
         return SearchRepo::of($institutions)
+            ->addColumn('discount',function($institution){
+              return '<b>'.$institution->discount.'% </b>';
+            })
             ->addColumn('action',function($institution){
                 $str = '';
                 $json = json_encode($institution);
-                $str.='<a href="#" data-model="'.htmlentities($json, ENT_QUOTES, 'UTF-8').'" onclick="prepareEdit(this,\'institution_modal\');" class="btn badge btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>';
-                $str.='&nbsp;&nbsp;<a href="#" onclick="deleteItem(\''.url(request()->user()->role.'/institutions/delete').'\',\''.$institution->id.'\');" class="btn badge btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>';
+                $str.='<a href="'.url("provider/institutions/".$institution->id).'" class="btn badge btn-info btn-sm"><i class="fa fa-eye"></i> View</a>';
+//                $str.='&nbsp;&nbsp;<a href="#" onclick="deleteItem(\''.url(request()->user()->role.'/institutions/delete').'\',\''.$institution->id.'\');" class="btn badge btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>';
                 return $str;
             })->make();
     }

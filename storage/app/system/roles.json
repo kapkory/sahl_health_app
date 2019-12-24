@@ -225,7 +225,8 @@
             },
             "children": [],
             "subs": [
-                "institutions"
+                "institutions",
+                "institutions/list"
             ],
             "urls": [
                 "home",

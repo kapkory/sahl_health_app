@@ -1,5 +1,5 @@
 <?php
-$controller = "InstitutionController@";
+$controller = "InstitutionsController@";
 Route::get('/',$controller.'index');
 Route::post('/',$controller.'storeInstitution');
 Route::get('/list',$controller.'listInstitutions');

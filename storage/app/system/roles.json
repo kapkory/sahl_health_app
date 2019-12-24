@@ -79,7 +79,7 @@
             },
             "children": [],
 
-            "subs": ["list", "user/orders/list", "list/userplans","user/deactivate/",  "user/dates", "websites", "user/active/", "user/unsuspend/"],
+            "subs": ["list", "institution"],
             "urls": ["admin/users","admin/users/user","admin/users/user/password", "admin/users/delete", "admin/users/add", "admin/users/members", "admin/users/clients", "admin/users/suspensions", "admin/users/suspensions/list"]
         },
         {

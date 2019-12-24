@@ -55,7 +55,11 @@ class InstitutionsController extends Controller
         unset($data['postal_code']);
         unset($data['organization_type']);
         unset($data['submit']);
-        $this->autoSaveModel($data);
+        $institution = $this->autoSaveModel($data);
+
+        $user= auth()->user();
+        $user->institution_id = $institution->id;
+        $user->save();
 
         return redirect()->back();
     }

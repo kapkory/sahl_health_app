@@ -214,6 +214,23 @@
                 "email/verify/",
                 "admin/countries/list"
             ]
+        },
+        {
+            "type": "single",
+            "slug": "institutions",
+            "menus": {
+                "label": "Institution",
+                "icon": "list",
+                "url": "provider"
+            },
+            "children": [],
+            "subs": [
+                "institutions"
+            ],
+            "urls": [
+                "home",
+                ""
+            ]
         }
     ],
     "guest": [

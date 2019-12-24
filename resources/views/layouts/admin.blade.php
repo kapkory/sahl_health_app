@@ -74,7 +74,7 @@
     <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
 
 </head>
-<body class="dt-sidebar--fixed dt-header--fixed">
+<body class="dt-sidebar--fixed dt-header--fixed" style="overflow-y: scroll !important;">
 
 <!-- Loader -->
 {{--<div class="dt-loader-container">--}}
@@ -508,7 +508,7 @@
             <div class="dt-content-wrapper">
 
                 <!-- Site Content -->
-                <div class="dt-content">
+                <div class="dt-content" >
 
                     <!-- Page Header -->
                     <div class="dt-page__header">
@@ -519,7 +519,7 @@
                     <!-- Grid -->
                     <div class="row">
                         <!-- Grid Item -->
-                        <div class="col-xl-12">
+                        <div class="col-md-12">
 
                          @yield('content')
 

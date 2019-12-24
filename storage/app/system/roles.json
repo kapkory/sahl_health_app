@@ -49,7 +49,10 @@
                 "admin/settings/institution_levels/delete",
                 "admin/settings/organization_type/",
                 "admin/settings/organization_type/list",
-                "admin/settings/organization_type/delete"
+                "admin/settings/organization_type/delete",
+                "admin/settings/identification",
+                "admin/settings/identification/list",
+                "admin/settings/identification/delete"
             ]
         },
         {
@@ -143,11 +146,11 @@
         },
         {
             "type": "single",
-            "slug": "settings",
+            "slug": "dependants",
             "menus": {
-                "label": "Settings",
+                "label": "Dependants",
                 "icon": "contacts-app",
-                "url": "member"
+                "url": "member/dependants"
             },
             "children": [],
             "subs": [

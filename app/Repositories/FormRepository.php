@@ -117,8 +117,10 @@ class FormRepository
         }
         $classes = implode(' ',$classes);
         $checkboxes = [];
+        $radioboxes = [];
 
         $checkboxes['downloadable'] = ['yes','no'];
+        $radioboxes['is_provider'] = ['yes','no'];
         $form_string = '';
         $id='model_form_id';
 
@@ -231,9 +233,9 @@ class FormRepository
                 $form_string.='<div class="checkboxes">';
                 foreach($radioboxes[$element] as $radiobox){
                     if(@$model[$element] == $radiobox){
-                        $form_string.='<input class="" type="radio" name="'.$element.'[]" value="'.strtolower(str_replace(' ','_',$radiobox)).'">'.ucwords($radiobox).'<br/>';
+                        $form_string.='<div class="form-check mb-2"><input class="form-check-input" type="radio" name="'.$element.'" value="'.strtolower(str_replace(' ','_',$radiobox)).'"> '.ucwords($radiobox).'<br/></div>';
                     }else{
-                        $form_string.='<input class="" type="radio" name="'.$element.'[]" value="'.strtolower(str_replace(' ','_',$radiobox)).'">'.ucwords($radiobox).'<br/>';
+                        $form_string.='<div class="form-check mb-2"><input class="form-check-input" type="radio" name="'.$element.'" value="'.strtolower(str_replace(' ','_',$radiobox)).'"> '.ucwords($radiobox).'<br/></div>';
                     }
                 }
                 $form_string.='</div>';

@@ -36,6 +36,8 @@ class HomeController extends Controller
     public function authCheck(){
         $user = Auth::user();
         $role=$user->role;
+        if ($role == 'provider' && !$user->institution_id)
+            return redirect('provider/institution/create');
         return redirect($role)->send();
     }
 }

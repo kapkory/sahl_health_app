@@ -83,7 +83,7 @@
             "children": [],
 
             "subs": ["list", "institution"],
-            "urls": ["admin/users","admin/users/user","admin/users/user/password", "admin/users/delete", "admin/users/add", "admin/users/members", "admin/users/clients", "admin/users/suspensions", "admin/users/suspensions/list"]
+            "urls": ["provider/institution/create","provider/institutions"]
         },
         {
             "type": "hidden",
@@ -230,7 +230,8 @@
             "subs": [
                 "institutions",
                 "institution",
-                "list"
+                "list",
+                "contacts","contacts/list"
             ],
             "urls": [
                 "home",

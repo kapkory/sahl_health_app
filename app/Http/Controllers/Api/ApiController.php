@@ -18,8 +18,10 @@ class ApiController extends Controller
                 break;
             case 'organization_types':
                 $response = OrganizationType::select('id','name')->get();
+                break;
             case 'identifications':
                 $response = Identification::select('id','name')->where('is_provider',0)->get();
+                break;
         }
         return $response;
     }

@@ -99,6 +99,7 @@ class FormRepository
         $selects['profit_by'] = ['commission','fixed_amount'];
         $selects['recurring_period'] = ['weekly','monthly','quarterly','semi-annually','annually'];
         $selects['currency'] = ['USD','KES'];
+        $selects['relationship_type'] = ['Spouse','Child','Parent','Grand Parent','Grand Children'];
         $selects['region'] = ['central','coast','eastern','nairobi','north eastern','nyanza','rift valley','western'];
         $class = 'ajax-post';
         $enctype = '';

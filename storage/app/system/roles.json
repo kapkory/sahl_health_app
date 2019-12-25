@@ -78,7 +78,7 @@
             "menus": {
                 "label": "Institutions",
                 "url": "admin/institutions",
-                "icon": "contacts-app"
+                "icon": "basic-components"
             },
             "children": [],
 
@@ -154,7 +154,7 @@
             },
             "children": [],
             "subs": [
-                "stats/list"
+                "list"
             ],
             "urls": [
                 "home",

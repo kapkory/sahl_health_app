@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\Identification;
 use App\Models\Core\InstitutionLevel;
 use App\Models\Core\OrganizationType;
 use Illuminate\Http\Request;
@@ -17,6 +18,8 @@ class ApiController extends Controller
                 break;
             case 'organization_types':
                 $response = OrganizationType::select('id','name')->get();
+            case 'identifications':
+                $response = Identification::select('id','name')->where('is_provider',0)->get();
         }
         return $response;
     }

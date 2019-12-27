@@ -86,6 +86,20 @@
             "urls": ["provider/institution/create","provider/institutions"]
         },
         {
+            "type": "single",
+            "name": "packages",
+            "slug": "packages",
+            "menus": {
+                "label": "Packages",
+                "url": "admin/packages",
+                "icon": "basic-components"
+            },
+            "children": [],
+
+            "subs": ["list", "package_category/list","package_category/delete","package_category"],
+            "urls": []
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "manage_admin_departments",

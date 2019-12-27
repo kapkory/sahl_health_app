@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Core\Package;
 use App\Repositories\SearchRepo;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 class PackagesController extends Controller
 {
@@ -24,12 +25,13 @@ class PackagesController extends Controller
      * store package
      */
     public function storePackage(){
-        request()->validate($this->getValidationFields());
+        request()->validate($this->getValidationFields(['name','duration','package_category_id','cost']));
         $data = \request()->all();
         if(!isset($data['user_id'])) {
             if (Schema::hasColumn('packages', 'user_id'))
                 $data['user_id'] = request()->user()->id;
         }
+        $data['slug'] = Str::slug($data['name']);
         $this->autoSaveModel($data);
         return redirect()->back();
     }
@@ -38,9 +40,8 @@ class PackagesController extends Controller
      * return package values
      */
     public function listPackages(){
-        $packages = Package::where([
-            ['id','>',0]
-        ]);
+        $packages = Package::join('package_categories','packages.package_category_id','=','package_categories.id')
+        ->select('packages.*','package_categories.name as category');
         if(\request('all'))
             return $packages->get();
         return SearchRepo::of($packages)

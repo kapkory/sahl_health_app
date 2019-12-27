@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Core\Identification;
 use App\Models\Core\InstitutionLevel;
 use App\Models\Core\OrganizationType;
+use App\Models\Core\PackageCategory;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -21,6 +22,9 @@ class ApiController extends Controller
                 break;
             case 'identifications':
                 $response = Identification::select('id','name')->where('is_provider',0)->get();
+                break;
+            case 'package_categories':
+                $response = PackageCategory::select('id','name')->get();
                 break;
         }
         return $response;

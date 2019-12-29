@@ -1,0 +1,42 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.nav-link {
+  color: black;
+  font-weight: 600;
+}
+.btn-primary {
+  color: white !important;
+}
+.bg-dark-myimg {
+  background-image: url("frontend/assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.inner_div {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.form_cont {
+  margin-top: -140px !important;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7) !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .form_cont {
+    margin-top: 10px !important;
+  }
+}
+.user_image {
+  border-radius: 50%;
+  border: 2px solid rgba(40, 167, 69, 0.3);
+}
+.my_input {
+  border: 1px solid rgba(40, 167, 69, 0.3) !important;
+}
+
+p {
+  color: grey;
+}
+.bg-grey {
+  background-color: silver;
+}

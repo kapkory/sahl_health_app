@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ url('frontend/assets/style.css') }}" />
     <title>@yield('title','Sahl Health')</title>
+
+    @yield('styles')
 </head>
 <body>
 <div class="container-fluid bg-grey d-none d-md-block text-dark">

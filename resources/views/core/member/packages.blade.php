@@ -45,7 +45,7 @@
                             to subscribe.
                         </caption>
                     </h5>
-                    <form action="" class="py-md-3 px-md-4">
+{{--                    <form action="" class="py-md-3 px-md-4">--}}
 
                         @foreach($categories as $category)
                             <h3 style="color: orangered">{{ $category->name }}</h3>
@@ -55,7 +55,7 @@
                         @endphp
                         @foreach($category->packages as $package)
                             <div class="col-md-4">
-                                <button type="button" style="border-width:thick; border-radius: 20px" class="btn btn-outline-{{ $class_colors[$loop->iteration] }} col-md m-3">
+                                <button id="package_btn_{{ $package->id }}" onclick="setPackage('{{ $package }}','{{ $category }}')" type="button" style="border-width:thick; border-radius: 20px" class="btn btn-outline-{{ $class_colors[$loop->iteration] }} col-md m-3">
                                     <h4 class="font-weight-900">KES</h4>
                                     <span class="font-weight-800">{{ $package->cost.'/=' }}</span><br>
                                     <span><b>{{ $package->duration }}</b> Months</span><br>
@@ -68,17 +68,40 @@
 
                         <div class="col-md-6 mx-auto">
                             <div class="row">
-
+                                <div id="error_alert"></div>
                                 <div class="col p-2 my-2 mx-1 text-center">
-                                    <input type="submit" value="Continue" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light"
-                                    />
+                                    <input onclick="return checkPackage()" type="button" value="Continue" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light"/>
                                 </div>
                             </div>
                         </div>
-                    </form>
+{{--                    </form>--}}
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        function setPackage(package,category) {
+            $('.btn').removeClass('active');
+            package = JSON.parse(package);
+            let p_id = '#package_btn_'+package.id;
+            $(p_id).addClass('active');
+            category = JSON.parse(category);
+            localStorage.setItem('package_id',package.id);
+            let message = 'Thank you for choosing <b>'+category.name+'</b> for \n <span class="alert alert-success"> KES '+package.cost+'</span> for '+package.duration+' months.<br>Please fill the details below';
+            localStorage.setItem('package_message',message);
+         console.log(message);
+        }
+
+        function checkPackage() {
+        if(localStorage.getItem('package_id'))
+        {
+            console.log('package id is '+localStorage.getItem('package_id'));
+            window.location.href="{{ url('member-complete-registration') }}";
+        }
+        else
+            $('#error_alert').append('<div class="alert alert-danger">Please Select a Package to Proceed, select by clicking on a package</div>');
+
+        }
+    </script>
 @endsection

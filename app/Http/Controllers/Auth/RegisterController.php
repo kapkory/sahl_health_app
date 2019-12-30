@@ -94,6 +94,13 @@ class RegisterController extends Controller
     }
 
     public function completeRegistration(){
+        $this->validate(\request(), [
+            'date_of_birth' => 'required|max:255',
+            'identification_type' => 'required',
+            'identification_number' => 'required|min:4',
+            'password' => 'required|min:10',
+            'password_confirmation' => 'required|min:10',
+        ]);
         return view('auth.complete_registration');
     }
 }

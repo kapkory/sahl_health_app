@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -82,6 +83,14 @@ class RegisterController extends Controller
             'email' => 'required',
             'phone_number' => 'required',
         ]);
+        $user = new User();
+        $user->name = \request('name');
+        $user->email = \request('email');
+        $user->phone_number = \request('phone_number');
+        $user->password = bcrypt(\request('email'));
+        $user->save();
+        Auth::login($user);
+        return ['redirect_url'=>url('member-packages')];
     }
 
     public function completeRegistration(){

@@ -23,6 +23,7 @@ class CreatePackagesTable extends Migration
 			$table->tinyInteger('status')->default(0);
 			$table->integer('user_id')->unsigned();
 			$table->integer('duration');
+			$table->integer('number_of_members')->default(1);
             $table->timestamps();
         });
     }

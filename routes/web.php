@@ -20,7 +20,9 @@ Route::get('logout',function (){
 });
 
 Auth::routes();
+
 Route::get('register','Frontend\IndexController@memberRegistration');
+Route::get('member-packages','Frontend\IndexController@memberPackages');
 
 Route::get('home', 'HomeController@index');
 

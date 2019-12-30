@@ -10,4 +10,8 @@ class IndexController extends Controller
     public function memberRegistration(){
          return view('auth.member_registration');
     }
+
+    public function memberPackages(){
+        return view('core.member.packages');
+    }
 }

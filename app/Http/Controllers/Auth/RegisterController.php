@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\Profile;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -101,6 +103,16 @@ class RegisterController extends Controller
             'password' => 'required|min:10',
             'password_confirmation' => 'required|min:10',
         ]);
+        $user = \auth()->user();
+        $user->password = \request('password');
+        $user->save();
+
+        $profile = Profile::updateOrCreate(['user_id'=>\auth()->id()],[
+            'date_of_birth'=>Carbon::parse(\request('date_of_birth')),
+            'identification_type_id'=>\request('identification_type'),
+            'identification_number'=>\request('identification_number')
+        ]);
+
         return view('auth.complete_registration');
     }
 }

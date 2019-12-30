@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\PackageCategory;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -12,6 +13,7 @@ class IndexController extends Controller
     }
 
     public function memberPackages(){
-        return view('core.member.packages');
+        $categories = PackageCategory::all();
+        return view('core.member.packages',compact('categories'));
     }
 }

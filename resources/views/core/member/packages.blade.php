@@ -47,16 +47,30 @@
                     </h5>
                     <form action="" class="py-md-3 px-md-4">
 
+                        @foreach($categories as $category)
+                            <h3 style="color: orangered">{{ $category->name }}</h3>
                         <div class="row my-2">
-
+                        @php
+                        $class_colors = ['','info','secondary','success'];
+                        @endphp
+                        @foreach($category->packages as $package)
+                            <div class="col-md-4">
+                                <button type="button" style="border-width:thick; border-radius: 20px" class="btn btn-outline-{{ $class_colors[$loop->iteration] }} col-md m-3">
+                                    <h4 class="font-weight-900">KES</h4>
+                                    <span class="font-weight-800">{{ $package->cost.'/=' }}</span><br>
+                                    <span><b>{{ $package->duration }}</b> Months</span><br>
+                                </button>
+                            </div>
+                            @endforeach
 
                         </div>
+                        @endforeach
 
                         <div class="col-md-6 mx-auto">
                             <div class="row">
 
                                 <div class="col p-2 my-2 mx-1 text-center">
-                                    <input type="submit" value="Get Started" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light"
+                                    <input type="submit" value="Continue" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light"
                                     />
                                 </div>
                             </div>

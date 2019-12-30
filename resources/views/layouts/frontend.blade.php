@@ -12,6 +12,8 @@
     <title>@yield('title','Sahl Health')</title>
 
     @yield('styles')
+    <script src="{{ url('frontend/assets/js/jquery.min.js') }}"></script>
+
 </head>
 <body>
 <div class="container-fluid bg-grey d-none d-md-block text-dark">
@@ -150,8 +152,96 @@
     </div>
 </footer>
 
-<script src="{{ url('frontend/assets/js/jquery.min.js') }}"></script>
 <script src="{{ url('frontend/assets/popper.min.js') }}"></script>
 <script src="{{ url('frontend/assets/js/bootstrap.min.js') }}"></script>
+
+<script>
+    $('.ajax-post').submit(function (event) {
+        event.preventDefault();
+        var form = $(this);
+        var btn = form.find(".submit-btn");
+        btn.prepend('<img class="processing-submit-image" style="height: 50px;margin:-10px !important;" src="{{ url("img/Ripple.gif") }}">');
+        btn.attr('disabled', true);
+        var url = form.attr('action');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function (response) {
+                btn.find('img').remove();
+                btn.attr('disabled', false);
+                removeError();
+                resetForm('ajax-form');
+                window.location.href= response.redirect_url;
+                // toastr.success('Our administration has been notified of your message. We will respond as soon as possible');
+            },
+            error: function (xhr, status, error) {
+                var btn = form.find(".submit-btn");
+                btn.find('img').remove();
+                btn.attr('disabled', false);
+                if (xhr.status == 422) {
+                    form.find('.alert_status').remove();
+                    var response = JSON.parse(xhr.responseText).errors;
+                    console.log(response);
+                    for (field in response) {
+                        form.find("input[name='" + field + "']").addClass('is-invalid');
+                        form.find("input[name='" + field + "']").closest(".form-group").find('.help-block').remove();
+                        form.find("input[name='" + field + "']").closest(".form-group").append('<small class="help-block invalid-feedback">' + response[field] + '</small>');
+
+                        form.find("select[name='" + field + "']").addClass('is-invalid');
+                        form.find("select[name='" + field + "']").closest(".form-group").find('.help-block').remove();
+                        form.find("select[name='" + field + "']").closest(".form-group").append('<small class="help-block invalid-feedback">' + response[field] + '</small>');
+
+                        form.find("textarea[name='" + field + "']").addClass('is-invalid');
+                        form.find("textarea[name='" + field + "']").closest(".form-group").find('.help-block').remove();
+                        form.find("textarea[name='" + field + "']").closest(".form-group").append('<small class="help-block invalid-feedback">' + response[field] + '</small>');
+                    }
+
+                    jQuery(".invalid-feedback").css('display', 'block')
+                    jQuery(".invalid-feedback").css('display', 'block');
+                } else if (xhr.status == 406) {
+                    form.find('#form-exception').remove();
+                    form.find('.alert_status').remove();
+                    form.prepend('<div id="form-exception" class="alert alert-warning"><strong>' + xhr.status + '</strong> ' + error + '<br/>' + xhr.responseText + '</div>');
+                } else {
+                    form.find('#form-exception').remove();
+                    form.find('.alert_status').remove();
+                    form.prepend('<div id="form-exception" class="alert alert-danger"><strong>' + xhr.status + '</strong> ' + error + '<br/>(' + url + ')</div>');
+                }
+
+            },
+        });
+    });
+
+    jQuery(document).on('click', '.is-invalid', function () {
+        $(this).removeClass("is-invalid");
+        $(this).closest(".invalid-feedback").remove();
+    });
+    jQuery(document).on('change', '.is-invalid', function () {
+        $(this).removeClass("is-invalid");
+        $(this).closest(".invalid-feedback").remove();
+    });
+    jQuery(document).on('click', '.form-group', function () {
+        $(this).find('.help-block').remove();
+        $(this).closest(".form-group").removeClass('is-invalid');
+    });
+    jQuery(document).on('click', '.form-control', function () {
+        $(this).find('.help-block').remove();
+        $(this).closest(".form-group").removeClass('is-invalid');
+    });
+    function resetForm(form_class) {
+        $("." + form_class).find("input[type=text],textarea,select").val("");
+        $("input[name='id']").val('');
+    }
+    function removeError() {
+        setTimeout(function () {
+            $("#form-exception").fadeOut();
+            $("#form-success").fadeOut();
+            $(".alert_status").fadeOut();
+        }, 1200);
+
+    }
+</script>
 </body>
 </html>

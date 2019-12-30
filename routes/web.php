@@ -22,6 +22,7 @@ Route::get('logout',function (){
 Auth::routes();
 
 Route::get('register','Frontend\IndexController@memberRegistration');
+Route::post('member-register','Auth\RegisterController@memberRegistration');
 Route::get('member-packages','Frontend\IndexController@memberPackages');
 
 Route::get('home', 'HomeController@index');

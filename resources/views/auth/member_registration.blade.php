@@ -45,19 +45,20 @@
                             the details below to get started.
                         </caption>
                     </h5>
-                    <form action="" class="py-md-3 px-md-4">
+                    <form action="{{ url('member-register') }}" method="post" class="py-md-3 px-md-4 ajax-post">
 
                         <div class="row my-2">
-                            <div class="p-2">
-                                <input type="text" placeholder="Your Name" class="my_input col-md border-0 rounded m-3 p-2"/>
+                            <div class="p-2 form-group">
+                                <input type="text" required name="name" placeholder="Your Name" class="my_input col-md border-0 rounded m-3 p-2"/>
                             </div>
 
-                            <div class="p-2">
-                                <input type="email" placeholder="Your Email" class="my_input col-md border-0 rounded m-3 p-2"/>
+                            @csrf
+                            <div class="p-2 form-group">
+                                <input type="email" required name="email" placeholder="Your Email" class="my_input col-md border-0 rounded m-3 p-2"/>
                             </div>
 
-                            <div class="p-2 ">
-                                <input type="text" placeholder="Your Number" class="my_input col-md border-0 rounded m-3 p-2"/>
+                            <div class="p-2 form-group">
+                                <input type="text" required name="phone_number" placeholder="Your Number" class="my_input col-md border-0 rounded m-3 p-2"/>
                             </div>
 
                          </div>
@@ -66,7 +67,7 @@
                             <div class="row">
 
                                 <div class="col p-2 my-2 mx-1 text-center">
-                                    <input type="submit" value="Get Started" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light"
+                                    <input type="submit" value="Get Started" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light submit-btn"
                                     />
                                 </div>
                             </div>

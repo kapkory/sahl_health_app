@@ -76,6 +76,14 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function memberRegistration(){
+        $this->validate(\request(), [
+            'name' => 'required|max:255',
+            'email' => 'required',
+            'phone_number' => 'required',
+        ]);
+    }
+
     public function completeRegistration(){
         return view('auth.complete_registration');
     }

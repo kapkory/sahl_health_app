@@ -81,7 +81,7 @@ class RegisterController extends Controller
         $this->validate(\request(), [
             'name' => 'required|max:255',
             'email' => 'required',
-            'phone_number' => 'required',
+            'phone_number' => 'required|min:10',
         ]);
         $user = new User();
         $user->name = \request('name');

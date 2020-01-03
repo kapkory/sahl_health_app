@@ -7,7 +7,10 @@ use App\Models\Core\Identification;
 use App\Models\Core\InstitutionLevel;
 use App\Models\Core\OrganizationType;
 use App\Models\Core\PackageCategory;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ApiController extends Controller
 {
@@ -28,5 +31,26 @@ class ApiController extends Controller
                 break;
         }
         return $response;
+    }
+
+    public function sendSms(){
+         $username = 'SAHL';
+         $password = '!Kitale2019';
+         $businessCode = 'TPL-SAH-013';
+         $timestamp = Carbon::now()->format('YmdHis');
+        $client = new Client();
+
+        $response = $client->post(url('external-bulk/create'), [
+            'form_params' => [
+                'token' => base64_encode(hash('sha256', $username . $password . $timestamp)),
+                'timestamp' => $timestamp,
+                'business_code' => $businessCode,
+                'external_bulk_id' => Str::random(14),
+                'message' => "test Message by Levis",
+                'schedule_time' => date("Y-m-d H:i:s"),
+                'addresses' => ['254712137367']
+            ],
+        ]);
+        return json_decode((string) $response->getBody(), true);
     }
 }

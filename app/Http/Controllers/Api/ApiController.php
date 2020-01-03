@@ -34,11 +34,12 @@ class ApiController extends Controller
     }
 
     public function sendSms(){
-        header("Content-Type: application/json");
+//        header("Content-Type: application/json");
          $username = 'SAHL';
          $password = '!Kitale2019';
          $businessCode = 'TPL-SAH-013';
-         $timestamp = date('YmdHis');
+         $timestamp = Carbon::now('Africa/Nairobi')->format('YmdHis');
+//         dd($timestamp,date('YmdHis'));
          $data =  [
              'token' => base64_encode(hash('sha256', $username . $password . $timestamp)),
              'timestamp' => $timestamp,
@@ -46,7 +47,7 @@ class ApiController extends Controller
              'short_code' => 'SAHL-HEALTH',
              'external_bulk_id' => Str::random(14),
              'message' => "test Message by Levis",
-             'schedule_time' => date("Y-m-d H:i:s"),
+             'schedule_time' => Carbon::now('Africa/Nairobi')->format("Y-m-d H:i:s"),
              'addresses' => ['254712137367']
          ];
 

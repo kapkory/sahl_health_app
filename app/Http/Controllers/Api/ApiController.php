@@ -38,19 +38,21 @@ class ApiController extends Controller
          $password = '!Kitale2019';
          $businessCode = 'TPL-SAH-013';
          $timestamp = date('YmdHis');
+         $data =  [
+             'token' => base64_encode(hash('sha256', $username . $password . $timestamp)),
+             'timestamp' => $timestamp,
+             'business_code' => $businessCode,
+             'short_code' => 'SAHL-HEALTH',
+             'external_bulk_id' => Str::random(14),
+             'message' => "test Message by Levis",
+             'schedule_time' => date("Y-m-d H:i:s"),
+             'addresses' => ['254712137367']
+         ];
 
         $client = new Client();
 
         $response = $client->post('http://196.13.121.195:9095/external-bulk/create', [
-            'form_params' => [
-                'token' => base64_encode(hash('sha256', $username . $password . $timestamp)),
-                'timestamp' => $timestamp,
-                'business_code' => $businessCode,
-                'external_bulk_id' => Str::random(14),
-                'message' => "test Message by Levis",
-                'schedule_time' => date("Y-m-d H:i:s"),
-                'addresses' => ['254712137367']
-            ],
+            'form_params' =>$data,
         ]);
         return json_decode((string) $response->getBody(), true);
     }

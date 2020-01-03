@@ -37,7 +37,8 @@ class ApiController extends Controller
          $username = 'SAHL';
          $password = '!Kitale2019';
          $businessCode = 'TPL-SAH-013';
-         $timestamp = Carbon::now()->format('YmdHis');
+         $timestamp = date('YmdHis');
+         dd($timestamp);
         $client = new Client();
 
         $response = $client->post('http://196.13.121.195:9095/external-bulk/create', [

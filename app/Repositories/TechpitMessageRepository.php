@@ -35,7 +35,7 @@ class TechpitMessageRepository
             'schedule_time' => Carbon::now('Africa/Nairobi')->format("Y-m-d H:i:s"),
             'addresses' => $addresses
         ];
-        dd($data);
+
         $client = new Client();
         $response =  $client->post($this->baseUrl.'/external-bulk/create', [
             'json' =>$data,

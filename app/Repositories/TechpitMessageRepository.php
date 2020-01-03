@@ -46,6 +46,6 @@ class TechpitMessageRepository
     }
 
     public function getToken($timestamp) {
-        return base64_encode(hash('sha256', $this->username . $this->password . $timestamp, true));
+        return base64_encode(hash('sha256', $this->username . $this->password . $timestamp));
     }
 }

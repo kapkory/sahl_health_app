@@ -38,7 +38,7 @@ class ApiController extends Controller
          $password = '!Kitale2019';
          $businessCode = 'TPL-SAH-013';
          $timestamp = date('YmdHis');
-         dd($timestamp);
+
         $client = new Client();
 
         $response = $client->post('http://196.13.121.195:9095/external-bulk/create', [

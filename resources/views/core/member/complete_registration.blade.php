@@ -70,7 +70,7 @@
 
                         </div>
                     </h5>
-                    <form id="member_register" action="{{ url('member-complete-register') }}" method="post" class="py-md-3 px-md-4 ajax-post">
+                    <form id="member_register" action="{{ url('member/complete-registration') }}" method="post" class="py-md-3 px-md-4 ajax-post">
 
                         <div class="row my-2">
                             <div class="col-md-4 form-group">
@@ -109,8 +109,7 @@
                             <div class="row">
 
                                 <div class="col p-2 my-2 mx-1 text-center">
-                                    <input type="submit" value="Continue" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light submit-btn"
-                                    />
+                                    <input type="submit" value="Continue" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light submit-btn"/>
                                 </div>
                             </div>
                         </div>

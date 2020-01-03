@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\MemberPackage;
+use App\Models\Core\Package;
 use App\Models\Core\Profile;
 use App\User;
 use Carbon\Carbon;
@@ -93,26 +95,5 @@ class RegisterController extends Controller
         $user->save();
         Auth::login($user);
         return ['redirect_url'=>url('member-packages')];
-    }
-
-    public function completeRegistration(){
-        $this->validate(\request(), [
-            'date_of_birth' => 'required|max:255',
-            'identification_type' => 'required',
-            'identification_number' => 'required|min:4',
-            'password' => 'required|min:10',
-            'password_confirmation' => 'required|min:10',
-        ]);
-        $user = \auth()->user();
-        $user->password = \request('password');
-        $user->save();
-
-        $profile = Profile::updateOrCreate(['user_id'=>\auth()->id()],[
-            'date_of_birth'=>Carbon::parse(\request('date_of_birth')),
-            'identification_type_id'=>\request('identification_type'),
-            'identification_number'=>\request('identification_number')
-        ]);
-
-        return view('auth.complete_registration');
     }
 }

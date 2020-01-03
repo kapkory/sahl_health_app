@@ -34,6 +34,26 @@ class DependantsController extends Controller
         $this->autoSaveModel($data);
         return redirect()->back();
     }
+    //returns api results
+    public function addDependant(){
+        request()->validate($this->getValidationFields(['first_name','last_name','relationship_type']));
+        $dependant = new Dependant();
+        $dependant->user_id = auth()->id();
+        $dependant->first_name = \request('first_name');
+        $dependant->last_name = \request('last_name');
+        if (\request('identification_type'))
+        {
+            $dependant->identification_type_id = \request('identification_type');
+            $dependant->identification_number = \request('identification_number');
+        }
+        $dependant->relationship_type = \request('relationship_type');
+        $dependant->save();
+        if (\request('add_dependant') == 0)
+            return ['redirect_url'=>url('member/payment')];
+
+        return ['redirect_url'=>url('member/nominate-dependant?added=true')];
+
+    }
 
     /**
      * return dependant values

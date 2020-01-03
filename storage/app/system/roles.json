@@ -130,7 +130,9 @@
             },
             "children": [],
             "subs": [
-                "stats/list"
+                "stats/list",
+                "nominate-dependant",
+                "payment"
             ],
             "urls": [
                 "home",
@@ -155,7 +157,7 @@
             ],
             "urls": [
                 "home",
-                ""
+                "member/complete-registration"
             ]
         },
         {
@@ -168,7 +170,7 @@
             },
             "children": [],
             "subs": [
-                "list"
+                "list","add"
             ],
             "urls": [
                 "home",

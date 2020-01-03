@@ -11,10 +11,10 @@
 |
 */
 
-//Route::get('/','Frontend\MenuController@index');
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Frontend\MenuController@index');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Route::get('logout',function (){
    Auth::logout();
 });
@@ -25,7 +25,7 @@ Route::get('register','Frontend\IndexController@memberRegistration');
 Route::post('member-register','Auth\RegisterController@memberRegistration');
 Route::get('member-packages','Frontend\IndexController@memberPackages');
 Route::view('member-complete-registration','core.member.complete_registration');
-Route::post('member-complete-registration','Auth\RegisterController@completeRegistration');
+Route::post('member/complete-registration','Member\IndexController@completeRegistration');
 
 Route::get('home', 'HomeController@index');
 

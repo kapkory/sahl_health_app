@@ -40,7 +40,7 @@ class ApiController extends Controller
          $timestamp = Carbon::now()->format('YmdHis');
         $client = new Client();
 
-        $response = $client->post(url('external-bulk/create'), [
+        $response = $client->post('http://196.13.121.195:9095/external-bulk/create', [
             'form_params' => [
                 'token' => base64_encode(hash('sha256', $username . $password . $timestamp)),
                 'timestamp' => $timestamp,

@@ -34,6 +34,7 @@ class ApiController extends Controller
     }
 
     public function sendSms(){
+        header("Content-Type: application/json");
          $username = 'SAHL';
          $password = '!Kitale2019';
          $businessCode = 'TPL-SAH-013';
@@ -52,7 +53,6 @@ class ApiController extends Controller
         $client = new Client();
 
         $response = $client->post('http://196.13.121.195:9095/external-bulk/create', [
-            'headers' => ['Content-Type' => 'application/json'],
             'form_params' =>$data,
         ]);
         return json_decode((string) $response->getBody(), true);

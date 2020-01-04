@@ -46,7 +46,7 @@ class IndexController extends Controller
             $payment->reference = $checkoutRequestId;
             $payment->save();
 
-            return ['redirect_url'=>url('member?payment=success')];
+            return ['redirect_url'=>url('member/payments')];
         }
 
         return ['redirect_url'=>url('member/payment')];

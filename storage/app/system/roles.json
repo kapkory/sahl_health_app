@@ -182,6 +182,23 @@
             ]
         },
         {
+            "type": "single",
+            "slug": "payments",
+            "menus": {
+                "label": "Payments",
+                "icon": "list",
+                "url": "member/payments"
+            },
+            "children": [],
+            "subs": [
+                "list"
+            ],
+            "urls": [
+                "home",
+                "member/complete-registration"
+            ]
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "make_sales",

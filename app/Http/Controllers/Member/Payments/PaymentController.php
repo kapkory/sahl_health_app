@@ -20,27 +20,28 @@ class PaymentController extends Controller
         ]);
     }
 
-    /**
-     * store memberpayment
-     */
-    public function storeMemberPayment(){
-        request()->validate($this->getValidationFields());
-        $data = \request()->all();
-        if(!isset($data['user_id'])) {
-            if (Schema::hasColumn('memberpayments', 'user_id'))
-                $data['user_id'] = request()->user()->id;
-        }
-        $this->autoSaveModel($data);
-        return redirect()->back();
-    }
+//    /**
+//     * store memberpayment
+//     */
+//    public function storeMemberPayment(){
+//        request()->validate($this->getValidationFields());
+//        $data = \request()->all();
+//        if(!isset($data['user_id'])) {
+//            if (Schema::hasColumn('memberpayments', 'user_id'))
+//                $data['user_id'] = request()->user()->id;
+//        }
+//        $this->autoSaveModel($data);
+//        return redirect()->back();
+//    }
 
     /**
      * return memberpayment values
      */
     public function listMemberPayments(){
-        $memberpayments = MemberPayment::where([
-            ['id','>',0]
-        ]);
+        $memberpayments = MemberPayment::join('packages','packages.id','=','member_payments.package_id')
+        ->where([
+            ['member_payments.id','>',0]
+        ])->select('member_payments.*','packages.name as package');
         if(\request('all'))
             return $memberpayments->get();
         return SearchRepo::of($memberpayments)
@@ -53,13 +54,13 @@ class PaymentController extends Controller
             })->make();
     }
 
-    /**
-     * delete memberpayment
-     */
-    public function destroyMemberPayment($memberpayment_id)
-    {
-        $memberpayment = MemberPayment::findOrFail($memberpayment_id);
-        $memberpayment->delete();
-        return redirect()->back()->with('notice',['type'=>'success','message'=>'MemberPayment deleted successfully']);
-    }
+//    /**
+//     * delete memberpayment
+//     */
+//    public function destroyMemberPayment($memberpayment_id)
+//    {
+//        $memberpayment = MemberPayment::findOrFail($memberpayment_id);
+//        $memberpayment->delete();
+//        return redirect()->back()->with('notice',['type'=>'success','message'=>'MemberPayment deleted successfully']);
+//    }
 }

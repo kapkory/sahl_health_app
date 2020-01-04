@@ -149,7 +149,7 @@
             "menus": {
                 "label": "Hospitals",
                 "icon": "list",
-                "url": "member"
+                "url": "member/institutions"
             },
             "children": [],
             "subs": [

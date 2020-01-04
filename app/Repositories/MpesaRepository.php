@@ -43,7 +43,7 @@ class MpesaRepository
 
     $phone = preg_replace('/^\\D*/', '', $phone);
     $pay_url = url('api/reference?payment_id='.$payment_id);
-      $amount = '1';
+//      $amount = '1';
     $curl_post_data = array(
         'BusinessShortCode' => $this->shortCode,
         'Password' => $pass,

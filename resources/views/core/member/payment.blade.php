@@ -78,7 +78,10 @@
     </div>
 <script>
     function requestPayment() {
-    
+    let url = "{{ url('member/request-payment?_token='.csrf_token()) }}";
+    $.post(url,function (response) {
+      window.location.href = response.redirect_url;
+    })
     }
 </script>
 @endsection

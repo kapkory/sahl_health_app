@@ -132,7 +132,7 @@
             "subs": [
                 "stats/list",
                 "nominate-dependant",
-                "payment"
+                "payment","request-payment"
             ],
             "urls": [
                 "home",

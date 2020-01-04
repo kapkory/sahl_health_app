@@ -29,31 +29,31 @@ class MpesaRepository
       return $access_token;
   }
 
-  public function stkPush($payment_id){
+  public function stkPush($payment_id,$phone,$amount){
     $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
       $timestamp = '20'.date("ymdhis");
     $stamp = (string)$timestamp;
     $pass = base64_encode("174379"."bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919".$stamp);
 
-    $phone = '254712137367';
+//    $phone = '254712137367';
     $pay_url = url('api/reference?payment_id='.$payment_id);
 //    $pay_url = 'https://qusoma.maviti.co.ke/api/reference?payment_id='.$payment_id;
-    $amount = '1';
+//    $amount = '1';
     $curl_post_data = array(
         'BusinessShortCode' => 174379,
         'Password' => $pass,
         'Timestamp' => $timestamp,
         'TransactionType' => 'CustomerPayBillOnline',
         'Amount' => $amount,
-        'PartyA' => '254712137367',
+        'PartyA' => $phone,
         'PartyB' => 174379,
         'PhoneNumber' => $phone,
         'CallBackURL' => $pay_url,
         'AccountReference' => 'Payment',
         'TransactionDesc' => 'Orders'
     );
-      DB::table('table_response')->insert(['response'=>$pay_url]);
+//      DB::table('table_response')->insert(['response'=>$pay_url]);
     return $this->curlRequest($url,$curl_post_data);
   }
 

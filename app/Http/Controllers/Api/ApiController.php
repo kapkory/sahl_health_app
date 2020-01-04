@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Core\Identification;
 use App\Models\Core\InstitutionLevel;
+use App\Models\Core\MemberPackage;
+use App\Models\Core\MemberPayment;
 use App\Models\Core\OrganizationType;
+use App\Models\Core\Package;
 use App\Models\Core\PackageCategory;
 use App\Repositories\TechpitMessageRepository;
+use App\User;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -32,6 +36,43 @@ class ApiController extends Controller
                 break;
         }
         return $response;
+    }
+
+    public function mpesaCallback(){
+        header("Content-Type: application/json");
+        $payment_id = \request('payment_id');
+        $resp =  json_decode(file_get_contents('php://input'));
+
+        //success
+        if ($resp->Body->stkCallback->ResultCode == 0){
+            $pay = MemberPayment::findOrFail($payment_id);
+            $pay->reference = $resp->Body->stkCallback->CheckoutRequestID;
+            $pay->comment = $resp->Body->stkCallback->ResultDesc;
+            $pay->status = 1;
+            $pay->save();
+
+            $memberPackage = MemberPackage::where('member_id',$pay->member_id)
+                       ->where('package_id',$pay->package_id)->orderBy('created_at','desc')
+                       ->first();
+            $package = Package::findOrFail($pay->package_id);
+
+            $memberPackage->started_on = Carbon::now()->toDateString();
+            $memberPackage->started_on = Carbon::now()->addMonths($package->duration)->toDateString();
+            $memberPackage->save();
+
+            $user = User::findOrFail($pay->member_id);
+            $user->member_package_id = $memberPackage->id;
+            $user->save();
+
+
+        }else{
+            $pay = MemberPayment::findOrFail($payment_id);
+            $pay->reference = $resp->Body->stkCallback->CheckoutRequestID;
+            $pay->comment = $resp->Body->stkCallback->ResultDesc;
+            $pay->status = 2;
+            $pay->save();
+        }
+        echo '{"ResultCode": 0, "ResultDesc": "The service was accepted successfully", "ThirdPartyTransID": "1234567890"}';
     }
 
     public function sendSms(){

@@ -6,9 +6,10 @@ namespace App\Repositories;
 
 use Carbon\Carbon;
 use GuzzleHttp\Client;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Str;
 
-class TechpitMessageRepository
+class TechpitMessageRepository implements ShouldQueue
 {
     public $username = 'SAHL';
     public $password = '!Kitale2019';

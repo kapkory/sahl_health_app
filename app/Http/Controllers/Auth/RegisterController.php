@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Core\MemberPackage;
 use App\Models\Core\Package;
 use App\Models\Core\Profile;
+use App\Repositories\TechpitMessageRepository;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -94,6 +95,12 @@ class RegisterController extends Controller
         $user->password = bcrypt(\request('email'));
         $user->save();
         Auth::login($user);
+
+        $address= [];
+        $address  = \request('phone_number');
+        $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership. Follow link to complete sign up '.url("member-packages").' Welcome ';
+        $techpitch = new TechpitMessageRepository();
+        $response = $techpitch->execute($message,$address);
         return ['redirect_url'=>url('member-packages')];
     }
 }

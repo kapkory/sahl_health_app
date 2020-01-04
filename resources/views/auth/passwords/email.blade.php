@@ -35,7 +35,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="phone">{{ __('Phone Number') }}</label>
+                            <label for="phone">{{ __('Phone Number/ Email Address') }}</label>
 
 
                             <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>

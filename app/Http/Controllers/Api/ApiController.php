@@ -77,7 +77,7 @@ class ApiController extends Controller
 
     public function sendSms(){
         $message= 'Hello there, This is a test Message';
-        $address= ['254712137367'];
+        $address= ['+254712137367'];
         $techpitch = new TechpitMessageRepository();
         $response = $techpitch->execute($message,$address);
         return $response;

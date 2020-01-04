@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/','Frontend\MenuController@index');
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+//Route::get('/','Frontend\MenuController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('logout',function (){
    Auth::logout();
 });

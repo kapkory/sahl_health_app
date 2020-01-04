@@ -36,7 +36,7 @@ class MpesaRepository
     $stamp = (string)$timestamp;
     $pass = base64_encode("174379"."bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919".$stamp);
 
-//    $phone = '254712137367';
+    $phone = preg_replace('/^\\D*/', '', $phone);
     $pay_url = url('api/reference?payment_id='.$payment_id);
 //    $pay_url = 'https://qusoma.maviti.co.ke/api/reference?payment_id='.$payment_id;
 //    $amount = '1';

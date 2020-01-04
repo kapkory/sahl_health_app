@@ -23,7 +23,7 @@
                 <!-- Brand logo -->
                 <div class="dt-login__logo">
                     <a class="dt-brand__logo-link" href="#">
-                        <img class="dt-brand__logo-img" src="{{ url('/') }}/drift/assets/images/logo-white.png" alt="Drift">
+                        <img style="width: 180px" class="dt-brand__logo-img" src="{{ url('/') }}/frontend/assets/logo.jpeg" alt="Drift">
                     </a>
                 </div>
                 <!-- /brand logo -->

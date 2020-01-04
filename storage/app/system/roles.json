@@ -100,6 +100,20 @@
             "urls": []
         },
         {
+            "type": "single",
+            "name": "payments",
+            "slug": "payments",
+            "menus": {
+                "label": "Payments",
+                "url": "admin/payments",
+                "icon": "basic-components"
+            },
+            "children": [],
+
+            "subs": ["list", "package_category/list","package_category/delete","package_category"],
+            "urls": []
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "manage_admin_departments",

@@ -19,7 +19,8 @@ class IndexController extends Controller
         return view($this->folder.'dependants');
     }
     public function payment(){
-        return view($this->folder.'payment');
+        $package = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
+        return view($this->folder.'payment',compact('package'));
     }
 
     public function completeRegistration(){

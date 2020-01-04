@@ -57,6 +57,9 @@
                     <p class="text-center">
                         Your Phone Number is <b>{{ auth()->user()->phone_number }}</b><br>
                         <small>After clicking the Complete Transaction button a  popup will be sent to your phone for you to finish the transaction</small>
+                        @isset($package)
+                            You will be charged KES&nbsp;<b>{{ $package->amount }}/=</b>
+                            @endisset
                     </p>
 
 
@@ -64,7 +67,7 @@
                         <div class="row">
                             <div id="error_alert"></div>
                             <div class="col p-2 my-2 mx-1 text-center">
-                                <input onclick="return checkPackage()" type="button" value="Complete Transaction" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light"/>
+                                <input onclick="return requestPayment()" type="button" value="Complete Transaction" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light"/>
                             </div>
                         </div>
                     </div>
@@ -73,5 +76,9 @@
             </div>
         </div>
     </div>
-
+<script>
+    function requestPayment() {
+    
+    }
+</script>
 @endsection

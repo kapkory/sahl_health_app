@@ -97,7 +97,7 @@ class RegisterController extends Controller
         Auth::login($user);
 
 
-        $address[]  = \request('phone_number');
+        $address[]  = preg_replace('/^\\D*/', '', \request('phone_number'));
         $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership. Follow link to complete sign up '.url("member-packages").' Welcome ';
         $techpitch = new TechpitMessageRepository();
 //        dd($message,$address);

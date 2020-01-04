@@ -38,6 +38,7 @@ class IndexController extends Controller
 
         $mpesaRepository= new MpesaRepository();
         $phone = auth()->user()->phone_number;
+        $amount = '1';
         $response =  $mpesaRepository->stkPush($payment->id,$phone,$amount);
         $responses = json_decode($response,true);
 

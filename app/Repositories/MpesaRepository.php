@@ -7,13 +7,18 @@ use Illuminate\Support\Facades\DB;
 
 class MpesaRepository
 {
-  public function fetchAccessToken()
+    public $consumerKey = "396f0jH2ss278wSpALXCDpxjA7Nmz1CQ";
+    public $consumerSecret = "TNGVKhFreXzyeA2l";
+    public $passKey = 'b0584de44ab8bc26fa1f71a9db04b93f03619d8ca018a7d28bd79a2c71d23d1e';
+    public $shortCode = 698489;
+
+    public function fetchAccessToken()
   {
-      $url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
+      $url = 'https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
 
       $curl = curl_init();
       curl_setopt($curl, CURLOPT_URL, $url);
-      $credentials = base64_encode('GNMVbSGO3o9uqtooSzJpPUQdKdCSGbtI:uCZDMafnnqhGppui');
+      $credentials = base64_encode($this->consumerKey.':'.$this->consumerSecret);
       curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic '.$credentials)); //setting a custom header
       curl_setopt($curl, CURLOPT_HEADER, false);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
@@ -30,30 +35,28 @@ class MpesaRepository
   }
 
   public function stkPush($payment_id,$phone,$amount){
-    $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+    $url = 'https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
       $timestamp = '20'.date("ymdhis");
     $stamp = (string)$timestamp;
-    $pass = base64_encode("174379"."bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919".$stamp);
+    $pass = base64_encode($this->shortCode.$this->passKey.$stamp);
 
     $phone = preg_replace('/^\\D*/', '', $phone);
     $pay_url = url('api/reference?payment_id='.$payment_id);
-//    $pay_url = 'https://qusoma.maviti.co.ke/api/reference?payment_id='.$payment_id;
-//    $amount = '1';
+
     $curl_post_data = array(
-        'BusinessShortCode' => 174379,
+        'BusinessShortCode' => $this->shortCode,
         'Password' => $pass,
         'Timestamp' => $timestamp,
         'TransactionType' => 'CustomerPayBillOnline',
         'Amount' => $amount,
         'PartyA' => $phone,
-        'PartyB' => 174379,
+        'PartyB' => $this->shortCode,
         'PhoneNumber' => $phone,
         'CallBackURL' => $pay_url,
         'AccountReference' => 'Payment',
         'TransactionDesc' => 'Orders'
     );
-//      DB::table('table_response')->insert(['response'=>$pay_url]);
     return $this->curlRequest($url,$curl_post_data);
   }
 

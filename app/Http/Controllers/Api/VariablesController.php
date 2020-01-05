@@ -10,7 +10,7 @@ class VariablesController extends Controller
 {
     public function listVariables(){
         return [
-            'dependants'=>Dependant::select('user_id','first_name','last_name','other_name','identification_number','relationship_type')->get()
+            'dependants'=>Dependant::select('id','user_id','first_name','last_name','other_name','identification_number','relationship_type')->get()
         ];
     }
 }

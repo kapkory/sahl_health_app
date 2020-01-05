@@ -284,6 +284,22 @@
                 "home",
                 ""
             ]
+        },
+        {
+            "type": "single",
+            "slug": "search",
+            "menus": {
+                "label": "Search",
+                "icon": "searchpage",
+                "url": "provider/search"
+            },
+            "children": [],
+            "subs": [
+                "list"
+            ],
+            "urls": [
+                "home"
+            ]
         }
     ],
     "guest": [

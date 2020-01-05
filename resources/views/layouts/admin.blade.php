@@ -66,13 +66,14 @@
     <!-- Perfect Scrollbar stylesheet -->
     <link rel="stylesheet" href="{{ url('drift/assets/modules/perfect-scrollbar/css/perfect-scrollbar.css') }}">
     <!-- /perfect scrollbar stylesheet -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Load Styles -->
     <link rel="stylesheet" href="{{ url('drift/assets/css/semidark-style-1.min.css') }}">
     <!-- /load styles -->
 
     <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
-
+    @stack('scripts')
 </head>
 <body class="dt-sidebar--fixed dt-header--fixed" style="overflow-y: scroll !important;">
 

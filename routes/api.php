@@ -19,3 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('institution/{variables}','Api\ApiController@variables');
 Route::get('sendSms','Api\ApiController@sendSms');
 Route::any('reference','Api\ApiController@mpesaCallback');
+
+
+Route::get('vars','Api\VariablesController@listVariables');

@@ -836,8 +836,7 @@
         } else if (response.redirect) {
             endLoading(response);
             setTimeout(function () {
-                alert('reload')
-                // ajaxLoad(response.redirect);
+                ajaxLoad(response.redirect);
             }, 1300);
 
         } else {

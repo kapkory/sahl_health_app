@@ -59,23 +59,22 @@
         <div class="container mb-4">
             <div class="form_cont container py-md-5 bg-light shadow-lg rounded mb-5">
                 <div class="col-11 mx-auto">
-                    <div class="col-5 col-md-2 mx-auto">
-                        <img src="{{ url('frontend/assets/user.png') }}" alt="User Logo" width="100%" class="user_image mb-2"/>
-                    </div>
+
                     <div class="row my-2">
 
-                        <div class="p-2 col-md-4 form-group">
+                        <div class=" p-2 col-md-4 offset-4 form-group text-center">
                             <a style="color: #212121;border-color: #212121;" href="{{ url('google/login') }}" class="btn btn-outline-secondary btn-lg btn-block">
                                 <i class="fa fa-google"></i> &nbsp;Register with Google </a>
                         </div>
 
-                        <div class="p-2 col-md-4 form-group">
+                    </div>
+                    <div class="row my-2">
+                        <div class=" p-2 col-md-4 offset-4 form-group text-center">
                             <a style="background-color: #FF5A5F;border-color:white; color: white;box-shadow: none;" data-toggle="modal" data-target="#providerSignUpModal" class="btn btn-outline-dark btn-lg btn-block">
                                 <i class="fa fa-envelope"></i>
                                 &nbsp;Register with Email
                             </a>
                         </div>
-
                     </div>
 
                 </div>

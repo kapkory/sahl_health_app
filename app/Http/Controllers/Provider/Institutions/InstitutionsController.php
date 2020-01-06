@@ -26,7 +26,7 @@ class InstitutionsController extends Controller
      * store institution
      */
     public function storeInstitution(){
-        request()->validate($this->getValidationFields(['name','institution_level','organization_type','address','postal_code','featured_image','discount']));
+        request()->validate($this->getValidationFields(['name','institution_level','organization_type','address','postal_code','featured_image']));
         $data = \request()->all();
 //       dd($data);
         if(!isset($data['user_id'])) {
@@ -57,11 +57,13 @@ class InstitutionsController extends Controller
         unset($data['submit']);
         $institution = $this->autoSaveModel($data);
 
-        $user= auth()->user();
-        $user->institution_id = $institution->id;
-        $user->save();
+        if (!auth()->user()->institution_id){
+            $user= auth()->user();
+            $user->institution_id = $institution->id;
+            $user->save();
+        }
 
-        return redirect()->back();
+        return ['redirect'=>url('provider/institutions')];
     }
 
     /**

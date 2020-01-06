@@ -37,7 +37,7 @@
                 <!-- Login Content Inner -->
                 <div class="dt-login__content-inner">
 
-                    <a href="{{ url('facebook/login?type=providers') }}" class="btn btn-primary btn-lg btn-block"> <i class="icon icon-facebook icon-xl"></i> &nbsp;Continue with Facebook </a>
+                    <a style="display: none" href="{{ url('facebook/login?type=providers') }}" class="btn btn-primary btn-lg btn-block"> <i class="icon icon-facebook icon-xl"></i> &nbsp;Continue with Facebook </a>
 
                     <a href="{{ url('google/login?type=providers') }}" class="btn btn-outline-dark btn-lg btn-block"> <i class="icon icon-google-plus icon-xl"></i> &nbsp;Continue with Google </a>
 

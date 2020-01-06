@@ -37,7 +37,7 @@
         <nav class="navbar navbar-expand-md mb-md-2 mt-2 ">
             <div class="container">
                 <a class="navbar-brand hidden-sm navbar-brand-ab" href="">
-                    <img style="height:50px;" src="{{ url('frontend/assets/logo.jpeg') }}" alt="logo">
+                    <img style="height:50px;" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="logo">
                 </a>
 {{--                <a href="/" class="navbar-brand text-dark"><h2>Logo</h2></a>--}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

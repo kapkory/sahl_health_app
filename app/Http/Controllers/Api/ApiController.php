@@ -70,10 +70,11 @@ class ApiController extends Controller
 
 
         }else{
+
             $pay = MemberPayment::findOrFail($payment_id);
             $pay->reference = $resp->Body->stkCallback->CheckoutRequestID;
             $pay->comment = $resp->Body->stkCallback->ResultDesc;
-            $pay->status = 2;
+            $pay->status = ($resp->Body->stkCallback->ResultCode == 0) ? 2 : 3;
             $pay->save();
         }
         echo '{"ResultCode": 0, "ResultDesc": "The service was accepted successfully", "ThirdPartyTransID": "1234567890"}';

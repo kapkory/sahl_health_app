@@ -93,7 +93,7 @@ class IndexController extends Controller
 
         if (\request('type')=='social'){
             $user = \auth()->user();
-            $user->phone_number = bcrypt(\request('phone_number'));
+            $user->phone_number = \request('phone_number');
             $user->save();
         }
 

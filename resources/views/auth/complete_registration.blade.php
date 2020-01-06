@@ -25,7 +25,7 @@
             padding-left: 10px !important;
         }
         #phone_number{
-            padding-left: 40px !important;
+            padding-left: 45px !important;
         }
     </style>
     <script src="{{ url('drift/assets/js/vue-2.6.min.js') }}"></script>
@@ -179,5 +179,22 @@
       {{--       console.log(response);--}}
       {{--    });--}}
       {{--})--}}
+    </script>
+
+    <script>
+        $(function () {
+            const form = document.getElementById('member_register');
+            const input = form.querySelector('#phone_number');
+            var itil=  window.intlTelInput(input, {
+                "preferredCountries":["KE","UG","TZ"],
+            });
+            $('input[name="phone_number"]').val('+254');
+            input.addEventListener("countrychange", function() {
+                var text = (itil.isValidNumber()) ? "International: " + itil.getNumber() : "Please enter a number below";
+                var textNode = document.createTextNode(text);
+                output.innerHTML = "";
+                output.appendChild(textNode);
+            });
+        });
     </script>
 @endsection

@@ -23,7 +23,7 @@
                 <!-- Brand logo -->
                 <div class="dt-login__logo">
                     <a class="dt-brand__logo-link" href="#">
-                        <img style="width: 180px" class="dt-brand__logo-img" src="{{ url('/') }}/frontend/assets/logo.jpeg" alt="Drift">
+                        <img style="width: 180px" class="dt-brand__logo-img" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Health Logo">
                     </a>
                 </div>
                 <!-- /brand logo -->
@@ -96,7 +96,7 @@
                            <ul class="dt-list dt-list-sm dt-list-cm-0 ml-auto">
                                <li class="dt-list__item">
                                    <!-- Fab Button -->
-                                   <a href="{{ url('facebook/login') }}" class="btn btn-outline-primary dt-fab-btn size-30">
+                                   <a style="display: none" href="{{ url('facebook/login') }}" class="btn btn-outline-primary dt-fab-btn size-30">
                                        <i class="icon icon-facebook icon-xl"></i>
                                    </a>
                                    <!-- /fab button -->

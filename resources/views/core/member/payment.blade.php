@@ -77,6 +77,7 @@
         </div>
     </div>
 <script>
+    localStorage.removeItem('nominate_dependant');
     function requestPayment() {
     let url = "{{ url('member/request-payment?_token='.csrf_token()) }}";
     $.post(url,function (response) {

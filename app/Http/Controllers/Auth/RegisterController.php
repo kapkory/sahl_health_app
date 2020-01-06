@@ -98,10 +98,29 @@ class RegisterController extends Controller
 
 
         $address[]  = preg_replace('/^\\D*/', '', \request('phone_number'));
-        $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership. Follow link to complete sign up '.url("member-packages").' Welcome ';
+        $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
         $techpitch = new TechpitMessageRepository();
 //        dd($message,$address);
         $response = $techpitch->execute($message,$address);
         return ['redirect_url'=>url('member-packages')];
     }
+    public function registerMember(){
+        $this->validate(\request(), [
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $user = new User();
+        $user->name = \request('first_name').' '.\request('other_name').' '.\request('last_name');
+        $user->email = \request('email');
+        $user->phone_number = \request('phone_number');
+        $user->password = bcrypt(\request('password'));
+        $user->save();
+        Auth::login($user);
+
+        return ['redirect_url'=>url('complete-registration?type=email')];
+    }
+
 }

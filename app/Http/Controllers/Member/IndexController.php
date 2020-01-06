@@ -82,4 +82,36 @@ class IndexController extends Controller
 
         return ['redirect_url'=>url('member/nominate-dependant')];
     }
+
+    public function completeMemberRegistration(){
+        \request()->validate([
+            'date_of_birth' => 'required|max:255',
+            'identification_type' => 'required',
+            'identification_number' => 'required|min:4',
+            'package_id' => 'required',
+        ]);
+
+        if (\request('type')=='social'){
+            $user = \auth()->user();
+            $user->phone_number = bcrypt(\request('phone_number'));
+            $user->save();
+        }
+
+
+        $profile = Profile::updateOrCreate(['user_id'=>\auth()->id()],[
+            'date_of_birth'=>Carbon::parse(\request('date_of_birth')),
+            'identification_type_id'=>\request('identification_type'),
+            'identification_number'=>\request('identification_number')
+        ]);
+
+        $package_id = \request('package_id');
+        $pack = Package::findOrFail($package_id);
+        $package = new MemberPackage();
+        $package->member_id = \auth()->id();
+        $package->package_id = $package_id;
+        $package->amount = $pack->cost;
+        $package->save();
+
+        return ['redirect_url'=>url('member/nominate-dependant')];
+    }
 }

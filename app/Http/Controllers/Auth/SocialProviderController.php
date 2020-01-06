@@ -31,6 +31,10 @@ class SocialProviderController extends Controller
                 $user = $this->createUser($getInfo,$provider,$role);
                 Auth::loginUsingId($user->id);
             }
+
+            if (\auth()->user()->role == 'member')
+                return redirect('complete-registration?type=social');
+
             return redirect(\auth()->user()->role);
         }
         catch (Exception $e) {

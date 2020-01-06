@@ -83,7 +83,7 @@
                             <div class=" col-md-6 form-group">
                                 <!-- Default inline 2-->
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="dontNominate" name="nominate">
+                                    <input type="radio" class="custom-control-input" id="dontNominate" name="nominate" value="0">
                                     <label class="custom-control-label" for="dontNominate">No</label>
                                 </div>
                             </div>
@@ -193,6 +193,7 @@
 
     <script type="text/javascript">
         $(function () {
+            // localStorage.removeItem('nominate_dependant');
             if (localStorage.getItem("nominate_dependant") != null) {
                 $('#nominate_dependant_form').hide();
                 $('#add_dependant_form').show();
@@ -200,7 +201,10 @@
         });
         function nominateDependant() {
             localStorage.setItem('nominate_dependant','yes');
-             if($('input[name="nominate"]').is(':checked'))
+            let radio_val = $('input[name="nominate"]:checked').val();
+            // console.log('radio value is '+radio_val);
+
+             if(radio_val ==1)
              {
                $('#nominate_dependant_form').hide();
                $('#add_dependant_form').show();

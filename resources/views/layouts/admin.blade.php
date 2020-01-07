@@ -550,7 +550,9 @@
 <!-- Perfect Scrollbar jQuery -->
 <script src="{{ url('drift/assets/modules/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
 <!-- /perfect scrollbar jQuery -->
-
+<script>
+    localStorage.setItem('home_url','{{ url("/") }}');
+</script>
 <!-- masonry script -->
 <script src="{{ url('drift/assets/modules/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
 <script src="{{ url('drift/assets/modules/sweetalert2/dist/sweetalert2.js') }}"></script>

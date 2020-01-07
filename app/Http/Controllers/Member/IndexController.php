@@ -26,13 +26,13 @@ class IndexController extends Controller
     }
 
     public function requestPayment(){
-        $package = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
+        $member_package = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
 
-        $amount = $package->amount;
+        $amount = $member_package->amount;
         $payment = new MemberPayment();
         $payment->member_id = auth()->id();
         $payment->payer_id = auth()->id();
-        $payment->package_id = $package->id;
+        $payment->package_id = $member_package->package_id;
         $payment->amount = $amount;
         $payment->save();
 

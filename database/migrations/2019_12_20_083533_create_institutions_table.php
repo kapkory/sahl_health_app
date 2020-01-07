@@ -25,7 +25,7 @@ class CreateInstitutionsTable extends Migration
 			$table->integer('is_branch')->nullable();
 			$table->integer('parent_institution_id')->nullable();
 			$table->integer('user_id');
-			$table->double('discount')->default(0);
+			$table->double('discount')->nullable();
 			$table->longText('intro')->nullable();
 			$table->string('featured_image')->nullable();
 			$table->tinyInteger('status')->default(0);

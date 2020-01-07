@@ -107,8 +107,8 @@
                     <!-- Brand logo -->
                     <span class="dt-brand__logo">
         <a class="dt-brand__logo-link" href="#">
-          <img class="dt-brand__logo-img d-none d-sm-inline-block" src="assets/images/logo.png" alt="Drift">
-          <img class="dt-brand__logo-symbol d-sm-none" src="assets/images/logo-symbol.png" alt="Drift">
+          <img class="dt-brand__logo-img d-none d-sm-inline-block" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Logo">
+          <img class="dt-brand__logo-symbol d-sm-none" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Logo">
         </a>
       </span>
                     <!-- /brand logo -->

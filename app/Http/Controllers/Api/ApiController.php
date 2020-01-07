@@ -35,7 +35,7 @@ class ApiController extends Controller
                 $response = PackageCategory::select('id','name')->get();
                 break;
             case 'packages':
-                $resp = Package::select('id','name','package_category_id')->get();
+                $resp = Package::select('id','name','package_category_id','cost')->get();
                 $response = ['packages'=>$resp];
                 break;
         }

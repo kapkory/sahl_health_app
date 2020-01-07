@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: iankibet
- * Date: 7/12/17
- * Time: 4:09 AM
- */
-
 namespace App\Repositories;
 use phpDocumentor\Reflection\Types\Self_;
 use Route;

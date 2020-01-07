@@ -64,12 +64,10 @@
         <div class="container mb-4">
             <div class="form_cont container py-md-5 bg-light shadow-lg rounded mb-5">
                 <div class="col-11 mx-auto">
-                    <div class="col-5 col-md-2 mx-auto">
-                        <img src="{{ url('frontend/assets/user.png') }}" alt="User Logo" width="100%" class="user_image mb-2"/>
-                    </div>
-                    <h5 class="text-center">
-                        <div id="c_registration_text">
 
+                    <h5 class="text-center">
+                        <div id="c_registration_text" v-if="package_cost > 0">
+                         The package Costs Ksh<span class="text-success"> @{{ package_cost }}</span>
                         </div>
                     </h5>
                     <form id="member_register" action="{{ url('member-complete-registration') }}" method="post" class="py-md-3 px-md-4 ajax-post">
@@ -118,7 +116,8 @@
                             </div>
 
                             <div class="col-md-6 form-group">
-                                <select name="package_id" class="form-control p-2 m-2 custom-select">
+                                <select @change="setPackageCost" name="package_id" v-model="package_id" class="form-control p-2 m-2 custom-select">
+                                    <option value="">Please Select</option>
                                     <option :value="package.id" v-for="package in selected_packages">@{{ package.name }}</option>
                                 </select>
                             </div>
@@ -145,7 +144,10 @@
             data: {
                 message: 'Hello Vue!',
                 package_category_id: 1,
+                package_id: '',
                 packages: [],
+                package: [],
+                package_cost: 0,
                 selected_packages: [],
                 filtered_packages: [],
             },
@@ -165,9 +167,20 @@
             methods:{
                 setPackages : function () {
                     var self = this;
+                    self.package_cost = 0;
                     return this.selected_packages = this.packages.filter(function (selected_package) {
                         return selected_package.package_category_id == self.package_category_id;
                     })
+                },
+                setPackageCost: function () {
+                    var self = this;
+                     this.package = this.packages.filter(function (selected_package) {
+                        return selected_package.id == self.package_id;
+                    })
+                    if(self.package_id != '')
+                        self.package_cost = this.package[0].cost;
+                    else
+                        self.package_cost = 0;
                 }
             }
         });

@@ -10,6 +10,7 @@ class IndexController extends Controller
 {
     public function index(){
         $institutions = Institution::where('organization_type_id',1)->get();
+//        dd($institutions);
         return  view($this->folder.'index',compact('institutions'));
     }
 }

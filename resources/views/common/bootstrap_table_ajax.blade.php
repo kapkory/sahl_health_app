@@ -1,11 +1,6 @@
 <?php
-
-if(isset($table_class)){
-    $table_classes = ['table','condensed'];
-    $table_class = array_merge($table_classes,$table_class);
-}
-else
-    $table_class = ['table','condensed'];
+if(!isset($table_class))
+    $table_class = ['table'];
 if(!isset($table_actions))
     $table_actions = [];
 if(!isset($status_fields))
@@ -28,13 +23,8 @@ foreach($table_headers as $key=>$header){
     }
 
 }
-$rand_id = str_random(15);
-$random_select_id = str_random();
-if(request('per_page')){
-    $per_page = request('per_page');
-}elseif(!isset($per_page)){
-    $per_page = 10;
-}
+$rand_id = \Illuminate\Support\Str::random(15);
+$random_select_id = \Illuminate\Support\Str::random();
 ?>
 @if($is_mobile)
     <br/>
@@ -46,7 +36,7 @@ if(request('per_page')){
     <form class="search-form form-horizontal" style="max-width: 400px !important;" onsubmit="return startBootstrapSearch();" method="get" action="{{ url($data_url) }}" role="form" _lpchecked="1">
         <div class="">
             <input type="hidden" name="order_by" value="{{ Request::input('order_by') }}">
-            <input type="hidden" name="per_page" value="{{  $per_page }}">
+            <input type="hidden" name="per_page" value="{{ Request::input('per_page') }}">
             <input type="hidden" name="order_method" value="{{ Request::input('order_method') }}">
             <input type="hidden" name="tab" value="{{ Request::input('tab') }}">
             <input type="hidden" name="base_table" value="{{ isset($base_tbl) ? $base_tbl:'' }}">
@@ -141,15 +131,14 @@ if(request('per_page')){
 
     {{--<div class="col-md-4">--}}
     {{--<div class="form-group">--}}
-
     <div class="">
         Show
         <select onchange="setBootPages(this.value)">
-            <option {{ $per_page == 10 ? 'selected':'' }} value="10">10</option>
-            <option {{ $per_page == 25 ? 'selected':'' }} value="25">25</option>
-            <option {{ $per_page == 50 ? 'selected':'' }} value="50">50</option>
-            <option {{ $per_page == 100 ? 'selected':'' }} value="100">100</option>
-            <option {{ $per_page == 200 ? 'selected':'' }} value="200">200</option>
+            <option {{ Request::input('per_page') == 10 ? 'selected':'' }} value="10">10</option>
+            <option {{ Request::input('per_page') == 25 ? 'selected':'' }} value="25">25</option>
+            <option {{ Request::input('per_page') == 50 ? 'selected':'' }} value="50">50</option>
+            <option {{ Request::input('per_page') == 100 ? 'selected':'' }} value="100">100</option>
+            <option {{ Request::input('per_page') == 200 ? 'selected':'' }} value="200">200</option>
         </select>
 
     </div>
@@ -177,10 +166,10 @@ if(request('per_page')){
         history_url = '{{ html_entity_decode(session()->get('cur_table_url')) }}';
         history_url = decodeHTMLEntities(history_url);
         $("input[name='filter_value']").val('{{ session()->get('cur_search_value') }}');
+        console.log(history_url);
         loadAjaxTableData(history_url);
     }else{
-        console.log('starting');
-        startBootstrapSearch();
+        loadAjaxTableData(data_url);
     }
 
 
@@ -203,7 +192,7 @@ if(request('per_page')){
     }
     var columns = <?php echo json_encode($ajax_headers) ?>;
     function loadAjaxTableData(data_url){
-        jQuery(".main_table_bdy").html('<img style="margin-top:2%;margin-left:50%;position:absolute;" src="{{ url('img/ajax-loader.gif') }}">');
+        jQuery(".main_table_bdy").html('<img style="margin-top:2%;margin-left:50%;position:absolute;" src="{{ url(env('CDN_HOST','').'/img/ajax-loader.gif') }}">');
         $("input[name='cur_table_url']").val(data_url);
         $("input[name='cur_search_value']").val($("input[name='filter_value']").val());
         $.get(data_url,null,function(response){

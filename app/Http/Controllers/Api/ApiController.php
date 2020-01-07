@@ -68,13 +68,20 @@ class ApiController extends Controller
             $user->member_package_id = $memberPackage->id;
             $user->save();
 
+            $message= 'Dear '.$user->name.', your payment of KES '.$memberPackage->amount.' for '.$package->category->name.' has been received, Thank you';
+            $phone = preg_replace('/^\\D*/', '', $user->phone_number);
+
+            $phone_number [] = $phone;
+            $techpitch = new TechpitMessageRepository();
+            $response = $techpitch->execute($message,$phone_number);
+
 
         }else{
 
             $pay = MemberPayment::findOrFail($payment_id);
             $pay->reference = $resp->Body->stkCallback->CheckoutRequestID;
             $pay->comment = $resp->Body->stkCallback->ResultDesc;
-            $pay->status = ($resp->Body->stkCallback->ResultCode == 0) ? 2 : 3;
+            $pay->status = 3;
             $pay->save();
         }
         echo '{"ResultCode": 0, "ResultDesc": "The service was accepted successfully", "ThirdPartyTransID": "1234567890"}';

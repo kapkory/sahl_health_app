@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\Institution;
 use App\Models\Core\MemberPackage;
 use App\Models\Core\MemberPayment;
 use App\Models\Core\Package;
@@ -14,7 +15,10 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        return view($this->folder.'index');
+        $institutions = Institution::where('organization_type_id',1)->inRandomOrder()->limit(4)->get();
+
+        $memberPackage = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
+        return view($this->folder.'index',compact('memberPackage','institutions'));
     }
 
     public function nominate(){

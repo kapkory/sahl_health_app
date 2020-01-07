@@ -12,4 +12,8 @@ class Package extends Model
 	public function category(){
 	    return $this->belongsTo(PackageCategory::class,'package_category_id');
     }
+
+    public function memberPackages(){
+	    return $this->hasMany(MemberPackage::class);
+    }
 }

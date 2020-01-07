@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function memberRegistration(){
-         return view('auth.member_registration');
+         return view('auth.member_register');
     }
 
     public function memberPackages(){

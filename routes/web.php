@@ -35,7 +35,7 @@ Route::get('logout',function (){
 });
 
 //updated member routes
-Route::view('member-register','auth.member_register');
+//Route::view('member-register','auth.member_register');
 Route::post('member/register','Auth\RegisterController@registerMember');
 Route::view('complete-registration','auth.complete_registration');
 Route::post('member-complete-registration','Member\IndexController@completeMemberRegistration');

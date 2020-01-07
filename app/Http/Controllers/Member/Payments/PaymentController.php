@@ -40,8 +40,7 @@ class PaymentController extends Controller
     public function listMemberPayments(){
         $memberpayments = MemberPayment::join('packages','packages.id','=','member_payments.package_id')
         ->where([
-            ['member_payments.id','>',0],
-            ['member_payments.member_id',auth()->id()],
+            ['member_payments.member_id','=',auth()->id()],
         ])->select('member_payments.*','packages.name as package');
         if(\request('all'))
             return $memberpayments->get();

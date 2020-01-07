@@ -52,7 +52,7 @@ class ApiController extends Controller
             $pay = MemberPayment::findOrFail($payment_id);
             $pay->reference = $resp->Body->stkCallback->CheckoutRequestID;
             $pay->comment = $resp->Body->stkCallback->ResultDesc;
-            $pay->status = 1;
+            $pay->status = 2;
             $pay->save();
 
             $memberPackage = MemberPackage::where('member_id',$pay->member_id)

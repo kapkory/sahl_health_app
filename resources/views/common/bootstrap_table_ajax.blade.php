@@ -1,8 +1,15 @@
 <?php
-if(!isset($table_class))
+
+if(isset($table_class)){
+    $table_classes = ['table','condensed'];
+    $table_class = array_merge($table_classes,$table_class);
+}
+else
     $table_class = ['table','condensed'];
 if(!isset($table_actions))
     $table_actions = [];
+if(!isset($search_form))
+    $search_form = true;
 if(!isset($status_fields))
     $status_fields = [];
 if(!isset($filters)){
@@ -23,8 +30,8 @@ foreach($table_headers as $key=>$header){
     }
 
 }
-$rand_id = \Illuminate\Support\Str::random(15);
-$random_select_id = \Illuminate\Support\Str::random();
+$rand_id = str_random(15);
+$random_select_id = str_random();
 if(request('per_page')){
     $per_page = request('per_page');
 }elseif(!isset($per_page)){
@@ -50,10 +57,12 @@ if(request('per_page')){
                     <input type="hidden" name="keys[]" value="{{ $key }}">
                 @endif
             @endforeach
-            <div class="form-group">
-                <label class="control-label">Search</label>
-                <input onkeyup="startBootstrapSearch();" value="{{ Request::input('filter_value') }}" type="text" class="form-control input-sm filter-value" id="" name="filter_value" placeholder="">
-            </div>
+            @if($search_form)
+                <div class="form-group">
+                    <label class="control-label">Search</label>
+                    <input onkeyup="startBootstrapSearch();" value="{{ Request::input('filter_value') }}" type="text" class="form-control input-sm filter-value" id="" name="filter_value" placeholder="">
+                </div>
+            @endif
         </div>
     </form>
     @if(isset($multi_actions))
@@ -95,42 +104,44 @@ if(request('per_page')){
         <div class="main_table_bdy"></div>
     @elseif(@$is_responsive)
     @else
-        <table class="{{ implode(' ',$table_class) }} boots-table main_search_table">
-            <thead>
-            <tr>
-                @if(isset($multi_actions))
-                    <th>
-                        <input onclick="toggleSelectInTable();" type="checkbox" name="select_{{ $random_select_id }}">All
-                    </th>
-                @endif
-                @foreach($table_headers as $key=>$header)
-                    <?php
-                    $arr = explode('.',$header);
-                    $h_key = $header;
-                    if(!is_numeric($key))
-                        $h_key = $key;
-                    $head = $arr[count($arr)-1];
-                    $head =str_replace('->',' ',$head) ;
-                    $head =str_replace('_',' ',$head) ;
+        <div class="table-responsive">
+            <table class="{{ implode(' ',$table_class) }} boots-table main_search_table">
+                <thead>
+                <tr>
+                    @if(isset($multi_actions))
+                        <th>
+                            <input onclick="toggleSelectInTable();" type="checkbox" name="select_{{ $random_select_id }}">All
+                        </th>
+                    @endif
+                    @foreach($table_headers as $key=>$header)
+                        <?php
+                        $arr = explode('.',$header);
+                        $h_key = $header;
+                        if(!is_numeric($key))
+                            $h_key = $key;
+                        $head = $arr[count($arr)-1];
+                        $head =str_replace('->',' ',$head) ;
+                        $head =str_replace('_',' ',$head) ;
 
-                    ?>
-                    <th scope="col" onclick="setOrderBy('{{ $h_key }}');" style="cursor: pointer;">
-                        @if(Request::input('order_by') == $h_key)
-                            <i class="fa fa-{{ Request::input('order_method') }}"></i>
-                        @endif
-                        <i class="th_{{ $h_key }} order_cols"></i>
-                        <span>{{ ucwords($head) }}</span>
-                    </th>
-                @endforeach
-                @if(count($table_actions)>0)
-                    <th>&nbsp;</th>
-                @endif
-            </tr>
-            </thead>
-            <tbody class="main_table_bdy" id="{{ $rand_id }}">
+                        ?>
+                        <th scope="col" onclick="setOrderBy('{{ $h_key }}');" style="cursor: pointer;">
+                            @if(Request::input('order_by') == $h_key)
+                                <i class="fa fa-{{ Request::input('order_method') }}"></i>
+                            @endif
+                            <i class="th_{{ $h_key }} order_cols"></i>
+                            <span>{{ ucwords($head) }}</span>
+                        </th>
+                    @endforeach
+                    @if(count($table_actions)>0)
+                        <th>&nbsp;</th>
+                    @endif
+                </tr>
+                </thead>
+                <tbody class="main_table_bdy" id="{{ $rand_id }}">
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     @endif
 
 
@@ -168,13 +179,13 @@ if(request('per_page')){
     determinFilterInputType();
     var data_url = '{{ url($data_url) }}';
     var history_url = '{{ session()->get('cur_table_url') }}';
-
     if(history_url){
         history_url = '{{ html_entity_decode(session()->get('cur_table_url')) }}';
         history_url = decodeHTMLEntities(history_url);
         $("input[name='filter_value']").val('{{ session()->get('cur_search_value') }}');
         loadAjaxTableData(history_url);
     }else{
+        console.log('starting');
         startBootstrapSearch();
     }
 
@@ -247,14 +258,14 @@ if(request('per_page')){
 
         var records = response.data;
         if(records.length == 0){
-            jQuery(".main_table_bdy").html('<tr><td align="center" colspan="{{ count($ajax_headers) }}">{{ isset($no_data_message) ? $no_data_message:'No results found' }}</td></tr>');
+            jQuery(".main_table_bdy").html('<tr><td align="center" colspan="{{ count($ajax_headers) }}"><p class="alert alert-info">{{ isset($no_data_message) ? $no_data_message:'No results found' }}</p></td></tr>');
         }
         for(var i =0;i<records.length;i++){
             var record = records[i];
             var str = '<tr>';
             @if(isset($multi_actions))
                 str = str+'<td><input class="select_val_{{ $random_select_id }}" name="selected_values_{{ $random_select_id }}[]" value="'+record.id+'" type="checkbox"> </td>';
-                    @endif
+                @endif
             for(var l =0;l<columns.length;l++){
                 var cell = record[columns[l]];
                 str = str+'<td>'+cell+'</td>';
@@ -271,7 +282,7 @@ if(request('per_page')){
         if(records.length == 0){
             jQuery(".main_table_bdy").html('<p class="alert alert-info">{{ isset($no_data_message) ? $no_data_message:'No results found' }}<p>');
         }
-
+        console.log(records);
         for(var i =0;i<records.length;i++){
             var record = records[i];
             var str = '<table class="table titlecolumn">';
@@ -293,7 +304,6 @@ if(request('per_page')){
         var url = jQuery(".search-form").attr('action');
         var data = jQuery('.search-form').serialize();
         var full_url = url+"?"+data;
-
         loadAjaxTableData(full_url);
         return false;
     }
@@ -322,7 +332,6 @@ if(request('per_page')){
     }
 
     function setOrderBy(key){
-
         jQuery(".order_cols").removeClass('fa-sort-amount-up');
         jQuery(".order_cols").removeClass('fa-sort-amount-down');
         jQuery("input[name='order_by']").val(key);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Provider\Search;
 
 use App\Http\Controllers\Controller;
 use App\Models\Core\Dependant;
+use App\Models\Core\Institution;
 use App\Models\Core\Visit;
 use App\User;
 use Illuminate\Http\Request;
@@ -58,6 +59,15 @@ class IndexController extends Controller
             $dependant =  Dependant::findOrFail($visit->dependant_id);
             $name= $dependant->first_name.' '.$dependant->other_name.' '.$dependant->last_name;
         }
-        return view($this->folder.'visit',compact('name','role'));
+        $institution = Institution::findOrFail(auth()->user()->institution_id);
+
+        return view($this->folder.'visit',compact('name','role','visit','institution'));
+    }
+
+    public function confirmBill($visit_id){
+        $visit = Visit::findOrFail($visit_id);
+        $visit->amount = \request('total_bill');
+        $visit->save();
+        return ['redirect_url'=>'provider/search/'.$visit->id];
     }
 }

@@ -295,7 +295,7 @@
             },
             "children": [],
             "subs": [
-                "list","confirm-visit"
+                "list","confirm-visit","confirm-bill"
             ],
             "urls": [
                 "home"

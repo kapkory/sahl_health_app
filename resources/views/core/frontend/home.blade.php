@@ -125,7 +125,7 @@
 
                     {{--                    <div class="">--}}
                     <!-- listing block start  -->
-                        <div class="listing-block ">
+                        <div class="listing-block " style="padding-bottom: 1px">
                             <div class="listing-img">
                                 <a href="{{ url('institution/'.$featured_hospital->slug) }}">
                                     <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">
@@ -178,7 +178,7 @@
                     <div class="item">
 
                     <!-- listing block start  -->
-                        <div class="listing-block ">
+                        <div class="listing-block " style="padding-bottom: 1px">
                             <div class="listing-img">
                                 <a href="{{ url('institution/'.$featured_hospital->slug) }}">
                                     <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">

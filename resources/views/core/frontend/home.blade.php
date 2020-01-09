@@ -158,7 +158,7 @@
     <div class="space-lg space-md space-xs pt-4">
 
         <div class="container">
-            <h3 class="section-heading-title ">Explore our Highly Rated Hospitals</h3>
+            <h3 class="section-heading-title ">Top Rated Hospitals</h3>
 
             <div class="row owl-carousel owl-featured">
 
@@ -200,7 +200,7 @@
                     </div>
                 @endforeach
             </div>
-            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all Hospitals&nbsp;></a>
+            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
 
 
             {{--        </div>--}}

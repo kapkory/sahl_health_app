@@ -450,12 +450,6 @@
                 <div class="dt-sidebar__container">
 
                     <ul class="dt-side-nav">
-                        <!-- Menu Header -->
-                        <li class="dt-side-nav__item dt-side-nav__header">
-                            <span class="dt-side-nav__text">Extra Components</span>
-                        </li>
-                        <!-- /menu header -->
-
 
                         @isset($real_menus)
                         @foreach($real_menus as $menu)

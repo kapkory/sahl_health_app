@@ -6,7 +6,7 @@
        <div class="row">
            <div class="col-md-8">
                @if($memberPackage)
-                   <h3>Current Plan: <span class="text-success">{{ $memberPackage->package->name }}</span></h3>
+                   <h3>Current Plan: <span class="text-success">{{ @$memberPackage->package->name }}</span></h3>
                    @if($memberPackage->ends_at)
                        Expires on {{ $memberPackage->ends_at }}
                    @else

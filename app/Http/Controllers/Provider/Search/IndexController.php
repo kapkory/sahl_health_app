@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Core\Dependant;
 use App\Models\Core\Institution;
 use App\Models\Core\Visit;
+use App\Repositories\TechpitMessageRepository;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -68,6 +69,12 @@ class IndexController extends Controller
         $visit = Visit::findOrFail($visit_id);
         $visit->amount = \request('total_bill');
         $visit->save();
+        if (auth()->user()->phone_number){
+            $address[]  = preg_replace('/^\\D*/', '', auth()->user()->phone_number);
+            $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
+            $techpitch = new TechpitMessageRepository();
+            $response = $techpitch->execute($message,$address);
+        }
 
         return ['redirect_url'=>'provider/search/'.$visit->id];
     }

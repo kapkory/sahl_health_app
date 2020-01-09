@@ -17,9 +17,9 @@ class CreateServicesTable extends Migration
             $table->bigIncrements('id');
 			$table->string('name');
 			$table->string('slug');
-			$table->integer('organization_type_id');
-			$table->integer('status');
-			$table->integer('user_id');
+			$table->integer('organization_type_id')->unsigned();
+			$table->integer('user_id')->unsigned();
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ class IndexController extends Controller
         $institutions = Institution::where('organization_type_id',1)->inRandomOrder()->limit(4)->get();
 
         $memberPackage = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
+
         return view($this->folder.'index',compact('memberPackage','institutions'));
     }
 

@@ -33,7 +33,9 @@
             top:0px;
         }
 
-
+        .owl-stage-outer{
+           padding-bottom: 0px;
+        }
     </style>
 <!-- header close -->
 <div class="container-fluid">

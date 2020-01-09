@@ -47,13 +47,7 @@
                                         <div class="listing-content-meta">
                                             <div class="row">
                                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                                                    <span class="lable">Monthly</span> <br> <span class="value">$2250</span>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                                                    <span class="lable">People</span> <br> <span class="value">12</span>
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                                                    <span class="lable">Sq.Ft</span> <br> <span class="value">1200</span>
+                                                    <span class="value">{{ @$hospital->institutionLevel->name }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -62,41 +56,6 @@
                                 <!-- listing block close -->
                             </div>
 
-
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <!-- listing block start -->
-                            <div class="listing-block grid-listing">
-                                <div class="listing-img">
-                                    <a href="{{ url('institution/'.$hospital->slug) }}">
-                                        <img style="max-height: 250px" src="{{ ($hospital->featured_image) ? url($hospital->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="{{ $hospital->name }}" class="img-fluid">
-                                    </a>
-                                    @if($hospital->discount > 0)
-                                    <div class="listing-badge">Discount {{ $hospital->discount }}%</div>
-                                    @endif
-
-{{--                                    <div class="like-icon"></div>--}}
-                                </div>
-                                <div class="listing-content">
-                                    <div class="listing-content-head">
-                                        <h3 class="listing-content-head-title">
-                                            <a href="{{ url('institution/'.$hospital->slug) }}">
-                                                {{ $hospital->name }}
-                                            </a>
-                                        </h3>
-                                        <p class="listing-content-head-text">Nairobi, Kenya</p>
-                                    </div>
-
-                                    <div class="listing-content-meta">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                                                <span class="value">{{ @$hospital->institutionLevel->name }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- listing block close -->
-                        </div>
                         @endforeach
 
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">

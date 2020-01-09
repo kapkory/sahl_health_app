@@ -155,7 +155,7 @@ jQuery(document).ready(function($) {
             loop: true,
             margin: 30,
             nav: true,
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 5000,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             responsive: {

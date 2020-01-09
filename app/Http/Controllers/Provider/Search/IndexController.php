@@ -74,8 +74,10 @@ class IndexController extends Controller
             $institution = Institution::findOrFail(auth()->user()->institution_id );
             $address[]  = preg_replace('/^\\D*/', '', $user->phone_number);
             $names = explode(' ',$user->name);
+            $total_bill = \request('total_bill');
             $amount = ($institution->discount * \request('total_bill')) / 100;
-            $message = 'Hi '.$names[0].', your total bill is '.\request('total_bill').', you have saved '.$amount. ' '.$institution->name;
+            $discounted_bill = $total_bill - $amount;
+            $message = 'Hi '.$names[0].', your discounted bill is '.$discounted_bill.', you have saved '.$amount. ' at'.$institution->name;
             $techpitch = new TechpitMessageRepository();
             $response = $techpitch->execute($message,$address);
         }

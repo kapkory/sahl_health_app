@@ -79,6 +79,14 @@
                                     <input type="text" id="phone_number" required name="phone_number" placeholder="Phone Number" class="my_input col-md border-0 rounded m-2 p-2"/>
                                 </div>
                                     <input type="hidden" name="type" value="social">
+                                    @elseif($_GET['type'] == 'account')
+                                    <div class="col-md-4 form-group">
+                                        <input type="text" id="phone_number" required name="phone_number" placeholder="Phone Number" class="my_input col-md border-0 rounded m-2 p-2"/>
+                                    </div>
+                                    <input type="hidden" name="type" value="account">
+                                    <div class="col-md-4 form-group">
+                                        <input type="password" id="password" required name="password" placeholder="Enter Password" class="my_input col-md border-0 rounded m-2 p-2"/>
+                                    </div>
                                     @else
                                     <input type="hidden" name="phone_number" value="{{ auth()->user()->phone_number  }}">
                                     @endif

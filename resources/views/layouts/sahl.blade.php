@@ -68,7 +68,7 @@
                                 </li>
                             </ul>
                             <div class="header-btn d-xl-block d-lg-none">
-                                <a href="{{ url('login') }}" class="btn btn-outline-primary">Login</a>
+                                <a href="{{ url('login') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Login</a>
 {{--                                <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i>List a space</a>--}}
                             </div>
                         </div>

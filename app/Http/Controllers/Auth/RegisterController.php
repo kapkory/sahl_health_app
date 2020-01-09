@@ -136,7 +136,7 @@ class RegisterController extends Controller
         $user->save();
         Auth::login($user);
 
-        return redirect(url('complete-registration?type=home'));
+        return redirect(url('complete-registration?type=account'));
     }
 
 }

@@ -9,6 +9,7 @@ use App\Models\Core\MemberPayment;
 use App\Models\Core\Package;
 use App\Models\Core\Profile;
 use App\Repositories\MpesaRepository;
+use App\Repositories\TechpitMessageRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -98,8 +99,14 @@ class IndexController extends Controller
         if (\request('type')=='social'){
             $user = \auth()->user();
             $user->phone_number = \request('phone_number');
-//            if (\request('password'))
-//                $user->password = bcrypt(\request('password'));
+            $user->save();
+        }
+
+        if (\request('type')=='account')
+        {
+            $user = \auth()->user();
+            $user->phone_number = \request('phone_number');
+            $user->password = bcrypt(\request('password'));
             $user->save();
         }
 
@@ -118,6 +125,13 @@ class IndexController extends Controller
         $package->package_id = $package_id;
         $package->amount = $pack->cost;
         $package->save();
+
+        if($user->phone_number){
+            $address[]  = preg_replace('/^\\D*/', '', $user->phone_number);
+            $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
+            $techpitch = new TechpitMessageRepository();
+            $response = $techpitch->execute($message,$address);
+        }
 
         return ['redirect_url'=>url('member/nominate-dependant')];
     }

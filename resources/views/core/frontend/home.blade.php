@@ -148,9 +148,8 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($loop->first)
+                            @if($loop->iteration == 0 || $loop->iteration % 5 ==0)
                                 <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
-
                             @endif
                         </div>
                         <!-- listing block close  -->
@@ -203,9 +202,8 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($loop->first)
+                            @if($loop->iteration == 0 || $loop->iteration % 5 ==0)
                                 <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
-
                             @endif
                         </div>
 
@@ -232,7 +230,7 @@
                     <p class="section-heading-text lead">
                         List your hospital, Insurance Company, Health Care with us and start offering your discount
                     </p>
-                    <a href="{{ url('provider-register') }}" class="btn btn-outline-primary">List Your Institution</a>
+                    <a href="{{ url('provider-register') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">List Your Institution</a>
 
                 </div>
                 <!-- section heading close  -->

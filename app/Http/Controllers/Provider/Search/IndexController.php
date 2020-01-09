@@ -68,6 +68,7 @@ class IndexController extends Controller
         $visit = Visit::findOrFail($visit_id);
         $visit->amount = \request('total_bill');
         $visit->save();
+
         return ['redirect_url'=>'provider/search/'.$visit->id];
     }
 }

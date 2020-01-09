@@ -22,7 +22,7 @@
                 <!-- /slider header -->
 
                 <div class="owl-carousel owl-theme">
-                    <img class="card-img-top" style="max-height: 250px" src="{{ ($institution->featured_image) ? url($institution->featured_image) :'' }}" alt="Hospital">
+                    <img class="card-img-top" style="max-height: 250px" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
 {{--                    <img class="card-img-top" src="assets/images/grid/living-room-6.jpeg"--}}
 {{--                         alt="Living Room">--}}
 {{--                    <img class="card-img-top" src="assets/images/grid/bedroom-6.jpeg" alt="Bedroom">--}}

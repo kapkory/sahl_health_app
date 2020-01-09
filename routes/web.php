@@ -11,10 +11,13 @@
 |
 */
 
-//Route::get('/','Frontend\MenuController@index');
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Frontend\MenuController@index');
+Route::get('hospitals','Frontend\MenuController@hospitals');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//Route::view('/','core.frontend.home');
 Route::get('logout',function (){
    Auth::logout();
 });

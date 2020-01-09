@@ -106,7 +106,7 @@
     <div class="space-lg space-md space-xs pt-4">
 
         <div class="container">
-            <h3 class="section-heading-title ">Explore our Featured Hospitals</h3>
+            <h3 class="section-heading-title ">Featured Hospitals</h3>
 
             <div class="row owl-carousel owl-featured">
 
@@ -126,7 +126,7 @@
                             </div>
                             <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
 
-                            <div class="listing-content" style="padding-left: 10px; padding-top: 5px">
+                            <div class="listing-content" style="padding-left: 10px; padding-top: 1px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">
                                         <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,20,'...') }}</a>
@@ -148,7 +148,7 @@
                     </div>
                 @endforeach
             </div>
-            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all Featured Hospitals&nbsp;></a>
+            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
 
 
             {{--        </div>--}}

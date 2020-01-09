@@ -12094,7 +12094,7 @@ a.text-dark:focus {
     right: 0;
     left: 0;
     text-align: center;
-    top: 5px;
+    top: 0px;
 }
 
 .listing-img .like-icon:before {
@@ -13341,7 +13341,7 @@ a.text-dark:focus {
 }
 
 .like-button .like-icon {
-    top: 20px;
+    top: 0px;
     color: #fff;
     font-size: 16px;
     position: absolute;

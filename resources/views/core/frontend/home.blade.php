@@ -26,9 +26,7 @@
             color: white;
             top:0px;
         }
-        .like-icon{
-            top: 0px;
-        }
+
 
     </style>
 <!-- header close -->

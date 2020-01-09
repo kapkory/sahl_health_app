@@ -21,6 +21,10 @@
             width: 269px!important;
            }
         }
+        .listing-badge{
+            background-color: #313d4f;
+            color: white;
+        }
 
     </style>
 <!-- header close -->
@@ -83,7 +87,7 @@
     <div class="container-fluid" style="background-color:#0E4D92; color: white">
         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
             <h2 class="section-heading-title text-center" style="color: white">
-                See what you get with our membership Plans
+                What you get with our membership Plans
             </h2>
         </div>
         <div class="row pb-5">

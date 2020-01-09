@@ -51,6 +51,7 @@
                         </div>
                         <!-- search area start -->
                         <div class="hero-search-area-form">
+                            @guest()
                             <form class="form-row" method="post" class="ajax-post" action="{{ url('create-account') }}">
                                 <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
 
@@ -74,6 +75,16 @@
                                 </div>
 
                             </form>
+                                @else
+                                <div class="col-10">
+                                    <div class="alert alert-success">
+                                        Greetings {{ auth()->user()->name }},
+                                        Thank you for checking in, <br>
+                                        We look forward to hearing from you
+
+                                    </div>
+                                </div>
+                                @endguest
                         </div>
                         <!-- search area close -->
                     </div>
@@ -125,7 +136,6 @@
                 @foreach($featured_hospitals as $featured_hospital)
                     <div class="item">
 
-                    {{--                    <div class="">--}}
                     <!-- listing block start  -->
                         <div class="listing-block " style="padding-bottom: 1px">
                             <div class="listing-img">
@@ -145,29 +155,18 @@
                                     </h3>
                                     <p class="listing-content-head-text">Nairobi, Kenya</p>
                                 </div>
-                                <div class="listing-content-meta">
-                                    <div class="row">
-                                        {{--                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">--}}
-                                        {{--                                     <span class="value">{{ @$featured_hospital->institutionLevel->name }}</span>--}}
-                                        {{--                                </div>--}}
-
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
                         <!-- listing block close  -->
-                        {{--            </div>--}}
                     </div>
                 @endforeach
             </div>
             <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
 
-
-
-            {{--        </div>--}}
         </div>
     </div>
+
 {{--Start Featured Hospital--}}
     <div class="space-lg space-md space-xs pt-4">
 
@@ -191,26 +190,17 @@
                             </div>
                             <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
 
-                            <div class="listing-content" style="padding-left: 10px; padding-top: 5px">
+                            <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">
                                         <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,18,'...') }}</a>
                                     </h3>
                                     <p class="listing-content-head-text">Nairobi, Kenya</p>
                                 </div>
-                                <div class="listing-content-meta">
-                                    <div class="row">
-                                        {{--                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">--}}
-                                        {{--                                     <span class="value">{{ @$featured_hospital->institutionLevel->name }}</span>--}}
-                                        {{--                                </div>--}}
-
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <!-- listing block close  -->
-                        {{--            </div>--}}
                     </div>
                 @endforeach
 

@@ -68,8 +68,12 @@
                                 </li>
                             </ul>
                             <div class="header-btn d-xl-block d-lg-none">
-                                <a href="{{ url('login') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Login</a>
-{{--                                <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i>List a space</a>--}}
+
+                                @guest
+                                    <a href="{{ url('login') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Login</a>
+                                @else
+                                    <a href="{{ url(auth()->user()->role) }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Dashboard</a>
+                                @endguest
                             </div>
                         </div>
                     </nav>
@@ -84,54 +88,47 @@
 
 
     <div class="footer-dark">
-{{--        <div class="container">--}}
+        <div class="container">
             <div class="row">
-{{--                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">--}}
-{{--                    <!-- footer widget  -->--}}
-{{--                    <div class="footer-widget">--}}
-{{--                        <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="spacely realtor directory listing bootstrap template"></div>--}}
-{{--                        <p class="footer-widget-text">Sahlhealth is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>--}}
-{{--                        <div class="footer-location">--}}
-{{--                            <p class="phone-numbers">1800 123 345 789</p>--}}
-{{--                            <p class="address">3 Doris St, North Sydney, NSW 2060</p>--}}
-{{--                        </div>--}}
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+                    <!-- footer widget  -->
+                    <div class="footer-widget">
+                        <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="spacely realtor directory listing bootstrap template"></div>
+                        <p class="footer-widget-text">Sahlhealth is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
+                        <div class="footer-location">
+                            <p class="phone-numbers">1800 123 345 789</p>
+                            <p class="address">3 Doris St, North Sydney, NSW 2060</p>
+                        </div>
 
-{{--                    </div>--}}
-{{--                </div>--}}
+                    </div>
+                </div>
 {{--                <!-- footer widget  -->--}}
-{{--                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                    <div class="footer-widget">--}}
-{{--                        <h3 class="footer-widget-title">Type of spaces</h3>--}}
-{{--                        <div class="footer-links">--}}
-{{--                            <ul class="list-unstyled">--}}
-{{--                                <li><a href="#">Coworking space</a></li>--}}
-{{--                                <li><a href="#">Meeting space</a></li>--}}
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Type of spaces</h3>
+                        <div class="footer-links">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Coworking space</a></li>
+                                <li><a href="#">Meeting space</a></li>
 
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 {{--                <!-- footer widget  -->--}}
-{{--                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                    <div class="footer-widget">--}}
-{{--                        <h3 class="footer-widget-title">Company</h3>--}}
-{{--                        <div class="footer-links">--}}
-{{--                            <ul class="list-unstyled">--}}
-{{--                                <li><a href="#">About us</a></li>--}}
-{{--                                <li><a href="#">Careers</a></li>--}}
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Company</h3>
+                        <div class="footer-links">
+                            <ul class="list-unstyled">
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Careers</a></li>
 
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <!-- footer widget  -->--}}
-{{--                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">--}}
-{{--                    <div class="footer-widget">--}}
-
-{{--                    </div>--}}
-{{--                    <!-- footer widget  -->--}}
-{{--                </div>--}}
-{{--            </div>--}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
         </div>
         <!-- tiny footer  -->
         <div class="tiny-footer">

@@ -106,10 +106,7 @@
                             <ul class="list-unstyled">
                                 <li><a href="#">Coworking space</a></li>
                                 <li><a href="#">Meeting space</a></li>
-                                <li><a href="#">Office space</a></li>
-                                <li><a href="#">Retail Space</a></li>
-                                <li><a href="#">Event space</a></li>
-                                <li><a href="#">Virtual Space</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -122,10 +119,7 @@
                             <ul class="list-unstyled">
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">Careers</a></li>
-                                <li><a href="#">Clients</a></li>
-                                <li><a href="#">Team</a> </li>
-                                <li><a href="#">Help Center</a></li>
-                                <li><a href="#">Press</a></li>
+
                             </ul>
                         </div>
                     </div>

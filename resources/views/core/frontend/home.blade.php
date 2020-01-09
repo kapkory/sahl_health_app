@@ -49,24 +49,28 @@
                         </div>
                         <!-- search area start -->
                         <div class="hero-search-area-form">
-                            <form class="form-row">
+                            <form class="form-row" method="post" class="ajax-post" action="{{ url('create-account') }}">
                                 <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="first_name" placeholder="First Name">
-                                    </div>
 
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="first_name" placeholder="Last Name">
-                                    </div>
+                                      <div class="form-group">
+                                          <input type="text" required class="form-control" name="first_name" placeholder="First Name">
+                                      </div>
 
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" name="first_name" placeholder="Email Address">
-                                    </div>
+                                      @csrf
+                                      <div class="form-group">
+                                          <input type="text" required class="form-control" name="last_name" placeholder="Last Name">
+                                      </div>
+
+                                      <div class="form-group">
+                                          <input type="email" required class="form-control" name="email" placeholder="Email Address">
+                                      </div>
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                          <button type="submit" class="btn btn-secondary" style="background-color: #F07A3B;border-color: inherit; color: white">Start Now</button>
+                                      </div>
+
 
                                 </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <button class="btn btn-secondary" style="background-color: #F07A3B;border-color: inherit; color: white">Start Now</button>
-                                </div>
+
                             </form>
                         </div>
                         <!-- search area close -->
@@ -148,15 +152,15 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($loop->iteration == 1 || $loop->iteration % 5 ==0)
-                                <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
-                            @endif
+
                         </div>
                         <!-- listing block close  -->
                         {{--            </div>--}}
                     </div>
                 @endforeach
             </div>
+            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
+
 
 
             {{--        </div>--}}
@@ -173,7 +177,6 @@
                 @foreach($featured_hospitals as $featured_hospital)
                     <div class="item">
 
-                    {{--                    <div class="">--}}
                     <!-- listing block start  -->
                         <div class="listing-block ">
                             <div class="listing-img">
@@ -202,9 +205,6 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($loop->iteration == 1 || $loop->iteration % 5 ==0)
-                                <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
-                            @endif
                         </div>
 
                         <!-- listing block close  -->
@@ -213,10 +213,7 @@
                 @endforeach
 
             </div>
-
-
-
-            {{--        </div>--}}
+            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
         </div>
     </div>
 

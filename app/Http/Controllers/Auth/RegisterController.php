@@ -123,4 +123,20 @@ class RegisterController extends Controller
         return ['redirect_url'=>url('complete-registration?type=email')];
     }
 
+    public function createAccount(){
+        $this->validate(\request(), [
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email' => 'required',
+        ]);
+        $user = new User();
+        $user->name = \request('first_name').' '.\request('last_name');
+        $user->email = \request('email');
+        $user->password = bcrypt(\request('email'));
+        $user->save();
+        Auth::login($user);
+
+        return redirect(url('complete-registration?type=home'));
+    }
+
 }

@@ -65,7 +65,7 @@
 
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <button class="btn btn-secondary">Create Account</button>
+                                    <button class="btn btn-secondary" style="background-color: orangered">Create Account</button>
                                 </div>
                             </form>
                         </div>
@@ -78,12 +78,6 @@
                         <div class="hero-slider-item">
                             <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/sahl-health.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
                         </div>
-{{--                        <div class="hero-slider-item">--}}
-{{--                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/kenya-red-cross-ambulance.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                        </div>--}}
-{{--                        <div class="hero-slider-item">--}}
-{{--                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/separation_of_conjoined_twins-700x500.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                        </div>--}}
                     </div>
                     <!-- hero slider close -->
                 </div>

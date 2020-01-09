@@ -24,6 +24,7 @@
         .listing-badge{
             background-color: #313d4f;
             color: white;
+            top:0px;
         }
 
     </style>

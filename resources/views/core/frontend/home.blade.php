@@ -80,8 +80,9 @@
 
                         <div class="like-icon"></div>
                     </div>
+                    <small class="lable">{{ @$featured_hospital->institutionLevel->name }}</small>
+
                     <div class="listing-content">
-                        <small class="lable">{{ @$featured_hospital->institutionLevel->name }}</small>
                         <div class="listing-content-head">
                             <h3 class="listing-content-head-title"> <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,17,'...') }}</a></h3>
                             <p class="listing-content-head-text">Nairobi, Kenya</p>

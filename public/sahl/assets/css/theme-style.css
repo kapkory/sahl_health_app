@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-/*
-
-Theme: Spacely - Design system for Real estate office space 
-Author: JituChauhan
-Author URI: https://codescandy.com/
-
----
-
-
-*/
 :root {
     --blue: #2841f8;
     --indigo: #6610f2;
@@ -5366,7 +5356,7 @@ input[type='%2328a745'].btn-block {
     border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
-    
+
 }
 
 .page-link:hover {
@@ -6382,7 +6372,7 @@ a.close.disabled {
     pointer-events: auto;
     background-color: #fff;
     background-clip: padding-box;
-    
+
     border-radius: 6px;
     outline: 0;
 }
@@ -11224,7 +11214,7 @@ a.text-dark:focus {
 
 
 /*-----------------------------------------
-  spacely css 
+  spacely css
 ------------------------------------------ */
 ::selection {
     background: rgba(255, 244, 147, .8);
@@ -11245,7 +11235,7 @@ a.text-dark:focus {
 }
 
 .space-lg {
-    padding: 100px 0px;
+    padding: 18px 0px;
 }
 
 .space-xl {
@@ -15184,11 +15174,11 @@ blockquote {
 }
 
 /*------------------------------------
- Dashboard 
+ Dashboard
  -----------------------------*/
 
 .db-wrapper {
-     
+
 }
 
 /*---------------  Dashboard Header --------------------*/
@@ -15205,7 +15195,7 @@ blockquote {
     right: 0;
     left: 0;
     z-index: 1030;
-    
+
 
 }
 
@@ -16510,9 +16500,9 @@ blockquote {
     .hero-slide .hero-search-area {
         bottom: 5px;
     }
-    .hero-slide .hero-search-area-caption-title {       
+    .hero-slide .hero-search-area-caption-title {
     font-size: 30px;
-    line-height: 36px;    
+    line-height: 36px;
     }
 }
 
@@ -16580,7 +16570,7 @@ blockquote {
 
     /*------ dashboard page -----*/
     .db-wrapper {
-        
+
     }
 
 
@@ -16662,7 +16652,7 @@ blockquote {
 
     /*------ dashboard page -----*/
     .db-wrapper {
-         
+
     }
 
 
@@ -16742,15 +16732,15 @@ blockquote {
         width: 100%;
     }
 .single-post-pageheader {
-  
+
     min-height: 340px;}
     .post-pagecaption {
-   
+
     padding-top: 114px;}
 
     /*------ dashboard page -----*/
     .db-wrapper {
-        
+
     }
 
 
@@ -16875,12 +16865,12 @@ blockquote {
     display: block;
     padding: 16px 20px;}
     .page-link {
-    
+
     padding: 8px 13px;}
 
 .single-post-pageheader{min-height: 380px;}
 .post-pagecaption {
-    
+
     padding-bottom: 30px;
     padding-top: 44px;}
 
@@ -16899,11 +16889,11 @@ blockquote {
 
     /*------ dashboard page -----*/
     .db-wrapper {
-        
+
     }
 
     .db-header {
-        
+
     }
 
     .db-overview-quote .table th,

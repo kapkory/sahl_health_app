@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.sahl')
 @section('styles')
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url('drift/assets/modules/intlTelInput/intlTelInput.min.css') }}">

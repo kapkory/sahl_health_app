@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url('sahl/assets/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ url('frontend/assets/style.css') }}" />
 
+    <script src="{{ url('sahl/assets') }}/js/jquery-3.3.1.min.js"></script>
+    <script src="{{ url('sahl/assets') }}/js/bootstrap.bundle.js"></script>
+    @yield('styles')
 </head>
 
 <body>
@@ -81,7 +84,7 @@
                     <!-- footer widget  -->
                     <div class="footer-widget">
                         <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="spacely realtor directory listing bootstrap template"></div>
-                        <p class="footer-widget-text">Spacely a Directory Listing HTML Website Template. Its complete design systems for your real estate or realtor project. Its build with Bootstrap framework.</p>
+                        <p class="footer-widget-text">Sahlhealth is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
                         <div class="footer-location">
                             <p class="phone-numbers">1800 123 345 789</p>
                             <p class="address">3 Doris St, North Sydney, NSW 2060</p>
@@ -135,7 +138,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <p class="tiny-footer-text">Copyright © 2020 Spacely Companies Inc. All rights reserved</p>
+                        <p class="tiny-footer-text">Copyright © {{ date('Y') }} Sahlhealth Inc. All rights reserved</p>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="tiny-footer-links">
@@ -158,12 +161,99 @@
 <!-- ============================================================== -->
 <!-- end main wrapper -->
 <!-- ============================================================== -->
-<script src="{{ url('sahl/assets') }}/js/jquery-3.3.1.min.js"></script>
-<script src="{{ url('sahl/assets') }}/js/bootstrap.bundle.js"></script>
 <script src="{{ url('sahl/assets') }}/js/main-js.js"></script>
 <script src="{{ url('sahl/assets') }}/select2/select2.full.min.js"></script>
 <script src="{{ url('sahl/assets') }}/select2/select2.min.js"></script>
 <script src="{{ url('sahl/assets') }}/js/slick.min.js"></script>
+@yield('scripts')
+<script>
+    $('.ajax-post').submit(function (event) {
+        event.preventDefault();
+        var form = $(this);
+        var btn = form.find(".submit-btn");
+        btn.prepend('<img class="processing-submit-image" style="height: 50px;margin:-10px !important;" src="{{ url("img/Ripple.gif") }}">');
+        btn.attr('disabled', true);
+        var url = form.attr('action');
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), // serializes the form's elements.
+            success: function (response) {
+                btn.find('img').remove();
+                btn.attr('disabled', false);
+                removeError();
+                resetForm('ajax-form');
+                window.location.href= response.redirect_url;
+                // toastr.success('Our administration has been notified of your message. We will respond as soon as possible');
+            },
+            error: function (xhr, status, error) {
+                var btn = form.find(".submit-btn");
+                btn.find('img').remove();
+                btn.attr('disabled', false);
+                if (xhr.status == 422) {
+                    form.find('.alert_status').remove();
+                    var response = JSON.parse(xhr.responseText).errors;
+                    console.log(response);
+                    for (field in response) {
+                        form.find("input[name='" + field + "']").addClass('is-invalid');
+                        form.find("input[name='" + field + "']").closest(".form-group").find('.help-block').remove();
+                        form.find("input[name='" + field + "']").closest(".form-group").append('<small class="help-block invalid-feedback">' + response[field] + '</small>');
+
+                        form.find("select[name='" + field + "']").addClass('is-invalid');
+                        form.find("select[name='" + field + "']").closest(".form-group").find('.help-block').remove();
+                        form.find("select[name='" + field + "']").closest(".form-group").append('<small class="help-block invalid-feedback">' + response[field] + '</small>');
+
+                        form.find("textarea[name='" + field + "']").addClass('is-invalid');
+                        form.find("textarea[name='" + field + "']").closest(".form-group").find('.help-block').remove();
+                        form.find("textarea[name='" + field + "']").closest(".form-group").append('<small class="help-block invalid-feedback">' + response[field] + '</small>');
+                    }
+
+                    jQuery(".invalid-feedback").css('display', 'block')
+                    jQuery(".invalid-feedback").css('display', 'block');
+                } else if (xhr.status == 406) {
+                    form.find('#form-exception').remove();
+                    form.find('.alert_status').remove();
+                    form.prepend('<div id="form-exception" class="alert alert-warning"><strong>' + xhr.status + '</strong> ' + error + '<br/>' + xhr.responseText + '</div>');
+                } else {
+                    form.find('#form-exception').remove();
+                    form.find('.alert_status').remove();
+                    form.prepend('<div id="form-exception" class="alert alert-danger"><strong>' + xhr.status + '</strong> ' + error + '<br/>(' + url + ')</div>');
+                }
+
+            },
+        });
+    });
+
+    jQuery(document).on('click', '.is-invalid', function () {
+        $(this).removeClass("is-invalid");
+        $(this).closest(".invalid-feedback").remove();
+    });
+    jQuery(document).on('change', '.is-invalid', function () {
+        $(this).removeClass("is-invalid");
+        $(this).closest(".invalid-feedback").remove();
+    });
+    jQuery(document).on('click', '.form-group', function () {
+        $(this).find('.help-block').remove();
+        $(this).closest(".form-group").removeClass('is-invalid');
+    });
+    jQuery(document).on('click', '.form-control', function () {
+        $(this).find('.help-block').remove();
+        $(this).closest(".form-group").removeClass('is-invalid');
+    });
+    function resetForm(form_class) {
+        $("." + form_class).find("input[type=text],textarea,select").val("");
+        $("input[name='id']").val('');
+    }
+    function removeError() {
+        setTimeout(function () {
+            $("#form-exception").fadeOut();
+            $("#form-success").fadeOut();
+            $(".alert_status").fadeOut();
+        }, 1200);
+
+    }
+</script>
 </body>
 
 </html>

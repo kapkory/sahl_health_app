@@ -108,7 +108,7 @@
         <div class="container">
             <h3 class="section-heading-title ">Featured Hospitals</h3>
 
-            <div class="row owl-carousel owl-featured">
+            <div class="row owl-carousel owl-featured" style="padding-bottom: 0px !important;">
 
                 @foreach($featured_hospitals as $featured_hospital)
                     <div class="item">
@@ -160,7 +160,7 @@
         <div class="container">
             <h3 class="section-heading-title ">Top Rated Hospitals</h3>
 
-            <div class="row owl-carousel owl-featured">
+            <div class="row owl-carousel owl-featured" style="padding-bottom: 0px !important;">
 
                 @foreach($featured_hospitals as $featured_hospital)
                     <div class="item">
@@ -199,8 +199,10 @@
                         {{--            </div>--}}
                     </div>
                 @endforeach
+
             </div>
             <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
+
 
 
             {{--        </div>--}}

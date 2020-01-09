@@ -15,6 +15,13 @@
         .owl-next {
             right: -2rem;
         }
+        @media only screen and (min-width: 600px) {
+           .institution_image{
+            height: 179px !important;
+            width: 269px!important;
+           }
+        }
+
     </style>
 <!-- header close -->
 <div class="container-fluid">
@@ -109,7 +116,7 @@
                 <!-- listing block start  -->
                 <div class="listing-block ">
                     <div class="listing-img">
-                        <a href="{{ url('institution/'.$featured_hospital->slug) }}"> <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid"></a>
+                        <a href="{{ url('institution/'.$featured_hospital->slug) }}"> <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image"></a>
                         <div class="listing-badge">Discount {{ $featured_hospital->discount }}</div>
 
                         <div class="like-icon"></div>

@@ -84,12 +84,7 @@
                         </div>
                         <!-- listing detail head close -->
                     </div>
-                    <!-- listing detail start -->
-                    <div class="listing-detail-card" id="about">
-                        <h4 class="listing-detail-card-title">Description</h4>
-                        <p>{{ $institution->intro }}</p>
-                    </div>
-                    <!-- listing detail close -->
+
 
 
                 </div>
@@ -110,6 +105,15 @@
 
                     </div>
                     <!-- listing detail close -->
+
+                    @if($institution->intro)
+                        <!-- listing detail start -->
+                            <div class="listing-detail-card" id="about">
+                                <h4 class="listing-detail-card-title">Description</h4>
+                                <p>{{ $institution->intro }}</p>
+                            </div>
+                            <!-- listing detail close -->
+                    @endif
 
                     <!-- listing detail start -->
                     <div class="listing-detail-card amenities" id="amenities">

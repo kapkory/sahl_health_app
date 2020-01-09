@@ -142,13 +142,16 @@
                                     </div>
                                 </div>
                             </div>
+                            @if($loop->first)
+                                <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
+
+                            @endif
                         </div>
                         <!-- listing block close  -->
                         {{--            </div>--}}
                     </div>
                 @endforeach
             </div>
-            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
 
 
             {{--        </div>--}}
@@ -194,14 +197,18 @@
                                     </div>
                                 </div>
                             </div>
+                            @if($loop->first)
+                                <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
+
+                            @endif
                         </div>
+
                         <!-- listing block close  -->
                         {{--            </div>--}}
                     </div>
                 @endforeach
 
             </div>
-            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
 
 
 

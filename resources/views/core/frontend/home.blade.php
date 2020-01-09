@@ -147,10 +147,10 @@
                 </div>
             @endforeach
             </div>
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center mt-3">
-                <a href="{{ url('hospitals') }}" class="btn btn-outline-primary">Browse all Hospitals</a>
-            </div>
-{{--        </div>--}}
+        <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">Browse all Hospitals&nbsp;></a>
+
+
+        {{--        </div>--}}
     </div>
 </div>
 <div class="space-lg space-md space-xs bg-light rounded">

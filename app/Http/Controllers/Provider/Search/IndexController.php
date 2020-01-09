@@ -70,8 +70,9 @@ class IndexController extends Controller
         $visit->amount = \request('total_bill');
         $visit->save();
         if (auth()->user()->phone_number){
+//            $institution = Institution::findOrFail(auth()->user());
             $address[]  = preg_replace('/^\\D*/', '', auth()->user()->phone_number);
-            $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
+            $message = 'Hi Granville, your total bill is '.\request('total_bill').', thank you for visiting Dummy Organization';
             $techpitch = new TechpitMessageRepository();
             $response = $techpitch->execute($message,$address);
         }

@@ -71,7 +71,7 @@ class IndexController extends Controller
         $visit->save();
         $user = User::findOrFail($visit->user_id);
         if ($user->phone_number){
-            $institution = Institution::findOrFail(auth()->user());
+            $institution = Institution::findOrFail(auth()->user()->institution_id );
             $address[]  = preg_replace('/^\\D*/', '', $user->phone_number);
             $names = explode(' ',$user->name);
             $amount = ($institution->discount * \request('total_bill')) / 100;

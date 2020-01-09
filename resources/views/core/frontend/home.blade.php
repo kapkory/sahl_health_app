@@ -21,14 +21,18 @@
             width: 269px!important;
            }
         }
+        @media only screen and (max-width: 599px) {
+            .institution_image{
+                height: 95px !important;
+                width: 142.5px!important;
+            }
+        }
         .listing-badge{
             background-color: #313d4f;
             color: white;
             top:0px;
         }
-        .like-icon{
-            padding-top: 0px !important;
-        }
+
 
     </style>
 <!-- header close -->
@@ -130,7 +134,7 @@
                                 </a>
                                 <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>
 
-                                <div class="like-icon"></div>
+                                <div style="top: 0px" class="like-icon"></div>
                             </div>
                             <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
 
@@ -185,7 +189,7 @@
                                 </a>
                                 <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>
 
-                                <div class="like-icon"></div>
+                                <div style="top: 0px" class="like-icon"></div>
                             </div>
                             <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
 
@@ -234,60 +238,12 @@
                     <p class="section-heading-text lead">
                         List your hospital, Insurance Company, Health Care with us and start offering your discount
                     </p>
+                    <a href="{{ url('provider-register') }}" class="btn btn-outline-primary">List Your Institution</a>
+
                 </div>
                 <!-- section heading close  -->
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                <!-- process block start  -->
-                <div class="process-block">
-                    <div class="process-block-number">1</div>
-                    <div class="process-content">
-                        <div class="process-content-icon">
-                            <img src="{{ url('sahl/assets') }}/images/location-map.png" alt="spacely realtor directory listing bootstrap template">
-                        </div>
-                        <h3 class="process-content-title">Create an Account</h3>
-                        <p>It takes no longer than 1 minutes to create a providers account on Sahlhealth. </p>
-                    </div>
-                </div>
-                <!-- process block close  -->
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                <!-- process block start  -->
-                <div class="process-block">
-                    <div class="process-block-number">2</div>
-                    <div class="process-content">
-                        <div class="process-content-icon">
-                            <img src="{{ url('sahl/assets') }}/images/graph-icon.png" alt="Sahl Health">
-                        </div>
-                        <h3 class="process-content-title">Get more orders</h3>
-                        <p>
-                        Fill all the required Organization fields accordingly, Our Administrator will review your application
-                        </p>
-                    </div>
-                </div>
-                <!-- process block close  -->
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                <!-- process block start  -->
-                <div class="process-block">
-                    <div class="process-block-number">3</div>
-                    <div class="process-content">
-                        <div class="process-content-icon">
-                            <img src="{{ url('sahl/assets') }}/images/money-icon.png" alt="Sahlhealth">
-                        </div>
-                        <h3 class="process-content-title">Earn money</h3>
-                        <p>
-                            Sahlhealth shall list your Institution on our site and our members shall be able to easily visit your premise.
-                        </p>
-                    </div>
-                </div>
-                <!-- process block close  -->
-            </div>
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center mt-5">
-                <a href="{{ url('provider-register') }}" class="btn btn-outline-primary">Create an Institution</a>
-            </div>
+
         </div>
     </div>
 </div>

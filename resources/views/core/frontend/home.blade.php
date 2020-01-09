@@ -129,7 +129,7 @@
                             <div class="listing-content" style="padding-left: 10px; padding-top: 1px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">
-                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,20,'...') }}</a>
+                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,18,'...') }}</a>
                                     </h3>
                                     <p class="listing-content-head-text">Nairobi, Kenya</p>
                                 </div>
@@ -181,7 +181,7 @@
                             <div class="listing-content" style="padding-left: 10px; padding-top: 5px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">
-                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,20,'...') }}</a>
+                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,18,'...') }}</a>
                                     </h3>
                                     <p class="listing-content-head-text">Nairobi, Kenya</p>
                                 </div>

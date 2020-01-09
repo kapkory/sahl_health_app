@@ -82,7 +82,7 @@
 </div>
     <div class="container-fluid" style="background-color:#0E4D92; color: white">
         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
-            <h2 class="section-heading-title text-center" style="color: white">
+            <h2 class="section-heading-title" style="color: white">
                 See what you get with our membership Plans
             </h2>
         </div>

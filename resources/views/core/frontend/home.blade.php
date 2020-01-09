@@ -148,7 +148,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($loop->iteration == 0 || $loop->iteration % 5 ==0)
+                            @if($loop->iteration == 1 || $loop->iteration % 5 ==0)
                                 <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
                             @endif
                         </div>
@@ -202,7 +202,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($loop->iteration == 0 || $loop->iteration % 5 ==0)
+                            @if($loop->iteration == 1 || $loop->iteration % 5 ==0)
                                 <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>
                             @endif
                         </div>

@@ -56,14 +56,14 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        Dashboard
+                                    <a class="nav-link" href="{{ url('hospitals') }}">
+                                        Hospitals
                                     </a>
                                 </li>
                             </ul>
                             <div class="header-btn d-xl-block d-lg-none">
                                 <a href="{{ url('login') }}" class="btn btn-outline-primary">Login</a>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i>List a space</a>
+{{--                                <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i>List a space</a>--}}
                             </div>
                         </div>
                     </nav>

@@ -163,14 +163,14 @@
                 <!-- listing block start  -->
                 <div class="listing-block">
                     <div class="listing-img">
-                        <a href="#"> <img src="{{ url($featured_hospital->featured_image) }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid"></a>
+                        <a href="{{ url('institution/'.$featured_hospital->slug) }}"> <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid"></a>
                         <div class="listing-badge">Discount {{ $featured_hospital->discount }}</div>
 
                         <div class="like-icon"></div>
                     </div>
                     <div class="listing-content">
                         <div class="listing-content-head">
-                            <h3 class="listing-content-head-title"> <a href="#">{{ $featured_hospital->name }}</a></h3>
+                            <h3 class="listing-content-head-title"> <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ $featured_hospital->name }}</a></h3>
                             <p class="listing-content-head-text">Nairobi, Kenya</p>
                         </div>
 {{--                        <div class="review-content-rating">--}}

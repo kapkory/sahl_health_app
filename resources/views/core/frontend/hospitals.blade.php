@@ -108,7 +108,7 @@
                             <!-- listing block start -->
                             <div class="listing-block grid-listing">
                                 <div class="listing-img">
-                                    <a href="#">
+                                    <a href="{{ url('institution/'.$hospital->slug) }}">
                                         <img style="max-height: 250px" src="{{ ($hospital->featured_image) ? url($hospital->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="{{ $hospital->name }}" class="img-fluid">
                                     </a>
                                     @if($hospital->discount > 0)
@@ -120,7 +120,7 @@
                                 <div class="listing-content">
                                     <div class="listing-content-head">
                                         <h3 class="listing-content-head-title">
-                                            <a href="#">
+                                            <a href="{{ url('institution/'.$hospital->slug) }}">
                                                 {{ $hospital->name }}
                                             </a>
                                         </h3>

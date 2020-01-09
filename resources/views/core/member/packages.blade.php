@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.sahl')
 @section('styles')
     <style>
         .bg-dark-myimg{

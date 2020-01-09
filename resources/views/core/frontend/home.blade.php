@@ -102,58 +102,112 @@
         </div>
     </div>
 
-<div class="space-lg space-md space-xs pt-4">
 
-    <div class="container">
-        <h3 class="section-heading-title ">Explore our Featured Hospitals</h3>
+    <div class="space-lg space-md space-xs pt-4">
 
-        <div class="row owl-carousel owl-featured">
+        <div class="container">
+            <h3 class="section-heading-title ">Explore our Featured Hospitals</h3>
 
-            @foreach($featured_hospitals as $featured_hospital)
-                <div class="item">
+            <div class="row owl-carousel owl-featured">
 
-{{--                    <div class="">--}}
-                <!-- listing block start  -->
-                <div class="listing-block ">
-                    <div class="listing-img">
-                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">
-                            <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">
-                        </a>
-                        <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>
+                @foreach($featured_hospitals as $featured_hospital)
+                    <div class="item">
 
-                        <div class="like-icon"></div>
-                    </div>
-                    <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
+                    {{--                    <div class="">--}}
+                    <!-- listing block start  -->
+                        <div class="listing-block ">
+                            <div class="listing-img">
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">
+                                    <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">
+                                </a>
+                                <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>
 
-                    <div class="listing-content" style="padding-left: 10px; padding-top: 5px">
-                        <div class="listing-content-head">
-                            <h3 class="listing-content-head-title">
-                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,20,'...') }}</a>
-                            </h3>
-                            <p class="listing-content-head-text">Nairobi, Kenya</p>
-                        </div>
-                        <div class="listing-content-meta">
-                            <div class="row">
-{{--                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">--}}
-{{--                                     <span class="value">{{ @$featured_hospital->institutionLevel->name }}</span>--}}
-{{--                                </div>--}}
+                                <div class="like-icon"></div>
+                            </div>
+                            <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
 
+                            <div class="listing-content" style="padding-left: 10px; padding-top: 5px">
+                                <div class="listing-content-head">
+                                    <h3 class="listing-content-head-title">
+                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,20,'...') }}</a>
+                                    </h3>
+                                    <p class="listing-content-head-text">Nairobi, Kenya</p>
+                                </div>
+                                <div class="listing-content-meta">
+                                    <div class="row">
+                                        {{--                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">--}}
+                                        {{--                                     <span class="value">{{ @$featured_hospital->institutionLevel->name }}</span>--}}
+                                        {{--                                </div>--}}
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!-- listing block close  -->
+                        {{--            </div>--}}
                     </div>
-                </div>
-                <!-- listing block close  -->
-{{--            </div>--}}
-                </div>
-            @endforeach
+                @endforeach
             </div>
-        <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">Browse all Hospitals&nbsp;></a>
+            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all Featured Hospitals&nbsp;></a>
 
 
-        {{--        </div>--}}
+            {{--        </div>--}}
+        </div>
     </div>
-</div>
-<div class="space-lg space-md space-xs bg-light rounded">
+{{--Start Featured Hospital--}}
+    <div class="space-lg space-md space-xs pt-4">
+
+        <div class="container">
+            <h3 class="section-heading-title ">Explore our Highly Rated Hospitals</h3>
+
+            <div class="row owl-carousel owl-featured">
+
+                @foreach($featured_hospitals as $featured_hospital)
+                    <div class="item">
+
+                    {{--                    <div class="">--}}
+                    <!-- listing block start  -->
+                        <div class="listing-block ">
+                            <div class="listing-img">
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">
+                                    <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">
+                                </a>
+                                <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>
+
+                                <div class="like-icon"></div>
+                            </div>
+                            <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
+
+                            <div class="listing-content" style="padding-left: 10px; padding-top: 5px">
+                                <div class="listing-content-head">
+                                    <h3 class="listing-content-head-title">
+                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,20,'...') }}</a>
+                                    </h3>
+                                    <p class="listing-content-head-text">Nairobi, Kenya</p>
+                                </div>
+                                <div class="listing-content-meta">
+                                    <div class="row">
+                                        {{--                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">--}}
+                                        {{--                                     <span class="value">{{ @$featured_hospital->institutionLevel->name }}</span>--}}
+                                        {{--                                </div>--}}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- listing block close  -->
+                        {{--            </div>--}}
+                    </div>
+                @endforeach
+            </div>
+            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all Hospitals&nbsp;></a>
+
+
+            {{--        </div>--}}
+        </div>
+    </div>
+
+    <div class="space-lg space-md space-xs bg-light rounded">
     <div class="container">
         <div class="row">
             <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">

@@ -69,11 +69,15 @@
             </div>
             <!-- section heading close  -->
         </div>
-        <div class="row">
+        <div class="row owl-carousel owl-featured">
+{{--            <div class="">--}}
+
             @foreach($featured_hospitals as $featured_hospital)
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="item">
+
+{{--                    <div class="">--}}
                 <!-- listing block start  -->
-                <div class="listing-block">
+                <div class="listing-block ">
                     <div class="listing-img">
                         <a href="{{ url('institution/'.$featured_hospital->slug) }}"> <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid"></a>
                         <div class="listing-badge">Discount {{ $featured_hospital->discount }}</div>
@@ -106,12 +110,14 @@
                     </div>
                 </div>
                 <!-- listing block close  -->
-            </div>
+{{--            </div>--}}
+                </div>
             @endforeach
+            </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center mt-3">
                 <a href="{{ url('hospitals') }}" class="btn btn-outline-primary">Browse all Hospitals</a>
             </div>
-        </div>
+{{--        </div>--}}
     </div>
 </div>
 <div class="space-lg space-md space-xs bg-light rounded">

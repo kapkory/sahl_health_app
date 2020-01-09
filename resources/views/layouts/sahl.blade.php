@@ -16,9 +16,13 @@
     <link rel="stylesheet" href="{{ url('sahl/assets/css/theme-style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('sahl/assets/select2/select2.min.css') }}">
     <link rel="stylesheet" href="{{ url('frontend/assets/style.css') }}" />
+    <link rel="stylesheet" href="{{ url('sahl/assets') }}/css/owl.carousel.css">
+    <link rel="stylesheet" href="{{ url('sahl/assets') }}/css/owl.theme.default.css">
 
     <script src="{{ url('sahl/assets') }}/js/jquery-3.3.1.min.js"></script>
     <script src="{{ url('sahl/assets') }}/js/bootstrap.bundle.js"></script>
+
+        <script src="{{ url('sahl/assets') }}/js/owl.carousel.min.js"></script>
     @yield('styles')
 </head>
 

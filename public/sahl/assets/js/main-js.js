@@ -148,6 +148,31 @@ jQuery(document).ready(function($) {
     }
     /* owl-testimonial **/
 
+    if ($('.owl-featured').length) {
+
+        $('.owl-featured').owlCarousel({
+
+            loop: true,
+            margin: 30,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
+
+    }
+
 
     if ($('.owl-testimonial').length) {
 

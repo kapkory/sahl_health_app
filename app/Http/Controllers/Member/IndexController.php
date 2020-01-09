@@ -97,15 +97,15 @@ class IndexController extends Controller
             'package_id' => 'required',
         ]);
 
+        $user = \auth()->user();
         if (\request('type')=='social'){
-            $user = \auth()->user();
+
             $user->phone_number = \request('phone_number');
             $user->save();
         }
 
         if (\request('type')=='account')
         {
-            $user = \auth()->user();
             $user->phone_number = \request('phone_number');
             $user->password = bcrypt(\request('password'));
             $user->save();
@@ -129,7 +129,7 @@ class IndexController extends Controller
 
         if($user->phone_number){
             $address[]  = preg_replace('/^\\D*/', '', $user->phone_number);
-            $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
+            $message = 'Hi '.$user->name.', thank you for the signing up, complete your registration to save more when seeking medical service through your sahl Membership ';
             $techpitch = new TechpitMessageRepository();
             $response = $techpitch->execute($message,$address);
         }

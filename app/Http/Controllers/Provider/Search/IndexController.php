@@ -71,9 +71,11 @@ class IndexController extends Controller
         $visit->save();
         $user = User::findOrFail($visit->user_id);
         if ($user->phone_number){
-//            $institution = Institution::findOrFail(auth()->user());
+            $institution = Institution::findOrFail(auth()->user());
             $address[]  = preg_replace('/^\\D*/', '', $user->phone_number);
-            $message = 'Hi '.$user->name.', your total bill is '.\request('total_bill').', thank you for visiting Dummy Organization';
+            $names = explode(' ',$user->name);
+            $amount = ($institution->discount * \request('total_bill')) / 100;
+            $message = 'Hi '.$names[0].', your total bill is '.\request('total_bill').', you have saved '.$amount. ' '.$institution->name;
             $techpitch = new TechpitMessageRepository();
             $response = $techpitch->execute($message,$address);
         }

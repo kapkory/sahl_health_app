@@ -109,20 +109,28 @@
                 What you get with our membership Plans
             </h2>
         </div>
-        <div class="row pb-5">
-            <div class="col-md-4">
-                <i class="fa fa-check-circle" ></i>
-                Words to Display
-            </div>
-            <div class="col-md-4">
-                <i class="fa fa-check-circle" ></i>
-                Group Membership
-            </div>
-            <div class="col-md-4">
-                <i class="fa fa-check-circle" ></i>
-                Group Membership
+        <div class="col-12">
+            <div class="row pb-5">
+                <div class="col-md-4">
+                    <i class="fa fa-check-circle" ></i>
+                    Words to Display
+                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-check-circle" ></i>
+                    Group Membership
+                </div>
+                <div class="col-md-4">
+                    <i class="fa fa-check-circle" ></i>
+                    Group Membership
+                </div>
             </div>
         </div>
+
+{{--        <div class="offset-xl-1 col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">--}}
+{{--            <div>--}}
+{{--                --}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 
 

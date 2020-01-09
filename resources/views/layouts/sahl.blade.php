@@ -96,8 +96,8 @@
                         <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="spacely realtor directory listing bootstrap template"></div>
                         <p class="footer-widget-text">Sahlhealth is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
                         <div class="footer-location">
-                            <p class="phone-numbers">1800 123 345 789</p>
-                            <p class="address">3 Doris St, North Sydney, NSW 2060</p>
+                            <p class="phone-numbers">+254 769 687 287 / +254 731 434 140</p>
+                            <p class="address">Address: Sahl Health Limited, Pine Tree Plaza</p>
                         </div>
 
                     </div>
@@ -105,11 +105,12 @@
 {{--                <!-- footer widget  -->--}}
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
                     <div class="footer-widget">
-                        <h3 class="footer-widget-title">Type of spaces</h3>
+                        <h3 class="footer-widget-title">Legal use</h3>
                         <div class="footer-links">
                             <ul class="list-unstyled">
-                                <li><a href="#">Coworking space</a></li>
-                                <li><a href="#">Meeting space</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Advertising Policy</a></li>
 
                             </ul>
                         </div>
@@ -125,6 +126,11 @@
                                 <li><a href="#">Careers</a></li>
 
                             </ul>
+                        </div>
+                        <div class="social-media">
+                            <a href="https://www.facebook.com/sahlhealth/"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https://twitter.com/SahlHealth"><i class="fab fa-twitter-square"></i></a>
+                            <a href="https://www.instagram.com/sahlhealth/"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>

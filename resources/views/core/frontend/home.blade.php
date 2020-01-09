@@ -46,7 +46,7 @@
 
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <button class="btn btn-secondary">Search</button>
+                                    <button class="btn btn-secondary">Create Account</button>
                                 </div>
                             </form>
                         </div>
@@ -73,18 +73,30 @@
     </div>
 
 </div>
-
-<div class="space-lg space-md space-xs pt-4">
-    <div class="container">
-        <div class="row">
-            <!-- section heading start  -->
-            <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="section-heading text-center">
-                </div>
+    <div class="container-fluid" style="background-color:#0E4D92; color: white">
+        <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
+            <h2 class="section-heading-title text-center" style="color: white">
+                See what you get with our membership Plans
+            </h2>
+        </div>
+        <div class="row pb-5">
+            <div class="col-md-4">
+                <i class="fa fa-check-circle" ></i>
+                Words to Display
             </div>
-            <!-- section heading close  -->
+            <div class="col-md-4">
+                <i class="fa fa-check-circle" ></i>
+                Group Membership
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-check-circle" ></i>
+                Group Membership
+            </div>
         </div>
     </div>
+
+<div class="space-lg space-md space-xs pt-4">
+
     <div class="container">
         <h2 class="section-heading-title text-center">Explore our Featured Hospitals</h2>
 
@@ -106,17 +118,11 @@
 
                     <div class="listing-content">
                         <div class="listing-content-head">
-                            <h3 class="listing-content-head-title"> <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,17,'...') }}</a></h3>
+                            <h3 class="listing-content-head-title">
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,17,'...') }}</a>
+                            </h3>
                             <p class="listing-content-head-text">Nairobi, Kenya</p>
                         </div>
-{{--                        <div class="review-content-rating">--}}
-{{--                            <span class="star"></span>--}}
-{{--                            <span class="star"></span>--}}
-{{--                            <span class="star"></span>--}}
-{{--                            <span class="star"></span>--}}
-{{--                            <span class="star empty"></span>--}}
-{{--                            <a href="listing-single.html" class="rating-review">4.0</a>--}}
-{{--                        </div>--}}
                         <div class="listing-content-meta">
                             <div class="row">
 {{--                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">--}}

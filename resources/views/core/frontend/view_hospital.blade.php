@@ -90,21 +90,7 @@
                         <p>{{ $institution->intro }}</p>
                     </div>
                     <!-- listing detail close -->
-                    <!-- listing detail start -->
-                    <div class="listing-detail-card amenities" id="amenities">
-                        <h4 class="listing-detail-card-title">Services</h4>
-                        <ul class="list-inline">
-                            <li class="list-inline-item">WiFi</li>
-                            <li class="list-inline-item">Parking</li>
-                            <li class="list-inline-item">24/7 access</li>
-                            <li class="list-inline-item">Kitchen</li>
-                            <li class="list-inline-item">Phone</li>
-                            <li class="list-inline-item">Receptionist</li>
-                            <li class="list-inline-item">Scan</li>
-                            <li class="list-inline-item">Tea & coffee</li>
-                        </ul>
-                    </div>
-                    <!-- listing detail close -->
+
 
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
@@ -122,6 +108,22 @@
                                 </div>
                             @endif
 
+                    </div>
+                    <!-- listing detail close -->
+
+                    <!-- listing detail start -->
+                    <div class="listing-detail-card amenities" id="amenities">
+                        <h4 class="listing-detail-card-title">Services</h4>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">WiFi</li>
+                            <li class="list-inline-item">Parking</li>
+                            <li class="list-inline-item">24/7 access</li>
+                            <li class="list-inline-item">Kitchen</li>
+                            <li class="list-inline-item">Phone</li>
+                            <li class="list-inline-item">Receptionist</li>
+                            <li class="list-inline-item">Scan</li>
+                            <li class="list-inline-item">Tea & coffee</li>
+                        </ul>
                     </div>
                     <!-- listing detail close -->
                 </div>

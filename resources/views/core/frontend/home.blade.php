@@ -65,7 +65,7 @@
 
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <button class="btn btn-secondary" style="background-color: orangered">Create Account</button>
+                                    <button class="btn btn-secondary" style="background-color: #F07A3B;box-shadow: none; color: white">Create Account</button>
                                 </div>
                             </form>
                         </div>

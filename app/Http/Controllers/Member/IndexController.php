@@ -98,6 +98,8 @@ class IndexController extends Controller
         if (\request('type')=='social'){
             $user = \auth()->user();
             $user->phone_number = \request('phone_number');
+//            if (\request('password'))
+//                $user->password = bcrypt(\request('password'));
             $user->save();
         }
 
@@ -107,6 +109,7 @@ class IndexController extends Controller
             'identification_type_id'=>\request('identification_type'),
             'identification_number'=>\request('identification_number')
         ]);
+
 
         $package_id = \request('package_id');
         $pack = Package::findOrFail($package_id);

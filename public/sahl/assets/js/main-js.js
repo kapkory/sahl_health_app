@@ -156,11 +156,11 @@ jQuery(document).ready(function($) {
             margin: 30,
             nav: true,
             autoplay: true,
-            autoplayTimeout: 3000,
+            autoplayTimeout: 5000,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             responsive: {
                 0: {
-                    items: 1
+                    items: 2
                 },
                 600: {
                     items: 2

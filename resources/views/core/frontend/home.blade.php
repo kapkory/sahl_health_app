@@ -1,5 +1,21 @@
 @extends('layouts.sahl')
 @section('content')
+    <style>
+        .owl-prev,
+        .owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .owl-prev {
+            left: -2rem;
+        }
+
+        .owl-next {
+            right: -2rem;
+        }
+    </style>
 <!-- header close -->
 <div class="container-fluid">
     <!-- hero section start  -->
@@ -64,13 +80,15 @@
             <!-- section heading start  -->
             <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="section-heading text-center">
-                    <h2 class="section-heading-title">Explore our Featured Hospitals</h2>
                 </div>
             </div>
             <!-- section heading close  -->
         </div>
+    </div>
+    <div class="container">
+        <h2 class="section-heading-title text-center">Explore our Featured Hospitals</h2>
+
         <div class="row owl-carousel owl-featured">
-{{--            <div class="">--}}
 
             @foreach($featured_hospitals as $featured_hospital)
                 <div class="item">
@@ -198,50 +216,6 @@
                     </p>
                 </div>
                 <!-- section heading close  -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('sahl/assets') }}/images/logo-buffer.png" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('sahl/assets') }}/images/logo-buzzumo.png" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('sahl/assets') }}/images/logo-clearbit.png" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('sahl/assets') }}/images/logo-converkit.png" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('sahl/assets') }}/images/logo-envato.png" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('sahl/assets') }}/images/logo-frame.png" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
             </div>
         </div>
     </div>

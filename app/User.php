@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Core\Institution;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -42,5 +43,9 @@ class User extends Authenticatable
         return $this->forceFill([
             'phone_number_verified_at' => $this->freshTimestamp(),
         ])->save();
+    }
+
+    public function institutions(){
+        return $this->hasMany(Institution::class);
     }
 }

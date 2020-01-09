@@ -2,6 +2,7 @@
 
 namespace App\Models\Core;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Institution extends Model
@@ -14,5 +15,8 @@ class Institution extends Model
     }
     public function organizationType(){
         return $this->belongsTo(OrganizationType::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

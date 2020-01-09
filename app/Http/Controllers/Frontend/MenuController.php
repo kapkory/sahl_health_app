@@ -17,4 +17,12 @@ class MenuController extends Controller
         $hospitals = Institution::where('organization_type_id',1)->paginate(12);
         return view($this->folder.'hospitals',compact('hospitals'));
     }
+
+    public function hospital($slug){
+        $institution = Institution::where('slug',$slug)->first();
+        if (!$institution)
+            return redirect('hospitals');
+
+        return view($this->folder.'view_hospital',compact('institution'));
+    }
 }

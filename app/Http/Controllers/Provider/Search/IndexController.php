@@ -77,7 +77,7 @@ class IndexController extends Controller
             $total_bill = \request('total_bill');
             $amount = ($institution->discount * \request('total_bill')) / 100;
             $discounted_bill = $total_bill - $amount;
-            $message = 'Hi '.$names[0].', your discounted bill is '.$discounted_bill.', you have saved '.$amount. ' at'.$institution->name;
+            $message = 'Hi '.$names[0].', your discounted bill is '.$discounted_bill.', you have saved '.$amount. ' at '.$institution->name;
             $techpitch = new TechpitMessageRepository();
             $response = $techpitch->execute($message,$address);
         }

@@ -76,7 +76,7 @@
                     <!-- hero slider start -->
                     <div class="hero-slider">
                         <div class="hero-slider-item">
-                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/sahl-health.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
+                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/sahl-health.jpg') }}" alt="Sahl" class="img-fluid">
                         </div>
                     </div>
                     <!-- hero slider close -->
@@ -247,8 +247,9 @@
             <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 text-center mb-5 ">
                 <!-- section heading start  -->
                 <div class="section-heading">
-                    <h2 class="section-heading-title">Market leaders are already with us </h2>
-                    <p class="lead">The largest coworking and smart office spaces across world chose to work with us. Dozens of smart spaces use our software to manage hundreds of locations.
+                    <h2 class="section-heading-title">Partner with us </h2>
+                    <p class="lead">
+                        Market Leaders have already partnered with us, Contact us to get more information on how we can leverage our competencies
                     </p>
                 </div>
                 <!-- section heading close  -->

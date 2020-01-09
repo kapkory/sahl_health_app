@@ -82,7 +82,7 @@
 </div>
     <div class="container-fluid" style="background-color:#0E4D92; color: white">
         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
-            <h2 class="section-heading-title" style="color: white">
+            <h2 class="section-heading-title text-center" style="color: white">
                 See what you get with our membership Plans
             </h2>
         </div>
@@ -105,7 +105,7 @@
 <div class="space-lg space-md space-xs pt-4">
 
     <div class="container">
-        <h2 class="section-heading-title text-center">Explore our Featured Hospitals</h2>
+        <h3 class="section-heading-title ">Explore our Featured Hospitals</h3>
 
         <div class="row owl-carousel owl-featured">
 
@@ -116,17 +116,19 @@
                 <!-- listing block start  -->
                 <div class="listing-block ">
                     <div class="listing-img">
-                        <a href="{{ url('institution/'.$featured_hospital->slug) }}"> <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image"></a>
-                        <div class="listing-badge">Discount {{ $featured_hospital->discount }}</div>
+                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">
+                            <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">
+                        </a>
+                        <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>
 
                         <div class="like-icon"></div>
                     </div>
-                    <small class="lable">{{ @$featured_hospital->institutionLevel->name }}</small>
+                    <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
 
-                    <div class="listing-content">
+                    <div class="listing-content" style="padding-left: 10px">
                         <div class="listing-content-head">
                             <h3 class="listing-content-head-title">
-                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,17,'...') }}</a>
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,20,'...') }}</a>
                             </h3>
                             <p class="listing-content-head-text">Nairobi, Kenya</p>
                         </div>

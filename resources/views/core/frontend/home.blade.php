@@ -10,13 +10,12 @@
                     <!-- search area start -->
                     <div class="hero-search-area">
                         <div class="hero-search-area-caption">
-                            <h1 class="hero-search-area-caption-title">Access up to 20% discounts</h1>
-                            <p class="hero-search-area-caption-text">at your nearest health facility</p>
+                            <h1 class="hero-search-area-caption-title">Access up to 20% discounts at your nearest health facility</h1>
                         </div>
                         <!-- search area start -->
                         <div class="hero-search-area-form">
                             <form class="form-row">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="first_name" placeholder="First Name">
                                     </div>
@@ -31,7 +30,7 @@
 
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <a href="#" class="btn btn-secondary">Search</a>
+                                    <button class="btn btn-secondary">Search</button>
                                 </div>
                             </form>
                         </div>
@@ -44,12 +43,12 @@
                         <div class="hero-slider-item">
                             <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/sahl-health.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
                         </div>
-                        <div class="hero-slider-item">
-                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/kenya-red-cross-ambulance.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                        </div>
-                        <div class="hero-slider-item">
-                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/separation_of_conjoined_twins-700x500.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                        </div>
+{{--                        <div class="hero-slider-item">--}}
+{{--                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/kenya-red-cross-ambulance.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
+{{--                        </div>--}}
+{{--                        <div class="hero-slider-item">--}}
+{{--                            <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/separation_of_conjoined_twins-700x500.jpg') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
+{{--                        </div>--}}
                     </div>
                     <!-- hero slider close -->
                 </div>
@@ -58,94 +57,7 @@
     </div>
 
 </div>
-{{--<div class="space-lg space-md space-xs">--}}
-{{--    <div class="container-fluid">--}}
-{{--        <div class="row">--}}
-{{--            <!-- section heading start  -->--}}
-{{--            <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">--}}
-{{--                <div class="section-heading text-center">--}}
-{{--                    <h2 class="section-heading-title">Types of office space available </h2>--}}
-{{--                    <p class="section-heading-text lead">Explore the different types of office space availableto rentand discover <br> which is right for your business.</p>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <!-- section heading close  -->--}}
-{{--        </div>--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                <!-- space showcase start  -->--}}
-{{--                <a href="listing-single.html" class="space-showcase-block">--}}
-{{--                    <div class="space-showcase-img zoom-img">--}}
-{{--                        <img src="{{ url('sahl/assets') }}/images/space-img-1.jpg" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                    </div>--}}
-{{--                    <div class="space-showcase-content">--}}
-{{--                        <h3 class="space-showcase-content-title">Meeting space</h3>--}}
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--                <!-- space showcase close  -->--}}
-{{--            </div>--}}
-{{--            <!-- space showcase start  -->--}}
-{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                <a href="listing-single.html" class="space-showcase-block">--}}
-{{--                    <div class="space-showcase-img zoom-img">--}}
-{{--                        <img src="{{ url('sahl/assets') }}/images/space-img-2.jpg" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                    </div>--}}
-{{--                    <div class="space-showcase-content">--}}
-{{--                        <h3 class="space-showcase-content-title">Coworking space</h3>--}}
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--            <!-- space showcase close  -->--}}
-{{--            <!-- space showcase start  -->--}}
-{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                <a href="listing-single.html" class="space-showcase-block">--}}
-{{--                    <div class="space-showcase-img zoom-img">--}}
-{{--                        <img src="{{ url('sahl/assets') }}/images/space-img-3.jpg" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                    </div>--}}
-{{--                    <div class="space-showcase-content">--}}
-{{--                        <h3 class="space-showcase-content-title">Office space</h3>--}}
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--            <!-- space showcase close  -->--}}
-{{--            <!-- space showcase start  -->--}}
-{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                <a href="listing-single.html" class="space-showcase-block">--}}
-{{--                    <div class="space-showcase-img zoom-img">--}}
-{{--                        <img src="{{ url('sahl/assets') }}/images/space-img-4.jpg" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                    </div>--}}
-{{--                    <div class="space-showcase-content">--}}
-{{--                        <h3 class="space-showcase-content-title">Retail space</h3>--}}
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--            <!-- space showcase close  -->--}}
-{{--            <!-- space showcase start  -->--}}
-{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                <a href="listing-single.html" class="space-showcase-block">--}}
-{{--                    <div class="space-showcase-img zoom-img">--}}
-{{--                        <img src="{{ url('sahl/assets') }}/images/space-img-5.jpg" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                    </div>--}}
-{{--                    <div class="space-showcase-content">--}}
-{{--                        <h3 class="space-showcase-content-title">Event space</h3>--}}
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--            <!-- space showcase close  -->--}}
-{{--            <!-- space showcase start  -->--}}
-{{--            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6">--}}
-{{--                <a href="listing-single.html" class="space-showcase-block">--}}
-{{--                    <div class="space-showcase-img zoom-img">--}}
-{{--                        <img src="{{ url('sahl/assets') }}/images/space-img-6.jpg" alt="spacely realtor directory listing bootstrap template" class="img-fluid">--}}
-{{--                    </div>--}}
-{{--                    <div class="space-showcase-content">--}}
-{{--                        <h3 class="space-showcase-content-title">Virtual office</h3>--}}
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--            <!-- space showcase close  -->--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
+
 <div class="space-lg space-md space-xs pt-4">
     <div class="container">
         <div class="row">
@@ -159,7 +71,7 @@
         </div>
         <div class="row">
             @foreach($featured_hospitals as $featured_hospital)
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                 <!-- listing block start  -->
                 <div class="listing-block">
                     <div class="listing-img">

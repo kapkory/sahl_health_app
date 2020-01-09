@@ -4,7 +4,7 @@
 @push('scripts')
 {{--    <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
     <script src="{{ url('drift/assets/js/vue-2.6.min.js') }}"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+{{--    <script type="text/javascript" src="js/app.js"></script>--}}
 
 @endpush
     <!-- Card -->
@@ -19,6 +19,8 @@
                 </button>
             </form>
             <!-- /search box -->
+          <div v-if="results.length > 0">
+
 
           <div v-for="result in results">
               <!-- Separator -->
@@ -34,10 +36,9 @@
 
                       <div class="col-md-8">
                           <h3 class="search-heading"><a href="javascript:void(0)">@{{ result.name }}</a>
-                              &nbsp;&nbsp;&nbsp;Package Details
+                              &nbsp;&nbsp;&nbsp;
                           </h3>
 
-                          <a href="javascript:void(0)" class="search-link">View Dependants</a>
                       </div>
 
                       <div class="col-md-2">
@@ -87,6 +88,12 @@
               <hr class="border-dashed my-6">
               <!-- /separator -->
           </div>
+          </div>
+            <div v-else>
+                <div class="alert alert-info" v-if="result_flag == 1">
+                    We Currently do not have that user in our database
+                </div>
+            </div>
 
 
 
@@ -101,6 +108,7 @@
             data: {
                 message: 'Hello Vue!',
                 results:[],
+                result_flag:0,
                 dependants:[]
             },
             mounted(){
@@ -119,12 +127,13 @@
 
                     var self = this;
                     $.post(url,{'search':search,'_token':token},function (response) {
-                       console.log(response);
+                       // console.log(response);
+                        self.result_flag = 1;
                         self.results = response;
                     })
                 },
                 userDependants:function (user_id) {
-                    console.log('User id is '+user_id);
+                    // console.log('User id is '+user_id);
                      return this.dependants.filter(function (dependant) {
                         return dependant.user_id == user_id;
                     })

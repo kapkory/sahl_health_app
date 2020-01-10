@@ -62,10 +62,10 @@
                                 @if($institution->discount > 0)
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 border-right">
                                     <div class="listing-detail-body-meta">
-                                        <div class="meta-icon"> <i class="fas fa fa-circle-o"></i></div>
+                                        <div class="meta-icon text-center"> <i style="color: green" class="fas fa-check-circle"></i></div>
                                         <h4 class="meta-lable">
 
-                                                <div class="sticky-badge">Discount {{ $institution->discount }}%</div>
+                                                <div style="color: #234057"> {{ $institution->discount }}%</div>
 
                                         </h4>
                                         <span class="meta-value">Discount</span>

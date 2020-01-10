@@ -85,6 +85,6 @@ class IndexController extends Controller
             $response = $techpitch->execute($message,$address);
         }
 
-        return ['redirect_url'=>'provider'];
+        return ['redirect_url'=>'provider/visits'];
     }
 }

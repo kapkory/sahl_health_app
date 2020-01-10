@@ -273,7 +273,7 @@
             "slug": "institutions",
             "menus": {
                 "label": "Institution",
-                "icon": "list",
+                "icon": "profilepage",
                 "url": "provider/institutions"
             },
             "children": [],
@@ -299,6 +299,22 @@
             "children": [],
             "subs": [
                 "list","confirm-visit","confirm-bill"
+            ],
+            "urls": [
+                "home"
+            ]
+        },
+        {
+            "type": "single",
+            "slug": "visits",
+            "menus": {
+                "label": "Visits",
+                "icon": "list",
+                "url": "provider/visits"
+            },
+            "children": [],
+            "subs": [
+                "list"
             ],
             "urls": [
                 "home"

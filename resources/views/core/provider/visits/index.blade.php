@@ -4,7 +4,7 @@
 
 @section('content')
     @include('common.bootstrap_table_ajax',[
-    'table_headers'=>["user_id"=>'customer',"created_at"=>"visited_on"],
+    'table_headers'=>["user_id"=>'customer',"created_at"=>"visited_on","action"],
     'data_url'=>'provider/visits/list',
     'base_tbl'=>'visits'
     ])

@@ -43,7 +43,7 @@ class IndexController extends Controller
     public function listVisits(){
         $visits = Visit::where([
             ['id','>',0],
-            ['institution_id',auth()->user()->institution_id]
+//            ['institution_id',auth()->user()->institution_id]
         ]);
         if(\request('all'))
             return $visits->get();
@@ -64,8 +64,7 @@ class IndexController extends Controller
             ->addColumn('action',function($visit){
                 $str = '';
                 $json = json_encode($visit);
-                $str.='<a href="#" data-model="'.htmlentities($json, ENT_QUOTES, 'UTF-8').'" onclick="prepareEdit(this,\'visit_modal\');" class="btn badge btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>';
-                $str.='&nbsp;&nbsp;<a href="#" onclick="deleteItem(\''.url(request()->user()->role.'/visits/delete').'\',\''.$visit->id.'\');" class="btn badge btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>';
+                $str.='<a href="'.url("provider/search/".$visit->id).'" class="btn badge btn-info btn-sm"><i class="fa fa-eye"></i> View</a>';
                 return $str;
             })->make();
     }

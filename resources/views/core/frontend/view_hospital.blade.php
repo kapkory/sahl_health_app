@@ -24,7 +24,6 @@
                         <!-- listing detail head start -->
                         <div class="listing-detail-head">
                             <h2 class="listing-detail-head-title">{{ $institution->name }}</h2>
-                            <p class="listing-detail-head-text"><span class="map-icon"><i class="fas fa-map-marker-alt"></i></span>Nairobi, Kenya</p>
                         </div>
                         <div class="listing-detail-body">
                             <div class="row no-gutters">
@@ -54,6 +53,14 @@
                                     </div>
                                 </div>
                                     @endif
+
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 border-right">
+                                    <div class="listing-detail-body-meta">
+                                        <div class="meta-icon"> <i class="fas fa-map"></i></div>
+                                        <h4 class="meta-lable">Nairobi, Kenya</h4>
+                                        <span class="meta-value">Location</span>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>

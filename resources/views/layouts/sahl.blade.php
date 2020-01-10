@@ -107,11 +107,11 @@
 
 
     <div class="footer-dark">
-        <div class="container">
+        <div class="containdder">
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
                     <!-- footer widget  -->
-                    <div class="footer-widget">
+                    <div class="footer-widget pl-2" >
                         <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="spacely realtor directory listing bootstrap template"></div>
                         <p class="footer-widget-text">Sahl health is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
                         <div class="footer-location">

@@ -49,10 +49,10 @@
 {{--                            </p>--}}
                         </div>
                         <div class="col-md-4 pt-md-3 mt-md-3">
-                            <i
-                                class="fa fa-heartbeat text-light fa-5x float-md-right"
-                                aria-hidden="true"
-                            ></i>
+{{--                            <i--}}
+{{--                                class="fa fa-heartbeat text-light fa-5x float-md-right"--}}
+{{--                                aria-hidden="true"--}}
+{{--                            ></i>--}}
                         </div>
                     </div>
                 </div>

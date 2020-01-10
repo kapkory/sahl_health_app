@@ -41,7 +41,7 @@
                 "",
                 "edit",
                 "list",
-                "sale"
+                "services","services/list"
             ],
             "urls": [
                 "admin/settings/institution_levels/",
@@ -52,7 +52,9 @@
                 "admin/settings/organization_type/delete",
                 "admin/settings/identification",
                 "admin/settings/identification/list",
-                "admin/settings/identification/delete"
+                "admin/settings/identification/delete",
+                "admin/settings/services",
+                "admin/settings/services/list"
             ]
         },
         {

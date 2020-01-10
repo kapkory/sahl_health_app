@@ -98,8 +98,9 @@
             },
             "children": [],
 
-            "subs": ["list", "package_category/list","package_category/delete","package_category"],
-            "urls": []
+            "subs": ["list", "package_category/list",
+                "package_category/delete","package_category","mark/active"],
+            "urls": ["admin/packages/mark"]
         },
         {
             "type": "single",

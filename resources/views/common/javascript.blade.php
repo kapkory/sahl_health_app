@@ -538,6 +538,7 @@
         $("#run_action_form").attr('action', url);
 
         $("#run_action_form").attr('action', url);
+        // console.log('url is '+url+' id is '+id)
         if (id) {
             $("#run_action_form").attr('action', url + '/' + id);
         }
@@ -554,11 +555,14 @@
             closeOnConfirm: false,
             closeOnCancel: false
         }, function (isConfirm) {
+
             if (isConfirm) {
+
                 var url = $("#run_action_form").attr('action');
                 var data = $("#run_action_form").serialize();
                 $.post(url, data)
                     .done(function (response) {
+
                         if (response.redirect) {
                             swal("Success!", "Action Completed Successfully", "success");
                             setTimeout(function () {

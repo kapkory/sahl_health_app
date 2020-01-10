@@ -49,7 +49,11 @@ class PackagesController extends Controller
                 $str = '';
                 $json = json_encode($package);
                 $str.='<a href="#" data-model="'.htmlentities($json, ENT_QUOTES, 'UTF-8').'" onclick="prepareEdit(this,\'package_modal\');" class="btn badge btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>';
-                $str.='&nbsp;&nbsp;<a href="#" onclick="deleteItem(\''.url(request()->user()->role.'/packages/delete').'\',\''.$package->id.'\');" class="btn badge btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>';
+                if ($package->status == 0)
+                    $str.='&nbsp;&nbsp;<a href="#" onclick="runPlainRequest(\''.url('admin/packages/'.$package->id.'/mark').'\');" class="btn badge btn-outline-secondary btn-sm"><i class="fa fa-trash"></i> Mark as Inactive</a>';
+                else
+                    $str.='&nbsp;&nbsp;<a href="#" onclick="runPlainRequest(\''.url(request()->user()->role.'/packages/'.$package->id.'/mark').'\');" class="btn badge btn-outline-success btn-sm"><i class="fa fa-check"></i> Mark Active</a>';
+
                 return $str;
             })->make();
     }
@@ -62,5 +66,16 @@ class PackagesController extends Controller
         $package = Package::findOrFail($package_id);
         $package->delete();
         return redirect()->back()->with('notice',['type'=>'success','message'=>'Package deleted successfully']);
+    }
+
+    public function markStatus($id){
+        $package = Package::findOrfail($id);
+        $state = 0;
+        if ($package->status == 0)
+            $state = 1;
+        $package->status = $state;
+        $package->save();
+        return redirect()->back()->with('notice',['type'=>'success','message'=>'Package State has been changed successfully']);
+
     }
 }

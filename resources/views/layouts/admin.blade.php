@@ -71,6 +71,8 @@
     <!-- Load Styles -->
     <link rel="stylesheet" href="{{ url('drift/assets/css/semidark-style-1.min.css') }}">
     <!-- /load styles -->
+    <link rel="stylesheet" href="{{ url('drift/assets/modules/sweetalert/dist/sweetalert.css') }}">
+
 
     <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
     @stack('scripts')
@@ -549,7 +551,8 @@
 </script>
 <!-- masonry script -->
 <script src="{{ url('drift/assets/modules/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
-<script src="{{ url('drift/assets/modules/sweetalert2/dist/sweetalert2.js') }}"></script>
+<script src="{{ url('drift/assets/modules/sweetalert/dist/sweetalert.min.js') }}"></script>
+
 <script src="{{ url('drift/assets/js/functions.js') }}"></script>
 <script src="{{ url('drift/assets/js/customizer.js') }}"></script><!-- Custom JavaScript -->
 <script src="{{ url('drift/assets/js/script.js') }}"></script>

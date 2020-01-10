@@ -1,31 +1,6 @@
 @extends('layouts.sahl')
 @section('content')
-    <style>
-        .bg-dark-myimg{
-            background-image: url("{{ url('frontend/assets/background.jpg') }}");
-        }
-    </style>
-    <div class="container-fluid bg-dark-myimg pb-md-5 mb-md-5 ">
-        <div class="col-md-10 mx-auto">
-            <div class="container py-md-5">
-                <div class="rounded">
-                    <div class="row py-4">
-                        <div class="col-md-8 pt-md-3 mt-md-3">
-                            <h3 class="text-light">
-                                <b>SahlHealth <br>&nbsp;&nbsp;&nbsp; Health Care Service Providers</b>
-                            </h3>
-                        </div>
-                        <div class="col-md-4 pt-md-3 mt-md-3">
-                            <i
-                                class="fa fa-heartbeat text-light fa-5x float-md-right"
-                                aria-hidden="true"
-                            ></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

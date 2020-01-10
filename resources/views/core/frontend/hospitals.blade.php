@@ -36,7 +36,7 @@
                                         @if($hospital->discount > 0)
                                             <div class="listing-badge">Discount {{ $hospital->discount }}%</div>
                                         @endif
-                                        <div class="like-icon"></div>
+                                        <div class="like-icon" style="top:0px"></div>
                                     </div>
                                     <div class="listing-content">
                                         <div class="listing-content-head">

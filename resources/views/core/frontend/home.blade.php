@@ -16,12 +16,6 @@
             right: -2rem;
         }
 
-        .listing-badge{
-            background-color: #313d4f;
-            color: white;
-            top:0px;
-        }
-
         .owl-stage-outer{
            padding-bottom: 0px;
         }

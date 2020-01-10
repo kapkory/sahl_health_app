@@ -37,6 +37,11 @@
                 width: 142.5px!important;
             }
         }
+        .listing-badge{
+            background-color: #313d4f;
+            color: white;
+            top:0px;
+        }
     </style>
 <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6671420.js"></script> <!-- End of HubSpot Embed Code -->

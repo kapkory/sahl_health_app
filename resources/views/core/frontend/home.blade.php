@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="hero-slider-item">
-                            <img style="max-height: 480px;width: 100%" src="{{ url('frontend/assets/images/slider/slider-3.jpg') }}" alt="Sahl" class="img-fluid">
+                            <img style="max-height: 480px;width: 100%" src="{{ url('frontend/assets/images/slider/slider-3.png') }}" alt="Sahl" class="img-fluid">
                         </div>
 
                     </div>

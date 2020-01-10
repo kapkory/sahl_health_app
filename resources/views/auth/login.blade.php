@@ -23,7 +23,7 @@
                 <!-- Brand logo -->
                 <div class="dt-login__logo">
                     <a class="dt-brand__logo-link" href="#">
-                        <img style="width: 180px" class="dt-brand__logo-img" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Health Logo">
+                        <img style="width: 180px" class="dt-brand__logo-img" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="Sahl Health Logo">
                     </a>
                 </div>
                 <!-- /brand logo -->

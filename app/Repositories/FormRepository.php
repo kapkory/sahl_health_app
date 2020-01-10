@@ -41,6 +41,7 @@ class FormRepository
         $selects['from_branch'] = [];
         $selects['to_branch'] = [];
         $selects['inc_type'] = ["amount", "percentage"];
+        $selects['payment_mode'] = ["mpesa", "cash",'bank'];
         $selects['applied_to'] = ["staff", "products"];
 
         $selects_val = [];

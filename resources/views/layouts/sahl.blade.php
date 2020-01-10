@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <nav class="navbar navbar-expand-lg navbar-classic">
-                        <a class="navbar-brand" href="{{ url('/') }}"> <img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Health realtor"></a>
+                        <a class="navbar-brand" href="{{ url('/') }}"> <img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="Sahl Health realtor"></a>
                         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-classic" aria-controls="navbar-classic" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="icon-bar top-bar mt-0"></span>
                             <span class="icon-bar middle-bar"></span>
@@ -93,7 +93,7 @@
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
                     <!-- footer widget  -->
                     <div class="footer-widget">
-                        <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="spacely realtor directory listing bootstrap template"></div>
+                        <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="spacely realtor directory listing bootstrap template"></div>
                         <p class="footer-widget-text">Sahlhealth is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
                         <div class="footer-location">
                             <p class="phone-numbers">+254 769 687 287 / +254 731 434 140</p>

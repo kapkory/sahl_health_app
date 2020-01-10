@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','MemberPayments')
+@section('title','Subscription History')
 
 @section('content')
     @include('common.bootstrap_table_ajax',[

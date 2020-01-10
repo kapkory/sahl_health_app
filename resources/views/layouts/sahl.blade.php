@@ -94,7 +94,7 @@
                     <!-- footer widget  -->
                     <div class="footer-widget">
                         <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="spacely realtor directory listing bootstrap template"></div>
-                        <p class="footer-widget-text">Sahlhealth is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
+                        <p class="footer-widget-text">Sahl health is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
                         <div class="footer-location">
                             <p class="phone-numbers">+254 769 687 287 / +254 731 434 140</p>
                             <p class="address">Address: Sahl Health Limited, Pine Tree Plaza</p>

@@ -70,21 +70,23 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbar-classic">
                             <ul class="navbar-nav ml-auto mt-2 mt-lg-0 mr-3">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="{{ url('/') }}" id="menu-1">
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        Blogs
-                                    </a>
-                                </li>
+{{--                                <li class="nav-item dropdown">--}}
+{{--                                    <a class="nav-link" href="{{ url('/') }}" id="menu-1">--}}
+{{--                                        Home--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('hospitals') }}">
                                         Hospitals
                                     </a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Blogs
+                                    </a>
+                                </li>
+
                             </ul>
                             <div class="header-btn d-xl-block d-lg-none">
 

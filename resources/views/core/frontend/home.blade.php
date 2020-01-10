@@ -15,18 +15,7 @@
         .owl-next {
             right: -2rem;
         }
-        @media only screen and (min-width: 600px) {
-           .institution_image{
-            height: 179px !important;
-            width: 269px!important;
-           }
-        }
-        @media only screen and (max-width: 599px) {
-            .institution_image{
-                height: 95px !important;
-                width: 142.5px!important;
-            }
-        }
+
         .listing-badge{
             background-color: #313d4f;
             color: white;
@@ -227,16 +216,16 @@
     </div>
 
     <div class="space-lg space-md space-xs bg-light rounded">
-    <div class="container">
+    <div class="container" style="background-color: #234057 !important;">
         <div class="row">
             <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
                 <!-- section heading start  -->
                 <div class="section-heading text-center">
-                    <h2 class="section-heading-title">List Your Hospital with Us</h2>
-                    <p class="section-heading-text lead">
+                    <h2 class="section-heading-title" style="color: white">List Your Hospital with Us</h2>
+                    <p class="section-heading-text lead" style="color: white">
                         List your hospital, Insurance Company, Health Care with us and start offering your discount
                     </p>
-                    <a href="{{ url('provider-register') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">List Your Institution</a>
+                    <a href="{{ url('provider-register') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: #F07A3B; color: white">List Your Institution</a>
 
                 </div>
                 <!-- section heading close  -->
@@ -251,9 +240,9 @@
             <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 text-center mb-5 ">
                 <!-- section heading start  -->
                 <div class="section-heading">
-                    <h2 class="section-heading-title">Partner with us </h2>
+                    <h2 class="section-heading-title">Our Partners </h2>
                     <p class="lead">
-                        Market Leaders have already partnered with us, Contact us to get more information on how we can leverage our competencies
+                        Pathcare, Neoscience Africa , Bhub
                     </p>
                 </div>
                 <!-- section heading close  -->

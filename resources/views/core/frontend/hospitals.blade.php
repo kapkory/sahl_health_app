@@ -31,7 +31,7 @@
                                 <div class="listing-block">
                                     <div class="listing-img">
                                         <a href="{{ url('institution/'.$hospital->slug) }}">
-                                            <img src="{{ ($hospital->featured_image) ? url($hospital->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Spacely - Realtor Directory & Listing Bootstrap Template" class="img-fluid"></a>
+                                            <img src="{{ ($hospital->featured_image) ? url($hospital->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="{{ $hospital->name }}" class="img-fluid institution_image"></a>
 
                                         @if($hospital->discount > 0)
                                             <div class="listing-badge">Discount {{ $hospital->discount }}%</div>
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="listing-content">
                                         <div class="listing-content-head">
-                                            <h3 class="listing-content-head-title"> <a href="{{ url('institution/'.$hospital->slug) }}">Heading for Office Space Title</a></h3>
+                                            <h3 class="listing-content-head-title"> <a href="{{ url('institution/'.$hospital->slug) }}">{{ \Illuminate\Support\Str::limit($hospital->name,16,'...') }}</a></h3>
                                             <p class="listing-content-head-text">Nairobi, Kenya</p>
                                         </div>
 

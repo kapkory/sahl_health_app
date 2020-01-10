@@ -24,6 +24,20 @@
 
         <script src="{{ url('sahl/assets') }}/js/owl.carousel.min.js"></script>
     @yield('styles')
+    <style type="text/css">
+        @media only screen and (min-width: 600px) {
+            .institution_image{
+                height: 179px !important;
+                width: 269px!important;
+            }
+        }
+        @media only screen and (max-width: 599px) {
+            .institution_image{
+                height: 95px !important;
+                width: 142.5px!important;
+            }
+        }
+    </style>
 <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6671420.js"></script> <!-- End of HubSpot Embed Code -->
 </head>

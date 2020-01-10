@@ -43,7 +43,7 @@ class IndexController extends Controller
     public function listVisits(){
         $visits = Visit::where([
             ['id','>',0],
-//            ['institution_id',auth()->user()->institution_id]
+            ['institution_id',auth()->user()->institution_id]
         ]);
         if(\request('all'))
             return $visits->get();

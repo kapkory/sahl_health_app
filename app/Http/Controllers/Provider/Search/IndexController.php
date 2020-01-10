@@ -46,7 +46,7 @@ class IndexController extends Controller
         return ['redirect_url'=>url('provider/search/'.$visit->id)];
     }
 
-    public function viewVisit($visit_id){
+    public function viewVisit($visit_id, $dependant_id = null){
         $visit = Visit::findOrFail($visit_id);
         $role = 'Member';
         $name = '';
@@ -82,6 +82,6 @@ class IndexController extends Controller
             $response = $techpitch->execute($message,$address);
         }
 
-        return ['redirect_url'=>'provider/search/'.$visit->id];
+        return ['redirect_url'=>'provider'];
     }
 }

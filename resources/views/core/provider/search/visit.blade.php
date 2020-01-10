@@ -39,7 +39,7 @@
                 $('#calculated_discount').text(calculated_discount);
                 $('#total_discounted_bill').text(payable_bill);
           }
-        })
+        });
 
         @if($visit->amount > 0)
         $('#total_bill').text("{{ $visit->amount }}");

@@ -42,7 +42,7 @@
                       </div>
 
                       <div class="col-md-2">
-                          <button @click="confirmVisit(result.id,'mb')" type="button" name="btn" class="btn btn-outline-primary">Confirm Visit</button>
+                          <button @click="confirmVisit(result.id,'mb',result.id)" type="button" name="btn" class="btn btn-outline-primary">Confirm Visit</button>
                       </div>
                   </div>
 
@@ -74,7 +74,7 @@
                               <td>@{{ dependant.identification_number }}</td>
                               <td>@{{ dependant.relationship_type }}</td>
                               <td>
-                                  <button @click="confirmVisit(dependant.id,'dp')" class="btn badge btn-outline-success">Confirm Visit</button>
+                                  <button @click="confirmVisit(dependant.id,'dp',result.id)" class="btn badge btn-outline-success">Confirm Visit</button>
                               </td>
                           </tr>
                           </tbody>
@@ -138,9 +138,9 @@
                         return dependant.user_id == user_id;
                     })
                 },
-                confirmVisit:function (user_id,type) {
+                confirmVisit:function (user_id,type,member_id) {
                     let url = "{{ url('provider/search/confirm-visit?_token='.csrf_token()) }}";
-                 $.post(url,{'user_id':user_id,'type':type},function (response) {
+                 $.post(url,{'user_id':user_id,'type':type,'member_id':member_id},function (response) {
                   window.location.href= response.redirect_url;
                  })
                 }

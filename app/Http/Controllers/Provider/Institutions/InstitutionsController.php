@@ -41,16 +41,12 @@ class InstitutionsController extends Controller
             $image->move(storage_path() . '/app/public/institutions/images', $name);
             $data['featured_image'] = 'storage/institutions/images/'.$name;
         }
-        if ($data['is_main'] == 'no'){
-            $data['is_branch'] = 1;
-        }
+
 
         $data['organization_type_id'] = $data['organization_type'];
         $data['address_postal_code'] = $data['postal_code'];
         $data['institution_level_id'] = $data['institution_level'];
 
-
-        unset($data['is_main']);
         unset($data['institution_level']);
         unset($data['postal_code']);
         unset($data['organization_type']);

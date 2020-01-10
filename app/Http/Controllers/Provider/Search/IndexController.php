@@ -40,13 +40,16 @@ class IndexController extends Controller
         if (\request('type') =='mb')
         $visit->user_id = \request('user_id');
         else
-            $visit->dependant_id = \request('user_id');
+        {
+            $visit->user_id = \request('member_id');
+            $visit->dependant_id = \request('user_id');//dependant
+        }
         $visit->institution_id = auth()->user()->institution_id;
         $visit->save();
         return ['redirect_url'=>url('provider/search/'.$visit->id)];
     }
 
-    public function viewVisit($visit_id, $dependant_id = null){
+    public function viewVisit($visit_id){
         $visit = Visit::findOrFail($visit_id);
         $role = 'Member';
         $name = '';

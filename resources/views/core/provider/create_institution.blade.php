@@ -62,30 +62,30 @@
                     </div>
                     @csrf
 
-                    <div class="form-row">
-                        <label for="normal-input-3" class="col-md-2 col-sm-3 col-form-label col-form-label-md text-sm-right">
-                            Is Main Branch
-                        </label>
+{{--                    <div class="form-row">--}}
+{{--                        <label for="normal-input-3" class="col-md-2 col-sm-3 col-form-label col-form-label-md text-sm-right">--}}
+{{--                            Is Main Branch--}}
+{{--                        </label>--}}
 
-                        <div class="col-md-10 col-sm-9">
-                            <!-- Radio Button -->
-                            <div class="custom-control custom-radio mb-3">
-                                <input type="radio" id="main_branch" name="is_main" class="custom-control-input" value="yes" checked="checked">
-                                <label class="custom-control-label" for="main_branch">
-                                    Yes</label>
-                            </div>
-                            <!-- /radio button -->
+{{--                        <div class="col-md-10 col-sm-9">--}}
+{{--                            <!-- Radio Button -->--}}
+{{--                            <div class="custom-control custom-radio mb-3">--}}
+{{--                                <input type="radio" id="main_branch" name="is_main" class="custom-control-input" value="yes" checked="checked">--}}
+{{--                                <label class="custom-control-label" for="main_branch">--}}
+{{--                                    Yes</label>--}}
+{{--                            </div>--}}
+{{--                            <!-- /radio button -->--}}
 
-                            <!-- Radio Button -->
-                            <div class="custom-control custom-radio mb-3">
-                                <input type="radio" id="not_main_branch" name="is_main" value="no" class="custom-control-input">
-                                <label class="custom-control-label" for="not_main_branch">
-                                    No</label>
-                            </div>
-                            <!-- /radio button -->
+{{--                            <!-- Radio Button -->--}}
+{{--                            <div class="custom-control custom-radio mb-3">--}}
+{{--                                <input type="radio" id="not_main_branch" name="is_main" value="no" class="custom-control-input">--}}
+{{--                                <label class="custom-control-label" for="not_main_branch">--}}
+{{--                                    No</label>--}}
+{{--                            </div>--}}
+{{--                            <!-- /radio button -->--}}
 
-                        </div>
-                    </div>
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <input type="hidden" name="form_model" value="{{ \App\Models\Core\Institution::class }}">
 

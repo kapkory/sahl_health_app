@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Core\Institution;
+use App\Models\Core\Visit;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,5 +48,14 @@ class User extends Authenticatable
 
     public function institutions(){
         return $this->hasMany(Institution::class);
+    }
+
+    public function visits(){
+        return $this->hasMany(Visit::class);
+    }
+
+    public function getInstitutionName(){
+        $institution = Institution::where('user_id',$this->id)->first();
+        return $institution->name;
     }
 }

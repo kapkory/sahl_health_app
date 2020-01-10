@@ -29,9 +29,7 @@
                             <div class="row no-gutters">
                                 <div class="post-img">
                                     <img src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="{{ $institution->name }}" class="img-fluid">
-                                   @if($institution->discount > 0)
-                                    <div class="sticky-badge">Discount {{ $institution->discount }}%</div>
-                                   @endif
+
                                 </div>
                             </div>
                         </div>
@@ -61,6 +59,19 @@
                                         <span class="meta-value">Location</span>
                                     </div>
                                 </div>
+                                @if($institution->discount > 0)
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 border-right">
+                                    <div class="listing-detail-body-meta">
+                                        <div class="meta-icon"> <i class="fas fa fa-circle-o"></i></div>
+                                        <h4 class="meta-lable">
+
+                                                <div class="sticky-badge">Discount {{ $institution->discount }}%</div>
+
+                                        </h4>
+                                        <span class="meta-value">Discount</span>
+                                    </div>
+                                </div>
+                                @endif
 
                             </div>
                         </div>

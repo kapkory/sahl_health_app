@@ -202,7 +202,7 @@
             "type": "single",
             "slug": "payments",
             "menus": {
-                "label": "Subscription History",
+                "label": "Payment History",
                 "icon": "list",
                 "url": "member/payments"
             },

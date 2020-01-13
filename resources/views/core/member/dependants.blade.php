@@ -37,18 +37,7 @@
             <div class="container py-md-5">
                 <div class="rounded">
                     <div class="row py-4">
-                        <div class="col-md-8 pt-md-3 mt-md-3">
-                            <h3 class="text-light">
-                                <b>ACCESS AFFORDABLE HEALTHCARE <br>&nbsp;&nbsp;&nbsp; ANYWHERE, ANYTIME</b>
-                            </h3>
-                            <p class="text-light pt-3 mt-3 lead">
-                                Save up to <b style="font-size: 26px">20%</b> at the best <br>Healthcare providers near
-                                you!
-                            </p>
-                        </div>
-                        <div class="col-md-4 pt-md-3 mt-md-3">
-                            <i class="fa fa-heartbeat text-light fa-5x float-md-right" aria-hidden="true"></i>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -91,7 +80,7 @@
                             <div class="row">
 
                                 <div class="col p-2 my-2 mx-1 text-center">
-                                    <input type="button" onclick="return nominateDependant()" value="Continue" style="background-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light submit-btn"/>
+                                    <input type="button" onclick="return nominateDependant()" value="Continue" style="background-color: orangered;border-color: orangered; color: white !important;" class="btn btn-warning pl-4 pr-4 text-light submit-btn"/>
                                 </div>
                             </div>
                         </div>

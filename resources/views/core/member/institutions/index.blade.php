@@ -15,7 +15,7 @@
                         <!-- Slider -->
                         <div class="dt-slider">
                             <!-- Slider Header -->
-                            <div class="dt-slider__header">
+                            <div class="dt-slider__header" style="padding: 2px !important;">
                                 <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
 
                                 @if(App\User::hasFavoriteInstitution($institution->id,auth()->id()))

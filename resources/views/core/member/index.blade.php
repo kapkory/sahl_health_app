@@ -61,7 +61,7 @@
                                 <div class="dt-slider">
 
                                     <!-- Slider Header -->
-                                    <div class="dt-slider__header" style="padding: 2px">
+                                    <div class="dt-slider__header" style="padding: 2px !important;">
                                         <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
                                     </div>
                                     <!-- /slider header -->

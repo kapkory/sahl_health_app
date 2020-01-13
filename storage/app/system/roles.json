@@ -170,7 +170,7 @@
             },
             "children": [],
             "subs": [
-                "stats/list"
+                "favorite"
             ],
             "urls": [
                 "home",

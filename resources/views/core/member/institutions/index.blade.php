@@ -7,17 +7,24 @@
     @isset($institutions)
         @foreach($institutions as $institution)
             <!-- Grid Item -->
-                <a class="col-xl-3 col-md-4 col-sm-6 col-12" href="{{ url('institution/'.$institution->slug) }}">
+                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
 
                     <!-- Card -->
                     <div class="card">
 
                         <!-- Slider -->
                         <div class="dt-slider">
-
                             <!-- Slider Header -->
                             <div class="dt-slider__header">
                                 <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
+
+                                <div class="dt-checkbox dt-checkbox-icon dt-checkbox-only">
+                                    <input id="checkbox-1" type="checkbox" onclick="runCustomPlainRequest('{{ url("member/institutions/favorite/".$institution->id) }}',null,'Mark {{ $institution->name }} Hospital as Favorite Hospital')">
+                                    <label class="font-weight-light dt-checkbox-content" for="checkbox-1">
+                                        <span class="unchecked"><i class="icon icon-heart-o text-white"></i></span>
+                                        <span class="checked"><i class="icon icon-heart text-white"></i></span>
+                                    </label>
+                                </div>
                             </div>
                             <!-- /slider header -->
 
@@ -41,7 +48,7 @@
 
                     </div>
                     <!-- /card -->
-                </a>
+                </div>
                 <!-- /grid item -->
         @endforeach
     @endisset

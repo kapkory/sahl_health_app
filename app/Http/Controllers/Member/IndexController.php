@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\FavoriteInstitution;
 use App\Models\Core\Institution;
 use App\Models\Core\MemberPackage;
 use App\Models\Core\MemberPayment;
@@ -17,12 +18,18 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        $institutions = Institution::where('organization_type_id',1)->inRandomOrder()->limit(4)->get();
+//        $institutions = Institution::where('organization_type_id',1)->inRandomOrder()->limit(4)->get();
+        $favorite_institutions = FavoriteInstitution::join('institutions','favorite_institutions.institution_id','=','institutions.id')
+            ->where('favorite_institutions.user_id',auth()->id())
+            ->where('institutions.organization_type_id',1)
+            ->select('institutions.*')
+            ->limit(3)
+            ->get();
 
         $memberPackage = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
         $data = [];
         $data['visits'] = Visit::where('user_id',auth()->id())->count();
-        return view($this->folder.'index',compact('memberPackage','institutions','data'));
+        return view($this->folder.'index',compact('memberPackage','favorite_institutions','data'));
     }
 
     public function nominate(){

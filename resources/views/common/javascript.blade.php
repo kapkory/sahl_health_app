@@ -603,12 +603,12 @@
 
 
         swal({
-            title: "Are you sure?",
+            title: '',
             text: message,
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#32c787",
-            confirmButtonText: "Yes, Proceed!",
+            confirmButtonText: "Yes",
             cancelButtonText: "No, cancel",
             closeOnConfirm: false,
             closeOnCancel: false
@@ -634,7 +634,7 @@
                     });
 
             } else {
-                swal("Cancelled", "Action Cancelled by user", "error");
+                swal("Cancelled", "Cancelled", "error");
             }
         });
     }

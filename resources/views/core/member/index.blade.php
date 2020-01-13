@@ -45,9 +45,12 @@
        </div>
 
             <div class="card">
+                <div class="card-title pl-4 pt-3">
+                    Favorite Hospitals
+                </div>
                 <div class="row mt-3">
-            @isset($institutions)
-                @foreach($institutions as $institution)
+            @if(count($favorite_institutions) > 0)
+                @foreach($favorite_institutions as $institution)
                     <!-- Grid Item -->
                         <a class="col-xl-3 col-md-4 col-sm-6 col-12" href="{{ url('institution/'.$institution->slug) }}">
 
@@ -62,6 +65,7 @@
                                         <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
                                     </div>
                                     <!-- /slider header -->
+
 
                                     <div class="owl-carousel owl-theme">
                                         <img class="card-img-top" style="max-height: 110.25px" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
@@ -86,7 +90,14 @@
                         </a>
                         <!-- /grid item -->
                     @endforeach
-                @endisset
+
+                @else
+                <div class="col-12 ">
+                    <p class="text-info pl-3" style="font-size: 14px">
+                        You have not selected a favourite Hospital, Proceed to  <a class="btn badge btn-outline-secondary" href="{{ url('member/institutions') }}">Hospitals </a> and Click on the <i class="icon icon-heart-o text-black-50 font-weight-600"></i> (heart) button to Select
+                    </p>
+                </div>
+                @endif
             </div>
 
         </div>

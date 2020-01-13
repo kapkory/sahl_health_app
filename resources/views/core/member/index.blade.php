@@ -77,10 +77,10 @@
                                 <!-- Card Body -->
                                 <div class="card-body" style="padding: 3px">
                                     <!-- Card Title-->
+                                    <span>{{ @$institution->institutionLevel->name }}</span>
+
                                     <h3>{{ $institution->name }}</h3>
                                     <!-- Card Title-->
-
-                                    <h5 class="card-subtitle">{{ @$institution->institutionLevel->name }}</h5>
 
                                 </div>
                                 <!-- /card body -->

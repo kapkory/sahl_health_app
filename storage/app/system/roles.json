@@ -216,6 +216,22 @@
             ]
         },
         {
+            "type": "single",
+            "slug": "search",
+            "menus": {
+                "label": "Visits History",
+                "icon": "searchpage",
+                "url": "member/visits"
+            },
+            "children": [],
+            "subs": [
+                "list","visit"
+            ],
+            "urls": [
+                "home"
+            ]
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "make_sales",

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Core\FavoriteInstitution;
 use App\Models\Core\Institution;
 use App\Models\Core\Visit;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -57,5 +58,18 @@ class User extends Authenticatable
     public function getInstitutionName(){
         $institution = Institution::where('user_id',$this->id)->first();
         return $institution->name;
+    }
+
+    public static function hasFavoriteInstitution($institution_id,$user_id){
+        $count  = FavoriteInstitution::where('user_id',$user_id)->count();
+        if ($count >= 3)
+            return false;
+
+        $favorite = FavoriteInstitution::where('institution_id',$institution_id)
+            ->where('user_id',$user_id)->get();
+        if ($favorite->isEmpty())
+            return true;
+
+        return false;
     }
 }

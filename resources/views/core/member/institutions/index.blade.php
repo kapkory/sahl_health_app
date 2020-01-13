@@ -18,6 +18,7 @@
                             <div class="dt-slider__header">
                                 <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
 
+                                @if(App\User::hasFavoriteInstitution($institution->id,auth()->id()))
                                 <div class="dt-checkbox dt-checkbox-icon dt-checkbox-only">
                                     <input id="checkbox-1" type="checkbox" onclick="runCustomPlainRequest('{{ url("member/institutions/favorite/".$institution->id) }}',null,'Mark {{ $institution->name }} Hospital as Favorite Hospital')">
                                     <label class="font-weight-light dt-checkbox-content" for="checkbox-1">
@@ -25,6 +26,7 @@
                                         <span class="checked"><i class="icon icon-heart text-white"></i></span>
                                     </label>
                                 </div>
+                                    @endif
                             </div>
                             <!-- /slider header -->
 

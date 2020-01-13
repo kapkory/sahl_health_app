@@ -6,7 +6,7 @@
    ])
 
 @include('common.bootstrap_table_ajax',[
-  'table_headers'=>["id","services.name"=>'service',"cost","action"],
+  'table_headers'=>["id","services.name"=>'service',"cost"],
   'data_url'=>'provider/institutions/services/list',
   'base_tbl'=>'institution_services'
   ])

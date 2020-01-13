@@ -92,7 +92,7 @@
                         <!-- listing widget close -->
                             @else
                                 <div class="listing-sidebar-widget">
-                                    <a href="mailto:{{ $institution->user->email }}" class="btn btn-primary btn-block">Email Institution</a>
+                                    <a href="mailto:{{ $institution->user->email }}" class="btn btn-primary btn-block">Email Institution </a>
                                 </div>
                             @endif
 
@@ -108,21 +108,18 @@
                             <!-- listing detail close -->
                     @endif
 
+                    @if(count($institution->institutionServices) > 0)
                     <!-- listing detail start -->
                     <div class="listing-detail-card amenities" id="amenities">
                         <h4 class="listing-detail-card-title">Services</h4>
                         <ul class="list-inline">
-                            <li class="list-inline-item">WiFi</li>
-                            <li class="list-inline-item">Parking</li>
-                            <li class="list-inline-item">24/7 access</li>
-                            <li class="list-inline-item">Kitchen</li>
-                            <li class="list-inline-item">Phone</li>
-                            <li class="list-inline-item">Receptionist</li>
-                            <li class="list-inline-item">Scan</li>
-                            <li class="list-inline-item">Tea & coffee</li>
+                            @foreach($institution->institutionServices as $instituionService)
+                            <li>{{ @$instituionService->service->name }}</li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- listing detail close -->
+                        @endif
                 </div>
             </div>
         </div>

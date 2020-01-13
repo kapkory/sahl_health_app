@@ -3,8 +3,16 @@
 @section('content')
         @include('common.auto_tabs',[
         'tabs_folder'=>'core.provider.institutions.institution.tabs',
-        'tabs'=> ['institution','contacts',"images"],
+        'tabs'=> ['institution','services','contacts',"images"],
         'base_url'=>'provider/institutions/institution/'.$institution->id
        ])
-
+        @push('footer-scripts')
+            <script>
+                $(function () {
+                    autoFillSelect('services','{{ url("api/services/".$institution->id) }}');
+                })
+            </script>
+        @endpush
     @endsection
+
+

@@ -281,6 +281,8 @@
                 "institutions",
                 "institution",
                 "list",
+                "services",
+                "services/list",
                 "contacts","contacts/list"
             ],
             "urls": [
@@ -289,7 +291,7 @@
             ]
         },
         {
-            "type": "single",
+            "type": "hidden",
             "slug": "search",
             "menus": {
                 "label": "Search",

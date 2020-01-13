@@ -131,7 +131,7 @@ class IndexController extends Controller
             $address[]  = preg_replace('/^\\D*/', '', $user->phone_number);
             $message = 'Hi '.$user->name.', thank you for the signing up, complete your registration to save more when seeking medical service through your sahl Membership ';
             $techpitch = new TechpitMessageRepository();
-            $response = $techpitch->execute($message,$address);
+            $response = @$techpitch->execute($message,$address);
         }
 
         return ['redirect_url'=>url('member/nominate-dependant')];

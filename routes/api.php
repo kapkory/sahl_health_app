@@ -22,3 +22,8 @@ Route::any('reference','Api\ApiController@mpesaCallback');
 
 
 Route::get('vars','Api\VariablesController@listVariables');
+
+
+Route::get('services/{institution_id}','Api\ProviderController@listServices');
+
+

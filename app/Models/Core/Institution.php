@@ -19,4 +19,7 @@ class Institution extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function institutionServices(){
+        return $this->hasMany(InstitutionService::class);
+    }
 }

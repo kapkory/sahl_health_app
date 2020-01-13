@@ -45,6 +45,15 @@ class PaymentController extends Controller
         if(\request('all'))
             return $memberpayments->get();
         return SearchRepo::of($memberpayments)
+            ->addColumn('status',function ($memberpayment){
+                if ($memberpayment->status == 2)
+                    return '<p class="mb-1 h3 text-success font-weight-500">Paid</p>';
+                elseif($memberpayment->status == 3)
+                    return '<p class="mb-1 h3 text-sky-blue font-weight-500">Failed</p>';
+                else
+                    return '<p class="mb-1 h3 text-secondary font-weight-500">Processing</p>';
+
+            })
             ->addColumn('action',function($memberpayment){
                 $str = '';
                 $json = json_encode($memberpayment);

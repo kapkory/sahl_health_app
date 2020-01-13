@@ -4,7 +4,7 @@
     <!-- Grid Item -->
     <div class="col-xl-12">
        <div class="row">
-           <div class="col-md-8">
+           <div class="col-md-8 pb-3">
                @if($memberPackage)
                    <h3>Current Plan: <span class="text-success">{{ @$memberPackage->package->name }}</span></h3>
                    @if($memberPackage->ends_at)
@@ -20,80 +20,56 @@
            </div>
 
            <div class="col-md-4">
-{{--               @if($memberPackage)--}}
-{{--                   @if(!$memberPackage->ends_at)--}}
-{{--                   <div class="jumbotron">--}}
-{{--                       <div class="p-2">--}}
-{{--                           <p>--}}
-{{--                               We have received your order for  <strong>{{  }}</strong>--}}
-{{--                               Please pay the amount following these instructions                            </p>--}}
-{{--                           <ul>--}}
-{{--                               <li>Go to MPESA paybill</li>--}}
-{{--                               <li>Enter Paybill as <strong>698 489</strong></li>--}}
-{{--                               <li>Enter Account name--}}
-{{--                                   <strong>Universal Plus</strong></li>--}}
-{{--                               <li>Enter Amount as <strong>500.00 </strong></li>--}}
-{{--                               <li>Enter your MPESA pin</li>--}}
-{{--                           </ul>--}}
-{{--                       </div>--}}
-{{--                   </div>--}}
-{{--                       @endif--}}
-{{--                   @endif--}}
+
            </div>
 
        </div>
 
-        <div class="row mt-3">
-        @isset($institutions)
-            @foreach($institutions as $institution)
-                <!-- Grid Item -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <div class="row mt-3">
+            @isset($institutions)
+                @foreach($institutions as $institution)
+                    <!-- Grid Item -->
+                        <a class="col-xl-3 col-md-4 col-sm-6 col-12" href="{{ url('institution/'.$institution->slug) }}">
 
-                        <!-- Card -->
-                        <div class="card">
+                            <!-- Card -->
+                            <div class="card">
 
-                            <!-- Slider -->
-                            <div class="dt-slider">
+                                <!-- Slider -->
+                                <div class="dt-slider">
 
-                                <!-- Slider Header -->
-                                <div class="dt-slider__header">
-                                    <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
+                                    <!-- Slider Header -->
+                                    <div class="dt-slider__header">
+                                        <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
+                                    </div>
+                                    <!-- /slider header -->
+
+                                    <div class="owl-carousel owl-theme">
+                                        <img class="card-img-top" style="max-height: 110.25px" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
+                                    </div>
+
                                 </div>
-                                <!-- /slider header -->
+                                <!-- /slider -->
 
-                                <div class="owl-carousel owl-theme">
-                                    <img class="card-img-top" style="max-height: 250px" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
-                                    {{--                    <img class="card-img-top" src="assets/images/grid/living-room-6.jpeg"--}}
-                                    {{--                         alt="Living Room">--}}
-                                    {{--                    <img class="card-img-top" src="assets/images/grid/bedroom-6.jpeg" alt="Bedroom">--}}
+                                <!-- Card Body -->
+                                <div class="card-body" style="padding: 3px">
+                                    <!-- Card Title-->
+                                    <h3>{{ $institution->name }}</h3>
+                                    <!-- Card Title-->
+
+                                    <h5 class="card-subtitle">{{ @$institution->institutionLevel->name }}</h5>
+
                                 </div>
+                                <!-- /card body -->
 
                             </div>
-                            <!-- /slider -->
+                            <!-- /card -->
+                        </a>
+                        <!-- /grid item -->
+                    @endforeach
+                @endisset
+            </div>
 
-                            <!-- Card Body -->
-                            <div class="card-body">
-                                <!-- Card Title-->
-                                <h3 class="card-title">{{ $institution->name }}</h3>
-                                <!-- Card Title-->
-
-                                <h5 class="card-subtitle">{{ @$institution->institutionLevel->name }}</h5>
-
-                                <!-- card Link -->
-                                <a class="card-link" href="javascript:void(0)">
-                                    Check Detail <i class="icon icon-double-arrow-right"></i>
-                                </a>
-                                <!-- card Link -->
-
-                            </div>
-                            <!-- /card body -->
-
-                        </div>
-                        <!-- /card -->
-                    </div>
-                    <!-- /grid item -->
-                @endforeach
-            @endisset
         </div>
 
     </div>

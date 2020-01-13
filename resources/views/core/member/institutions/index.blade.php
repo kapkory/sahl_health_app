@@ -47,6 +47,4 @@
     @endisset
     </div>
 
-
-
     @endsection

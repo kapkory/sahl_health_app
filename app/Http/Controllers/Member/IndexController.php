@@ -8,6 +8,7 @@ use App\Models\Core\MemberPackage;
 use App\Models\Core\MemberPayment;
 use App\Models\Core\Package;
 use App\Models\Core\Profile;
+use App\Models\Core\Visit;
 use App\Repositories\MpesaRepository;
 use App\Repositories\TechpitMessageRepository;
 use Carbon\Carbon;
@@ -19,8 +20,9 @@ class IndexController extends Controller
         $institutions = Institution::where('organization_type_id',1)->inRandomOrder()->limit(4)->get();
 
         $memberPackage = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
-
-        return view($this->folder.'index',compact('memberPackage','institutions'));
+        $data = [];
+        $data['visits'] = Visit::where('user_id',auth()->id())->count();
+        return view($this->folder.'index',compact('memberPackage','institutions','data'));
     }
 
     public function nominate(){

@@ -4,7 +4,8 @@
     <!-- Grid Item -->
     <div class="col-xl-12">
        <div class="row">
-           <div class="col-md-8 pb-3">
+           <div class="col-md-4">
+               <div class="dt-card p-2">
                @if($memberPackage)
                    <h3>Current Plan: <span class="text-success">{{ @$memberPackage->package->name }}</span></h3>
                    @if($memberPackage->ends_at)
@@ -17,10 +18,28 @@
                @else
                    <a class="btn btn-primary btn-sm rounded-0" style="font-size: 13px" href="{{ url('complete-registration?type=email') }}">Choose a Membership Package</a>
                @endif
+               </div>
            </div>
 
-           <div class="col-md-4">
+           <div class="col-md-3">
+               <div class="dt-card">
 
+                   <!-- Card Body -->
+                   <div class="dt-card__body px-5 py-4">
+                       <h6 class="text-body text-uppercase mb-2">Hospital Visits</h6>
+                       <div class="d-flex align-items-baseline mb-4">
+                           <span class="display-4 text-center font-weight-500 text-dark ">{{ $data['visits'] }} visit(s)</span>
+                       </div>
+
+                       <div class="dt-indicator-item__info mb-2" data-fill="100" data-max="100">
+                           <div class="dt-indicator-item__bar">
+                               <div class="dt-indicator-item__fill fill-pointer bg-primary" style="width: 100%;"></div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- /bard body -->
+
+               </div>
            </div>
 
        </div>

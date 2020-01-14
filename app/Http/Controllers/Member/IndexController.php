@@ -14,6 +14,7 @@ use App\Repositories\MpesaRepository;
 use App\Repositories\TechpitMessageRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -29,6 +30,17 @@ class IndexController extends Controller
         $memberPackage = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
         $data = [];
         $data['visits'] = Visit::where('user_id',auth()->id())->count();
+
+        $data['savings'] = 0;
+        if ($data['visits'] > 0){
+            $savings = Visit::join('institutions','institutions.id','=','visits.institution_id')
+                ->where([
+                    ['visits.user_id',auth()->id()]
+                ])->select(DB::raw('sum(visits.amount *institutions.discount) as savings'))
+                ->first();
+            $data['savings'] = $savings->savings / 100;
+        }
+
         return view($this->folder.'index',compact('memberPackage','favorite_institutions','data'));
     }
 

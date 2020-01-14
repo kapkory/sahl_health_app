@@ -22,4 +22,8 @@ class Institution extends Model
     public function institutionServices(){
         return $this->hasMany(InstitutionService::class);
     }
+
+    public function visits(){
+        return $this->hasMany(Visit::class);
+    }
 }

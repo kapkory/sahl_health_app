@@ -1,24 +1,30 @@
 @extends('layouts.admin')
+@section('title','')
 
 @section('content')
     <!-- Grid Item -->
     <div class="col-xl-12">
        <div class="row">
-           <div class="col-md-4">
-               <div class="dt-card p-2">
-               @if($memberPackage)
-                   <h3>Current Plan: <span class="text-success">{{ @$memberPackage->package->name }}</span></h3>
-                   @if($memberPackage->ends_at)
-                       Expires on {{ $memberPackage->ends_at }}
-                   @else
-                       Status: <span class="text-danger h4">Unpaid</span><br>
-                       <a class="btn btn-info btn-sm rounded-0" style="font-size: 13px" href="{{ url('member/payment') }}">Pay <b>KES {{ $memberPackage->amount }}</b> for your Package</a>
-
-                   @endif
-               @else
-                   <a class="btn btn-primary btn-sm rounded-0" style="font-size: 13px" href="{{ url('complete-registration?type=email') }}">Choose a Membership Package</a>
-               @endif
+           <div class="col-md-3 col-6">
+               <!-- Card -->
+               <div class="dt-card">
+                   <!-- Card Body -->
+                   <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
+                       <span class="badge badge-secondary badge-top-right">Savings</span>
+                       <!-- Media -->
+                       <div class="media">
+                           <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i>
+                           <!-- Media Body -->
+                           <div class="media-body">
+                               <p class="mb-1 h1">{{ @number_format($data['savings'],2) }}</p>
+                               <span class="d-block text-light-gray">Ksh</span>
+                           </div><!-- /media body -->
+                       </div>
+                       <!-- /media -->
+                   </div>
+                   <!-- /card body -->
                </div>
+               <!-- /card -->
            </div>
 
            <div class="col-md-3">
@@ -41,6 +47,27 @@
 
                </div>
            </div>
+
+
+           <div class="col-md-4">
+               <div class="dt-card p-2">
+               @if($memberPackage)
+                   <h3>Current Plan: <span class="text-success">{{ @$memberPackage->package->name }}</span></h3>
+                   @if($memberPackage->ends_at)
+                       Expires on {{ $memberPackage->ends_at }}
+                   @else
+
+                       <h4> Status:<span class="text-danger h4">  Unpaid</span></h4>
+                       <a class="btn btn-info btn-sm rounded-0" style="font-size: 13px" href="{{ url('member/payment') }}">Pay <b>KES {{ $memberPackage->amount }}</b> for your Package</a>
+
+                   @endif
+               @else
+                   <a class="btn btn-primary btn-sm rounded-0" style="font-size: 13px" href="{{ url('complete-registration?type=email') }}">Choose a Membership Package</a>
+               @endif
+               </div>
+           </div>
+
+
 
        </div>
 

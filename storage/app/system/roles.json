@@ -80,7 +80,7 @@
             "menus": {
                 "label": "Institutions",
                 "url": "admin/institutions",
-                "icon": "basic-components"
+                "icon": "widgets"
             },
             "children": [],
 
@@ -109,12 +109,28 @@
             "menus": {
                 "label": "Payments",
                 "url": "admin/payments",
-                "icon": "basic-components"
+                "icon": "revenue-new"
             },
             "children": [],
 
             "subs": ["list", "package_category/list","package_category/delete","package_category"],
             "urls": []
+        },
+        {
+            "type": "single",
+            "slug": "visits",
+            "menus": {
+                "label": "Visits",
+                "icon": "list",
+                "url": "admin/visits"
+            },
+            "children": [],
+            "subs": [
+                "list","visit"
+            ],
+            "urls": [
+                "home"
+            ]
         },
         {
             "type": "hidden",

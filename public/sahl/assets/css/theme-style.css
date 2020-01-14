@@ -12581,10 +12581,10 @@ a.text-dark:focus {
      footer-dark
      -----------------------------*/
 .footer-dark {
-    background-color: #242530;
+    background-color: #335062;
     border-radius: 6px;
     padding: 30px 0px 0px 0px;
-    color: #7f8299;
+    color: white;
     font-size: 15px;
     line-height: 26px;
 }
@@ -12968,7 +12968,7 @@ a.text-dark:focus {
     font-weight: 900;
     padding-right: 8px;
     font-size: 10px;
-    color: #cdcdd3;
+    color: white;
 }
 
 .footer-light .footer-widget .footer-links ul li:hover:before {
@@ -12989,7 +12989,7 @@ a.text-dark:focus {
 
 .footer-light .tiny-footer {
     border-radius: 0px 0px 10px 10px;
-    background-color: #f1f1f8;
+    background-color: white;
     padding: 20px 0px;
     margin-top: 100px;
     line-height: 1;

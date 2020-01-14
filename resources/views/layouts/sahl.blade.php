@@ -109,16 +109,16 @@
 
 
     <div class="footer-dark">
-        <div class="containdder">
+        <div class="containdder" >
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
                     <!-- footer widget  -->
-                    <div class="footer-widget pl-2" >
+                    <div class="footer-widget pl-2" style="color: white">
                         <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="spacely realtor directory listing bootstrap template"></div>
-                        <p class="footer-widget-text">Sahl health is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
+                        <p class="footer-widget-text" style="color: white">Sahl health is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
                         <div class="footer-location">
-                            <p class="phone-numbers">+254 769 687 287 / +254 731 434 140</p>
-                            <p class="address">Address: Sahl Health Limited, Pine Tree Plaza</p>
+                            <p class="phone-numbers" style="color: white">+254 769 687 287 / +254 731 434 140</p>
+                            <p class="address" style="color: white">Address: Sahl Health Limited, Pine Tree Plaza</p>
                         </div>
 
                     </div>
@@ -128,10 +128,10 @@
                     <div class="footer-widget">
                         <h3 class="footer-widget-title">Legal use</h3>
                         <div class="footer-links">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Advertising Policy</a></li>
+                            <ul class="list-unstyled" style="color: white">
+                                <li><a href="#" style="color: white">Privacy Policy</a></li>
+                                <li><a href="#" style="color: white">Terms of Use</a></li>
+                                <li><a href="#" style="color: white">Advertising Policy</a></li>
 
                             </ul>
                         </div>
@@ -142,9 +142,9 @@
                     <div class="footer-widget">
                         <h3 class="footer-widget-title">Company</h3>
                         <div class="footer-links">
-                            <ul class="list-unstyled">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Careers</a></li>
+                            <ul class="list-unstyled" >
+                                <li><a style="color: white" href="#">About us</a></li>
+                                <li><a style="color: white" href="#">Careers</a></li>
 
                             </ul>
                         </div>

@@ -76,6 +76,9 @@
 
     <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
     @stack('scripts')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 </head>
 <body class="dt-sidebar--fixed dt-header--fixed" style="overflow-y: scroll !important;">
 

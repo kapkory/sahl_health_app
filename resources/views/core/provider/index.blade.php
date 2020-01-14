@@ -45,7 +45,7 @@
 
                     <!-- Card Body -->
                     <div class="dt-card__body px-5 py-4">
-                        <span class="badge badge-info badge-top-right">Hospital Visits</span>                        <div class="d-flex align-items-baseline mb-4">
+                        <span class="badge badge-success badge-top-right">Hospital Visits</span>                        <div class="d-flex align-items-baseline mb-4">
                             <span class="display-4 text-center font-weight-500 text-dark ">{{ $data['visits'] }} visit(s)</span>
                         </div>
 
@@ -53,15 +53,30 @@
                             <div class="dt-indicator-item__bar">
                                 <div class="dt-indicator-item__fill fill-pointer bg-primary" style="width: 100%;"></div>
                             </div>
-                            <span class="d-block text-light-gray">Ksh</span>
+
                         </div>
                     </div>
                     <!-- /bard body -->
 
                 </div>
             </a>
+
+
+            <div class="col-md-3 col-6"><!-- Card -->
+                <div class="dt-card"><!-- Card Body -->
+                    <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
+                     <button href="#refer_member"  data-toggle="modal"  class="btn btn-outline-info">Refer Member</button>
+                    </div><!-- /card body -->
+                </div><!-- /card -->
+            </div>
         </div>
     </div>
+
+    @include('common.auto_modal',[
+    'modal_id'=>'refer_member',
+    'modal_title'=>'Refer Member',
+    'modal_content'=>Form::autoForm(["first_name","last_name",'phone','email',"form_model"=>\App\User::class],"provider/refer-member")
+])
     <!-- Card -->
     <div class="dt-card" id="search">
 

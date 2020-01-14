@@ -48,14 +48,21 @@ class IndexController extends Controller
      * return visit values
      */
     public function listVisits(){
-        $visits = Visit::where([
-            ['user_id',auth()->id()]
-        ]);
+        $visits = Visit::join('institutions','institutions.id','=','visits.institution_id')
+        ->where([
+            ['visits.user_id',auth()->id()]
+        ])->select('visits.*','institutions.name as institution','institutions.discount');
         if(\request('all'))
             return $visits->get();
         return SearchRepo::of($visits)
+            ->addColumn('amount',function ($visit){
+                $discount = ($visit->amount * $visit->discount) /100;
+                $paid = $visit->amount - $discount;
+                return '<div><span>Paid: <b class="text-indigo">'.$paid.'</b></span><br>
+                         <span>Saved: <b class="text-success">'.$discount.'</b></span></div>';
+            })
             ->addColumn('customer',function ($visit){
-                $name = 'Me';
+                $name = auth()->user()->name;
                 if ($visit->dependant_id){
                     $dependant = Dependant::findOrFail($visit->dependant_id);
                     $name = 'Dependant: '.$dependant->first_name.' '.$dependant->last_name;

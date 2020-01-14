@@ -27,7 +27,7 @@
                <!-- /card -->
            </div>
 
-           <div class="col-md-3">
+           <a href="{{ url('member/visits') }}" class="col-md-3">
                <div class="dt-card">
 
                    <!-- Card Body -->
@@ -46,7 +46,7 @@
                    <!-- /bard body -->
 
                </div>
-           </div>
+           </a>
 
 
            <div class="col-md-4">

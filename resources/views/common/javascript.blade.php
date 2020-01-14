@@ -588,6 +588,44 @@
             }
         });
     }
+    function runJavascriptPlainRequest(url,data,message) {
+        swal({
+            title: '',
+            text: message,
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#32c787",
+            confirmButtonText: "Yes",
+            cancelButtonText: "No, cancel",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function (isConfirm) {
+            if (isConfirm) {
+                $.post(url, data)
+
+                    .done(function (response) {
+                        swal(response.title, response.message, response.type);
+                        setTimeout(function () {
+                            ajaxLoad(response.redirect);
+                        }, 1300);
+                    })
+                    .fail(function (xhr, status, response) {
+                        if (response == 'Not Acceptable') {
+                            swal('Error!', xhr.responseText, 'error');
+                        } else {
+                            swal("Error!", response, "error");
+                        }
+
+                    });
+
+            } else {
+                swal("Cancelled", "Cancelled", "error");
+                setTimeout(function () {
+                    ajaxLoad("{{ url()->current() }}");
+                }, 1300);
+            }
+        });
+    }
 
     function runCustomPlainRequest(url, id, message) {
         if (id != undefined && id != 0) {

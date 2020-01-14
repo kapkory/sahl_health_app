@@ -13,6 +13,7 @@ class IndexController extends Controller
         $data = [];
         $data['revenue'] = 0;
         $data['visits'] = 0;
+        $data['customer_savings'] = 0;
         if (auth()->user()->institution_id)
         {
             $institution_id = auth()->user()->institution_id;
@@ -22,10 +23,12 @@ class IndexController extends Controller
                 $total_bills = $visit->sum('amount');
                 $savings = Visit::join('institutions','institutions.id','=','visits.institution_id')
                     ->where([
-                        ['visits.user_id',auth()->id()]
+                        ['visits.institution_id',$institution_id]
                     ])->select(DB::raw('sum(visits.amount *institutions.discount) as savings'))
                     ->first();
-                $data['revenue'] = $total_bills - ($savings->savings / 100);
+                $data['customer_savings'] = $savings->savings / 100;
+                $data['revenue'] = $total_bills - $data['customer_savings'];
+
             }
         }
 

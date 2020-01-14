@@ -46,7 +46,7 @@ class IndexController extends Controller
         }
         $visit->institution_id = auth()->user()->institution_id;
         $visit->save();
-        return ['redirect_url'=>url('provider/search/'.$visit->id)];
+        return ['redirect'=>url('provider/search/'.$visit->id),'title'=>'User visit has been confirmed'];
     }
 
     public function viewVisit($visit_id){

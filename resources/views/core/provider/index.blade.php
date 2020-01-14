@@ -10,26 +10,34 @@
     <!-- Grid Item -->
     <div class="col-xl-12">
         <div class="row">
-            <div class="col-md-3 col-6">
-                <!-- Card -->
-                <div class="dt-card">
-                    <!-- Card Body -->
+            <div class="col-md-3 col-6"><!-- Card -->
+                <div class="dt-card"><!-- Card Body -->
                     <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
-                        <span class="badge badge-secondary badge-top-right">Revenue</span>
-                        <!-- Media -->
+                        <span class="badge badge-secondary badge-top-right">Revenue</span><!-- Media -->
                         <div class="media">
-                            <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i>
-                            <!-- Media Body -->
+                            <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
                             <div class="media-body">
                                 <p class="mb-1 h1">{{ @number_format($data['revenue'],2) }}</p>
                                 <span class="d-block text-light-gray">Ksh</span>
                             </div><!-- /media body -->
-                        </div>
-                        <!-- /media -->
-                    </div>
-                    <!-- /card body -->
-                </div>
-                <!-- /card -->
+                        </div><!-- /media -->
+                    </div><!-- /card body -->
+                </div><!-- /card -->
+            </div>
+
+            <div class="col-md-3 col-6"><!-- Card -->
+                <div class="dt-card"><!-- Card Body -->
+                    <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
+                        <span class="badge badge-info badge-top-right">Customer Savings</span><!-- Media -->
+                        <div class="media">
+                            <i class="icon icon-orders-new icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
+                            <div class="media-body">
+                                <p class="mb-1 h1">{{ @number_format($data['customer_savings'],2) }}</p>
+                                <span class="d-block text-light-gray">Ksh</span>
+                            </div><!-- /media body -->
+                        </div><!-- /media -->
+                    </div><!-- /card body -->
+                </div><!-- /card -->
             </div>
 
             <a href="{{ url('provider/visits') }}" class="col-md-3">
@@ -37,8 +45,7 @@
 
                     <!-- Card Body -->
                     <div class="dt-card__body px-5 py-4">
-                        <h6 class="text-body text-uppercase mb-2">Hospital Visits</h6>
-                        <div class="d-flex align-items-baseline mb-4">
+                        <span class="badge badge-info badge-top-right">Hospital Visits</span>                        <div class="d-flex align-items-baseline mb-4">
                             <span class="display-4 text-center font-weight-500 text-dark ">{{ $data['visits'] }} visit(s)</span>
                         </div>
 
@@ -46,6 +53,7 @@
                             <div class="dt-indicator-item__bar">
                                 <div class="dt-indicator-item__fill fill-pointer bg-primary" style="width: 100%;"></div>
                             </div>
+                            <span class="d-block text-light-gray">Ksh</span>
                         </div>
                     </div>
                     <!-- /bard body -->
@@ -186,10 +194,14 @@
                     })
                 },
                 confirmVisit:function (user_id,type,member_id) {
+
                     let url = "{{ url('provider/search/confirm-visit?_token='.csrf_token()) }}";
-                    $.post(url,{'user_id':user_id,'type':type,'member_id':member_id},function (response) {
-                        window.location.href= response.redirect_url;
-                    })
+                    let data = {'user_id':user_id,'type':type,'member_id':member_id};
+                    let message = 'Are you Sure you want to Confirm Visit';
+                    window.runJavascriptPlainRequest(url,data,message);
+                    // $.post(url,,function (response) {
+                    //     window.location.href= response.redirect_url;
+                    // })
                 }
             },
             computed: {

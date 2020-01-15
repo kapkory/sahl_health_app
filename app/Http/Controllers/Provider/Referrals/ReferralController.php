@@ -52,7 +52,7 @@ class ReferralController extends Controller
         $institution_id = $provider->institution_id;
         $institution = Institution::findOrfail($institution_id);
 
-        $message = 'Hi '.\request('first_name').', You have been invited to sign up for Sahl Health Membership by '.$names[0]. ', '.$institution->name. '. Follow the link to complete registration '.url('member-referral/'.$referral->id.'/'.$user->referral_code);
+        $message = 'Hi '.\request('first_name').', You have been invited to sign up for Sahl Health Membership by '.$names[0]. ', '.$institution->name. '. Follow the link to complete registration '.url('member-referral/'.$referral->id.'/'.$provider->referral_code);
         $techpitch = new TechpitMessageRepository();
 
         $response = $techpitch->execute($message,$address);

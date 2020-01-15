@@ -47,6 +47,21 @@ class User extends Authenticatable
         ])->save();
     }
 
+    public function getFormattedPhone()
+    {
+        $country_code = '254';
+//        $country_code = str_replace('+', '', $country_code);
+        $phone = $this->phone_number;
+        $phone = str_replace('+', '', $phone);
+        if (strlen($phone) == 9) {
+            $phone = $country_code . $phone;
+        } elseif (strlen($phone) == 10) {
+            $phone = "+" . $phone;
+            $phone = str_replace('+0', $country_code, $phone);
+        }
+        return $phone;
+    }
+
     public function institutions(){
         return $this->hasMany(Institution::class);
     }

@@ -353,6 +353,22 @@
             "urls": [
                 "home"
             ]
+        },
+        {
+            "type": "single",
+            "slug": "referrals",
+            "menus": {
+                "label": "Referrals",
+                "icon": "list",
+                "url": "provider/referrals"
+            },
+            "children": [],
+            "subs": [
+                "list"
+            ],
+            "urls": [
+                "home"
+            ]
         }
     ],
     "guest": [

@@ -31,6 +31,8 @@ Route::get('member-packages','Frontend\IndexController@memberPackages');
 Route::view('member-complete-registration','core.member.complete_registration');
 Route::post('member/complete-registration','Member\IndexController@completeRegistration');
 
+Route::get('member-referral/{referral_id}/{referral_code}','Frontend\IndexController@referredMember');
+
 Route::get('home', 'HomeController@index');
 
 Route::get('logout',function (){

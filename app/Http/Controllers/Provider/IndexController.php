@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Core\Visit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class IndexController extends Controller
 {
@@ -32,6 +33,11 @@ class IndexController extends Controller
             }
         }
 
+        if(!auth()->user()->referral_code){
+            $user = auth()->user();
+            $user->referral_code = uniqid();
+            $user->save();
+        }
 
         return view($this->folder.'index',compact('data'));
     }

@@ -75,7 +75,7 @@
     @include('common.auto_modal',[
     'modal_id'=>'refer_member',
     'modal_title'=>'Refer Member',
-    'modal_content'=>Form::autoForm(["first_name","last_name",'phone','email',"form_model"=>\App\User::class],"provider/refer-member")
+    'modal_content'=>Form::autoForm(["first_name","last_name",'phone_number','email',"form_model"=>\App\User::class],"provider/referrals")
 ])
     <!-- Card -->
     <div class="dt-card" id="search">

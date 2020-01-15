@@ -1,18 +1,19 @@
 @extends('layouts.admin')
 
-@section('title',Referrals)
+@section('title','Referrals')
 
 @section('content')
-<a href="#referral_modal" class="btn btn-info btn-sm clear-form float-right" data-toggle="modal"><i class="fa fa-plus"></i> ADD REFERRAL</a>
+<a href="#refer_member" class="btn btn-info btn-sm clear-form float-right" data-toggle="modal"><i class="fa fa-plus"></i> Refer Member</a>
     @include('common.bootstrap_table_ajax',[
-    'table_headers'=>["id","user_id","referral_id","amount","status","action"],
+    'table_headers'=>["id","user_id","referral_id"],
     'data_url'=>'provider/referrals/list',
     'base_tbl'=>'referrals'
     ])
 
-    @include('common.auto_modal',[
-        'modal_id'=>'referral_modal',
-        'modal_title'=>'REFERRAL FORM',
-        'modal_content'=>Form::autoForm(\App\Models\Core\Referral::class,"provider/referrals")
-    ])
+@include('common.auto_modal',[
+'modal_id'=>'refer_member',
+'modal_title'=>'Refer Member',
+'modal_content'=>Form::autoForm(["first_name","last_name",'phone_number','email',"form_model"=>\App\User::class],"provider/referrals")
+])
+
 @endsection

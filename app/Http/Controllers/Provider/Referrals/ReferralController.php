@@ -34,7 +34,7 @@ class ReferralController extends Controller
             'phone_number' => 'required|min:10',
         ]);
         $user = new User();
-        $user->name = \request('name');
+        $user->name = \request('first_name').' '.\request('last_name');
         $user->email = \request('email');
         $user->phone_number = \request('phone_number');
         $user->password = bcrypt(\request('phone_number'));

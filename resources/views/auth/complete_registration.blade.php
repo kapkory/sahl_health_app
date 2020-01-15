@@ -87,6 +87,11 @@
                                     <div class="col-md-4 form-group">
                                         <input type="password" id="password" required name="password" placeholder="Enter Password" class="my_input col-md border-0 rounded m-2 p-2"/>
                                     </div>
+                                    @elseif($_GET['type'] == 'referred')
+                                    <div class="col-md-4 form-group">
+                                        <input type="hidden" name="type" value="referred">
+                                        <input type="password" id="password" required name="password" placeholder="Enter Password" class="my_input col-md border-0 rounded m-2 p-2"/>
+                                    </div>
                                     @else
                                     <input type="hidden" name="phone_number" value="{{ auth()->user()->phone_number  }}">
                                     @endif

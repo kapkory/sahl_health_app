@@ -120,7 +120,6 @@ class IndexController extends Controller
 
         $user = \auth()->user();
         if (\request('type')=='social'){
-
             $user->phone_number = \request('phone_number');
             $user->save();
         }
@@ -128,6 +127,11 @@ class IndexController extends Controller
         if (\request('type')=='account')
         {
             $user->phone_number = \request('phone_number');
+            $user->password = bcrypt(\request('password'));
+            $user->save();
+        }
+        if (\request('type')=='referred')
+        {
             $user->password = bcrypt(\request('password'));
             $user->save();
         }

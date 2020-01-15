@@ -31,7 +31,7 @@ class IndexController extends Controller
         $user = User::findOrFail($referral->referral_id );
         Auth::login($user);
 
-        return redirect('complete-registration');
+        return redirect('complete-registration?type=referred');
 
     }
 }

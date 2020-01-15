@@ -5,7 +5,7 @@
 @section('content')
 <a href="#refer_member" class="btn btn-info btn-sm clear-form float-right" data-toggle="modal"><i class="fa fa-plus"></i> Refer Member</a>
     @include('common.bootstrap_table_ajax',[
-    'table_headers'=>["id","referral_id"],
+    'table_headers'=>["users.name"=>"name","created_at"=>"day_referred"],
     'data_url'=>'provider/referrals/list',
     'base_tbl'=>'referrals'
     ])

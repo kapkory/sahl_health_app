@@ -63,12 +63,16 @@ class ReferralController extends Controller
      * return referral values
      */
     public function listReferrals(){
-        $referrals = Referral::where([
-            ['id','>',0]
-        ]);
+        $referrals = Referral::join('users','users.referral_id','=','users.id')
+        ->where([
+            ['referrals.user_id',\auth()->id()]
+        ])->select('users.name as name','referrals.*');
         if(\request('all'))
             return $referrals->get();
         return SearchRepo::of($referrals)
+            ->addColumn('day_referred',function($referral) {
+              return $referral->created_at->diffForHumans();
+            })
             ->addColumn('action',function($referral){
                 $str = '';
                 $json = json_encode($referral);

@@ -23,15 +23,19 @@ class IndexController extends Controller
     public function referredMember($referral_id, $referral_code){
         $referral = Referral::findOrFail($referral_id);
 
-        $user = User::where('referral_code',$referral_code)->get();
-        if ($user->isEmpty())
+        $user = User::where('referral_code',$referral_code)->first();
+        if (!$user)
             return false;
-        $referral->status = 1;
-        $referral->save();
-        $user = User::findOrFail($referral->referral_id );
-        Auth::login($user);
-
-        return redirect('complete-registration?type=referred');
-
+        else
+        {
+            if ($user->id == $referral->user_id){
+                $referral->status = 1;
+                $referral->save();
+                $user = User::findOrFail($referral->referral_id );
+                Auth::login($user);
+                return redirect('complete-registration?type=referred');
+            }
+        }
+        return false;
     }
 }

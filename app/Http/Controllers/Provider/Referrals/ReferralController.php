@@ -63,7 +63,7 @@ class ReferralController extends Controller
      * return referral values
      */
     public function listReferrals(){
-        $referrals = Referral::join('users','users.referral_id','=','users.id')
+        $referrals = Referral::join('users','referrals.referral_id','=','users.id')
         ->where([
             ['referrals.user_id',\auth()->id()]
         ])->select('users.name as name','referrals.*');

@@ -61,14 +61,15 @@
                 </div>
             </a>
 
-
-            <div class="col-md-3 col-6"><!-- Card -->
-                <div class="dt-card"><!-- Card Body -->
-                    <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
-                     <button href="#refer_member"  data-toggle="modal"  class="btn btn-outline-info">Refer Member</button>
-                    </div><!-- /card body -->
-                </div><!-- /card -->
-            </div>
+            @if(auth()->user()->referral_code)
+                <div class="col-md-3 col-6"><!-- Card -->
+                    <div class="dt-card"><!-- Card Body -->
+                        <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
+                         <button href="#refer_member"  data-toggle="modal"  class="btn btn-outline-info">Refer Member</button>
+                        </div><!-- /card body -->
+                    </div><!-- /card -->
+                </div>
+                @endif
         </div>
     </div>
 

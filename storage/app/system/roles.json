@@ -364,7 +364,7 @@
             },
             "children": [],
             "subs": [
-                "list"
+                "list","register-as-agent"
             ],
             "urls": [
                 "home"

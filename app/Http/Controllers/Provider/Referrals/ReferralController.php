@@ -24,6 +24,14 @@ class ReferralController extends Controller
         ]);
     }
 
+    //become an agent so that you can recruit members
+    public function registerAgent(){
+        $user = auth()->user();
+        $user->referral_code = uniqid();
+        $user->save();
+        return redirect()->back()->with('notice',['type'=>'success','message'=>'You have become an Agent']);
+    }
+
     /**
      * store referral
      */

@@ -33,11 +33,6 @@ class IndexController extends Controller
             }
         }
 
-        if(!auth()->user()->referral_code){
-            $user = auth()->user();
-            $user->referral_code = uniqid();
-            $user->save();
-        }
 
         return view($this->folder.'index',compact('data'));
     }

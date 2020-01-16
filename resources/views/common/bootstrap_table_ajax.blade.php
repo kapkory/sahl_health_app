@@ -33,6 +33,8 @@ $random_select_id = \Illuminate\Support\Str::random();
 @endif
 
 <div class="bootstrap_table" >
+    @isset($search_table)
+        @else
     <form class="search-form form-horizontal" style="max-width: 400px !important;" onsubmit="return startBootstrapSearch();" method="get" action="{{ url($data_url) }}" role="form" _lpchecked="1">
         <div class="">
             <input type="hidden" name="order_by" value="{{ Request::input('order_by') }}">
@@ -51,6 +53,7 @@ $random_select_id = \Illuminate\Support\Str::random();
             </div>
         </div>
     </form>
+    @endisset
     @if(isset($multi_actions))
         <div class="row">
             <form id="multi_select_form_{{ $random_select_id }}" class="ajax-post model_form_id" method="post" action="{{ url($multi_actions[0]) }}">

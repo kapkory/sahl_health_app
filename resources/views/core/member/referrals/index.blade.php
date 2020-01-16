@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Earn by Referring')
+@section('title','Get up to Ksh 1,000 off your next hospital visit for each friend you refer')
 
 @section('content')
 <div class="row">

@@ -10,6 +10,7 @@ use App\Models\Core\MemberPayment;
 use App\Models\Core\OrganizationType;
 use App\Models\Core\Package;
 use App\Models\Core\PackageCategory;
+use App\Models\Core\Referral;
 use App\Repositories\TechpitMessageRepository;
 use App\User;
 use Carbon\Carbon;
@@ -67,6 +68,16 @@ class ApiController extends Controller
             $user = User::findOrFail($pay->member_id);
             $user->member_package_id = $memberPackage->id;
             $user->save();
+
+            $referral = Referral::where('referral_id',$user->id)->first();
+            if ($referral){
+                $referee = User::findOrFail($referral->user_id);
+                $referee->wallet += $referral->amount;
+                $referee->save();
+
+                $referral->status = 1;
+                $referral->save();
+            }
 
             $message= 'Dear '.$user->name.', your payment of KES '.$memberPackage->amount.' for '.$package->category->name.' has been received, Thank you';
             $phone = preg_replace('/^\\D*/', '', $user->phone_number);

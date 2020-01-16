@@ -216,23 +216,6 @@
         },
         {
             "type": "single",
-            "slug": "payments",
-            "menus": {
-                "label": "Payment History",
-                "icon": "list",
-                "url": "member/payments"
-            },
-            "children": [],
-            "subs": [
-                "list"
-            ],
-            "urls": [
-                "home",
-                "member/complete-registration"
-            ]
-        },
-        {
-            "type": "single",
             "slug": "search",
             "menus": {
                 "label": "Visits History",
@@ -261,6 +244,23 @@
             ],
             "urls": [
                 "home"
+            ]
+        },
+        {
+            "type": "single",
+            "slug": "payments",
+            "menus": {
+                "label": "Payment History",
+                "icon": "charts",
+                "url": "member/payments"
+            },
+            "children": [],
+            "subs": [
+                "list"
+            ],
+            "urls": [
+                "home",
+                "member/complete-registration"
             ]
         },
         {
@@ -375,7 +375,7 @@
             "slug": "referrals",
             "menus": {
                 "label": "Referrals",
-                "icon": "list",
+                "icon": "breadcrumbs",
                 "url": "provider/referrals"
             },
             "children": [],

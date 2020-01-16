@@ -182,7 +182,7 @@
         function copyToClipboard() {
             var $temp = $("<input>");
             $("body").append($temp);
-            let referral_link = "{{ url('member-register/'.auth()->user()->reference_code) }}";
+            let referral_link = "{{ url('member-register/'.auth()->user()->referral_code) }}";
             $temp.val(referral_link).select();
             document.execCommand("copy");
             $temp.remove();

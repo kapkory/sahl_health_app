@@ -253,7 +253,7 @@
             "menus": {
                 "label": "Free Healthcare",
                 "icon": "task-manager",
-                "url": "member"
+                "url": "member/referrals"
             },
             "children": [],
             "subs": [

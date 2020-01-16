@@ -248,6 +248,22 @@
             ]
         },
         {
+            "type": "single",
+            "slug": "search",
+            "menus": {
+                "label": "Free Healthcare",
+                "icon": "task-manager",
+                "url": "member"
+            },
+            "children": [],
+            "subs": [
+                "list","visit"
+            ],
+            "urls": [
+                "home"
+            ]
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "make_sales",

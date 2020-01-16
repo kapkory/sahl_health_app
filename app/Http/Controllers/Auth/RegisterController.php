@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Core\MemberPackage;
 use App\Models\Core\Package;
 use App\Models\Core\Profile;
+use App\Models\Core\Referral;
 use App\Repositories\TechpitMessageRepository;
 use App\User;
 use Carbon\Carbon;
@@ -109,6 +110,7 @@ class RegisterController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => 'required',
+            'phone_number' => 'required|min:10',
             'password' => 'required',
         ]);
 
@@ -116,9 +118,20 @@ class RegisterController extends Controller
         $user->name = \request('first_name').' '.\request('other_name').' '.\request('last_name');
         $user->email = \request('email');
         $user->phone_number = \request('phone_number');
+        $user->referral_code = uniqid();
         $user->password = bcrypt(\request('password'));
         $user->save();
         Auth::login($user);
+
+        if (\request('referral_code') != ''){
+            $referrer = User::where('referral_code',\request('referral_code'))->first();
+            if ($referrer){
+                $referral = new Referral();
+                $referral->user_id = $referrer->id;
+                $referral->referral_id = $user->id;
+                $referral->save();
+            }
+        }
 
         return ['redirect_url'=>url('complete-registration?type=email')];
     }

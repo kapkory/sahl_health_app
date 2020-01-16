@@ -42,6 +42,13 @@ class IndexController extends Controller
             $data['savings'] = $savings->savings / 100;
         }
 
+        $user = auth()->user();
+        if(!$user->referral_code)
+        {
+            $user->referral_code = uniqid();
+            $user->save();
+        }
+
         return view($this->folder.'index',compact('memberPackage','favorite_institutions','data'));
     }
 
@@ -128,20 +135,21 @@ class IndexController extends Controller
         $user = \auth()->user();
         if (\request('type')=='social'){
             $user->phone_number = \request('phone_number');
-            $user->save();
+
         }
 
         if (\request('type')=='account')
         {
             $user->phone_number = \request('phone_number');
             $user->password = bcrypt(\request('password'));
-            $user->save();
+
         }
         if (\request('type')=='referred')
         {
             $user->password = bcrypt(\request('password'));
-            $user->save();
         }
+        $user->reference_code = uniqid();
+        $user->save();
 
 
         $profile = Profile::updateOrCreate(['user_id'=>\auth()->id()],[

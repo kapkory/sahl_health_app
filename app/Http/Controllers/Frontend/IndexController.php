@@ -15,6 +15,14 @@ class IndexController extends Controller
          return view('auth.member_register');
     }
 
+    public function memberRegister($referral_code){
+        $user = User::where('referral_code',$referral_code)->get();
+        if ($user->isEmpty())
+            return redirect('register');
+
+        return view('auth.register_form',compact('referral_code'));
+    }
+
     public function memberPackages(){
         $categories = PackageCategory::all();
         return view('core.member.packages',compact('categories'));

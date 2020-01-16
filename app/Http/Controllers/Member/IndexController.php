@@ -9,6 +9,7 @@ use App\Models\Core\MemberPackage;
 use App\Models\Core\MemberPayment;
 use App\Models\Core\Package;
 use App\Models\Core\Profile;
+use App\Models\Core\Referral;
 use App\Models\Core\Visit;
 use App\Repositories\MpesaRepository;
 use App\Repositories\TechpitMessageRepository;
@@ -62,6 +63,12 @@ class IndexController extends Controller
         $payment->package_id = $member_package->package_id;
         $payment->amount = $amount;
         $payment->save();
+
+        $referral = Referral::where('referral_id',auth()->id())->first();
+        if ($referral){
+            $referral->amount = 100;
+            $referral->save();
+        }
 
         $mpesaRepository= new MpesaRepository();
         $phone = auth()->user()->phone_number;

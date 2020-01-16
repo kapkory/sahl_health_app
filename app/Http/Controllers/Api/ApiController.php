@@ -61,7 +61,7 @@ class ApiController extends Controller
             $package = Package::findOrFail($pay->package_id);
 
             $memberPackage->started_on = Carbon::now()->toDateString();
-            $memberPackage->started_on = Carbon::now()->addMonths($package->duration)->toDateString();
+            $memberPackage->ends_at = Carbon::now()->addMonths($package->duration)->toDateString();
             $memberPackage->save();
 
             $user = User::findOrFail($pay->member_id);

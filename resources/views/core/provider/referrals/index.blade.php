@@ -6,7 +6,7 @@
     @if(auth()->user()->referral_code)
     <a href="#refer_member" class="btn btn-info btn-sm clear-form float-right" data-toggle="modal"><i class="fa fa-plus"></i> Refer Member</a>
         @include('common.bootstrap_table_ajax',[
-        'table_headers'=>["users.name"=>"name","created_at"=>"day_referred"],
+        'table_headers'=>["users.name"=>"name","id"=>"package","amount","created_at"=>"day_referred"],
         'data_url'=>'provider/referrals/list',
         'base_tbl'=>'referrals'
         ])

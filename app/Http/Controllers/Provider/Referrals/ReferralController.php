@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Provider\Referrals;
 
 use App\Http\Controllers\Controller;
 use App\Models\Core\Institution;
+use App\Models\Core\MemberPackage;
 use App\Repositories\TechpitMessageRepository;
 use App\User;
 use Illuminate\Http\Request;
@@ -80,6 +81,19 @@ class ReferralController extends Controller
         return SearchRepo::of($referrals)
             ->addColumn('day_referred',function($referral) {
               return $referral->created_at->diffForHumans();
+            })
+            ->addColumn('package',function($referral) {
+                $package = MemberPackage::where('member_id',$referral->referral_id)->orderBy('created_at','desc')->first();
+                if ($package){
+                    $status = 'Unpaid';
+                   if ($package->started_on)
+                       $status = 'Paid';
+                    return '<span class="text-success"> '.$package->package->name.': '.$status.'</span>';
+                }
+                else
+                {
+                    return '<span class="text-info">Not Selected</span>';
+                }
             })
             ->addColumn('action',function($referral){
                 $str = '';

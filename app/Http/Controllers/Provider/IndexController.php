@@ -33,7 +33,6 @@ class IndexController extends Controller
             }
         }
 
-
         return view($this->folder.'index',compact('data'));
     }
 

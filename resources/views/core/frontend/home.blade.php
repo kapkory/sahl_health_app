@@ -146,8 +146,12 @@
 
                                 <div style="top: 0px" class="like-icon"></div>
                             </div>
-                            <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
+                            <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>
 
+                            <div class="review-content-rating float-right">
+                                <span class="star" style="float: right"></span>
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">3.0</a>
+                            </div>
                             <div class="listing-content" style="padding-left: 10px; padding-top: 1px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">

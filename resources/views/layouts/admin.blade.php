@@ -114,7 +114,7 @@
 
                     <!-- Brand logo -->
                     <span class="dt-brand__logo">
-        <a class="dt-brand__logo-link" href="#">
+        <a class="dt-brand__logo-link" href="{{ url('/') }}">
           <img class="dt-brand__logo-img d-none d-sm-inline-block" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Logo">
           <img class="dt-brand__logo-symbol d-sm-none" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Logo">
         </a>

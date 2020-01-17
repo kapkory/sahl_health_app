@@ -84,8 +84,9 @@
             },
             "children": [],
 
-            "subs": ["list", "institution"],
-            "urls": ["provider/institution/create","provider/institutions"]
+            "subs": ["list", "institution","contacts/list","services/list"],
+            "urls": ["provider/institution/create",
+                "provider/institutions"]
         },
         {
             "type": "single",

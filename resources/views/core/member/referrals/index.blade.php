@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
-@section('title','Get up to Ksh 1,000 off your next hospital visit for each friend you refer')
+@section('title')
+    Get up to Ksh 1,000<sup>*</sup> off your next hospital visit for each friend you refer
+    @endsection
+
 
 @section('content')
 <div class="row">
@@ -81,7 +84,7 @@
         'search_table'=>'dont'
         ])
 
-
+<b><sup>*</sup></b> Payments depend on the package, the person you referred paid for
 <script>
     function copyToClipboard() {
         var $temp = $("<input>");

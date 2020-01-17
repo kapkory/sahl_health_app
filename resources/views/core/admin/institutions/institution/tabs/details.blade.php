@@ -30,6 +30,20 @@
                 <th class="titlecolumn">Discount Code</th>
                 <td>{{ @$institution->discount }}</td>
             </tr>
+
+            <tr>
+                <th class="titlecolumn">Status</th>
+                <td>
+                @if($institution->status == \App\Repositories\StatusRepository::getInstitutionStatus('inactive'))
+                    <button class="btn btn-outline-secondary">In active</button>
+                @elseif($institution->status == \App\Repositories\StatusRepository::getInstitutionStatus('active'))
+                        <button class="btn btn-outline-success">Active</button>
+                @else
+                        <button class="btn btn-outline-danger">Rejected</button>
+                @endif
+                </td>
+            </tr>
+
         </table>
 
     </div>
@@ -43,14 +57,17 @@
                     <img class="media-object rounded-circle" alt="64x64" src="{{ url($institution->featured_image) }}" style="width: 84px; height: 84px;">
                 </div>
             </div>
-            {{--                <div class="card-body">--}}
-            {{--                    @if(!$book->category_id)--}}
-            {{--                        <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="modal" data-target="#add_category_modal">Assign Category</button>--}}
-            {{--                    @endif--}}
-            {{--                    @if($book->status == \App\Repositories\StatusRepository::getBookStatus('active'))--}}
-            {{--                        <a href="#" onclick="runPlainRequest(`{{ url('admin/books/book/'.$book->id.'/mark-sold') }}`)" class="btn btn-success btn-sm clear-form m-1" ><i class="fa fa-check"></i> Mark as Sold</a>--}}
-            {{--                    @endif--}}
-            {{--                </div>--}}
+            <div class="card-body">
+                <h6>Actions</h6>
+                @if($institution->status == \App\Repositories\StatusRepository::getInstitutionStatus('inactive') || $institution->status == \App\Repositories\StatusRepository::getInstitutionStatus('rejected'))
+                    <a href="#" onclick="runPlainRequest(`{{ url('admin/institutions/institution/'.$institution->id.'/active') }}`)" class="btn btn-success btn-sm clear-form m-1" ><i class="fa fa-check"></i> Set as Active</a>
+                @endif
+
+                @if($institution->status != \App\Repositories\StatusRepository::getInstitutionStatus('rejected'))
+                    <a href="#" onclick="runPlainRequest(`{{ url('admin/institutions/institution/'.$institution->id.'/rejected') }}`)" class="btn btn-danger btn-sm clear-form m-1" ><i class="fa fa-check"></i> Reject Listing</a>
+                @endif
+
+            </div>
         </div>
     </div>
 </div>

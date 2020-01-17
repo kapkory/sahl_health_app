@@ -4,10 +4,11 @@ namespace App\Repositories;
 
 class StatusRepository
 {
-    public static function getAssignHistoryStatus($state){
+    public static function getInstitutionStatus($state){
         $statuses = [
-            'unassigned'=>0,
-            'assigned'=>1
+            'inactive'=>0,
+            'active'=>1,
+            'rejected'=>2
         ];
         if(is_numeric($state))
             $statuses = array_flip($statuses);

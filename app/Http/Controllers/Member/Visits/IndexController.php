@@ -30,7 +30,7 @@ class IndexController extends Controller
         $rating = new Rating();
         $rating->user_id = auth()->id();
         $rating->visit_id = \request('visit_id');
-        $rating->rating = \request('rating');
+        $rating->rating = (\request('rating') == 0) ? 1 : \request('rating');
         $rating->comments = \request('feedback');
         $rating->save();
         return back()->with('notice',['type'=>'success','message'=>'Rating has been successful']);

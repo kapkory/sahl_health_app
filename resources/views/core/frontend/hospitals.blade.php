@@ -43,7 +43,7 @@
 
                                     <div class="review-content-rating float-right pt-2">
                                         <span class="star" style="float: right"></span>
-                                        <a href="{{ url('institution/'.$hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{ ($hospital->getRatingCount()->rating) ? $hospital->getRatingCount()->rating : '3.0' }}</a>
+                                        <a href="{{ url('institution/'.$hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{ @$hospital->getRatingCount() }}</a>
                                     </div>
                                     <div class="listing-content">
                                         <div class="listing-content-head">

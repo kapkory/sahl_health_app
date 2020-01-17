@@ -38,18 +38,17 @@
                                         @endif
                                         <div class="like-icon" style="top:0px"></div>
                                     </div>
+
+                                    <small class="lable text-muted" style="padding-left: 10px;">{{ @$hospital->institutionLevel->name }}</small>
+
+                                    <div class="review-content-rating float-right pt-2">
+                                        <span class="star" style="float: right"></span>
+                                        <a href="{{ url('institution/'.$hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{ ($hospital->getRatingCount()->rating) ? $hospital->getRatingCount()->rating : '3.0' }}</a>
+                                    </div>
                                     <div class="listing-content">
                                         <div class="listing-content-head">
                                             <h3 class="listing-content-head-title"> <a href="{{ url('institution/'.$hospital->slug) }}">{{ \Illuminate\Support\Str::limit($hospital->name,16,'...') }}</a></h3>
                                             <p class="listing-content-head-text">Nairobi, Kenya</p>
-                                        </div>
-
-                                        <div class="listing-content-meta">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-                                                    <span class="value">{{ @$hospital->institutionLevel->name }}</span>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

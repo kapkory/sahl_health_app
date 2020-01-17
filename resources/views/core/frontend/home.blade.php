@@ -148,9 +148,9 @@
                             </div>
                             <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>
 
-                            <div class="review-content-rating float-right">
+                            <div class="review-content-rating float-right pt-2">
                                 <span class="star" style="float: right"></span>
-                                <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">3.0</a>
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{ ($featured_hospital->getRatingCount()->rating) ? $featured_hospital->getRatingCount()->rating : '3.0' }}</a>
                             </div>
                             <div class="listing-content" style="padding-left: 10px; padding-top: 1px">
                                 <div class="listing-content-head">
@@ -192,14 +192,18 @@
 
                                 <div style="top: 0px" class="like-icon"></div>
                             </div>
-                            <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
+                            <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>
 
+                            <div class="review-content-rating float-right pt-2">
+                                <span class="star" style="float: right"></span>
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{ ($featured_hospital->getRatingCount()->rating) ? $featured_hospital->getRatingCount()->rating : '3.0' }}</a>
+                            </div>
                             <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">
                                         <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,18,'...') }}</a>
                                     </h3>
-                                    <p class="listing-content-head-text">Nairobi, Kenya</p>
+                                    <p class="listing-content-head-text">Nairobi, Kenya </p>
                                 </div>
                             </div>
                         </div>

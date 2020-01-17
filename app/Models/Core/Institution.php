@@ -3,6 +3,7 @@
 namespace App\Models\Core;
 
 use App\User;
+use DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Institution extends Model
@@ -25,5 +26,13 @@ class Institution extends Model
 
     public function visits(){
         return $this->hasMany(Visit::class);
+    }
+
+    public function getRatingCount(){
+	    return Rating::join('visits','ratings.visit_id','=','visits.id')
+            ->where('visits.institution_id',$this->id)
+            ->select(DB::raw('SUM(ratings.rating) as rating'))
+            ->first();
+
     }
 }

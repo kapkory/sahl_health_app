@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Member\Visits;
 use App\Http\Controllers\Controller;
 use App\Models\Core\Dependant;
 use App\Models\Core\Institution;
+use App\Models\Core\Rating;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -22,6 +23,17 @@ class IndexController extends Controller
         return view($this->folder.'index',[
 
         ]);
+    }
+
+    public function rateVisit(){
+        request()->validate(['rating'=>'required']);
+        $rating = new Rating();
+        $rating->user_id = auth()->id();
+        $rating->visit_id = \request('visit_id');
+        $rating->rating = \request('rating');
+        $rating->comments = \request('feedback');
+        $rating->save();
+        return back()->with('notice',['type'=>'success','message'=>'Rating has been successful']);
     }
 
     public function viewVisit($visit_id){

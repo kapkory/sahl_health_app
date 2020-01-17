@@ -62,6 +62,7 @@
     <link rel="stylesheet" href="{{ url('drift/assets/modules/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ url('drift/vendors/gaxon-icon/styles.css') }}">
     <!-- /font icon Styles -->
+    <link rel="stylesheet" href="{{ url('drift/assets/modules/rateYo/jquery.rateyo.min.css') }}">
 
     <!-- Perfect Scrollbar stylesheet -->
     <link rel="stylesheet" href="{{ url('drift/assets/modules/perfect-scrollbar/css/perfect-scrollbar.css') }}">
@@ -75,6 +76,8 @@
 
 
     <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url('drift/assets/modules/rateYo/jquery.rateyo.min.js') }}"></script>
+
     @stack('scripts')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

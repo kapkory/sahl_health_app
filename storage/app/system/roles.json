@@ -224,7 +224,7 @@
             },
             "children": [],
             "subs": [
-                "list","visit"
+                "list","visit","visit/rate-visit"
             ],
             "urls": [
                 "home"

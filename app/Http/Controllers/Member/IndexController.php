@@ -178,7 +178,7 @@ class IndexController extends Controller
         {
             $user->password = bcrypt(\request('password'));
         }
-        $user->reference_code = uniqid();
+        $user->referral_code = uniqid();
         $user->save();
 
 

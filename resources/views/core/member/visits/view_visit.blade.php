@@ -65,8 +65,34 @@
                          @csrf
                          <div class="form-group mt-2">
                              <label for="exampleFormControlTextarea1">Feedback</label>
-                             <textarea name="feedback" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                             <textarea name="feedback" placeholder="Describe your Experience (optional)" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                          </div>
+
+
+                      <div class="row">
+                         <div class="col-md-8">
+                             <div class="card">
+                                 <div class="card-body">
+                                     <h5 class="card-title">Card title</h5>
+                                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                 </div>
+                             </div>
+                         </div>
+                          <div class="col-md-4" style="overflow: hidden">
+                              <div class="card">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="card-link">Card link</a>
+                                      <a href="#" class="card-link">Another link</a>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                      </div>
 
                          <input type="submit" value="Submit Feedback" name="submit" class="btn btn-primary submit-btn">
                      </form>

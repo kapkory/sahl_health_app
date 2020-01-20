@@ -41,8 +41,10 @@
                </div>
            </a>
 
-
            <div class="col-md-3">
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                   Launch demo modal
+               </button>
                <div class="dt-card p-2">
                @if($memberPackage)
                    <h3>Current Plan: <span class="text-success">{{ @$memberPackage->package->name }}</span></h3>
@@ -175,10 +177,68 @@
 
         </div>
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="text-success text-center" id="exampleModalLabel"> <h4>Phone Verification</h4></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="onboarding-media text-center">
+                            <img alt="Image" src="{{ url('drift/assets/images/search.png') }}" width="200px">
+                        </div>
+                        <p>
+                            Enter the verification token that was sent to your phone number during registration,
+                            If you can't find it Click on the <b>Resend Code</b> Button
+                            <br><br>
+                        </p>
+
+                        <div class="onboarding-text">
+
+                            <form method="post" action="{{ url('member/verify-user') }}" class="ajax-post">
+                                <div class="input-group">
+                                    @csrf
+
+                                    <input id="verifyPhoneNumber" name="code" placeholder="Enter Code" required="required" class="form-control form-control-lg">
+
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success submit-btn" id="btnVerify">Verify
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <p class="text-center mt-3">
+                            <b>Or</b> <br>
+                        </p>
+
+                        <p class="text-center mt-3">
+                            <a id="btnGenerateToken" class="btn btn-outline-info text-center">Resend Code</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- /grid item -->
 
     <script>
+        $('#btnGenerateToken').click(function () {
+            let url = "{{ url('member/generate-token?_token='.csrf_token()) }}";
+          $.post(url).done(function (response) {
+              console.log(response.message);
+              toastr.success(response.message);
+              $('#btnGenerateToken').hide();
+
+          })
+        });
+
+
         function copyToClipboard() {
             var $temp = $("<input>");
             $("body").append($temp);

@@ -165,7 +165,7 @@
             "children": [],
             "subs": [
                 "stats/list",
-                "nominate-dependant",
+                "nominate-dependant","verify-user","generate-token",
                 "payment","request-payment"
             ],
             "urls": [

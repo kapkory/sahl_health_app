@@ -267,17 +267,14 @@
             }
         })
             .fail(function (xhr, status, error) {
+                console.log(xhr,status);
                 var btn = form.find(".submit-btn");
                 btn.find('img').remove();
                 btn.attr('disabled', false);
                 if (xhr.status == 422) {
                     form.find('.alert_status').remove();
                     var response = JSON.parse(xhr.responseText).errors;
-                    var cart_errors = JSON.parse(xhr.responseText).cart_errors;
-                    if(cart_errors){
-                        $("#cart_items_table").addClass('is-invalid');
-                        $("#cart_items_table").append('<tr><td colspan="3"><small class="help-block invalid-feedback">' + cart_errors['quantity_error'][0] + '</small></td></tr>');
-                    }
+
                     for (field in response) {
                         form.find("input[name='" + field + "']").addClass('is-invalid');
                         form.find("input[name='" + field + "']").closest(".form-group").find('.help-block').remove();

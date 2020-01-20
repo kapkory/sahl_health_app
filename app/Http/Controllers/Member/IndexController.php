@@ -13,6 +13,7 @@ use App\Models\Core\Referral;
 use App\Models\Core\Visit;
 use App\Repositories\MpesaRepository;
 use App\Repositories\TechpitMessageRepository;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -48,6 +49,11 @@ class IndexController extends Controller
             $user->referral_code = uniqid();
             $user->save();
         }
+        if(!$user->verification_code)
+        {
+            $user->verification_code = rand(999,100000);
+            $user->save();
+        }
 
         return view($this->folder.'index',compact('memberPackage','favorite_institutions','data'));
     }
@@ -55,9 +61,33 @@ class IndexController extends Controller
     public function nominate(){
         return view($this->folder.'dependants');
     }
+
+
     public function payment(){
         $package = MemberPackage::where('member_id',auth()->id())->orderBy('created_at','desc')->first();
         return view($this->folder.'payment',compact('package'));
+    }
+
+    public function verifyUser(){
+        $code = \request('code');
+        $user= User::where('verification_code',$code)->first();
+        if (!$user)
+            return redirect()->back()->with('notice',['type'=>'error','message'=>'Enter a Valid Code']);
+
+        $user->verified_at = Carbon::now()->toDateTimeString();
+        $user->save();
+        return redirect()->back()->with('notice',['type'=>'success','message'=>'Your Phone Number has been successfully verified']);
+    }
+
+    public function generateToken(){
+        $user= auth()->user();
+        if($user->phone_number){
+            $address[]  = preg_replace('/^\\D*/', '', $user->getFormattedPhone());
+            $message = 'Your verification Code is : '.$user->verification_code;
+            $techpitch = new TechpitMessageRepository();
+          $response = @$techpitch->execute($message,$address);
+        }
+        return ['status'=>true, 'message'=>'Verification Code has been sent to your Mobile Phone'];
     }
 
     public function requestPayment(){

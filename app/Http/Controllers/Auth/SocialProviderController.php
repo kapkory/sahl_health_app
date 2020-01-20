@@ -28,6 +28,9 @@ class SocialProviderController extends Controller
                 if (\request('type') == 'providers')
                     $role = 'provider';
 
+                if (\request('type') == 'agents')
+                    $role = 'agent';
+
                 $user = $this->createUser($getInfo,$provider,$role);
                 Auth::loginUsingId($user->id);
             }

@@ -76,7 +76,7 @@ class UserController extends Controller
         while($next_month>$date){
             if($date->isTuesday())
                 $tuesdays[] = $date->toDateString();
-            
+
 
         }
         dd($date);
@@ -121,9 +121,7 @@ class UserController extends Controller
         return redirect()->back()->with('notice',['type'=>'success','message'=>'User password changed']);
     }
 
-    public function listWebsites(){
-        return Website::select('id','name')->get();
-    }
+
 
     public function active($user_id){
         $user = User::whereId($user_id)->firstOrFail();
@@ -149,22 +147,4 @@ class UserController extends Controller
         return back();
     }
 
-    public function addTag($user_id){
-        request()->validate([
-            'tag_id'=>'required'
-        ]);
-        $user = User::whereId($user_id)->firstOrFail();
-        $user->clientTags()->updateOrCreate([
-            'tag_id'=>request('tag_id')
-        ],[
-            'tag_id'=>request('tag_id'),
-            'added_by'=>0
-        ]);
-        return redirect()->back()->with('notice',['type'=>'success','message'=>'Tag added successfully']);
-    }
-    public function removeTag($user_id,$tag_id){
-        $user = User::whereId($user_id)->firstOrFail();
-        $user->clientTags()->where('tag_id',$tag_id)->delete();
-        return redirect()->back()->with('notice',['type'=>'success','message'=>'Tag removed successfully']);
-    }
 }

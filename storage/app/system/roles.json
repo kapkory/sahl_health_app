@@ -388,6 +388,100 @@
             ]
         }
     ],
+    "agent": [
+        {
+            "type": "single",
+            "section": "main",
+            "slug": "view_admin_dashboard",
+            "menus": {
+                "label": "Dashboard",
+                "icon": "dashboard",
+                "url": "agent"
+            },
+            "children": [],
+            "subs": [
+            ],
+            "urls": [
+                "home",
+                "user/password",
+                "user/default-branch",
+                "user/profile",
+                "user/profile-picture",
+                "email/verify/",
+                "admin/countries/list"
+            ]
+        },
+        {
+            "type": "single",
+            "slug": "referrals",
+            "menus": {
+                "label": "Referrals",
+                "icon": "breadcrumbs",
+                "url": "agent/referrals"
+            },
+            "children": [],
+            "subs": [
+                "list"
+            ],
+            "urls": [
+                "home"
+            ]
+        },
+        {
+            "type": "hidden",
+            "slug": "institutions",
+            "menus": {
+                "label": "Institution",
+                "icon": "profilepage",
+                "url": "provider/institutions"
+            },
+            "children": [],
+            "subs": [
+                "institutions",
+                "institution",
+                "list",
+                "services",
+                "services/list",
+                "contacts","contacts/list"
+            ],
+            "urls": [
+                "home",
+                ""
+            ]
+        },
+        {
+            "type": "hidden",
+            "slug": "search",
+            "menus": {
+                "label": "Search",
+                "icon": "searchpage",
+                "url": "provider/search"
+            },
+            "children": [],
+            "subs": [
+                "list","confirm-visit","confirm-bill"
+            ],
+            "urls": [
+                "home"
+            ]
+        },
+        {
+            "type": "hidden",
+            "slug": "visits",
+            "menus": {
+                "label": "Visits",
+                "icon": "list",
+                "url": "agent/visits"
+            },
+            "children": [],
+            "subs": [
+                "list"
+            ],
+            "urls": [
+                "home"
+            ]
+        }
+    ],
     "guest": [
     ],
     "out": [

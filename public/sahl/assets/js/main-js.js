@@ -146,7 +146,6 @@ jQuery(document).ready(function($) {
         }
 
     }
-    /* owl-testimonial **/
 
     if ($('.owl-featured').length) {
 
@@ -164,7 +163,7 @@ jQuery(document).ready(function($) {
                     items: 2
                 },
                 1000: {
-                    items: 4
+                    items: 3
                 }
             }
         });
@@ -201,10 +200,9 @@ jQuery(document).ready(function($) {
 
     if ($('.owl-post-save-more').length) {
         $('.owl-post-save-more').owlCarousel({
-
             loop: false,
-            autoplay: false,
-            autoplayTimeout: 3000,
+            autoplay: true,
+            autoplayTimeout: 5000,
             nav: true,
             navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
             responsive: {
@@ -215,7 +213,7 @@ jQuery(document).ready(function($) {
                     items: 2
                 },
                 1000: {
-                    items: 2
+                    items: 3
                 }
             }
         });

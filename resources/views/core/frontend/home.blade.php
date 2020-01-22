@@ -541,41 +541,4 @@
         </div>
     </div>
 
-
-<div class="space-lg space-md space-xs">
-    <div class="container">
-        <div class="row text-center">
-            <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="section-heading">
-                <h2 style="text-align: center !important;">Our Partners </h2>
-            </div>
-            </div>
-        </div>
-        <div class="row">
-
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('frontend/assets/images/partners/neoscience-africa.png') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('frontend/assets/images/partners/pathcare.png') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
-                <!-- client logo start  -->
-                <div class="client-logo">
-                    <img src="{{ url('frontend/assets/images/partners/thebhub.png') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
-                </div>
-                <!-- client logo close  -->
-            </div>
-
-        </div>
-    </div>
-</div>
     @endsection

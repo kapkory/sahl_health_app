@@ -375,8 +375,8 @@
 
         <div class="container-fluid">
 
-               <div class="col-10 offset-1 p-5" style="background-color: white">
-                   <div class="row">
+               <div class="col-10 offset-1">
+                   <div class="row p-5" style="background-color: white">
 
                            @foreach($featured_hospitals as $featured_hospital)
                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">

@@ -11852,13 +11852,9 @@ a.text-dark:focus {
     width: 100%;
     z-index: 9;
     opacity: 1;
-    border-radius: 6px;
     background: linear-gradient(to top, rgba(35, 35, 37, 0.55) 0%, rgba(35, 35, 37, 0.55) 35%, rgba(35, 35, 37, 0.55) 60%, rgba(35, 35, 37, 0.55) 100%);
 }
 
-.hero-slider-item img {
-    border-radius: 6px;
-}
 
 .hero-search-area {
     position: absolute;
@@ -12757,7 +12753,7 @@ a.text-dark:focus {
     border: 1px solid #eaeaf2;
     border-radius: 6px;
     background-color: transparent;
-    padding: 35px;
+    padding: 10px 10px 0px;
 }
 
 .testimonial-content {}

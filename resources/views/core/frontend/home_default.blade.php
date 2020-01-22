@@ -15,23 +15,6 @@
         .owl-next {
             right: -2rem;
         }
-        @media only screen and (min-width: 600px) {
-            .institution_image{
-                height: 179px !important;
-                width: 269px!important;
-            }
-        }
-        @media only screen and (max-width: 599px) {
-            .institution_image{
-                height: 95px !important;
-                width: 142.5px!important;
-            }
-        }
-        .listing-badge{
-            background-color: #313d4f;
-            color: white;
-            top:0px;
-        }
 
         .owl-stage-outer{
             padding-bottom: 0px;
@@ -93,8 +76,17 @@
                         <!-- hero slider start -->
                         <div class="hero-slider">
                             <div class="hero-slider-item">
-                                <img style="max-height: 450px;width: 100%" src="{{ url('frontend/assets/images/sahl-health.jpg') }}" alt="Sahl" class="img-fluid">
+                                <img style="max-height: 480px;width: 100%" src="{{ url('frontend/assets/images/slider/sahl-health.jpg') }}" alt="Sahl" class="img-fluid">
                             </div>
+
+                            {{--                        <div class="hero-slider-item">--}}
+                            {{--                            <img style="max-height: 480px;width: 100%" src="{{ url('frontend/assets/images/slider/slider-2.jpg') }}" alt="Sahl" class="img-fluid">--}}
+                            {{--                        </div>--}}
+
+                            {{--                        <div class="hero-slider-item">--}}
+                            {{--                            <img style="max-height: 480px;width: 100%" src="{{ url('frontend/assets/images/slider/slider-3.png') }}" alt="Sahl" class="img-fluid">--}}
+                            {{--                        </div>--}}
+
                         </div>
                         <!-- hero slider close -->
                     </div>
@@ -154,8 +146,12 @@
 
                                 <div style="top: 0px" class="like-icon"></div>
                             </div>
-                            <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
+                            <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>
 
+                            <div class="review-content-rating float-right pt-2">
+                                <span class="star" style="float: right"></span>
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{ @$featured_hospital->getRatingCount() }}</a>
+                            </div>
                             <div class="listing-content" style="padding-left: 10px; padding-top: 1px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">
@@ -196,14 +192,18 @@
 
                                 <div style="top: 0px" class="like-icon"></div>
                             </div>
-                            <small class="lable" style="padding-left: 10px">{{ @$featured_hospital->institutionLevel->name }}</small>
+                            <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>
 
+                            <div class="review-content-rating float-right pt-2">
+                                <span class="star" style="float: right"></span>
+                                <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{  @$featured_hospital->getRatingCount() }}</a>
+                            </div>
                             <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                 <div class="listing-content-head">
                                     <h3 class="listing-content-head-title">
                                         <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,18,'...') }}</a>
                                     </h3>
-                                    <p class="listing-content-head-text">Nairobi, Kenya</p>
+                                    <p class="listing-content-head-text">Nairobi, Kenya </p>
                                 </div>
                             </div>
                         </div>
@@ -218,16 +218,16 @@
     </div>
 
     <div class="space-lg space-md space-xs bg-light rounded">
-        <div class="container">
+        <div class="container" style="background-color: #234057 !important;">
             <div class="row">
                 <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
                     <!-- section heading start  -->
                     <div class="section-heading text-center">
-                        <h2 class="section-heading-title">List Your Hospital with Us</h2>
-                        <p class="section-heading-text lead">
+                        <h2 class="section-heading-title" style="color: white">List Your Hospital with Us</h2>
+                        <p class="section-heading-text lead" style="color: white">
                             List your hospital, Insurance Company, Health Care with us and start offering your discount
                         </p>
-                        <a href="{{ url('provider-register') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">List Your Institution</a>
+                        <a href="{{ url('provider-register') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: #F07A3B; color: white">List Your Institution</a>
 
                     </div>
                     <!-- section heading close  -->
@@ -238,17 +238,37 @@
     </div>
     <div class="space-lg space-md space-xs">
         <div class="container">
-            <div class="row">
-                <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 text-center mb-5 ">
-                    <!-- section heading start  -->
+            <div class="row text-center">
+                <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="section-heading">
-                        <h2 class="section-heading-title">Partner with us </h2>
-                        <p class="lead">
-                            Market Leaders have already partnered with us, Contact us to get more information on how we can leverage our competencies
-                        </p>
+                        <h2 style="text-align: center !important;">Our Partners </h2>
                     </div>
-                    <!-- section heading close  -->
                 </div>
+            </div>
+            <div class="row">
+
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <!-- client logo start  -->
+                    <div class="client-logo">
+                        <img src="{{ url('frontend/assets/images/partners/neoscience-africa.png') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
+                    </div>
+                    <!-- client logo close  -->
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <!-- client logo start  -->
+                    <div class="client-logo">
+                        <img src="{{ url('frontend/assets/images/partners/pathcare.png') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
+                    </div>
+                    <!-- client logo close  -->
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <!-- client logo start  -->
+                    <div class="client-logo">
+                        <img src="{{ url('frontend/assets/images/partners/thebhub.png') }}" alt="spacely realtor directory listing bootstrap template" class="img-fluid">
+                    </div>
+                    <!-- client logo close  -->
+                </div>
+
             </div>
         </div>
     </div>

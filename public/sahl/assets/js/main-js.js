@@ -164,7 +164,7 @@ jQuery(document).ready(function($) {
                     items: 2
                 },
                 1000: {
-                    items: 4
+                    items: 6
                 }
             }
         });
@@ -180,7 +180,7 @@ jQuery(document).ready(function($) {
             margin: 30,
             nav: true,
             autoplay: true,
-            autoplayTimeout: 3000,
+            autoplayTimeout: 5000,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             responsive: {
                 0: {
@@ -190,10 +190,37 @@ jQuery(document).ready(function($) {
                     items: 2
                 },
                 1000: {
-                    items: 3
+                    items: 4
                 }
             }
         });
+
+    }
+
+    /* owl-post-thumbnail  **/
+
+    if ($('.owl-post-save-more').length) {
+        $('.owl-post-save-more').owlCarousel({
+
+            loop: false,
+            autoplay: false,
+            autoplayTimeout: 3000,
+            nav: true,
+            navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 2
+                }
+            }
+        });
+
+
 
     }
 

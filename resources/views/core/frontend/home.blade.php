@@ -359,7 +359,6 @@
             <div class="row owl-carousel owl-featured" style="padding-bottom: 0px !important;">
 
                 @foreach($featured_hospitals as $featured_hospital)
-{{--                    @if()--}}
                     <div class="item">
                     <!-- listing block start  -->
                         <div class="listing-block " style="padding-bottom: 1px">
@@ -389,6 +388,7 @@
 
                         <!-- listing block close  -->
                     </div>
+
                 @endforeach
 
             </div>

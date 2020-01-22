@@ -103,12 +103,12 @@ class IndexController extends Controller
 
         $referral = Referral::where('referral_id',auth()->id())->first();
         if ($referral){
-            $referral->amount = 100;
+            $referral->amount = (20 * $amount) / 100;
             $referral->save();
         }
 
         $mpesaRepository= new MpesaRepository();
-        $phone = auth()->user()->phone_number;
+        $phone = auth()->user()->getFormattedPhone();
 //        $amount = '1';
         $response =  $mpesaRepository->stkPush($payment->id,$phone,$amount);
         $responses = json_decode($response,true);

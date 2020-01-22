@@ -489,7 +489,7 @@
 
                             @if($menu->type=='many')
 
-                                    <li class="dt-side-nav__item">
+                                    <li class="dt-side-nav__item open">
                                         <a href="javascript:void(0)" class="dt-side-nav__link dt-side-nav__arrow" title="{{ $menu->label }}">
                                             <i class="icon icon-{{ $menu->icon }} icon-fw icon-lg"></i>
                                             <span class="dt-side-nav__text">{{ $menu->label }}</span>
@@ -502,7 +502,7 @@
                                                 @if($drop->label)
                                                     <li class="dt-side-nav__item">
                                                         <a href="{{ url($drop->url) }}" class="dt-side-nav__link load-page" title="{{ $drop->label }}">
-                                                            <i class="icon icon-date-time-picker icon-fw icon-lg"></i>
+                                                            <i class="icon icon-{{ isset($drop->icon) ? $drop->icon : 'date-time-picker' }} icon-fw icon-lg"></i>
                                                             <span class="dt-side-nav__text">{{ $drop->label }}</span>
                                                         </a>
                                                     </li>

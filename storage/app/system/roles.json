@@ -103,19 +103,36 @@
                 "package_category/delete","package_category","mark/active"],
             "urls": ["admin/packages/mark"]
         },
-        {
-            "type": "single",
-            "name": "payments",
-            "slug": "payments",
-            "menus": {
-                "label": "Payments",
-                "url": "admin/payments",
-                "icon": "revenue-new"
-            },
-            "children": [],
 
-            "subs": ["list", "package_category/list","package_category/delete","package_category"],
-            "urls": []
+        {
+            "type": "many",
+            "section": "main",
+            "slug": "payments",
+            "label": "Payments",
+            "icon": "revenue-new",
+            "main": "admin/payments",
+            "menus": [],
+            "children": [
+                {
+                    "label": "Packages",
+                    "url": "admin/payments",
+                    "icon": "card"
+                },
+                {
+                    "label": "Referrals",
+                    "url": "admin/payments/referrals",
+                    "icon": "crm"
+                }
+            ],
+            "subs": [
+                "list",
+                "package_category/list",
+                "package_category/delete",
+                "package_category"
+            ],
+            "urls": [
+"admin/payments/referrals/list"
+            ]
         },
         {
             "type": "single",

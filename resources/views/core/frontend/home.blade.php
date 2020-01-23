@@ -38,7 +38,7 @@
                          </div>
                          <div class="row">
                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                 <p class="hero-search-area-form-small-text">
+                                 <p class="hero-search-area-form-small-text pb-3">
                                      <a style="text-decoration: underline" href="{{ url('hospitals') }}"> Find Discounts Nearby</a>
                                  </p>
                              </div>

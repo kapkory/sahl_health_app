@@ -1,23 +1,33 @@
 @extends('layouts.sahl')
 @section('content')
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 mt-4">
-                <!-- breadcrumb start -->
-                <div class="custom-breadcrumb">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Hospitals</li>
-                        </ol>
-                    </nav>
-                </div>
-                <!-- breadcrumb close -->
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 mt-4">--}}
+{{--                <!-- breadcrumb start -->--}}
+{{--                <div class="custom-breadcrumb">--}}
+{{--                    <nav aria-label="breadcrumb">--}}
+{{--                        <ol class="breadcrumb">--}}
+{{--                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>--}}
+{{--                            <li class="breadcrumb-item active">Hospitals</li>--}}
+{{--                        </ol>--}}
+{{--                    </nav>--}}
+{{--                </div>--}}
+{{--                <!-- breadcrumb close -->--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <div class="row">
+        <div class="container-fluid">
+            <div style="background-image: url({{ url('sahl/assets/image/hospital-background.svg') }}); height: 150px">
+
+                    <h4 class="text-center post-title" style="padding-top: 30px !important;color: white">
+                        Check out our range of service providers <br> around the country
+                    </h4>
             </div>
         </div>
     </div>
-    <div class="space-lg space-md space-xs">
+    <div class="space-lg space-md space-xs mt-3">
         <div class="container">
             <div class="row">
 

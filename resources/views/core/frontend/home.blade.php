@@ -330,11 +330,11 @@
 
         <div class="container-fluid">
 
-               <div class="col-10 offset-1">
+               <div class="col-md-10 col-sm-12 offset-md-1">
                    <div class="row p-5" style="background-color: white">
 
                            @foreach($featured_hospitals as $featured_hospital)
-                               <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
                                    <!-- listing block start  -->
                                    <div class="listing-block " style="padding-bottom: 1px">
                                        <div class="listing-img">

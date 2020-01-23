@@ -286,82 +286,62 @@
                     We have over 500 healthcare providers at your service countrywide.
                 </p>
             </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="container-fluid">
             <div class="row">
-                <div class="post-carousel">
-                    <div class="owl-post-save-more owl-carousel owl-theme">
-                        <div class="item" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%)">
-                            <div class="post-imgoverlay">
-                                <!-- post classic block -->
-                                <div class="post-imgoverlay-img">
-                                    <a href="#">
-                                        <img src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px" >
-                                    </a>
-                                    <div class="post-imgoverlay-content">
-                                        <h4 class="post-title"><a href="#" class="title">Save up to 20% on inpatient bills </a></h4>
-                                        <div class="post-meta">
-                                            <div class="meta">
-                                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+            <div class="col-md-4" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                <img src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px" >
+                <div class="post-imgoverlay-content">
+                    <h4 class="post-title">
+                        <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                    </h4>
+                    <div class="post-meta">
+                        <div class="meta">
+                            <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
 
-                                            </div>
-                                            <!-- postmeta close -->
-                                        </div>
-                                    </div>
-                                    <!-- postmeta start -->
-                                </div>
-                            </div>
                         </div>
-                        <div class="item" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                            <div class="post-imgoverlay">
-                                <!-- post classic block -->
-                                <div class="post-imgoverlay-img">
-                                    <a href="#">
-                                        <img  src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; object-fit: cover;border-radius: 0px">
-                                    </a>
-                                    <div class="post-imgoverlay-content">
-                                        <h4 class="post-title">
-                                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
-                                        </h4>
-                                        <div class="post-meta">
-                                            <div class="meta">
-                                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+                        <!-- postmeta close -->
+                    </div>
+                </div>
+            </div>
 
-                                            </div>
-                                            <!-- postmeta close -->
-                                        </div>
-                                    </div>
-                                    <!-- postmeta start -->
-                                </div>
-                            </div>
+            <div class="col-md-4" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                <img src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px" >
+                <div class="post-imgoverlay-content">
+                    <h4 class="post-title">
+                        <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                    </h4>
+                    <div class="post-meta">
+                        <div class="meta">
+                            <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+
                         </div>
-                        <div class="item" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                            <div class="post-imgoverlay">
-                                <!-- post classic block -->
-                                <div class="post-imgoverlay-img">
-                                    <a href="#">
-                                        <img  src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health"  style="height: 350px ; object-fit: cover;border-radius: 0px">
-                                    </a>
-                                    <div class="post-imgoverlay-content">
-                                        <h4 class="post-title">
-                                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
-                                        </h4>
-                                        <div class="post-meta">
-                                            <div class="meta">
-                                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+                        <!-- postmeta close -->
+                    </div>
+                </div>
+            </div>
 
-                                            </div>
-                                            <!-- postmeta close -->
-                                        </div>
-                                    </div>
-                                    <!-- postmeta start -->
-                                </div>
-                            </div>
+            <div class="col-md-4" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                <img src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px" >
+                <div class="post-imgoverlay-content">
+                    <h4 class="post-title">
+                        <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                    </h4>
+                    <div class="post-meta">
+                        <div class="meta">
+                            <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+
                         </div>
-
+                        <!-- postmeta close -->
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+
     </div>
 
     <div class="row" style="background: #7BB37D;">

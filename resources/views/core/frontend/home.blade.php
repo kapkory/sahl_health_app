@@ -366,9 +366,8 @@
                                            <a href="{{ url('institution/'.$featured_hospital->slug) }}">
                                                <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">
                                            </a>
-                                           <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>
+                                           <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
 
-                                           <div style="top: 0px" class="like-icon"></div>
                                        </div>
                                        <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>
 

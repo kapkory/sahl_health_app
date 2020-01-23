@@ -1,22 +1,6 @@
 @extends('layouts.sahl')
 @section('content')
 
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 mt-4">--}}
-{{--                <!-- breadcrumb start -->--}}
-{{--                <div class="custom-breadcrumb">--}}
-{{--                    <nav aria-label="breadcrumb">--}}
-{{--                        <ol class="breadcrumb">--}}
-{{--                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>--}}
-{{--                            <li class="breadcrumb-item active">Hospitals</li>--}}
-{{--                        </ol>--}}
-{{--                    </nav>--}}
-{{--                </div>--}}
-{{--                <!-- breadcrumb close -->--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
     <div class="row ">
         <div class="container-fluid">
             <div class="row" style="background-image: url({{ url('sahl/assets/image/hospital-background.svg') }}); height: 150px">
@@ -38,7 +22,7 @@
                    <div class="row">
                        <div class="col-md-3">
                          <div class="form-group">
-                             <select class="select2 form-control custom-select">
+                             <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
                                  <option>Search By Location</option>
                                  <option value="AK">Alaska</option>
                                  <option value="HI">Hawaii</option>
@@ -50,7 +34,7 @@
 
                        <div class="col-md-3">
                            <div class="form-group">
-                               <select class="select2 form-control custom-select">
+                               <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
                                    <option>Level</option>
                                    <option value="AL">Alabama</option>
                                </select>
@@ -59,7 +43,7 @@
 
                        <div class="col-md-3">
                            <div class="form-group">
-                               <select class="select2 form-control custom-select">
+                               <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
                                    <option>Service</option>
                                    <option value="AK">Alaska</option>
                                    <option value="WY">Wyoming</option>
@@ -81,9 +65,9 @@
                                             <img src="{{ ($hospital->featured_image) ? url($hospital->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="{{ $hospital->name }}" class="img-fluid institution_image"></a>
 
                                         @if($hospital->discount > 0)
-                                            <div class="listing-badge">Discount {{ $hospital->discount }}%</div>
+                                            <div class="listing-badge">{{ $hospital->discount }}%</div>
                                         @endif
-                                        <div class="like-icon" style="top:0px"></div>
+
                                     </div>
 
                                     <small class="lable text-muted" style="padding-left: 10px;">{{ @$hospital->institutionLevel->name }}</small>

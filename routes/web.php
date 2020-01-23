@@ -13,6 +13,7 @@
 
 Route::get('/','Frontend\MenuController@index');
 Route::get('hospitals','Frontend\MenuController@hospitals');
+Route::view('about','core.frontend.about');
 Route::get('institution/{slug}','Frontend\MenuController@hospital');
 //Route::get('/', function () {
 //    return view('welcome');

@@ -25,7 +25,7 @@
 <!-- header close -->
    <div class="row" style="background: linear-gradient(89.88deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">
 
-            <img style="width: 100% !important;max-height: 500px;   object-fit: cover;" src="{{ url('sahl') }}/assets/image/slider-1.svg" alt="Sahl Health slider" >
+            <img style="width: 100% !important;max-height: 500px; object-fit: cover;" src="{{ url('sahl') }}/assets/image/slider-1.svg" alt="Sahl Health slider" >
 
              <!-- hero serach area start  -->
              <div class="hero-search-area">
@@ -197,36 +197,6 @@
     </div>
 
 
-{{--    <div class="row" style="background-color: #234057 !important;font-family: Montserrat;font-style: normal;">--}}
-{{--        <div class="container-fluid">--}}
-{{--            <div class="text-center my-5 ">--}}
-{{--                <h3 class="section-heading-title " style="color: white">--}}
-{{--                    Smartest way to access health.<br> Save More and Prevent More--}}
-{{--                </h3>--}}
-
-{{--                <form>--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-md-4">--}}
-{{--                                <input  type="text" name="name" class="form-control" placeholder="Your Name" style="background-color: #234057; color: white">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-md-4">--}}
-{{--                            <input type="text" name="email" class="form-control" placeholder="Your Email" style="background-color: #234057; color: white">--}}
-{{--                        </div>--}}
-{{--                        @csrf--}}
-{{--                        <div class="col-md-4">--}}
-{{--                            <input type="text" name="phone_number" class="form-control" placeholder="Your Mobile" style="background-color: #234057">--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-{{--                    <div class="text-center mt-2">--}}
-{{--                        <button class="btn package_button m-2 text-center" style="color: white; border-radius: 10px">Get Started</button>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
 
         <div class="row">
             <div class="container-fluid">
@@ -297,7 +267,7 @@
     <div class="row">
         <div class="container-fluid">
             <div class="row">
-            <div class="col-md-4" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+            <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
                 <img src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
@@ -313,7 +283,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+            <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
                 <img src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
@@ -329,7 +299,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+            <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
                 <img src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
@@ -405,58 +375,6 @@
         </div>
     </div>
 
-
-
-
-    {{--Start Featured Hospital--}}
-{{--    <div class="space-lg space-md space-xs pt-4" style="rgba(229, 229, 229, 0.4)">--}}
-
-{{--        <div class="container">--}}
-{{--            <div class="text-center">--}}
-{{--                <h4 class="section-heading-title ">--}}
-{{--                    Check out our range of service providers around the country--}}
-{{--                </h4>--}}
-{{--            </div>--}}
-
-{{--            <div class="row owl-carousel owl-featured" style="padding-bottom: 0px !important;">--}}
-
-{{--                @foreach($featured_hospitals as $featured_hospital)--}}
-{{--                    <div class="item">--}}
-{{--                    <!-- listing block start  -->--}}
-{{--                        <div class="listing-block " style="padding-bottom: 1px">--}}
-{{--                            <div class="listing-img">--}}
-{{--                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">--}}
-{{--                                    <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">--}}
-{{--                                </a>--}}
-{{--                                <div class="listing-badge">Discount: {{ $featured_hospital->discount }}%</div>--}}
-
-{{--                                <div style="top: 0px" class="like-icon"></div>--}}
-{{--                            </div>--}}
-{{--                            <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>--}}
-
-{{--                            <div class="review-content-rating float-right pt-2">--}}
-{{--                                <span class="star" style="float: right"></span>--}}
-{{--                                <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{  @$featured_hospital->getRatingCount() }}</a>--}}
-{{--                            </div>--}}
-{{--                            <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">--}}
-{{--                                <div class="listing-content-head">--}}
-{{--                                    <h3 class="listing-content-head-title">--}}
-{{--                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,18,'...') }}</a>--}}
-{{--                                    </h3>--}}
-{{--                                    <p class="listing-content-head-text">Nairobi, Kenya </p>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <!-- listing block close  -->--}}
-{{--                    </div>--}}
-
-{{--                @endforeach--}}
-
-{{--            </div>--}}
-{{--            <a style="padding-left: 0px !important;" href="{{ url('hospitals') }}" class="btn btn-link">View all &nbsp;></a>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 
     <div class="row">
         <div class="container-fluid">

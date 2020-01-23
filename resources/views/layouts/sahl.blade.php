@@ -108,8 +108,8 @@
      @yield('content')
 
 
-    <div class="footer-dark">
-        <div class="containdder" >
+    <div class="footer-dark" style="width: 100%">
+        <div class="container-fluid" >
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
                     <!-- footer widget  -->

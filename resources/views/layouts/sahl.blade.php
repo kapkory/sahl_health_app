@@ -108,9 +108,10 @@
      @yield('content')
 
 
-    <div class="footer-dark" style="width: 100%">
+<div class="row">
+    <div class="footer-dark" style="border-radius: 0px">
         <div class="container-fluid" >
-            <div class="row">
+            <div class="row" style="width: 100% !important;">
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
                     <!-- footer widget  -->
                     <div class="footer-widget pl-2" style="color: white">
@@ -123,7 +124,7 @@
 
                     </div>
                 </div>
-{{--                <!-- footer widget  -->--}}
+                {{--                <!-- footer widget  -->--}}
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
                     <div class="footer-widget">
                         <h3 class="footer-widget-title">Legal use</h3>
@@ -137,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-{{--                <!-- footer widget  -->--}}
+                {{--                <!-- footer widget  -->--}}
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
                     <div class="footer-widget">
                         <h3 class="footer-widget-title">Company</h3>
@@ -155,10 +156,10 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         </div>
         <!-- tiny footer  -->
-        <div class="tiny-footer">
+        <div class="tiny-footer" style="border-radius: 0px">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -180,6 +181,7 @@
         <!-- footer section close  -->
     </div>
     <!-- footer section close -->
+</div>
 </div>
 
 <!-- ============================================================== -->

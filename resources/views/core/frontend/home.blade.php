@@ -268,7 +268,7 @@
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                <img src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 99%" >
+                <img src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
                         <a href="#" class="title">Save up to 20% on on outpatient bills</a>
@@ -284,7 +284,7 @@
             </div>
 
             <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                <img src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 99%; object-fit: cover; border-radius: 0px" >
+                <img src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
                         <a href="#" class="title">Save up to 20% on on outpatient bills</a>
@@ -300,7 +300,7 @@
             </div>
 
             <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                <img src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 99%;object-fit: cover; border-radius: 0px" >
+                <img src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
                         <a href="#" class="title">Save up to 20% on on outpatient bills</a>
@@ -329,12 +329,11 @@
         </div>
 
         <div class="container-fluid">
-
                <div class="col-md-10 col-sm-12 offset-md-1">
                    <div class="row p-5" style="background-color: white">
 
                            @foreach($featured_hospitals as $featured_hospital)
-                               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                               <div class="col-lg-4 col-sm-4 col-xs-4">
                                    <!-- listing block start  -->
                                    <div class="listing-block " style="padding-bottom: 1px">
                                        <div class="listing-img">

@@ -33,8 +33,43 @@
         <div class="container">
             <div class="row">
 
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-3">
+                    <!-- filter btn start -->
+                   <div class="row">
+                       <div class="col-md-3">
+                         <div class="form-group">
+                             <select class="select2 form-control custom-select">
+                                 <option>Search By Location</option>
+                                 <option value="AK">Alaska</option>
+                                 <option value="HI">Hawaii</option>
+                                 <option value="WY">Wyoming</option>
+                                 <option value="AL">Alabama</option>
+                             </select>
+                         </div>
+                       </div>
 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                       <div class="col-md-3">
+                           <div class="form-group">
+                               <select class="select2 form-control custom-select">
+                                   <option>Level</option>
+                                   <option value="AL">Alabama</option>
+                               </select>
+                           </div>
+                       </div>
+
+                       <div class="col-md-3">
+                           <div class="form-group">
+                               <select class="select2 form-control custom-select">
+                                   <option>Service</option>
+                                   <option value="AK">Alaska</option>
+                                   <option value="WY">Wyoming</option>
+                                   <option value="AL">Alabama</option>
+                               </select>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
 
                     <div class="row">
                         @foreach($hospitals as $hospital)

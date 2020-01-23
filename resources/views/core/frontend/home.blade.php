@@ -15,6 +15,11 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 8px;
          }
+        @media screen and (max-width: 768px) {
+            .hero-search-area-caption-text {
+                color: black;
+            }
+        }
 
     </style>
 <!-- header close -->
@@ -25,7 +30,7 @@
              <!-- hero serach area start  -->
              <div class="hero-search-area">
                  <div class="row">
-                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                          <div class="hero-search-area-caption">
                              <h1 class="hero-search-area-caption-title">Now, Medical bills have no claim on your health and wellness.</h1>
                              <p class="hero-search-area-caption-text">
@@ -456,12 +461,12 @@
     <div class="row">
         <div class="container-fluid">
             <div class="row mt-2">
-                <div style="padding: 0px !important;" class="col-md-6 mt-5">
+                <div style="padding: 0px !important;" class="col-md-6 mt-4">
                     <img style="object-fit: cover; width: 100%; max-height: 500px" src="{{ url('sahl/assets/image/contact-us.svg') }}">
                 </div>
                 <div class="col-md-6" style="float: right">
                     <div class="col-md-12">
-                        <div class="mt-3">
+                        <div class="mt-4">
                             <h4>Would prefer to get more information first?</h4>
                             <p>
                                 Get in touch with our friendly staff 24/7
@@ -497,7 +502,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea placeholder="Write Message" cols="4" rows="8" class="form-control">
+                                            <textarea placeholder="Write Message" cols="4" rows="6" class="form-control">
 
                                             </textarea>
                                         </div>

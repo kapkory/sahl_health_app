@@ -17,13 +17,15 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
-    <div class="row">
+    <div class="row ">
         <div class="container-fluid">
-            <div style="background-image: url({{ url('sahl/assets/image/hospital-background.svg') }}); height: 150px">
+            <div class="row" style="background-image: url({{ url('sahl/assets/image/hospital-background.svg') }}); height: 150px">
 
-                    <h4 class="text-center post-title" style="padding-top: 30px !important;color: white">
-                        Check out our range of service providers <br> around the country
-                    </h4>
+                    <div class="col-md-8 offset-3">
+                        <h4 class=" post-title" style="padding-top: 30px !important;color: white">
+                            Check out our range of service providers <br> around the country
+                        </h4>
+                    </div>
             </div>
         </div>
     </div>

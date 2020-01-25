@@ -82,6 +82,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+    <style>
+        .dt-nav__link,.dt-nav__link:hover
+        {
+            color: #757575 !important;
+        }
+        .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+            background-color: #757575;;
+        }
+    </style>
 </head>
 <body class="dt-sidebar--fixed dt-header--fixed" style="overflow-y: scroll !important;">
 
@@ -98,13 +107,13 @@
 <div class="dt-root">
     <div class="dt-root__inner">
         <!-- Header -->
-        <header class="dt-header">
+        <header class="dt-header" style="background-color:white;box-shadow: 0 0 15px 0rgba(0,0,0,0.2);transition: all 0.2s ease;">
 
             <!-- Header container -->
-            <div class="dt-header__container">
+            <div class="dt-header__container" >
 
                 <!-- Brand -->
-                <div class="dt-brand">
+                <div class="dt-brand" style="background-color:#fff !important ">
 
                     <!-- Brand tool -->
                     <div class="dt-brand__tool" data-toggle="main-sidebar">
@@ -115,8 +124,8 @@
                     <!-- Brand logo -->
                     <span class="dt-brand__logo">
         <a class="dt-brand__logo-link" href="{{ url('/') }}">
-          <img class="dt-brand__logo-img d-none d-sm-inline-block" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Logo">
-          <img class="dt-brand__logo-symbol d-sm-none" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Logo">
+          <img class="dt-brand__logo-img d-none d-sm-inline-block" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="Sahl Logo">
+          <img class="dt-brand__logo-symbol d-sm-none" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="Sahl Logo">
         </a>
       </span>
                     <!-- /brand logo -->
@@ -469,10 +478,10 @@
         <!-- Site Main -->
         <main class="dt-main">
             <!-- Sidebar -->
-            <aside id="main-sidebar" class="dt-sidebar">
+            <aside id="main-sidebar" class="dt-sidebar" style="background-color: #335062 !important;">
                 <div class="dt-sidebar__container">
 
-                    <ul class="dt-side-nav">
+                    <ul class="dt-side-nav" >
 
                         @isset($real_menus)
                         @foreach($real_menus as $menu)

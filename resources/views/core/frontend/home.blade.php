@@ -336,7 +336,7 @@
 
         <div class="container-fluid">
                <div class="col-md-10 col-sm-12 offset-md-1">
-                   <div class="row p-5" style="background-color: white">
+                   <div class="row p-5 mobile1`" style="background-color: white">
 
                            @foreach($featured_hospitals as $featured_hospital)
                                <div class="col-lg-4 mobile_disp">

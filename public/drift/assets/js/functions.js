@@ -476,12 +476,12 @@ function changeTheme($theme, $style, $themeStylesheet, $init) {
         $body.removeClass('theme-dark').removeClass('theme-semidark');
         $themeStylesheet.href = 'assets/css/' + $theme + '-' + $style + '.min.css';
     } else if ($theme === 'dark') {
-        $logo.attr('src', home_url+'/frontend/assets/sahl-logo.jpeg');
+        $logo.attr('src', home_url+'/frontend/assets/sahl-logo.png');
         $body.removeClass('theme-semidark').addClass('theme-dark');
         $themeStylesheet.href = 'assets/css/' + $theme + '-style-1.min.css';
         $('#theme-style-chooser').hide();
     } else if ($theme === 'semidark') {
-        $logo.attr('src', home_url+'/frontend/assets/sahl-logo.jpeg');
+        $logo.attr('src', home_url+'/frontend/assets/sahl-logo.png');
         $body.find('.dt-login__content-inner .dt-brand__logo-img').attr('src', 'assets/images/logo.png');
         $body.removeClass('theme-dark').addClass('theme-semidark');
         $themeStylesheet.href = 'assets/css/' + $theme + '-' + $style + '.min.css';

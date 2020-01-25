@@ -214,16 +214,16 @@
                         We have over 500 healthcare providers at your service countrywide.
                     </h5>
                 </div>
-                <div class="row " style="display: flex">
-                    <div class="col-md-3 offset-1">
-                        <div class="card  pt-3 mx-3">
+                <div class="row " >
+                    <div class="col-md-3">
+                        <div class="card  pt-3">
                             <div class="text-center">
                                 <img  src="{{ url('sahl/assets/image') }}/nearby_hospital.svg" alt="Find A Hospital Near You">
                                 <h4>Find A Hospital<br> Near You</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 mx-3">
+                    <div class="col-md-3">
                         <div class="card  pt-3">
                             <div class="text-center">
                                 <img class="text-center" src="{{ url('sahl/assets/image') }}/compare-charges.svg" alt="Compare Hospital Charges">

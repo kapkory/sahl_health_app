@@ -3,11 +3,6 @@
     <link rel="stylesheet" href="{{ url('drift/assets/modules/intlTelInput/intlTelInput.min.css') }}">
 
     <style>
-        .bg-dark-myimg{
-            background-image: url("{{ url('frontend/assets/background.jpg') }}");
-        }
-    </style>
-    <style>
         .iti-flag {background-image: url("{{ url('drift/assets/modules/intlTelInput/img/flags.png') }}");}
 
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

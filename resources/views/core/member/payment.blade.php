@@ -1,10 +1,6 @@
 @extends('layouts.sahl')
 @section('styles')
-    <style>
-        .bg-dark-myimg{
-            background-image: url("{{ url('frontend/assets/background.jpg') }}");
-        }
-    </style>
+
 @endsection
 @section('content')
     <div class="container-fluid bg-dark-myimg pb-md-5 mb-md-5 ">

@@ -2,11 +2,7 @@
 @section('styles')
     <link rel="stylesheet" href="{{ url('drift/assets/modules/intlTelInput/intlTelInput.min.css') }}">
 
-    <style>
-        .bg-dark-myimg{
-            background-image: url("{{ url('frontend/assets/background.jpg') }}");
-        }
-    </style>
+
     <style>
         .iti-flag {background-image: url("{{ url('drift/assets/modules/intlTelInput/img/flags.png') }}");}
 
@@ -49,6 +45,7 @@
 {{--                            </p>--}}
                         </div>
                         <div class="col-md-4 pt-md-3 mt-md-3">
+{{--                            <img src="{{ url('frontend/assets/sahl/heart.png') }}" alt="Heart Beat">--}}
 {{--                            <i--}}
 {{--                                class="fa fa-heartbeat text-light fa-5x float-md-right"--}}
 {{--                                aria-hidden="true"--}}

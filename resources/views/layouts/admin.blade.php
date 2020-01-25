@@ -478,7 +478,7 @@
         <!-- Site Main -->
         <main class="dt-main">
             <!-- Sidebar -->
-            <aside id="main-sidebar" class="dt-sidebar" style="background-color: #335062 !important;">
+            <aside id="main-sidebar" class="dt-sidebar" style="background-color: #234057 !important;">
                 <div class="dt-sidebar__container">
 
                     <ul class="dt-side-nav" >

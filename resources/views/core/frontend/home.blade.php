@@ -56,6 +56,7 @@
 {{--         </div>--}}
 
 </div>
+
     <div class="row" style="background-color:#335062;">
         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
             <h2 class="section-heading-title text-center" style="color: white">
@@ -67,6 +68,9 @@
                 The best healthcare costs an arm and a leg, but a Sahl Health Plan means you never have to get to that point. We have made it easy and affordable to take care of your health and wellness every day, as a way of life. Choose a plan that is right for you, your loved ones or employees.
             </p>
         </div>
+    </div>
+    <div class="clearfix">
+
     </div>
     <div class="row" style="background-color:#335062;">
         <div class="container-fluid my-3" >
@@ -210,7 +214,7 @@
                 <div class="row " >
                     <div class="container-fluid offset-1 col-md-10">
                       <div class="row">
-                          <div class="col-md-3">
+                          <div class="col-sm-6 col-md-6 col-lg-3 ">
                               <div class="card  pt-3">
                                   <div class="text-center">
                                       <img class="lazy" src="{{ url('sahl/assets/image') }}/nearby-hospital.svg" alt="Find A Hospital Near You">
@@ -218,7 +222,7 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="col-md-3">
+                          <div class="col-sm-6 col-md-6 col-lg-3">
                               <div class="card  pt-3">
                                   <div class="text-center">
                                       <img class="text-center lazy" src="{{ url('sahl/assets/image') }}/compare-charges.svg" alt="Compare Hospital Charges">
@@ -228,7 +232,7 @@
 
 
                           </div>
-                          <div class="col-md-3">
+                          <div class="col-sm-6 col-md-6 col-lg-3">
                               <div class="card  pt-3 mx-3">
                                   <div class="text-center">
                                       <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
@@ -238,7 +242,7 @@
 
                           </div>
 
-                          <div class="col-md-3 ">
+                          <div class="col-sm-6 col-md-6 col-lg-3">
                               <div class="card  pt-3 mx-3">
                                   <div class="text-center">
                                       <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
@@ -333,18 +337,18 @@
         </div>
 
         <div class="container-fluid">
-               <div class="col-md-10 col-sm-12 offset-md-1">
+               <div class="col-lg-10 col-sm-12 offset-lg-1">
                    <div class="row mobile1 p-5 `">
                    <?php
                      $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
                     ?>
                    @foreach($featured_hospitals as $featured_hospital)
-                       <div class="mobile_disp col-lg-4 ">
+                       <div class="mobile_disp col-lg-4 col-md-5 col-sm-6 col-xs-6">
                            <!-- listing block start  -->
                            <div class="listing-block " style="padding-bottom: 1px">
                                <div class="listing-img">
                                    <a href="{{ url('institution/'.$featured_hospital->slug) }}">
-                                       <img style="object-fit: cover;" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image lazy">
+                                       <img style="object-fit: cover;" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid  lazy">
                                    </a>
                                    <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
 

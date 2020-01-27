@@ -16591,10 +16591,10 @@ blockquote {
     }
 
     .hero-search-area {
-        position: absolute;
+        position: relative;
         bottom: 80px;
         width: 100%;
-        padding: 0px 30px;
+        padding: 0px 10px;
     }
 
     .hero-search-area-caption {

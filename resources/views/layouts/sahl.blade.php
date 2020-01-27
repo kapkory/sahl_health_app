@@ -8,7 +8,8 @@
     <meta name="description" content="Sahl health is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.">
     <title>Sahl Health</title>
     <!-- Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+{{--    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ url('sahl/assets/fonts/fontawesome/css/all.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('sahl/assets/css/slick.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url('sahl/assets/css/slick-theme.css') }}" />
@@ -52,6 +53,14 @@
             }
             .mobile1{
                 padding: 0px !important;
+            }
+            .mobile_padding{
+                padding: 2px;
+            }
+            .mobile_heading{
+                font-weight: normal;
+                font-size: 14px;
+                overflow-wrap: break-word !important;
             }
         }
     </style>

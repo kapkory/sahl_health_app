@@ -12179,7 +12179,7 @@ a.text-dark:focus {
     font-weight: 900;
     content: '\f005';
     display: block;
-    color: #ff9703;
+    /*color: #ff9703;*/
 }
 
 .review-content-rating .star.empty:before {

@@ -36,9 +36,9 @@ class Institution extends Model
 	    if ($rating->rating){
 	        $users = Rating::join('visits','ratings.visit_id','=','visits.id')
                 ->where('visits.institution_id',$this->id)->count();
-	        return $rating->rating / $users;
+	        return round($rating->rating / $users);
         }
-	    return '3.0';
+	    return 3;
 
     }
 }

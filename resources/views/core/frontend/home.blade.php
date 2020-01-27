@@ -338,32 +338,40 @@
         <div class="container-fluid">
                <div class="col-md-10 col-sm-12 offset-md-1">
                    <div class="row mobile1 p-5 `">
-
+                           <?php
+                             $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
+                            ?>
                            @foreach($featured_hospitals as $featured_hospital)
                                <div class="mobile_disp col-lg-4 ">
                                    <!-- listing block start  -->
                                    <div class="listing-block " style="padding-bottom: 1px">
                                        <div class="listing-img">
                                            <a href="{{ url('institution/'.$featured_hospital->slug) }}">
-                                               <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image lazy">
+                                               <img style="object-fit: cover;" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image lazy">
                                            </a>
                                            <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
 
                                        </div>
-                                       <small class="lable text-muted" style="padding-left: 10px;">{{ @$featured_hospital->institutionLevel->name }}</small>
 
-                                       <div class="review-content-rating float-right pt-2">
-                                           <span class="star" style="float: right"></span>
-                                           <a href="{{ url('institution/'.$featured_hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{  @$featured_hospital->getRatingCount() }}</a>
-                                       </div>
                                        <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                            <div class="listing-content-head">
-                                               <h3 class="listing-content-head-title">
-                                                   <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,18,'...') }}</a>
+                                               <button class="btn badge mobile_padding" style="color: white; background-color: {{ @$colors[$loop->index] }}">Nairobi</button>
+                                               <h3 class="listing-content-head-title mobile_heading">
+                                                   <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
                                                </h3>
-                                               <p class="listing-content-head-text">Nairobi, Kenya </p>
+
+                                               <p class="listing-content-head-text">{{ @$featured_hospital->institutionLevel->name }} </p>
+{{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
+                                               <div class="review-content-rating ">
+                                                   @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)
+                                                       <span class="star" style="float: right; color: #7BB37D !important;"></span>
+                                                   @endfor
+                                               </div>
                                            </div>
+
+
                                        </div>
+
                                    </div>
 
                                    <!-- listing block close  -->

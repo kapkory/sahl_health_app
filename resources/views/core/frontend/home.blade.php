@@ -216,7 +216,7 @@
                           <div class="col-md-3">
                               <div class="card  pt-3">
                                   <div class="text-center">
-                                      <img  src="{{ url('sahl/assets/image') }}/nearby_hospital.svg" alt="Find A Hospital Near You">
+                                      <img class="lazy" src="{{ url('sahl/assets/image') }}/nearby_hospital.svg" alt="Find A Hospital Near You">
                                       <h4>Find A Hospital<br> Near You</h4>
                                   </div>
                               </div>
@@ -224,7 +224,7 @@
                           <div class="col-md-3">
                               <div class="card  pt-3">
                                   <div class="text-center">
-                                      <img class="text-center" src="{{ url('sahl/assets/image') }}/compare-charges.svg" alt="Compare Hospital Charges">
+                                      <img class="text-center lazy" src="{{ url('sahl/assets/image') }}/compare-charges.svg" alt="Compare Hospital Charges">
                                       <h4>Compare Hospital Charges</h4>
                                   </div>
                               </div>
@@ -234,7 +234,7 @@
                           <div class="col-md-3">
                               <div class="card  pt-3 mx-3">
                                   <div class="text-center">
-                                      <img  src="{{ url('sahl/assets/image') }}/wellness.svg" alt="Talk to a Wellness Expert">
+                                      <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.svg" alt="Talk to a Wellness Expert">
                                       <h4>My Health <br> Assistants</h4>
                                   </div>
                               </div>
@@ -244,7 +244,7 @@
                           <div class="col-md-3 ">
                               <div class="card  pt-3 mx-3">
                                   <div class="text-center">
-                                      <img  src="{{ url('sahl/assets/image') }}/wellness.svg" alt="Talk to a Wellness Expert">
+                                      <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.svg" alt="Talk to a Wellness Expert">
                                       <h4>Talk to a Wellness <br> Expert</h4>
                                   </div>
                               </div>
@@ -275,7 +275,7 @@
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                <img src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >
+                <img class="lazy" src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
                         <a href="#" class="title">Save up to 20% on on outpatient bills</a>
@@ -291,7 +291,7 @@
             </div>
 
             <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                <img src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >
+                <img class="lazy" src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
                         <a href="#" class="title">Save up to 20% on on outpatient bills</a>
@@ -307,7 +307,7 @@
             </div>
 
             <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                <img src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >
+                <img class="lazy" src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >
                 <div class="post-imgoverlay-content">
                     <h4 class="post-title">
                         <a href="#" class="title">Save up to 20% on on outpatient bills</a>
@@ -345,7 +345,7 @@
                                    <div class="listing-block " style="padding-bottom: 1px">
                                        <div class="listing-img">
                                            <a href="{{ url('institution/'.$featured_hospital->slug) }}">
-                                               <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image">
+                                               <img src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid institution_image lazy">
                                            </a>
                                            <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
 

@@ -23,6 +23,7 @@
     <script src="{{ url('sahl/assets') }}/js/bootstrap.bundle.js"></script>
 
         <script src="{{ url('sahl/assets') }}/js/owl.carousel.min.js"></script>
+        <script src="{{ url('sahl/assets') }}/js/jquery.lazy.min.js"></script>
     @yield('styles')
     <style type="text/css">
         @media only screen and (min-width: 600px) {
@@ -210,6 +211,10 @@
 <script src="{{ url('sahl/assets') }}/js/slick.min.js"></script>
 @yield('scripts')
 <script>
+    $(function() {
+        $('.lazy').Lazy();
+    });
+
     $('.ajax-post').submit(function (event) {
         event.preventDefault();
         var form = $(this);

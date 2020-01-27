@@ -24,6 +24,12 @@
         @media screen and (max-width: 500px) {
             .mobile_disp {
                 width: 50%;
+                padding-left: 2px;
+                padding-right: 2px;
+
+            }
+            .mobile1{
+                padding: 0px !important;
             }
         }
 
@@ -79,15 +85,15 @@
             <div class="col-10 offset-1">
                 <div class="testimonial-carousel">
                     <div class="owl-carousel owl-theme owl-testimonial">
-                        <div class="item">
+                        <div class="item ">
                             <!-- testimonial start  -->
                             <div class="testimonial-block">
-                                <div class="testimonial-content">
+                                <div class="testimonial-content pt-3">
+                                    <h5 >Individual Plan</h5>
                                     <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="45" cy="45" r="45" fill="#7BB37D"/>
                                     </svg>
                                     <div>
-                                        <h5>Individual Plan</h5>
                                         <h4>
                                             Ksh 2499<br>
                                             <small>Per Year</small>
@@ -102,7 +108,7 @@
                                 </div>
                             </div>
 
-                            <div class="text-center">
+                            <div class="text-center pb-3">
                                 <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
                             </div>
                             <!-- testimonial close  -->
@@ -110,13 +116,14 @@
                         <div class="item">
                             <!-- testimonial start  -->
                             <div class="testimonial-block">
-                                <div class="testimonial-content">
+
+                                <div class="testimonial-content pt-3">
+                                    <h5>3 Member Plan</h5>
                                     <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="45" cy="45" r="45" fill="#7BB37D"/>
                                     </svg>
 
                                     <div>
-                                        <h5>3 Member Plan</h5>
                                         <h4>
                                             Ksh 5499<br>
                                             <small>Per Year</small>
@@ -131,7 +138,7 @@
 
                                 </div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center pb-3">
                                 <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
                             </div>
                             <!-- testimonial close  -->
@@ -140,12 +147,13 @@
 
                             <!-- testimonial start  -->
                             <div class="testimonial-block">
-                                <div class="testimonial-content">
+                                <div class="testimonial-content pt-3">
+                                    <h5>4 Member Plan</h5>
                                     <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="45" cy="45" r="45" fill="#7BB37D"/>
                                     </svg>
                                     <div>
-                                        <h5>4 Member Plan</h5>
+
                                         <h4>
                                             Ksh 5999<br>
                                             <small>Per Year</small>
@@ -160,7 +168,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center pb-3">
                                 <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
                             </div>
                             <!-- testimonial close  -->
@@ -168,13 +176,13 @@
                         <div class="item">
                             <!-- testimonial start  -->
                             <div class="testimonial-block">
-                                <div class="testimonial-content">
-
+                                <div class="testimonial-content pt-3">
+                                    <h5>Corporate Membership</h5>
                                     <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="45" cy="45" r="45" fill="#7BB37D"/>
                                     </svg>
                                     <div>
-                                        <h5>Corporate Membership</h5>
+
                                         <h4>
                                             Ksh 5499<br>
                                             <small>Per Year</small>
@@ -190,7 +198,7 @@
 
                                 </div>
                             </div>
-                            <div class="text-center">
+                            <div class="text-center pb-3">
                                 <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
                             </div>
                             <!-- testimonial close  -->
@@ -330,10 +338,10 @@
 
     </div>
 
-    <div class="row" style="background: #7BB37D;">
+    <div class="row">
         <div class="container-fluid my-3">
             <div class="text-center">
-                <h4 class="section-heading-title " style="color: white">
+                <h4 class="section-heading-title ">
                     Popular Service providers
                 </h4>
             </div>
@@ -341,10 +349,10 @@
 
         <div class="container-fluid">
                <div class="col-md-10 col-sm-12 offset-md-1">
-                   <div class="row p-5 mobile1`" style="background-color: white">
+                   <div class="row mobile1 p-5 `">
 
                            @foreach($featured_hospitals as $featured_hospital)
-                               <div class="col-lg-4 mobile_disp">
+                               <div class="mobile_disp col-lg-4 ">
                                    <!-- listing block start  -->
                                    <div class="listing-block " style="padding-bottom: 1px">
                                        <div class="listing-img">
@@ -402,7 +410,7 @@
                         </div>
                         <div class="row">
                             @if (session('status'))
-                                <div class="alert alert-success">
+                                <div class="alert alert-success text-center">
                                     {{ session('status') }}
                                 </div>
                             @endif

@@ -27,6 +27,7 @@ Route::get('logout',function (){
 Auth::routes();
 
 Route::get('register','Frontend\IndexController@memberRegistration');
+Route::post('contact-us','Frontend\IndexController@saveContacts');
 Route::post('member-register','Auth\RegisterController@memberRegistration');
 Route::get('member-packages','Frontend\IndexController@memberPackages');
 Route::view('member-complete-registration','core.member.complete_registration');

@@ -401,11 +401,16 @@
                             </p>
                         </div>
                         <div class="row">
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <form method="post" action="{{ url('contact-us') }}">
                                 <div class="form-row m-3">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input  type="text" name="name" class="form-control" placeholder="Your Name">
+                                            <input required="required" type="text" name="name" class="form-control" placeholder="Your Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -418,27 +423,26 @@
                                 <div class="form-row m-3">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input  type="text" name="name" class="form-control" placeholder="Your Name" >
+                                            <input required="required" type="text" name="phone" class="form-control" placeholder="Your Mobile" >
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="email" class="form-control" placeholder="Your Email">
+                                            <input required="required" type="text" name="location" class="form-control" placeholder="Your Location">
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea placeholder="Write Message" cols="4" rows="6" class="form-control">
-
-                                            </textarea>
+                                            <textarea name="message" required="required"  placeholder="Write Message" cols="4" rows="6" class="form-control"></textarea>
+                                            @csrf
                                         </div>
 
                                     </div>
 
                                     <div class="col-md-12 mt-2">
-                                        <button type="button" class="btn" style="color: white; background: #F07A3B;border-radius: 10px;">Submit</button>
+                                        <button type="submit" class="btn" style="color: white; background: #F07A3B;border-radius: 10px;">Submit</button>
                                     </div>
                                 </div>
                             </form>

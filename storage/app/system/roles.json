@@ -151,6 +151,22 @@
             ]
         },
         {
+            "type": "single",
+            "slug": "visits",
+            "menus": {
+                "label": "Contact Requests",
+                "icon": "user-account",
+                "url": "admin/contacts"
+            },
+            "children": [],
+            "subs": [
+                "list","delete"
+            ],
+            "urls": [
+                "home"
+            ]
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "manage_admin_departments",

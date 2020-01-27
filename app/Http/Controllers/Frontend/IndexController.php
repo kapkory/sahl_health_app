@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\ContactUs;
 use App\Models\Core\PackageCategory;
 use App\Models\Core\Referral;
 use App\User;
@@ -45,5 +46,17 @@ class IndexController extends Controller
             }
         }
         return false;
+    }
+
+    public function saveContacts(){
+        $this->validate(\request(),['name'=>'required','email'=>'required','message'=>'required']);
+        $contact = new ContactUs();
+        $contact->name = \request('name');
+        $contact->email = \request('email');
+        $contact->phone = \request('phone');
+        $contact->location = \request('location');
+        $contact->message = \request('message');
+        $contact->save();
+        return redirect('/')->with('status', 'Thank you for your feedback, we shall Reach back as soon as possible');
     }
 }

@@ -55,7 +55,7 @@
                     </h5>
 
                         <div class="row my-2">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-4 offset-md-2">
                                 <div class="form-group text-center">
                                     <div class="custom-control custom-radio custom-control-inline ">
                                         <input checked type="radio" class="custom-control-input" id="nominateDependant" name="nominate" value="1">
@@ -64,7 +64,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-4 col-sm-6">
                                 <div class="form-group text-center">
                                     <!-- Default inline 2-->
                                     <div class="custom-control custom-radio custom-control-inline">

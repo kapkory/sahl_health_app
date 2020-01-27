@@ -21,18 +21,6 @@
             }
         }
 
-        @media screen and (max-width: 500px) {
-            .mobile_disp {
-                width: 50%;
-                padding-left: 2px;
-                padding-right: 2px;
-
-            }
-            .mobile1{
-                padding: 0px !important;
-            }
-        }
-
     </style>
 <!-- header close -->
    <div class="row" style="background: linear-gradient(89.88deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">

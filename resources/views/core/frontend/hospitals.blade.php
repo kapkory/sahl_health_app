@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row" style="background-image: url({{ url('sahl/assets/image/hospital-background.svg') }}); height: 150px">
 
-                    <div class="col-md-8 offset-3">
+                    <div class="col-md-8 col-sm-12 offset-md-3">
                         <h4 class=" post-title" style="padding-top: 30px !important;color: white">
                             Check out our range of service providers <br> around the country
                         </h4>
@@ -55,9 +55,9 @@
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
 
-                    <div class="row">
+                    <div class="row mobile1">
                         @foreach($hospitals as $hospital)
-                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                            <div class="mobile_disp col-lg-3">
                                 <!-- listing block start -->
                                 <div class="listing-block">
                                     <div class="listing-img">

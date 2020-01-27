@@ -361,9 +361,9 @@
                                            <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
                                        </h3>
 
-                                       <p class="listing-content-head-text">{{ @$featured_hospital->institutionLevel->name }} </p>
+                                       <div class="listing-content-head-text py-0">{{ @$featured_hospital->institutionLevel->name }} </div>
 {{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
-                                       <div class="review-content-rating ">
+                                       <div class="py-0 review-content-rating  " >
                                            @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)
                                                <span class="star" style="float: right; color: #7BB37D !important;"></span>
                                            @endfor

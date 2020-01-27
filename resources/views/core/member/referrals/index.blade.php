@@ -54,7 +54,7 @@
 
                             <li class="dt-list__item">
                                 <!-- Fab Button -->
-                                <a href="mailto:?&subject=Invite Link&body={{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30">
+                                <a href="mailto:?&subject=Invite Link&body=Register with Sahl Health and get affordable discounts from selected hospitals, Register with this link {{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30">
                                     <i class="icon icon-google-plus icon-xl"></i>
                                 </a>
                                 <!-- /fab button -->
@@ -62,7 +62,7 @@
 
                             <li class="dt-list__item">
                                 <!-- Fab Button -->
-                                <a href="https://twitter.com/intent/tweet?text={{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30">
+                                <a target="_blank" href="https://twitter.com/intent/tweet?text=Register with Sahl Health and get affordable discounts from selected hospitals&url={{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30">
                                     <i class="icon icon-twitter icon-xl"></i>
                                 </a>
                                 <!-- /fab button -->

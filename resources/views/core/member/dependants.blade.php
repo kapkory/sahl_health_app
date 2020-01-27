@@ -44,8 +44,8 @@
         <div class="container mb-4">
             <div id="nominate_dependant_form" class="form_cont container py-md-5 bg-light shadow-lg rounded mb-5">
                 <div class="col-11 mx-auto">
-                    <div class="col-5 col-md-2 mx-auto">
-                        <img src="{{ url('frontend/assets/user.png') }}" alt="User Logo" width="100%" class="user_image mb-2"/>
+                    <div class="col-5 col-md-2  mx-auto">
+                        <img src="{{ url('frontend/assets/user.png') }}" alt="User Logo" width="100%" class="user_image my-2"/>
                     </div>
                     <h5 class="text-center">
                         <caption>
@@ -55,19 +55,24 @@
                     </h5>
 
                         <div class="row my-2">
-                            <div class=" col-md-6 form-group">
-                                <div class="custom-control custom-radio custom-control-inline float-right">
-                                    <input checked type="radio" class="custom-control-input" id="nominateDependant" name="nominate" value="1">
-                                    <label class="custom-control-label" for="nominateDependant">Yes</label>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group text-center">
+                                    <div class="custom-control custom-radio custom-control-inline ">
+                                        <input checked type="radio" class="custom-control-input" id="nominateDependant" name="nominate" value="1">
+                                        <label class="custom-control-label" for="nominateDependant">Yes</label>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class=" col-md-6 form-group">
-                                <!-- Default inline 2-->
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="dontNominate" name="nominate" value="0">
-                                    <label class="custom-control-label" for="dontNominate">No</label>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group text-center">
+                                    <!-- Default inline 2-->
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="dontNominate" name="nominate" value="0">
+                                        <label class="custom-control-label" for="dontNominate">No</label>
+                                    </div>
                                 </div>
+
                             </div>
 
                         </div>

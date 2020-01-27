@@ -62,8 +62,8 @@
                 My Sahl Health Plan
             </h2>
         </div>
-        <div class="col-8 offset-2">
-            <p style="text-align: center;color:#FFFFFF; font-family: Montserrat;font-style: normal;font-weight: normal;font-size: 16px;line-height: 159.5%;">
+        <div class="col-md-10 col-sm-12 offset-md-1">
+            <p style="text-align: center;color:#FFFFFF; font-family: Montserrat;font-style: normal;font-weight: normal;">
                 The best healthcare costs an arm and a leg, but a Sahl Health Plan means you never have to get to that point. We have made it easy and affordable to take care of your health and wellness every day, as a way of life. Choose a plan that is right for you, your loved ones or employees.
             </p>
         </div>

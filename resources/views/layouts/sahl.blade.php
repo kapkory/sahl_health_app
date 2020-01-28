@@ -58,7 +58,7 @@
                 padding: 2px;
             }
             .mobile_heading{
-                font-weight: normal;
+                font-weight: 600;
                 font-size: 14px;
                 margin-bottom: 0px;
                 line-height: 18px;

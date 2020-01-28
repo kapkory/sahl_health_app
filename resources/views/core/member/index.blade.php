@@ -14,13 +14,13 @@
     <div class="col-xl-12">
        <div class="row">
            <div class="col-md-3 col-6"><!-- Card -->
-               <div class="dt-card"><!-- Card Body -->
-                   <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" style="background-color: #7BB37D;border-radius: 10px;">
+               <div class="dt-card" style="background-color: #7BB37D;border-radius: 10px;"><!-- Card Body -->
+                   <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" >
 
                        <div class="media">
                            <i class="icon icon-revenue-new text-white icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
                            <div class="media-body">
-                               <p class="mb-1 h1 text-white">Ksh {{ @number_format($data['savings'],2) }}</p>
+                               <p class="mb-1 h1 text-white">Ksh <br>{{ @number_format($data['savings'],2) }}</p>
                                <span class="d-block text-black-50">Savings</span>
                            </div><!-- /media body -->
                        </div><!-- /media -->
@@ -78,7 +78,7 @@
                            <img src="{{ url('sahl/assets/image/referrals.png') }}" alt="hospital">
                            <div class="media-body">
                                <p class="mb-1 h1 text-center" style="color: #335062">{{ $data['referrals'] }}</p>
-                               <span class="d-block text-center" style="color: #335062">&nbsp;&nbsp;&nbsp;Referrals</span>
+                               <span class="d-block text-center" style="color: #335062">&nbsp;&nbsp;User <br>&nbsp;Referred</span>
                            </div><!-- /media body -->
                        </div><!-- /media -->
                    </div><!-- /card body -->

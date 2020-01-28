@@ -1,21 +1,8 @@
 @charset "UTF-8";
 
-/*
-
-Theme: Spacely - Website UI Kit
-Product Page:
-Author: JituChauhan
-Author URI:
-
----
-
-Copyright 2019-2020 Jituchauhan
-
-*/
 
 
-
-/*----------------------- 
+/*-----------------------
 Top Header
 -------------------------*/
 .live-search-list {}
@@ -122,7 +109,7 @@ Top Header
 
 /* -------------------- 0.4. Sidebar ----------------------- */
 
-/* ----------------------- 
+/* -----------------------
     Left Navigation Sidebar
     ------------------------- */
 .docs-nav-sidebar {
@@ -163,7 +150,7 @@ Top Header
 }
 .docs-nav-sidebar .navbar-nav >.nav-item >.nav-link:hover {
     color: #2841f8;
-    
+
 }
 
 
@@ -220,7 +207,7 @@ Top Header
 
 
 
-/*----------------------- 
+/*-----------------------
     Sidebar Page Navigations
  -------------------------*/
 .sidebar-nav-fixed {
@@ -263,7 +250,7 @@ Top Header
 
 
 
-/* -------------------- 
+/* --------------------
 Container / Wrapper
 ----------------------- */
 
@@ -284,7 +271,7 @@ Container / Wrapper
 
 .docs-main-wrapper {
     min-height: 100%;
-  
+
     position: relative;
 }
 
@@ -305,7 +292,7 @@ Container / Wrapper
 .docs-content {}
 
 
-/* -------------------- 
+/* --------------------
 copy button
 ----------------------- */
 .copy-button {
@@ -383,7 +370,7 @@ copy button
     margin-bottom: 0.5rem;
 }
 
-/* -------------------- 
+/* --------------------
 scrollspy example
 ----------------------- */
 
@@ -418,7 +405,7 @@ scrollspy example
     padding: 14px 30px 14px;
     color: #71748d;
     background-color: #fff;
-  
+
     margin-left: 269px;
 }
 .docs-footer p{margin-bottom: 0px; font-size: 14px; line-height: 30px;}
@@ -437,7 +424,7 @@ scrollspy example
     text-decoration: none;
 }
 
-/* -------------------- 
+/* --------------------
 slider elements
 ----------------------- */
 .slider-element-v1 {
@@ -448,7 +435,7 @@ slider elements
     margin-bottom: 0px;
 }
 
-/* -------------------- 
+/* --------------------
  color swatches
  ----------------------- */
 .color-swatches {}
@@ -487,7 +474,7 @@ slider elements
     line-height: 22px;
     margin-bottom: 0px;
 }
-/* -------------------- 
+/* --------------------
 doc tabel
 ----------------------- */
 .doc-table .table th,
@@ -508,7 +495,7 @@ doc tabel
     list-style: none;
 }
 
-/* -------------------- 
+/* --------------------
 doc example
 ----------------------- */
 .docs-example .nav.nav-pills.nav-example {}

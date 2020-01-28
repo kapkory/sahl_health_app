@@ -39,7 +39,7 @@
                              </p>
                          </div>
                          <div class="hero-search-area-form">
-                             <a href="#" class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;">Start My Sahl Health Plan</a>
+                             <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;">Start My Sahl Health Plan</a>
                          </div>
                          <div class="row">
                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
@@ -72,7 +72,7 @@
     <div class="clearfix">
 
     </div>
-    <div class="row" style="background-color:#335062;">
+    <div class="row" style="background-color:#335062;" id="packages_page">
         <div class="container-fluid my-3" >
             <div class="col-10 offset-1">
                 <div class="testimonial-carousel">
@@ -236,7 +236,7 @@
                               <div class="card  pt-3 mx-3">
                                   <div class="text-center">
                                       <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
-                                      <h4>My Health <br> Assistants</h4>
+                                      <h4>Access Service <br> Discounts</h4>
                                   </div>
                               </div>
 
@@ -246,7 +246,7 @@
                               <div class="card  pt-3 mx-3">
                                   <div class="text-center">
                                       <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
-                                      <h4>Talk to a Wellness <br> Expert</h4>
+                                      <h4>Access Wellness <br> Packages</h4>
                                   </div>
                               </div>
 
@@ -461,5 +461,7 @@
 
         </div>
     </div>
+
+
 
     @endsection

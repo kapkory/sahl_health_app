@@ -56,34 +56,43 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
 
                     <div class="row mobile1">
-                        @foreach($hospitals as $hospital)
-                            <div class="mobile_disp col-lg-3">
-                                <!-- listing block start -->
-                                <div class="listing-block">
+                        <?php
+                        $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
+                        ?>
+                        @foreach($hospitals as $featured_hospital)
+                            <div class="mobile_disp col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                                <!-- listing block start  -->
+                                <div class="listing-block " style="padding-bottom: 1px">
                                     <div class="listing-img">
-                                        <a href="{{ url('institution/'.$hospital->slug) }}">
-                                            <img src="{{ ($hospital->featured_image) ? url($hospital->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="{{ $hospital->name }}" class="img-fluid institution_image"></a>
-
-                                        @if($hospital->discount > 0)
-                                            <div class="listing-badge">{{ $hospital->discount }}%</div>
-                                        @endif
+                                        <a href="{{ url('institution/'.$featured_hospital->slug) }}">
+                                            <img style="object-fit: cover;height: 168px" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid  lazy">
+                                        </a>
+                                        <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
 
                                     </div>
 
-                                    <small class="lable text-muted" style="padding-left: 10px;">{{ @$hospital->institutionLevel->name }}</small>
-
-                                    <div class="review-content-rating float-right pt-2">
-                                        <span class="star" style="float: right"></span>
-                                        <a href="{{ url('institution/'.$hospital->slug) }}" class="rating-review" style="margin-right: 15px">{{ @$hospital->getRatingCount() }}</a>
-                                    </div>
-                                    <div class="listing-content">
+                                    <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                         <div class="listing-content-head">
-                                            <h3 class="listing-content-head-title"> <a href="{{ url('institution/'.$hospital->slug) }}">{{ \Illuminate\Support\Str::limit($hospital->name,16,'...') }}</a></h3>
-                                            <p class="listing-content-head-text">Nairobi, Kenya</p>
+                                            <button class="btn badge mobile_padding" style="color: white; background-color: {{ @$colors[$loop->index] }}">Nairobi</button>
+                                            <h3 class="listing-content-head-title mobile_heading">
+                                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
+                                            </h3>
+
+                                            <div class="listing-content-head-text py-0">{{ @$featured_hospital->institutionLevel->name }} </div>
+                                            {{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
+                                            <div class="py-0 review-content-rating  " >
+                                                @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)
+                                                    <span class="star" style="float: right; color: #7BB37D !important;"></span>
+                                                @endfor
+                                            </div>
                                         </div>
+
+
                                     </div>
+
                                 </div>
-                                <!-- listing block close -->
+
+                                <!-- listing block close  -->
                             </div>
 
                         @endforeach

@@ -2,121 +2,88 @@
 @section('title','')
 
 @section('content')
+    <style>
+        .dt-content {
+            padding: 1.4rem 3.2rem;
+        }
+        .dt-page__header {
+            margin-bottom: 1.4rem;
+        }
+    </style>
     <!-- Grid Item -->
     <div class="col-xl-12">
        <div class="row">
            <div class="col-md-3 col-6"><!-- Card -->
                <div class="dt-card"><!-- Card Body -->
-                   <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
-                       <span class="badge badge-secondary badge-top-right">Savings</span><!-- Media -->
+                   <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" style="background-color: #7BB37D;border-radius: 10px;">
+
                        <div class="media">
-                           <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
+                           <i class="icon icon-revenue-new text-white icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
                            <div class="media-body">
-                               <p class="mb-1 h1">{{ @number_format($data['savings'],2) }}</p>
-                               <span class="d-block text-light-gray">Ksh</span>
+                               <p class="mb-1 h1 text-white">Ksh {{ @number_format($data['savings'],2) }}</p>
+                               <span class="d-block text-black-50">Savings</span>
                            </div><!-- /media body -->
                        </div><!-- /media -->
                    </div><!-- /card body -->
                </div><!-- /card -->
            </div>
 
-           <a href="{{ url('member/visits') }}" class="col-md-3">
-               <div class="dt-card">
+           <a href="{{ url('member/visits') }}" class="col-md-3 col-6"><!-- Card -->
+               <div class="dt-card" style="background: rgba(196, 196, 196, 0.42);border-radius: 10px;"><!-- Card Body -->
+                   <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" >
 
-                   <!-- Card Body -->
-                   <div class="dt-card__body px-5 py-4">
-                       <h6 class="text-body text-uppercase mb-2">Hospital Visits</h6>
-                       <div class="d-flex align-items-baseline mb-4">
-                           <span class="display-4 text-center font-weight-500 text-dark ">{{ $data['visits'] }} visit(s)</span>
-                       </div>
-
-                       <div class="dt-indicator-item__info mb-2" data-fill="100" data-max="100">
-                           <div class="dt-indicator-item__bar">
-                               <div class="dt-indicator-item__fill fill-pointer bg-primary" style="width: 100%;"></div>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- /bard body -->
-
-               </div>
+                       <div class="media">
+                           <img src="{{ url('sahl/assets/image/hospital.png') }}" alt="hospital">
+                           <div class="media-body">
+                               <p class="mb-1 h1 text-center" style="color: #335062">{{ $data['visits'] }}</p>
+                               <span class="d-block text-center" style="color: #335062">&nbsp;&nbsp;&nbsp;Hospital Visits</span>
+                           </div><!-- /media body -->
+                       </div><!-- /media -->
+                   </div><!-- /card body -->
+               </div><!-- /card -->
            </a>
 
-           <div class="col-md-3">
-{{--               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verificationModal">--}}
-{{--                   Launch demo modal--}}
-{{--               </button>--}}
-               <div class="dt-card p-2">
-               @if($memberPackage)
-                   <h3>Current Plan: <span class="text-success">{{ @$memberPackage->package->name }}</span></h3>
-                   @if($memberPackage->ends_at)
-                       Expires on {{ $memberPackage->ends_at }}
-                   @else
-
-                       <h4> Status:<span class="text-danger h4">  Unpaid</span></h4>
-                       <a class="btn btn-info btn-sm rounded-0" style="font-size: 13px" href="{{ url('member/payment') }}">Pay <b>KES {{ $memberPackage->amount }}</b> for your Package</a>
-
-                   @endif
-               @else
-                   <a class="btn btn-primary btn-sm rounded-0" style="font-size: 13px" href="{{ url('complete-registration?type=email') }}">Choose a Membership Package</a>
-               @endif
-               </div>
-           </div>
-
            <div class="col-md-3 col-6"><!-- Card -->
-               <div class="dt-card"><!-- Card Body -->
-                   <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
-                       <span class="badge badge-success badge-top-right">Refer Friend</span><!-- Media -->
-{{--                       <div class="media">--}}
-{{--                           <div class="media-body">--}}
-{{--                               <p class="mb-1 h1">{{ @number_format($data['savings'],2) }}</p>--}}
-{{--                               <span class="d-block text-light-gray">Ksh</span>--}}
-{{--                           </div><!-- /media body -->--}}
-{{--                       </div><!-- /media -->--}}
-                       <div class="form-group">
-                           <label class="sr-only" for="subscription">Subject</label>
-                           <input type="text" class="form-control" id="subscription" value="{{ auth()->user()->referral_code }}">
-                           <button onclick="copyToClipboard()" style="background-color: #2ac174; border-color: #2ac174" class="btn btn-primary mt-3">Copy</button>
-                       </div>
+               <div class="dt-card" style="background-color: #335062;border-radius: 10px;"><!-- Card Body -->
+                   <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
 
-                       <div id="buttons">
-                           Invite Via
-                           <div class="d-flex flex-wrap align-items-center">
+                       <div class="media">
+                           <img src="{{ url('sahl/assets/image/current-plan.png') }}" alt="hospital">
+                           <div class="media-body">
+                               @if($memberPackage)
+                               <p class="mb-1 h1 text-white text-center">{{ @$memberPackage->package->name }}</p>
+                                   @if($memberPackage->ends_at)
+                                       <p class="text-white text-center">
+                                           Expires on {{ $memberPackage->ends_at }}
+                                       </p>
+                                   @else
+                                     &nbsp; <a class="btn btn-info btn-sm rounded-2" style="font-size: 13px" href="{{ url('member/payment') }}">Buy <b>Package</b></a>
+                                   @endif
+                               @else
+                                   &nbsp; <a class="btn btn-primary btn-sm rounded-0" style="font-size: 13px" href="{{ url('complete-registration?type=email') }}">Choose a Membership Package</a>
 
-                               <!-- List -->
-                               <ul class="dt-list dt-list-sm dt-list-cm-0 ml-auto">
-                                   <li class="dt-list__item">
-                                       <!-- Fab Button -->
-                                       <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30">
-                                           <i class="icon icon-facebook icon-xl"></i>
-                                       </a>
-                                       <!-- /fab button -->
-                                   </li>
-
-                                   <li class="dt-list__item">
-                                       <!-- Fab Button -->
-                                       <a href="mailto:?&subject=Invite Link&body={{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30">
-                                           <i class="icon icon-google-plus icon-xl"></i>
-                                       </a>
-                                       <!-- /fab button -->
-                                   </li>
-
-                                   <li class="dt-list__item">
-                                       <!-- Fab Button -->
-                                       <a href="https://twitter.com/intent/tweet?text={{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30">
-                                           <i class="icon icon-twitter icon-xl"></i>
-                                       </a>
-                                       <!-- /fab button -->
-                                   </li>
-                               </ul>
-                               <!-- /list -->
-                           </div>
-                       </div>
+                               @endif
+                                   <span class="d-block text-white text-center">Current Plan</span>
+                           </div><!-- /media body -->
+                       </div><!-- /media -->
                    </div><!-- /card body -->
                </div><!-- /card -->
            </div>
 
+           <a href="{{ url('member/referrals') }}" class="col-md-3 col-6"><!-- Card -->
+               <div class="dt-card" style="background: #F07A3B; border-color:#F07A3B; border-radius: 10px;box-sizing: border-box;"><!-- Card Body -->
+                   <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" >
 
-
+                       <div class="media">
+                           <img src="{{ url('sahl/assets/image/referrals.png') }}" alt="hospital">
+                           <div class="media-body">
+                               <p class="mb-1 h1 text-center" style="color: #335062">{{ $data['referrals'] }}</p>
+                               <span class="d-block text-center" style="color: #335062">&nbsp;&nbsp;&nbsp;Referrals</span>
+                           </div><!-- /media body -->
+                       </div><!-- /media -->
+                   </div><!-- /card body -->
+               </div><!-- /card -->
+           </a>
        </div>
 
             <div class="card">

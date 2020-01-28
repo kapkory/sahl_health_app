@@ -55,6 +55,7 @@ class IndexController extends Controller
             $user->save();
         }
 
+        $data['referrals'] = Referral::where('user_id',auth()->id())->count();
         return view($this->folder.'index',compact('memberPackage','favorite_institutions','data'));
     }
 

@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style>
+    .dt-login__bg-section::before,dt-login__bg-section{
+        background-color: #335062
+    }
+</style>
     <!-- Login Container -->
     <div class="dt-login--container">
 
         <!-- Login Content -->
-        <div class="dt-login__content-wrapper">
+        <div class="dt-login__content-wrapper" >
 
             <!-- Login Background Section -->
             <div class="dt-login__bg-section">
@@ -76,12 +80,12 @@
 
                         <div class="form-group row mb-0">
 
-                            <button type="submit" class="btn btn-primary">
+                            <button style="background: #F07A3B; border-color: #F07A3B" type="submit" class="btn btn-primary">
                                 {{ __('Login') }}
                             </button>
 
                             <span class="d-inline-block ml-4">Or
-              <a class="d-inline-block font-weight-500 ml-3" href="{{ url('register') }}">Create New Account</a>
+              <a class="d-inline-block font-weight-500 ml-3" style="color: #335062" href="{{ url('register') }}">Create New Account</a>
             </span>
 
                         </div>
@@ -120,7 +124,7 @@
                 <!-- Login Content Footer -->
                 <div class="dt-login__content-footer">
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                        <a class="btn btn-link" style="color: #335062" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif

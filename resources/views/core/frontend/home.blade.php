@@ -30,7 +30,7 @@
              <!-- hero serach area start  -->
              <div class="hero-search-area">
                  <div class="row">
-                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" style="padding-top:20px !important;">
                          <div class="hero-search-area-caption">
                              <h1 class="hero-search-area-caption-title" style="font-weight: 400">Now, Medical bills have no claim on your health and wellness.</h1>
                              <p class="hero-search-area-caption-text">
@@ -65,7 +65,7 @@
         </div>
         <div class="col-md-10 col-sm-12 offset-md-1">
             <p style="text-align: center;color:#FFFFFF; font-family: Montserrat;font-style: normal;font-weight: normal;">
-                The best healthcare costs an arm and a leg, but a Sahl Health Plan means you never have to get to that point. We have made it easy and affordable to take care of your health and wellness every day, as a way of life. Choose a plan that is right for you, your loved ones or employees.
+                The best healthcare costs an arm and a leg, but a Sahl Health Plan means you never have to get to that point.
             </p>
         </div>
     </div>

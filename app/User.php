@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public function getInstitutionName(){
         $institution = Institution::where('user_id',$this->id)->first();
-        return $institution->name;
+        return @$institution->name;
     }
 
     public static function hasFavoriteInstitution($institution_id,$user_id){

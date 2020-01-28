@@ -65,7 +65,7 @@
                                 <div class="listing-block " style="padding-bottom: 1px">
                                     <div class="listing-img">
                                         <a href="{{ url('institution/'.$featured_hospital->slug) }}">
-                                            <img style="object-fit: cover;height: 168px" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid  lazy">
+                                            <img style="object-fit: cover;height: 168px" src="{{ ($featured_hospital->featured_image) ? url($featured_hospital->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="{{ $featured_hospital->name }}" class="img-fluid  lazy">
                                         </a>
                                         <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
 

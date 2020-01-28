@@ -328,15 +328,14 @@
     </div>
 
     <div class="row">
-        <div class="container-fluid my-3">
-            <div class="text-center">
-                <h4 class="section-heading-title ">
-                    Popular Service providers
-                </h4>
-            </div>
-        </div>
-
         <div class="container-fluid">
+            <div class="row">
+                <div class=" col-12 pt-4">
+                    <h3 class="section-heading-title text-center">
+                       Popular Service Providers
+                    </h3>
+                </div>
+            </div>
                <div class="col-lg-10 col-sm-12 offset-lg-1">
                    <div class="row mobile1 p-5 `">
                    <?php

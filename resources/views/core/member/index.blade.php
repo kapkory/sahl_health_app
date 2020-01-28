@@ -94,7 +94,7 @@
             @if(count($favorite_institutions) > 0)
                 @foreach($favorite_institutions as $institution)
                     <!-- Grid Item -->
-                        <a class="col-xl-3 col-md-4 col-sm-6 col-12" href="{{ url('institution/'.$institution->slug) }}">
+                        <a class="mobile_disp col-xl-3 col-md-4 col-sm-6 col-12" href="{{ url('institution/'.$institution->slug) }}">
 
                             <!-- Card -->
                             <div class="card">
@@ -104,13 +104,13 @@
 
                                     <!-- Slider Header -->
                                     <div class="dt-slider__header" style="padding: 2px !important;">
-                                        <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
+                                        <span class="badge bg-orange text-white text-uppercase">{{ $institution->discount.'%' }}</span>
                                     </div>
                                     <!-- /slider header -->
 
 
                                     <div class="owl-carousel owl-theme">
-                                        <img class="card-img-top" style="max-height: 110.25px" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
+                                        <img class="card-img-top" style="max-height: 130.25px; object-fit: cover" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
                                     </div>
 
                                 </div>

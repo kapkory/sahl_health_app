@@ -93,6 +93,14 @@
         .dt-brand__logo-symbol{
             width: 44px;
         }
+        @media screen and (max-width: 574px) {
+            .mobile_disp {
+                width: 50%;
+                padding-left: 2px;
+                padding-right: 0px;
+
+            }
+        }
     </style>
 </head>
 <body class="dt-sidebar--fixed dt-header--fixed" style="overflow-y: scroll !important;">

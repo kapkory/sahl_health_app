@@ -32,7 +32,7 @@
                  <div class="row">
                      <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                          <div class="hero-search-area-caption">
-                             <h1 class="hero-search-area-caption-title">Now, Medical bills have no claim on your health and wellness.</h1>
+                             <h1 class="hero-search-area-caption-title" style="font-weight: 400">Now, Medical bills have no claim on your health and wellness.</h1>
                              <p class="hero-search-area-caption-text">
                                  Find the best hospitals and wellness clinics near you and save up to 20%
                                  all year long with My Sahl Health Plan

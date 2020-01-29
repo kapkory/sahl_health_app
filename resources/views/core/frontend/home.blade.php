@@ -19,18 +19,21 @@
             .hero-search-area-caption-text {
                 color: black;
             }
+            .mobile_packages{
+                width: 100% !important;
+            }
         }
 
     </style>
 <!-- header close -->
-   <div class="row" style="background: linear-gradient(89.88deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">
+   <div class="row sahl_home" style="background: linear-gradient(89.88deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">
 
-            <img style="width: 100% !important;max-height: 500px; object-fit: cover;" src="{{ url('sahl') }}/assets/image/slider-1.svg" alt="Sahl Health slider" >
+            <img style="width: 100% !important;max-height: 475px; object-fit: cover;" src="{{ url('sahl') }}/assets/image/slider-1.svg" alt="Sahl Health slider" >
 
              <!-- hero serach area start  -->
              <div class="hero-search-area">
                  <div class="row">
-                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" style="padding-top:20px !important;">
+                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                          <div class="hero-search-area-caption">
                              <h1 class="hero-search-area-caption-title" style="font-weight: 400">Now, Medical bills have no claim on your health and wellness.</h1>
                              <p class="hero-search-area-caption-text">
@@ -74,7 +77,7 @@
     </div>
     <div class="row" style="background-color:#335062;" id="packages_page">
         <div class="container-fluid my-3" >
-            <div class="col-10 offset-1">
+            <div class="mobile_packages col-sm-12 col-md-10 offset-md-1">
                 <div class="testimonial-carousel">
                     <div class="owl-carousel owl-theme owl-testimonial">
                         <div class="item ">
@@ -337,14 +340,14 @@
                 </div>
             </div>
                <div class="col-lg-10 col-sm-12 offset-lg-1">
-                   <div class="row mobile1 p-5 `">
+                   <div class="row mobile1 py-3 px-5">
                    <?php
                      $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
                     ?>
                    @foreach($featured_hospitals as $featured_hospital)
                        <div class="mobile_disp col-lg-4 col-md-5 col-sm-6 col-xs-6">
                            <!-- listing block start  -->
-                           <div class="listing-block " style="padding-bottom: 1px">
+                           <div class="listing-block p-1">
                                <div class="listing-img">
                                    <a href="{{ url('institution/'.$featured_hospital->slug) }}">
                                        <img style="object-fit: cover;height: 168px" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid  lazy">

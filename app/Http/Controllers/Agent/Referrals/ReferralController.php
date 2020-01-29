@@ -48,13 +48,12 @@ class ReferralController extends Controller
         $referral->save();
 
 
-        $address[]  = '254712137367';
-//        $address[]  = $user->getFormattedPhone();
+        $address[]  = $user->getFormattedPhone();
         $agent = auth()->user();
         $names = explode(' ',$agent->name);
 
         $message = 'Hi '.\request('first_name').', You have been invited to sign up for Sahl Health Membership by '.$names[0]. ', Follow the link to complete registration '.url('member-referral/'.$referral->id.'/'.$agent->referral_code);
-        $message = 'Phone Number was sent at '.$user->getFormattedPhone();
+//        $message = 'Phone Number was sent at '.$user->getFormattedPhone();
         $techpitch = new TechpitMessageRepository();
         $response = $techpitch->execute($message,$address);
         return ['redirect'=>url('agent/referrals')];

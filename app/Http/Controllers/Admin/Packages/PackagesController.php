@@ -25,13 +25,32 @@ class PackagesController extends Controller
      * store package
      */
     public function storePackage(){
-        request()->validate($this->getValidationFields(['name','duration','package_category_id','cost']));
+        if (\request('id'))
+            request()->validate($this->getValidationFields(['name','duration','package_category_id','cost']));
+        else
+            request()->validate($this->getValidationFields(['name','icon','duration','package_category_id','cost']));
+
         $data = \request()->all();
         if(!isset($data['user_id'])) {
             if (Schema::hasColumn('packages', 'user_id'))
                 $data['user_id'] = request()->user()->id;
         }
+
         $data['slug'] = Str::slug($data['name']);
+        if (isset($data['icon'])){
+            $image = request()->file('icon');
+            $ext = $image->getClientOriginalExtension();
+            $name = $data['slug']. "." . $ext;
+            $image->move(storage_path() . '/app/public/packages', $name);
+            $data['icon'] = 'storage/packages/'.$name;
+        }
+
+        if ($data['id'] && $data['icon'] == ''){
+            $package = Package::findOrFail($data['id']);
+            $data['icon'] = $package->icon;
+        }
+
+
         $this->autoSaveModel($data);
         return redirect()->back();
     }

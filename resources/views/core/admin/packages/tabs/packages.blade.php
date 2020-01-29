@@ -8,7 +8,7 @@
 @include('common.auto_modal',[
     'modal_id'=>'package_modal',
     'modal_title'=>'PACKAGE FORM',
-    'modal_content'=>Form::autoForm(["name","package_category_id","cost","duration","number_of_members","description","form_model"=>\App\Models\Core\Package::class],"admin/packages")
+    'modal_content'=>Form::autoForm(["name","package_category_id","cost","duration","icon","number_of_members","description","form_model"=>\App\Models\Core\Package::class],"admin/packages")
 ])
 
 

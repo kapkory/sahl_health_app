@@ -62,11 +62,6 @@
             <div class="form_cont container py-md-5 bg-light shadow-lg rounded mb-5">
                 <div class="col-11 mx-auto">
 
-                    <h5 class="text-center">
-                        <div id="c_registration_text" v-if="package_cost > 0">
-                         The package Costs Ksh<span class="text-success"> @{{ package_cost }}</span>
-                        </div>
-                    </h5>
                     <form id="member_register" action="{{ url('member-complete-registration') }}" method="post" class="py-md-3 px-md-4 ajax-post">
 
                         <div class="row my-2">
@@ -132,6 +127,13 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col p-2 my-2 mx-1 text-center">
+                                <div id="c_registration_text" style="text-align: center; vertical-align: middle;" v-if="package_cost > 0">
+                                   <h5> The package Costs Ksh<span class="text-success"> @{{ package_cost }}</span></h5>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="col-md-6 mx-auto">
                             <div class="row">
@@ -163,14 +165,26 @@
             },
             mounted() {
                 let api_url = "{{ url('api/institution/packages') }}";
+                let self = this;
                 fetch(api_url)
                     .then(response => response.json())
                     .then(json => {
                         this.packages = json.packages;
 
+                        if(localStorage.getItem('package_id') != null){
+                         let package=  this.packages.filter(function (package) {
+                               return package.id == localStorage.getItem('package_id');
+                            })
+                            // self.package_category_id =
+                            self.package_category_id = package[0].package_category_id;
+                            self.package_id = package[0].id;
+                            self.package_cost = package[0].cost;
+                        }
+
                         filtered_packages = this.packages.filter(function (selected_package) {
-                            return selected_package.package_category_id == 1;
+                            return selected_package.package_category_id == self.package_category_id;
                         })
+                        // console.log(filtered_packages);
                         this.selected_packages = filtered_packages;
                     });
             },

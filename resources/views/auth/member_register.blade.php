@@ -1,7 +1,7 @@
 @extends('layouts.sahl')
 @section('styles')
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ url('drift/assets/modules/intlTelInput/intlTelInput.min.css') }}">
+{{--    <link rel="stylesheet" href="{{ url('drift/assets/modules/intlTelInput/intlTelInput.min.css') }}">--}}
 
     <style>
         .iti-flag {background-image: url("{{ url('drift/assets/modules/intlTelInput/img/flags.png') }}");}
@@ -24,7 +24,7 @@
         /*    padding-left: 40px !important;*/
         /*}*/
     </style>
-    <script src="{{ url('drift/assets/modules/intlTelInput/intlTelInput.js') }}"></script>
+{{--    <script src="{{ url('drift/assets/modules/intlTelInput/intlTelInput.js') }}"></script>--}}
 
 @endsection
 @section('content')
@@ -92,12 +92,14 @@
                 <div class="modal-body">
                     <form class="ajax-post" id="providerRegistration" method="post" action="{{ url('member/register') }}">
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" id="email_address" placeholder="Email Address">
+                            {{--                            <small>Proceed with Value after leading 0 e.g +254712141141</small>--}}
+                            <input type="text"  name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number">
                         </div>
 
                         <div class="form-group">
                             <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
                         </div>
+                        <input type="hidden" name="package_id" value="0">
 
                         @csrf
                         <div class="form-group">
@@ -108,9 +110,9 @@
                             <input type="text" name="other_name" class="form-control" id="other_name" placeholder="Other Name">
                         </div>
 
+
                         <div class="form-group">
-                            <small>Proceed with Value after leading 0 e.g +254712141141</small>
-                            <input type="text"  name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number">
+                            <input type="email" name="email" class="form-control" id="email_address" placeholder="Email Address">
                         </div>
 
                         <div class="form-group">
@@ -136,20 +138,10 @@
     <!-- End of Provider Sign Up Modal -->
 
     <script>
-        $(function () {
-            const form = document.getElementById('providerRegistration');
-            const input = form.querySelector('#phone_number');
-            var itil=  window.intlTelInput(input, {
-                "preferredCountries":["KE","UG","TZ"],
-            });
-            $('input[name="phone_number"]').val('+254');
-            input.addEventListener("countrychange", function() {
-                var text = (itil.isValidNumber()) ? "International: " + itil.getNumber() : "Please enter a number below";
-                var textNode = document.createTextNode(text);
-                output.innerHTML = "";
-                output.appendChild(textNode);
-            });
-        });
+        if (localStorage.getItem('package_id') != null){
+            // console.log('local storage is pakaga'+localStorage.getItem('package_id'))
+            $('input[name="package_id"]').val(localStorage.getItem('package_id'));
+        }
     </script>
 @endsection
 

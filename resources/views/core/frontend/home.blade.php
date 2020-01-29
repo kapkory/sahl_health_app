@@ -80,121 +80,36 @@
             <div class="mobile_packages col-sm-12 col-md-10 offset-md-1">
                 <div class="testimonial-carousel">
                     <div class="owl-carousel owl-theme owl-testimonial">
+                        @foreach($packages as $package)
                         <div class="item ">
                             <!-- testimonial start  -->
                             <div class="testimonial-block">
                                 <div class="testimonial-content pt-3">
-                                    <h5 >Individual Plan</h5>
+                                    <h5>{{ $package->name }}</h5>
 
-                                    <img height="90" class="lazy" src="{{ url('sahl/assets/image/individual.svg') }}" alt="3 Members Plan">
+                                    <img height="90" style="text-align: center !important; display: inline-flex; max-width: 90px" class="lazy" src="{{ ($package->icon) ? url($package->icon) :url('sahl/assets/image/individual.svg') }}" alt="3 Members Plan">
 
                                     <div>
                                         <h4>
-                                            Ksh 2499<br>
+                                            Ksh {{ number_format($package->cost,2) }}<br>
                                             <small>Per Year</small>
                                         </h4>
 
                                     </div>
                                     <div class="testimonial-content-text">
                                         <p>
-                                            Young and single? Older and flying solo? Cover yourself so you have more freedom to explore and live life to the full
+                                            {{ $package->description }}
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="text-center pb-3">
-                                <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
+                                <button onclick="setPackage({{ $package->id }})" class="btn package_button m-2 " style="color: white;">Start My Plan</button>
                             </div>
                             <!-- testimonial close  -->
                         </div>
-                        <div class="item">
-                            <!-- testimonial start  -->
-                            <div class="testimonial-block">
-
-                                <div class="testimonial-content pt-3">
-                                    <h5>3 Member Plan</h5>
-                                    <img height="90" class="lazy" src="{{ url('sahl/assets/image/3-member.svg') }}" alt="3 Members Plan">
-
-                                    <div>
-                                        <h4>
-                                            Ksh 5499<br>
-                                            <small>Per Year</small>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="testimonial-content-text">
-                                        <p>
-                                            Young couples, those thinking of kids, and older couples with differing needs can easily combine their cover                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="text-center pb-3">
-                                <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
-                            </div>
-                            <!-- testimonial close  -->
-                        </div>
-                        <div class="item">
-
-                            <!-- testimonial start  -->
-                            <div class="testimonial-block">
-                                <div class="testimonial-content pt-3">
-                                    <h5>4 Member Plan</h5>
-                                    <img height="90" class="lazy" src="{{ url('sahl/assets/image/4-member.svg') }}" alt="3 Members Plan">
-
-                                    <div>
-
-                                        <h4>
-                                            Ksh 5999<br>
-                                            <small>Per Year</small>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="testimonial-content-text">
-                                        <p>
-                                            Young and single? Older and flying solo? Cover yourself so you have more freedom to explore and live life to the full
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center pb-3">
-                                <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
-                            </div>
-                            <!-- testimonial close  -->
-                        </div>
-                        <div class="item">
-                            <!-- testimonial start  -->
-                            <div class="testimonial-block">
-                                <div class="testimonial-content pt-3">
-                                    <h5>Corporate Membership</h5>
-
-                                    <img height="90" class="lazy" src="{{ url('sahl/assets/image/individual.svg') }}" alt="3 Members Plan">
-
-                                    <div>
-
-                                        <h4>
-                                            Ksh 5499<br>
-                                            <small>Per Year</small>
-                                        </h4>
-
-                                    </div>
-
-                                    <div class="testimonial-content-text">
-                                        <p>
-                                            Young and single? Older and flying solo? Cover yourself so you have more freedom to explore and live life to the full.
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="text-center pb-3">
-                                <button class="btn package_button m-2 " style="color: white;">Start My Plan</button>
-                            </div>
-                            <!-- testimonial close  -->
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -464,6 +379,11 @@
         </div>
     </div>
 
-
+<script type="text/javascript">
+    function setPackage(package_id) {
+      localStorage.setItem('package_id',package_id);
+      window.location.href = "{{ url('register') }}";
+    }
+</script>
 
     @endsection

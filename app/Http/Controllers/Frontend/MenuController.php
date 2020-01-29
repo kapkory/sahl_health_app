@@ -4,13 +4,16 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Core\Institution;
+use App\Models\Core\Package;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
     public function index(){
         $featured_hospitals = Institution::where('organization_type_id',1)->where('featured_image','!=',null)->limit(6)->get();
-        return view($this->folder.'home',compact('featured_hospitals'));
+        $packages = Package::where('status',0)->get();
+
+        return view($this->folder.'home',compact('featured_hospitals','packages'));
     }
 
     public function hospitals(){

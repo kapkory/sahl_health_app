@@ -16,10 +16,16 @@ class IndexController extends Controller
          return view('auth.member_register');
     }
 
-    public function memberRegister($referral_code){
-        $user = User::where('referral_code',$referral_code)->get();
-        if ($user->isEmpty())
-            return redirect('register');
+    public function memberRegister($referral_code =null){
+        if ($referral_code){
+            $user = User::where('referral_code',$referral_code)->get();
+            if ($user->isEmpty())
+                return redirect('register');
+        }
+        else{
+            $referral_code = null;
+        }
+
 
         return view('auth.register_form',compact('referral_code'));
     }

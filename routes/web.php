@@ -43,7 +43,7 @@ Route::get('logout',function (){
 });
 
 //updated member routes
-Route::get('member-register/{referral_code}','Frontend\IndexController@memberRegister');
+Route::get('member-register/{referral_code?}','Frontend\IndexController@memberRegister');
 Route::post('member/register','Auth\RegisterController@registerMember');
 Route::post('create-account','Auth\RegisterController@createAccount');
 Route::view('complete-registration','auth.complete_registration');

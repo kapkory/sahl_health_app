@@ -51,7 +51,7 @@
                         @endphp
                         @foreach($category->packages as $package)
                             <div class="col-md-4">
-                                <button id="package_btn_{{ $package->id }}" onclick="setPackage('{{ $package }}','{{ $category }}')" type="button" style="border-width:thick; border-radius: 20px" class="btn btn-outline-{{ $class_colors[$loop->iteration] }} col-md m-3">
+                                <button id="package_btn_{{ $package->id }}" onclick="setPackage('{{ $package }}','{{ $category }}')" type="button" style="border-width:thick; border-radius: 20px" class="btn btn-outline-{{ @$class_colors[$loop->iteration] }} col-md m-3">
                                     <h4 class="font-weight-900">KES</h4>
                                     <span class="font-weight-800">{{ $package->cost.'/=' }}</span><br>
                                     <span><b>{{ $package->duration }}</b> Months</span><br>

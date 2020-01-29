@@ -66,8 +66,8 @@
                     <div class="row my-2">
                         <div class=" p-2 col-md-4 offset-4 form-group text-center">
                             <a style="background-color: #FF5A5F;border-color:white; color: white;box-shadow: none;" data-toggle="modal" data-target="#providerSignUpModal" class="btn btn-outline-dark btn-lg btn-block">
-                                <i class="fa fa-envelope"></i>
-                                &nbsp;Register with Email
+                                <i class="fa fa-phone"></i>
+                                &nbsp;Register with Phone
                             </a>
                         </div>
                     </div>

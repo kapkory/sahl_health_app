@@ -176,11 +176,11 @@ jQuery(document).ready(function($) {
 
         $('.owl-testimonial').owlCarousel({
 
-            loop: true,
+            loop: false,
             margin: 10,
             nav: true,
             autoplay: true,
-            autoplayTimeout: 5000,
+            autoplayTimeout: 8000,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             responsive: {
                 0: {

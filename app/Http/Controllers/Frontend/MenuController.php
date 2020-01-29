@@ -11,7 +11,7 @@ class MenuController extends Controller
 {
     public function index(){
         $featured_hospitals = Institution::where('organization_type_id',1)->where('featured_image','!=',null)->limit(6)->get();
-        $packages = Package::where('status',0)->get();
+        $packages = Package::where('status',1)->get();
 
         return view($this->folder.'home',compact('featured_hospitals','packages'));
     }

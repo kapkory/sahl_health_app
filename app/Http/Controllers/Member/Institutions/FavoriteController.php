@@ -62,7 +62,8 @@ class FavoriteController extends Controller
      */
     public function destroyFavoriteInstitution($favoriteinstitution_id)
     {
-        $favoriteinstitution = FavoriteInstitution::findOrFail($favoriteinstitution_id);
+        $favoriteinstitution = FavoriteInstitution::where('institution_id',$favoriteinstitution_id)
+            ->where('user_id',auth()->id())->first();
         $favoriteinstitution->delete();
         return redirect()->back()->with('notice',['type'=>'success','message'=>'FavoriteInstitution deleted successfully']);
     }

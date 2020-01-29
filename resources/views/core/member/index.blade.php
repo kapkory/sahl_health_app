@@ -94,7 +94,7 @@
             @if(count($favorite_institutions) > 0)
                 @foreach($favorite_institutions as $institution)
                     <!-- Grid Item -->
-                        <a class="mobile_disp col-xl-3 col-md-4 col-sm-6 col-12" href="{{ url('institution/'.$institution->slug) }}">
+                        <div class="mobile_disp col-xl-3 col-md-4 col-sm-6 col-12">
 
                             <!-- Card -->
                             <div class="card">
@@ -103,14 +103,21 @@
                                 <div class="dt-slider">
 
                                     <!-- Slider Header -->
-                                    <div class="dt-slider__header" style="padding: 2px !important;">
+                                    <div class="dt-slider__header">
                                         <span class="badge bg-orange text-white text-uppercase">{{ $institution->discount.'%' }}</span>
+                                        <div class="dt-checkbox dt-checkbox-icon dt-checkbox-only">
+                                            <input id="checkbox-1" type="checkbox" onclick="runCustomPlainRequest('{{ url("member/institutions/favorite/delete/".$institution->id) }}',null,'Remove {{ $institution->name }} Hospital as Favorite Hospital')">
+                                            <label style="background-color: red" class="font-weight-light dt-checkbox-content" for="checkbox-1">
+                                                <span class="unchecked"><i class="icon icon-heart-o text-white"></i></span>
+                                                <span class="checked"><i class="icon icon-heart text-white"></i></span>
+                                            </label>
+                                        </div>
                                     </div>
                                     <!-- /slider header -->
 
 
                                     <div class="owl-carousel owl-theme">
-                                        <img class="card-img-top" style="max-height: 130.25px; object-fit: cover" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
+                                        <img class="card-img-top" style="max-height: 150.25px;object-fit: cover " src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
                                     </div>
 
                                 </div>
@@ -121,7 +128,9 @@
                                     <!-- Card Title-->
                                     <span>{{ @$institution->institutionLevel->name }}</span>
 
-                                    <h3>{{ $institution->name }}</h3>
+                                    <a href="{{ url('institution/'.$institution->slug) }}">
+                                        <h3>{{ $institution->name }}</h3>
+                                    </a>
                                     <!-- Card Title-->
 
                                 </div>
@@ -129,7 +138,7 @@
 
                             </div>
                             <!-- /card -->
-                        </a>
+                        </div>
                         <!-- /grid item -->
                     @endforeach
 

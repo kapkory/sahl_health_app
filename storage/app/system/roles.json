@@ -220,7 +220,7 @@
             },
             "children": [],
             "subs": [
-                "favorite"
+                "favorite","favorite/delete"
             ],
             "urls": [
                 "home",

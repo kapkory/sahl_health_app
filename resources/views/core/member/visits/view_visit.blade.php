@@ -2,6 +2,12 @@
 @section('title','View Visit')
 @section('content')
 
+    @push('scripts')
+        <link rel="stylesheet" href="{{ url('sahl/assets') }}/css/owl.carousel.css">
+        <link rel="stylesheet" href="{{ url('sahl/assets') }}/css/owl.theme.default.css">
+
+    @endpush
+
      <b>{{ $name }}</b> Visited <b><u>{{ @$visit->institution->name }}</u></b>
 
   <div class="row">

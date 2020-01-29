@@ -32,6 +32,8 @@ class IndexController extends Controller
         $rating->visit_id = \request('visit_id');
         $rating->rating = (\request('rating') == 0) ? 1 : \request('rating');
         $rating->comments = \request('feedback');
+        $rating->time = \request('time_rating');
+        $rating->service = \request('service_rating');
         $rating->save();
         return back()->with('notice',['type'=>'success','message'=>'Rating has been successful']);
     }

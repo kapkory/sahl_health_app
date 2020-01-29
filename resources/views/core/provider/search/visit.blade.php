@@ -19,6 +19,26 @@
                 <button type="submit" class="btn btn-primary ">Confirm Bill</button>
             </div>
         </form>
+        <h3> Day Visited:  <span class="text-muted">{{ $visit->created_at->toDateTimeString() }}</span></h3>
+        @if($visit->getRating())
+        <h4>Served in Timely Manner : <span class="text-muted">{{ @$visit->getRating()[0]->time }}</span></h4>
+        <h4>How was the Service : <span class="text-muted">{{ @$visit->getRating()[0]->service  }}</span></h4>
+
+            <h3><span class="text-muted">Rating:</span><span id="rateYo"></span></h3>
+            <h3>Comments</h3>
+            <p class="text-info">{{ @$visit->getRating()[0]->comments }}</p>
+
+            <script>
+                $(function () {
+
+                    $("#rateYo").rateYo({
+                        rating: "{{ @$visit->getRating()[0]->rating }}",
+                        readOnly: true
+                    });
+
+                });
+            </script>
+        @endif
     </div>
 
 @php

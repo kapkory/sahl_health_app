@@ -12,6 +12,8 @@
               <h3><span class="text-muted">Total Discount is:</span>  {{ @number_format($discounted_amount,2) }}</h3>
               <h3><span class="text-muted">Bill Paid:</span>  {{ @number_format($visit->amount-$discounted_amount ,2) }}</h3>
               <h3> Day Visited:  <span class="text-muted">{{ $visit->created_at->toDateTimeString() }}</span></h3>
+             <h4>Served in Timely Manner : <span class="text-muted">{{ @$visit->getRating()[0]->time }}</span></h4>
+             <h4>How was the Service : <span class="text-muted">{{ @$visit->getRating()[0]->service  }}</span></h4>
               @if($visit->getRating())
                   <h3><span class="text-muted">Rating:</span><span id="rateYo"></span></h3>
                   <h3>Comments</h3>
@@ -62,6 +64,8 @@
 
                          </div>
                          <input type="hidden" name="rating">
+                         <input type="hidden" name="time_rating">
+                         <input type="hidden" name="service_rating">
                          @csrf
                          <div class="form-group mt-2">
                              <label for="exampleFormControlTextarea1">Feedback</label>
@@ -70,23 +74,39 @@
 
 
                       <div class="row">
-                         <div class="col-md-8">
-                             <div class="card">
-                                 <div class="card-body">
-                                     <h5 class="card-title">Card title</h5>
-                                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                 </div>
-                             </div>
-                         </div>
-                          <div class="col-md-4" style="overflow: hidden">
-                              <div class="card">
-                                  <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="card-link">Card link</a>
-                                      <a href="#" class="card-link">Another link</a>
+                          <div class="col-md-11 mx-1">
+                              <div class="testimonial-carousel">
+                                  <div class="owl-carousel owl-theme owl-testimonial">
+                                      <div class="item jumbotron p-3">
+                                          <!-- testimonial start  -->
+                                          <div class="testimonial-block">
+                                              <div class="testimonial-content">
+                                                  <div class="testimonial-content-text">
+                                                      <h3>Were you served in a timely way?</h3>
+                                                  </div>
+                                                  <a class="btn btn-outline-dark time" data-text="No" href="javascript:void(0)">No</a>
+                                                  <a class="btn btn-outline-dark time" data-text="Not, Sure" href="javascript:void(0)">Not, Sure</a>
+                                                  <a class="btn btn-outline-dark time" data-text="Yes" href="javascript:void(0)">Yes</a>
+                                              </div>
+                                          </div>
+                                          <!-- testimonial close  -->
+                                      </div>
+                                      <div class="item jumbotron p-3">
+                                          <!-- testimonial start  -->
+                                          <div class="testimonial-block">
+                                              <div class="testimonial-content">
+                                                  <div class="testimonial-content-text">
+                                                      <h3>How was the service</h3>
+                                                  </div>
+                                                  <a class="btn btn-outline-dark service_rating" data-text="Bad" href="javascript:void(0)">Bad</a>
+                                                  <a class="btn btn-outline-dark service_rating" data-text="Not, Sure" href="javascript:void(0)">Not, Sure</a>
+                                                  <a class="btn btn-outline-dark service_rating" data-text="Yes" href="javascript:void(0)">Great</a>
+                                              </div>
+                                          </div>
+                                          <!-- testimonial close  -->
+                                      </div>
+
+
                                   </div>
                               </div>
                           </div>
@@ -131,5 +151,44 @@
             }
         });
     });
+
+    if ($('.owl-testimonial').length) {
+
+        $('.owl-testimonial').owlCarousel({
+
+            loop: false,
+            stagePadding: 50,
+            margin:20,
+            nav: true,
+            autoplay: false,
+            autoplayTimeout: 5000,
+            navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        });
+
+    }
+
+    $('.time').click(function () {
+        $('.time').removeClass('active');
+        $('input[name="time_rating"]').val($(this).data('text'));
+        $(this).addClass('active')
+    });
+
+    $('.service_rating').click(function () {
+        $('.service_rating').removeClass('active');
+        $('input[name="service_rating"]').val($(this).data('text'));
+        $(this).addClass('active')
+    });
+
 </script>
 @endsection

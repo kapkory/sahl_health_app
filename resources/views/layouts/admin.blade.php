@@ -73,6 +73,8 @@
     <link rel="stylesheet" href="{{ url('drift/assets/css/semidark-style-1.min.css') }}">
     <!-- /load styles -->
     <link rel="stylesheet" href="{{ url('drift/assets/modules/sweetalert/dist/sweetalert.css') }}">
+    <link rel="stylesheet" href="{{ url('sahl/assets') }}/css/owl.carousel.css">
+    <link rel="stylesheet" href="{{ url('sahl/assets') }}/css/owl.theme.default.css">
 
 
     <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
@@ -81,6 +83,7 @@
     @stack('scripts')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{ url('sahl/assets') }}/js/owl.carousel.min.js"></script>
 
     <style>
         .dt-nav__link,.dt-nav__link:hover

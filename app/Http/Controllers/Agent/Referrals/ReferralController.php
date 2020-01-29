@@ -7,6 +7,7 @@ use App\Models\Core\Institution;
 use App\Models\Core\MemberPackage;
 use App\Repositories\TechpitMessageRepository;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Models\Core\Referral;
@@ -52,6 +53,7 @@ class ReferralController extends Controller
         $names = explode(' ',$agent->name);
 
         $message = 'Hi '.\request('first_name').', You have been invited to sign up for Sahl Health Membership by '.$names[0]. ', Follow the link to complete registration '.url('member-referral/'.$referral->id.'/'.$agent->referral_code);
+        $message = 'This message was was sent at '.Carbon::now();
         $techpitch = new TechpitMessageRepository();
         $response = $techpitch->execute($message,$address);
         return ['redirect'=>url('agent/referrals')];

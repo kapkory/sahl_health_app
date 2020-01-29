@@ -48,7 +48,7 @@
                             <div class="d-flex flex-wrap align-items-center">
 
                                 <!-- List -->
-                                <ul class="dt-list dt-list-sm dt-list-cm-0 ml-auto text-white">
+                                <ul class="dt-list dt-list-sm dt-list-cm-0 ml-auto ">
                                     <li class="dt-list__item" style="color: white">
                                         <!-- Fab Button -->
                                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('member-register/'.auth()->user()->referral_code) }}" class="btn btn-outline-primary dt-fab-btn size-30 ">
@@ -60,8 +60,8 @@
                                     <li class="dt-list__item">
                                         <!-- Fab Button -->
                                         <a href="mailto:?&subject=Invite Link&body=Register with Sahl Health and get affordable discounts from selected hospitals, Register with this link {{ url('member-register/'.auth()->user()->referral_code) }}" class="btn dt-fab-btn size-30">
-{{--                                            <i class="icon icon-google-plus icon-xl text-white"></i>--}}
-                                            <img src="{{ url('sahl/assets/image/icons8-google.svg') }}" alt="google">
+                                            <i class="icon icon-google-plus icon-xl text-white"></i>
+{{--                                            <img  src="{{ url('sahl/assets/image/icons8-google.svg') }}" alt="google">--}}
                                         </a>
                                         <!-- /fab button -->
                                     </li>

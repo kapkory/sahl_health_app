@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Packages;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
 
 use App\Models\Core\Package;
@@ -68,7 +69,7 @@ class PackagesController extends Controller
                 $str = '';
                 $json = json_encode($package);
                 $str.='<a href="#" data-model="'.htmlentities($json, ENT_QUOTES, 'UTF-8').'" onclick="prepareEdit(this,\'package_modal\');" class="btn badge btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>';
-                if ($package->status == 0)
+                if ($package->status == StatusRepository::getPackageStatus('active'))
                     $str.='&nbsp;&nbsp;<a href="#" onclick="runPlainRequest(\''.url('admin/packages/'.$package->id.'/mark').'\');" class="btn badge btn-outline-secondary btn-sm"><i class="fa fa-trash"></i> Mark as Inactive</a>';
                 else
                     $str.='&nbsp;&nbsp;<a href="#" onclick="runPlainRequest(\''.url(request()->user()->role.'/packages/'.$package->id.'/mark').'\');" class="btn badge btn-outline-success btn-sm"><i class="fa fa-check"></i> Mark Active</a>';

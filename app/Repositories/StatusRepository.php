@@ -13,6 +13,14 @@ class StatusRepository
         return self::returnState($state,$statuses);
     }
 
+    public static function getPackageStatus($state){
+        $statuses = [
+            'inactive'=>0,
+            'active'=>1
+        ];
+        return self::returnState($state,$statuses);
+    }
+
     public static function getMemberPaymentStatus($state){
         $statuses = [
             'processing'=>1,

@@ -99,7 +99,7 @@
                         <div class="form-group">
                             <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
                         </div>
-                        <input type="hidden" name="package_id" value="0">
+{{--                        <input type="hidden" name="package_id" value="0">--}}
 
                         @csrf
                         <div class="form-group">

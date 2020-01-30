@@ -243,7 +243,7 @@
                 btn.attr('disabled', false);
                 removeError();
                 resetForm('ajax-form');
-                window.location.href= response.redirect_url;
+                window.location.href= response.redirect;
                 // toastr.success('Our administration has been notified of your message. We will respond as soon as possible');
             },
             error: function (xhr, status, error) {

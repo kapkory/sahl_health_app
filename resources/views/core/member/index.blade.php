@@ -94,7 +94,7 @@
             @if(count($favorite_institutions) > 0)
                 @foreach($favorite_institutions as $institution)
                     <!-- Grid Item -->
-                        <div class="mobile_disp col-xl-3 col-md-4 col-sm-6 col-12">
+                        <div class="mobile_disp  col-sm-6 col-md-4 col-xl-3">
 
                             <!-- Card -->
                             <div class="card">

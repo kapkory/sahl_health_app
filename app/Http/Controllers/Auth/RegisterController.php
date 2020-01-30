@@ -103,7 +103,7 @@ class RegisterController extends Controller
         $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
         $techpitch = new TechpitMessageRepository();
 //        dd($message,$address);
-//        $response = $techpitch->execute($message,$address);
+        $response = $techpitch->execute($message,$address);
         return ['redirect'=>url('member-packages')];
     }
     public function registerMember(){
@@ -135,7 +135,7 @@ class RegisterController extends Controller
             }
         }
 
-        return ['redirect'=>url('complete-registration?type=email')];
+        return ['redirect_url'=>url('complete-registration?type=email')];
     }
 
     public function createAccount(){

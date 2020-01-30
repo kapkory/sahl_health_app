@@ -205,6 +205,6 @@ class IndexController extends Controller
             $response = @$techpitch->execute($message,$address);
         }
 
-        return ['redirect'=>url('member/nominate-dependant')];
+        return ['redirect_url'=>url('member/nominate-dependant')];
     }
 }

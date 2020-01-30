@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\County;
 use App\Models\Core\Institution;
+use App\Models\Core\InstitutionLevel;
+use App\Models\Core\InstitutionService;
 use App\Models\Core\Package;
+use App\Models\Core\Service;
+use App\Repositories\StatusRepository;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -17,8 +22,17 @@ class MenuController extends Controller
     }
 
     public function hospitals(){
+        $levels = InstitutionLevel::all();
+        $services = InstitutionService::join('services','services.id','=','institution_services.service_id')
+                   ->join('institutions','institutions.id','=','institution_services.institution_id')
+                    ->where('institutions.status',StatusRepository::getInstitutionStatus('active'))
+                    ->groupBy('services.id')
+                     ->select('services.id','services.name')
+                    ->get();
+
         $hospitals = Institution::where('organization_type_id',1)->paginate(12);
-        return view($this->folder.'hospitals',compact('hospitals'));
+        $counties = County::select('id','name')->get();
+        return view($this->folder.'hospitals',compact('hospitals','levels','services','counties'));
     }
 
     public function hospital($slug){

@@ -20,35 +20,36 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-3">
                     <!-- filter btn start -->
 {{--                   <div class="row">--}}
-                        <form class="row" method="post" action="{{ url('/') }}">
+                        <form class="row" method="post" action="{{ url('search') }}">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
-                                        <option>Search By Location</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="WY">Wyoming</option>
-                                        <option value="AL">Alabama</option>
+                                    <select name="county" style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
+                                        <option>Search By County</option>
+                                        @foreach($counties as $county)
+                                            <option value="{{ $county->id }}">{{ $county->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
-                                        <option>Level</option>
-                                        <option value="AL">Alabama</option>
+                                    <select name="level" style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
+                                        <option value="">Level</option>
+                                        @foreach($levels as $level)
+                                        <option value="{{ $level->id }}">{{ $level->name }}</option>
+                                            @endforeach
                                     </select>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
-                                        <option>Service</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="WY">Wyoming</option>
-                                        <option value="AL">Alabama</option>
+                                    <select name="service" style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
+                                        <option value="">Service</option>
+                                        @foreach($services as $service)
+                                        <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -118,4 +119,7 @@
         </div>
     </div>
 
+    <script>
+        $('select[name="county"] [value="47"]').attr('selected','selected');
+    </script>
     @endsection

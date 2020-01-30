@@ -56,7 +56,7 @@
                         <div class="card-body" style="padding: 3px">
                             <span>{{ @$institution->institutionLevel->name }}</span>
                             <!-- Card Title-->
-                            <button class="badge badge-info" style="border-color:royalblue">Nairobi</button>
+                            <button class="badge btn" style="background-color: #335062; color: white">Nairobi</button>
 
                             <h3 class="mb-0">{{ $institution->name }}</h3>
                             <!-- Card Title-->

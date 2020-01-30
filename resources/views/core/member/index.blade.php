@@ -10,6 +10,21 @@
             margin-bottom: 1.4rem;
         }
     </style>
+
+    <style>
+        .review-content-rating {
+            color: #ff9703;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .review-content-rating .star::before, .review-content-rating .star.half::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: '\f005';
+            display: block;
+        }
+    </style>
     <!-- Grid Item -->
     <div class="col-xl-12">
        <div class="row">
@@ -126,11 +141,18 @@
                                 <!-- Card Body -->
                                 <div class="card-body" style="padding: 3px">
                                     <!-- Card Title-->
+                                    <button class="badge btn" style="background-color: #335062; color: white">Nairobi</button>
+
                                     <span>{{ @$institution->institutionLevel->name }}</span>
 
                                     <a href="{{ url('institution/'.$institution->slug) }}">
-                                        <h3>{{ $institution->name }}</h3>
+                                        <h3 class="mb-0">{{ $institution->name }}</h3>
                                     </a>
+                                    <div class="py-0 review-content-rating" >
+                                        @for($i=0; $i<@\App\Models\Core\Institution::getInstitutionRatingCount($institution->id); $i++)
+                                            <span class="star" style="float: right; color: #7BB37D !important;"></span>
+                                        @endfor
+                                    </div>
                                     <!-- Card Title-->
 
                                 </div>

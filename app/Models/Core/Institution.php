@@ -41,4 +41,17 @@ class Institution extends Model
 	    return 3;
 
     }
+
+    public static function getInstitutionRatingCount($id){
+        $rating =  Rating::join('visits','ratings.visit_id','=','visits.id')
+            ->where('visits.institution_id',$id)
+            ->select(DB::raw('SUM(ratings.rating) as rating'))
+            ->first();
+        if ($rating->rating){
+            $users = Rating::join('visits','ratings.visit_id','=','visits.id')
+                ->where('visits.institution_id',$id)->count();
+            return round($rating->rating / $users);
+        }
+        return 3;
+    }
 }

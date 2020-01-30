@@ -49,6 +49,8 @@ Route::post('create-account','Auth\RegisterController@createAccount');
 Route::view('complete-registration','auth.complete_registration');
 Route::post('member-complete-registration','Member\IndexController@completeMemberRegistration');
 
+Route::post('search-hospital','Frontend\SearchController@searchHospitals');
+
 
 Route::get('/{provider}/login', 'Auth\SocialProviderController@redirect');
 Route::get('/{provider}/callback', 'Auth\SocialProviderController@callback');

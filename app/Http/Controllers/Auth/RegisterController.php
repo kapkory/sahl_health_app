@@ -110,7 +110,7 @@ class RegisterController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'email' => 'required',
-            'phone_number' => 'required|min:10',
+            'phone_number' => 'required',
             'password' => 'required',
         ]);
 

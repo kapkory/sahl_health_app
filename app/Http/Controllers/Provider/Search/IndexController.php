@@ -46,6 +46,15 @@ class IndexController extends Controller
         }
         $visit->institution_id = auth()->user()->institution_id;
         $visit->save();
+
+        $member = User::findOrFail($visit->user_id);
+        $institution = Institution::findOrFail(auth()->user()->institution_id);
+
+        $address[] = $member->phone_number;
+        $message = 'Thank you for visiting '.$institution->name.'. Kindly rate your experience by following this Link '.url(' member/visits/visit/'.$visit->id.'?rating=true');
+        $techpitch = new TechpitMessageRepository();
+        $response = @$techpitch->execute($message,$address);
+
         return ['redirect'=>url('provider/search/'.$visit->id),'title'=>'User visit has been confirmed'];
     }
 

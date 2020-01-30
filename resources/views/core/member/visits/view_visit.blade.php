@@ -44,7 +44,7 @@
           <div class="alert alert-secondary">
               <p class="text-center">Thank you for visiting <u>{{ $visit->institution->name }}</u>, Please Rate your Visit and Confirm Feedback</p>
           </div>
-          <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" style="color: white;background-color: orangered; border-color: orangered">Submit Ratings</button>
+          <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" style="color: white;background-color: orangered; border-color: orangered">Rate your Visit</button>
           @endif
       </div>
   </div>
@@ -81,6 +81,7 @@
 
                       <div class="row">
                           <div class="col-md-11 mx-1">
+                              <h4 class="text-muted">Tell us more(optional)</h4>
                               <div class="testimonial-carousel">
                                   <div class="owl-carousel owl-theme owl-testimonial">
                                       <div class="item jumbotron p-3">
@@ -119,14 +120,11 @@
 
 
                       </div>
+                        <div class="text-center">
+                            <input type="submit" value="Submit Ratings" name="submit" class="btn btn-primary submit-btn">
 
-                         <input type="submit" value="Submit Feedback" name="submit" class="btn btn-primary submit-btn">
+                        </div>
                      </form>
-                 </div>
-
-                 <!-- Modal footer -->
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                  </div>
 
              </div>
@@ -195,6 +193,14 @@
         $('input[name="service_rating"]').val($(this).data('text'));
         $(this).addClass('active')
     });
+
+    @isset($_GET['rating'])
+        console.log('failed');
+        $(function () {
+            $('#myModal').modal('show');
+        })
+
+         @endisset
 
 </script>
 @endsection

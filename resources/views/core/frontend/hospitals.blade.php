@@ -19,39 +19,46 @@
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-3">
                     <!-- filter btn start -->
-                   <div class="row">
-                       <div class="col-md-3">
-                         <div class="form-group">
-                             <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
-                                 <option>Search By Location</option>
-                                 <option value="AK">Alaska</option>
-                                 <option value="HI">Hawaii</option>
-                                 <option value="WY">Wyoming</option>
-                                 <option value="AL">Alabama</option>
-                             </select>
-                         </div>
-                       </div>
+{{--                   <div class="row">--}}
+                        <form class="row" method="post" action="{{ url('/') }}">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
+                                        <option>Search By Location</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="WY">Wyoming</option>
+                                        <option value="AL">Alabama</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                       <div class="col-md-3">
-                           <div class="form-group">
-                               <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
-                                   <option>Level</option>
-                                   <option value="AL">Alabama</option>
-                               </select>
-                           </div>
-                       </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
+                                        <option>Level</option>
+                                        <option value="AL">Alabama</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                       <div class="col-md-3">
-                           <div class="form-group">
-                               <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
-                                   <option>Service</option>
-                                   <option value="AK">Alaska</option>
-                                   <option value="WY">Wyoming</option>
-                                   <option value="AL">Alabama</option>
-                               </select>
-                           </div>
-                       </div>
-                   </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <select style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
+                                        <option>Service</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="WY">Wyoming</option>
+                                        <option value="AL">Alabama</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <button style="background-color: #335062" class="btn text-white"><i class="fa fa-search text-white"></i>&nbsp;Search</button>
+                            </div>
+                        </form>
+{{--                   </div>--}}
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
 

@@ -133,7 +133,7 @@ class RegisterController extends Controller
             }
         }
 
-        return ['redirect_url'=>url('complete-registration?type=email')];
+        return ['redirect'=>url('complete-registration?type=email')];
     }
 
     public function createAccount(){

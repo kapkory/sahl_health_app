@@ -77,6 +77,7 @@
 
     <script src="{{ url('drift/assets/modules/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ url('drift/assets/modules/rateYo/jquery.rateyo.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url('sahl/assets/fonts/fontawesome/css/all.css') }}">
 
     @stack('scripts')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
@@ -98,8 +99,6 @@
             .mobile_disp {
                 width: 50%;
                 padding-left: 2px;
-                padding-right: 0px;
-
             }
         }
     </style>

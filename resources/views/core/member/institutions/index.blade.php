@@ -3,11 +3,26 @@
 @section('title','Institutions')
 
 @section('content')
-    <div class="row">
+    <style>
+        .review-content-rating {
+            color: #ff9703;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .review-content-rating .star::before, .review-content-rating .star.half::after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: '\f005';
+            display: block;
+        }
+    </style>
+
     @isset($institutions)
+        <div class="row">
         @foreach($institutions as $institution)
             <!-- Grid Item -->
-                <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                <div class="mobile_disp  col-sm-6 col-md-4 col-xl-3  ">
 
                     <!-- Card -->
                     <div class="card">
@@ -16,7 +31,7 @@
                         <div class="dt-slider">
                             <!-- Slider Header -->
                             <div class="dt-slider__header" style="padding: 2px !important;">
-                                <span class="badge bg-orange text-white text-uppercase">Discount {{ $institution->discount.'%' }}</span>
+                                <span class="badge bg-orange text-white text-uppercase">{{ $institution->discount.'%' }}</span>
 
                                 @if(App\User::hasFavoriteInstitution($institution->id,auth()->id()))
                                 <div class="dt-checkbox dt-checkbox-icon dt-checkbox-only">
@@ -31,7 +46,7 @@
                             <!-- /slider header -->
 
                             <div class="owl-carousel owl-theme">
-                                <img class="card-img-top" style="max-height: 110.25px" src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
+                                <img class="card-img-top"  style="max-height: 150.25px;object-fit: cover " src="{{ ($institution->featured_image) ? url($institution->featured_image) : url('frontend/assets/images/default-img-400x240.jpg') }}" alt="Hospital">
                             </div>
 
                         </div>
@@ -41,8 +56,15 @@
                         <div class="card-body" style="padding: 3px">
                             <span>{{ @$institution->institutionLevel->name }}</span>
                             <!-- Card Title-->
-                            <h3>{{ $institution->name }}</h3>
+                            <button class="badge badge-info" style="border-color:royalblue">Nairobi</button>
+
+                            <h3 class="mb-0">{{ $institution->name }}</h3>
                             <!-- Card Title-->
+                            <div class="py-0 review-content-rating" >
+                                @for($i=0; $i<@$institution->getRatingCount(); $i++)
+                                    <span class="star" style="float: right; color: #7BB37D !important;"></span>
+                                @endfor
+                            </div>
                         </div>
                         <!-- /card body -->
 
@@ -51,7 +73,12 @@
                 </div>
                 <!-- /grid item -->
         @endforeach
-    @endisset
     </div>
+        <div class="row">
+            {{ $institutions->links() }}
+        </div>
+
+    @endisset
+
 
     @endsection

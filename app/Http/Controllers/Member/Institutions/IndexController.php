@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        $institutions = Institution::where('organization_type_id',1)->get();
+        $institutions = Institution::where('organization_type_id',1)->paginate(12);
 //        dd($institutions);
         return  view($this->folder.'index',compact('institutions'));
     }

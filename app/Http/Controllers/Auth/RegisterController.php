@@ -92,18 +92,19 @@ class RegisterController extends Controller
         $user = new User();
         $user->name = \request('name');
         $user->email = \request('email');
+        $user->role = 'member';
         $user->phone_number = \request('phone_number');
         $user->password = bcrypt(\request('email'));
         $user->save();
         Auth::login($user);
 
 
-        $address[]  = preg_replace('/^\\D*/', '', \request('phone_number'));
+        $address[]  = preg_replace('/^\\D*/', '', $user->getFormattedPhone());
         $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
         $techpitch = new TechpitMessageRepository();
 //        dd($message,$address);
         $response = $techpitch->execute($message,$address);
-        return ['redirect_url'=>url('member-packages')];
+        return ['redirect'=>url('member-packages')];
     }
     public function registerMember(){
         $this->validate(\request(), [
@@ -119,6 +120,7 @@ class RegisterController extends Controller
         $user->email = \request('email');
         $user->phone_number = \request('phone_number');
         $user->referral_code = uniqid();
+        $user->role = 'member';
         $user->password = bcrypt(\request('password'));
         $user->save();
         Auth::login($user);

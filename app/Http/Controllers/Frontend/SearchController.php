@@ -20,7 +20,7 @@ class SearchController extends Controller
         if (\request('county') != ''){
             $institutions = $institutions->where('institutions.county_id',\request('county'));
         }
-        dd($institutions->get(),\request('county'));
+//        dd($institutions->get(),\request('county'));
 
         if (\request('level') != '')
             $institutions = $institutions->where('institutions.institution_level_id',\request('level'));

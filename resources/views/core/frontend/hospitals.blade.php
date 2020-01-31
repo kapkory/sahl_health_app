@@ -24,7 +24,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <select name="county" style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">
-                                        <option>Search By County</option>
+                                        <option value="">Search By County</option>
                                         @foreach($counties as $county)
                                             <option value="{{ $county->id }}">{{ $county->name }}</option>
                                         @endforeach

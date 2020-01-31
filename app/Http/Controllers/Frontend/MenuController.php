@@ -30,7 +30,7 @@ class MenuController extends Controller
                      ->select('services.id','services.name')
                     ->get();
         $counties = County::select('id','name')->get();
-        $hospitals = Institution::where('organization_type_id',1)->paginate(12);
+        $hospitals = Institution::where('organization_type_id',1)->where('status',1)->paginate(12);
 
         return view($this->folder.'hospitals',compact('hospitals','levels','services','counties'));
     }

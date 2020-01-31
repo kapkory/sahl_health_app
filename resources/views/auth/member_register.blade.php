@@ -20,6 +20,12 @@
         .intl-tel-input .flag-container{
             padding-left: 5px !important;
         }
+
+        .bg-dark-myimg{
+            background-image: url("{{ url('sahl/assets/image/family.png') }}");
+            object-fit: cover;
+        }
+
         /*#phone_number{*/
         /*    padding-left: 40px !important;*/
         /*}*/
@@ -34,7 +40,7 @@
                 <div class="rounded">
                     <div class="row py-4">
                         <div class="col-md-8 pt-md-3 mt-md-3">
-                            <h3 class="text-light">
+                            <h3 class="text-black" >
                                 <b>Transforming Health <br>&nbsp;&nbsp;&nbsp; Everyday Everywhere</b>
                             </h3>
                         </div>
@@ -58,7 +64,7 @@
                     <div class="row my-2">
 
                         <div class=" p-2 col-md-4 offset-md-4 form-group text-center">
-                            <a style="color: #212121;border-color: #212121;" href="{{ url('google/login') }}" class="btn btn-outline-secondary btn-lg btn-block">
+                            <a style="color: #212121;border-color: #212121;" href="{{ url('google/login') }}" class="btn btn-lg btn-block">
                                 <i class="fa fa-google"></i> &nbsp;Register with Google </a>
                         </div>
 

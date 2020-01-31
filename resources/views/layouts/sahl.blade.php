@@ -25,7 +25,7 @@
 
         <script src="{{ url('sahl/assets') }}/js/owl.carousel.min.js"></script>
         <script src="{{ url('sahl/assets') }}/js/jquery.lazy.min.js"></script>
-    @yield('styles')
+
     <style type="text/css">
         @media only screen and (min-width: 600px) {
             .institution_image{
@@ -72,6 +72,7 @@
             object-fit: cover;
         }
     </style>
+@yield('styles')
 <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6671420.js"></script> <!-- End of HubSpot Embed Code -->
 </head>

@@ -92,7 +92,6 @@ class RegisterController extends Controller
         $user = new User();
         $user->name = \request('name');
         $user->email = \request('email');
-        $user->role = 'member';
         $user->phone_number = \request('phone_number');
         $user->password = bcrypt(\request('email'));
         $user->save();
@@ -118,9 +117,8 @@ class RegisterController extends Controller
         $user = new User();
         $user->name = \request('first_name').' '.\request('other_name').' '.\request('last_name');
         $user->email = \request('email');
-        $user->phone_number = \request('phone_number');
+        $user->phone_number = preg_replace('/\s+/', '', \request('phone_number'));
         $user->referral_code = uniqid();
-        $user->role = 'member';
         $user->password = bcrypt(\request('password'));
         $user->save();
         Auth::login($user);

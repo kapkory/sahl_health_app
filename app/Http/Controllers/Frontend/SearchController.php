@@ -16,10 +16,11 @@ class SearchController extends Controller
         $institutions = Institution::leftJoin('institution_services','institution_services.institution_id','=','institutions.id')
                         ->where('institutions.status',1)
                         ->where('organization_type_id',1);
-        dd($institutions->get());
+
         if (\request('county') != ''){
             $institutions = $institutions->where('institutions.county_id',\request('county'));
         }
+        dd($institutions->get());
 
         if (\request('level') != '')
             $institutions = $institutions->where('institutions.institution_level_id',\request('level'));

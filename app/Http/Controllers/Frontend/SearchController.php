@@ -17,10 +17,10 @@ class SearchController extends Controller
                         ->where('institutions.status',1)
                         ->where('organization_type_id',1);
 
-        if (\request('county') != ''){
+        if (\request('county') !== ''){
             $institutions = $institutions->where('institutions.county_id',\request('county'));
         }
-        dd($institutions->get());
+        dd($institutions->get(),\request('county'));
 
         if (\request('level') != '')
             $institutions = $institutions->where('institutions.institution_level_id',\request('level'));

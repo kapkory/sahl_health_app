@@ -25,7 +25,8 @@ class SearchController extends Controller
             $institutions = $institutions->where('institutions.institution_level_id',\request('level'));
 
         if (\request('service') != ''){
-            $institutions = $institutions->where('institution_services.service_id',\request('service'));
+            $institutions = $institutions->where('institution_services.service_id',\request('service'))
+            ->select('institutions.*');
         }
 
         $levels = InstitutionLevel::all();
@@ -36,7 +37,7 @@ class SearchController extends Controller
             ->select('services.id','services.name')
             ->get();
         $counties = County::select('id','name')->get();
-        $hospitals = $institutions->select('institutions.*')->paginate(12);
+        $hospitals = $institutions->select('institutions.*')->groupBy('institutions.id')->paginate(12);
         return view($this->folder.'hospitals',compact('hospitals','levels','services','counties'));
 
     }

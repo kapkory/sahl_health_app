@@ -16,7 +16,7 @@ class SearchController extends Controller
         $institutions = Institution::leftJoin('institution_services','institution_services.institution_id','=','institutions.id')
                         ->where('institutions.status',1)
                         ->where('organization_type_id',1);
-
+        dd($institutions);
         if (\request('county') != ''){
             $institutions = $institutions->where('institutions.county_id',\request('county'));
         }
@@ -36,7 +36,7 @@ class SearchController extends Controller
             ->groupBy('services.id')
             ->select('services.id','services.name')
             ->get();
-        dd($institutions);
+
         $counties = County::select('id','name')->get();
         $hospitals = $institutions->select('institutions.*')->groupBy('institutions.id')->paginate(12);
         return view($this->folder.'hospitals',compact('hospitals','levels','services','counties'));

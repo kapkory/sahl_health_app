@@ -57,14 +57,14 @@
 
                     <div class="row my-2">
 
-                        <div class=" p-2 col-md-4 offset-4 form-group text-center">
+                        <div class=" p-2 col-md-4 offset-md-4 form-group text-center">
                             <a style="color: #212121;border-color: #212121;" href="{{ url('google/login') }}" class="btn btn-outline-secondary btn-lg btn-block">
                                 <i class="fa fa-google"></i> &nbsp;Register with Google </a>
                         </div>
 
                     </div>
                     <div class="row my-2">
-                        <div class=" p-2 col-md-4 offset-4 form-group text-center">
+                        <div class=" p-2 col-md-4 offset-md-4 form-group text-center">
                             <a style="background-color: #FF5A5F;border-color:white; color: white;box-shadow: none;" data-toggle="modal" data-target="#providerSignUpModal" class="btn btn-outline-dark btn-lg btn-block">
                                 <i class="fa fa-phone"></i>
                                 &nbsp;Register with Phone

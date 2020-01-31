@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\County;
 use App\Models\Core\Identification;
 use App\Models\Core\InstitutionLevel;
 use App\Models\Core\MemberPackage;
@@ -25,6 +26,9 @@ class ApiController extends Controller
         switch ($variable){
             case 'levels':
                 $response = InstitutionLevel::select('id','name')->get();
+                break;
+            case 'county':
+                $response = County::select('id','name')->get();
                 break;
             case 'organization_types':
                 $response = OrganizationType::select('id','name')->get();

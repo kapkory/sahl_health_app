@@ -26,7 +26,7 @@ class InstitutionsController extends Controller
      * store institution
      */
     public function storeInstitution(){
-        request()->validate($this->getValidationFields(['name','institution_level','organization_type','address','postal_code','featured_image']));
+        request()->validate($this->getValidationFields(['name','institution_level','organization_type','address','postal_code','featured_image','county','town']));
         $data = \request()->all();
 //       dd($data);
         if(!isset($data['user_id'])) {
@@ -34,23 +34,34 @@ class InstitutionsController extends Controller
                 $data['user_id'] = request()->user()->id;
         }
         $data['slug'] = Str::slug($data['name']).'-'.rand(1,999);
-        if (isset($data['featured_image'])){
+        if (\request('featured_image') != ''){
             $image = request()->file('featured_image');
             $ext = $image->getClientOriginalExtension();
             $name = $data['slug']. "." . $ext;
-            $image->move(storage_path() . '/app/public/institutions/images', $name);
+            $image->move(storage_path() . '/app/public/institutions/images/', $name);
             $data['featured_image'] = 'storage/institutions/images/'.$name;
+        }
+
+        if (\request('logo') != ''){
+            $logo = request()->file('logo');
+            $ext = $logo->getClientOriginalExtension();
+            $name = 'logo-'.$data['slug']. "." . $ext;
+            $logo->move(storage_path() . '/app/public/institutions/logo/', $name);
+            $data['logo_url'] = 'storage/institutions/logo/'.$name;
         }
 
 
         $data['organization_type_id'] = $data['organization_type'];
         $data['address_postal_code'] = $data['postal_code'];
         $data['institution_level_id'] = $data['institution_level'];
+        $data['county_id'] = $data['county'];
 
         unset($data['institution_level']);
         unset($data['postal_code']);
         unset($data['organization_type']);
+        unset($data['logo']);
         unset($data['submit']);
+        unset($data['county']);
         $institution = $this->autoSaveModel($data);
 
         if (!auth()->user()->institution_id){

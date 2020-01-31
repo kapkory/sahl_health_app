@@ -36,6 +36,7 @@ class SearchController extends Controller
             ->groupBy('services.id')
             ->select('services.id','services.name')
             ->get();
+        dd($institutions);
         $counties = County::select('id','name')->get();
         $hospitals = $institutions->select('institutions.*')->groupBy('institutions.id')->paginate(12);
         return view($this->folder.'hospitals',compact('hospitals','levels','services','counties'));

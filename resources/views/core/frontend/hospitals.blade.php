@@ -20,7 +20,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-3">
                     <!-- filter btn start -->
 {{--                   <div class="row">--}}
-                        <form class="row" method="post" action="{{ url('search-hospital') }}">
+                        <form class="row" method="post" action="{{ url('hospitals') }}">
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <select name="county" style="background: rgba(196, 196, 196, 0.24);" class="select2 form-control custom-select">

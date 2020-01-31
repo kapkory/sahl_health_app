@@ -29,9 +29,9 @@ class MenuController extends Controller
                     ->groupBy('services.id')
                      ->select('services.id','services.name')
                     ->get();
-
-        $hospitals = Institution::where('organization_type_id',1)->paginate(12);
         $counties = County::select('id','name')->get();
+        $hospitals = Institution::where('organization_type_id',1)->paginate(12);
+
         return view($this->folder.'hospitals',compact('hospitals','levels','services','counties'));
     }
 

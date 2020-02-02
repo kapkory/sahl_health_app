@@ -9,4 +9,8 @@ class Identification extends Model
 
 	protected $fillable = ["name","is_provider","user_id"];
 
+	public function profiles(){
+	    return $this->hasMany(Profile::class);
+    }
+
 }

@@ -17,11 +17,11 @@
                 </tr>
                 <tr>
                     <th>Identification</th>
-                    <td>{{ $user->identification_type }}</td>
+                    <td>{{ @$user->profile->identificationType->name }}</td>
                 </tr>
                 <tr>
                     <th>Identification Number</th>
-                    <td>{{ $user->identification_number }}</td>
+                    <td>{{ @$user->profile->identification_number }}</td>
                 </tr>
                 <tr>
                     <th>Phone</th>
@@ -47,4 +47,9 @@
         'modal_title'=>'New Password',
         'modal_content'=>Form::autoForm(['password','password_confirmation'],'user/password'),
     ])
+
+    <script>
+        $('select[name="identification_type"]').val("{{ @$user->profile->identificationType->name }}");
+        $('input[name="identification_number"]').val("{{ @$user->profile->identification_number }}");
+    </script>
 @endsection

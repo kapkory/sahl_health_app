@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Core\FavoriteInstitution;
 use App\Models\Core\Institution;
+use App\Models\Core\Profile;
 use App\Models\Core\Visit;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -86,5 +87,9 @@ class User extends Authenticatable
             return true;
 
         return false;
+    }
+
+    public function profile(){
+        return $this->hasOne(Profile::class);
     }
 }

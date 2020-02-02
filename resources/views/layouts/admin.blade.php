@@ -455,6 +455,18 @@
 <script src="{{ url('drift/assets/js/jquery.history.js') }}"></script>
 @include('common.javascript')
 @stack('footer-scripts')
+
+<script>
+    $('#btnGenerateToken').click(function () {
+        let url = "{{ url('member/generate-token?_token='.csrf_token()) }}";
+        $.post(url).done(function (response) {
+            console.log(response.message);
+            toastr.success(response.message);
+            $('#btnGenerateToken').hide();
+
+        })
+    });
+</script>
 </body>
 </html>
 @endif

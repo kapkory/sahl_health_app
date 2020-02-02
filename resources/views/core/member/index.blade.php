@@ -181,17 +181,6 @@
     <script>
 
 
-        $('#btnGenerateToken').click(function () {
-            let url = "{{ url('member/generate-token?_token='.csrf_token()) }}";
-          $.post(url).done(function (response) {
-              console.log(response.message);
-              toastr.success(response.message);
-              $('#btnGenerateToken').hide();
-
-          })
-        });
-
-
         function copyToClipboard() {
             var $temp = $("<input>");
             $("body").append($temp);

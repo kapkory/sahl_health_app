@@ -94,6 +94,7 @@ class RegisterController extends Controller
         $user->email = \request('email');
         $user->phone_number = \request('phone_number');
         $user->password = bcrypt(\request('email'));
+        $user->verification_code = rand(999,100000);
         $user->save();
         Auth::login($user);
 
@@ -119,6 +120,7 @@ class RegisterController extends Controller
         $user->email = \request('email');
         $user->phone_number = preg_replace('/\s+/', '', \request('phone_number'));
         $user->referral_code = uniqid();
+        $user->verification_code = rand(999,100000);
         $user->password = bcrypt(\request('password'));
         $user->save();
         Auth::login($user);
@@ -146,6 +148,7 @@ class RegisterController extends Controller
         $user->name = \request('first_name').' '.\request('last_name');
         $user->email = \request('email');
         $user->password = bcrypt(\request('email'));
+        $user->verification_code = rand(999,100000);
         $user->save();
         Auth::login($user);
 

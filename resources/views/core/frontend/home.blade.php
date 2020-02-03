@@ -23,10 +23,16 @@
                 width: 100% !important;
             }
         }
+        @media screen and (min-width: 768px) {
+            .sahl_home{
+                min-height:300px
+            }
+
+        }
 
     </style>
 <!-- header close -->
-   <div class="row sahl_home" style="background: linear-gradient(89.88deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">
+   <div class="row sahl_home" style="background: linear-gradient(89.88deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);max-height: 475px;">
 
             <img style="width: 100% !important;max-height: 475px; object-fit: cover;" src="{{ url('sahl') }}/assets/image/slider-1.svg" alt="Sahl Health slider" >
 

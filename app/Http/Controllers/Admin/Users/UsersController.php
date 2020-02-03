@@ -31,7 +31,7 @@ class UsersController extends Controller
                 $json = json_encode($user);
                 $str.='<a href="#" data-model="'.htmlentities($json, ENT_QUOTES, 'UTF-8').'" onclick="prepareEdit(this,\'add_user\');" class="btn badge btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>';
                 $str .= '&nbsp;&nbsp;<a href="' . url('admin/users') . '/user/' . $user->id . '"  class="btn badge btn-outline-dark btn-sm load-page"><i class="fa fa-eye"></i> view</a>';
-
+                $str.='&nbsp;&nbsp;<a href="#" onclick="deleteItem(\''.url(request()->user()->role.'/users/user/delete').'\',\''.$user->id.'\');" class="btn badge btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>';
                 return $str;
             })->make();
     }

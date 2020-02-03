@@ -100,7 +100,7 @@ class RegisterController extends Controller
 
 
         $address[]  = preg_replace('/^\\D*/', '', $user->getFormattedPhone());
-        $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical services through membership.';
+        $message = 'Hi '.\request('name').', thanks for the sign up- become now an empowered customer when seeking medical service through membership.';
         $techpitch = new TechpitMessageRepository();
 //        dd($message,$address);
         $response = $techpitch->execute($message,$address);

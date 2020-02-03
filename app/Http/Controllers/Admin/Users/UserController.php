@@ -117,7 +117,7 @@ class UserController extends Controller
         $user->password = Hash::make(request('new_password'));
         $user->update();
         $user->new_password = \request('new_password');
-        $user->notify(new GeneralNotification('change-user-password',null,null,null,\request('new_password')));
+//        $user->notify(new GeneralNotification('change-user-password',null,null,null,\request('new_password')));
         return redirect()->back()->with('notice',['type'=>'success','message'=>'User password changed']);
     }
 
@@ -135,7 +135,7 @@ class UserController extends Controller
         $user = User::whereId($user_id)->firstOrFail();
         $user->status = 1;
         $user->save();
-        LogsRepository::storeLog('user_suspend','un-suspended/Resumed user: <b>'.$user->name.'('.$user->role.')</b>');
+//        LogsRepository::storeLog('user_suspend','un-suspended/Resumed user: <b>'.$user->name.'('.$user->role.')</b>');
         return back()->with('notice',['type'=>'success','message'=>'User has been resumed']);
     }
 
@@ -145,6 +145,13 @@ class UserController extends Controller
         $user->save();
 
         return back();
+    }
+
+    public function deleteUser($user_id){
+        $user = User::whereId($user_id)->firstOrFail();
+        $user->delete();
+
+        return back()->with('notice',['type'=>'success','message'=>'User has been deleted successfully']);
     }
 
 }

@@ -11,14 +11,14 @@
     <div class="col-xl-12">
         <div class="row">
             <div class="col-md-3 col-6"><!-- Card -->
-                <div class="dt-card"><!-- Card Body -->
-                    <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
-                        <span class="badge badge-secondary badge-top-right">My Wallet</span><!-- Media -->
+                <div class="dt-card" style="background-color: #7BB37D;border-radius: 10px;"><!-- Card Body -->
+                    <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" >
+
                         <div class="media">
-                            <i class="icon icon-revenue-new icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
+                            <i class="icon icon-revenue-new text-white icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
                             <div class="media-body">
-                                <p class="mb-1 h1">{{ auth()->user()->wallet }}</p>
-                                <span class="d-block text-light-gray">Ksh</span>
+                                <p class="mb-1 h1 text-white">Ksh <br>{{ auth()->user()->wallet }}</p>
+                                <span class="d-block text-black-50">My Wallet</span>
                             </div><!-- /media body -->
                         </div><!-- /media -->
                     </div><!-- /card body -->
@@ -26,14 +26,14 @@
             </div>
 
             <div class="col-md-3 col-6"><!-- Card -->
-                <div class="dt-card"><!-- Card Body -->
-                    <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
-                        <span class="badge badge-info badge-top-right">Total Earnings</span><!-- Media -->
+                <div class="dt-card" style="background-color: #335062;border-radius: 10px;"><!-- Card Body -->
+                    <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" >
+
                         <div class="media">
-                            <i class="icon icon-orders-new icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
+                            <i class="icon icon-revenue-new text-white icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
                             <div class="media-body">
-                                <p class="mb-1 h1">{{ auth()->user()->wallet }}</p>
-                                <span class="d-block text-light-gray">Ksh</span>
+                                <p class="mb-1 h1 text-white">Ksh <br>{{ auth()->user()->wallet }}</p>
+                                <span class="d-block text-black-50">Total Earnings</span>
                             </div><!-- /media body -->
                         </div><!-- /media -->
                     </div><!-- /card body -->
@@ -41,13 +41,23 @@
             </div>
 
 
-                <div class="col-md-3 col-6"><!-- Card -->
-                    <div class="dt-card"><!-- Card Body -->
-                        <div class="dt-card__body p-xl-8 py-sm-8 py-6 px-4">
-                         <button href="#refer_member"  data-toggle="modal"  class="btn btn-outline-info">Refer Member</button>
-                        </div><!-- /card body -->
-                    </div><!-- /card -->
-                </div>
+            <div class="col-md-3 col-6"><!-- Card -->
+                <div class="dt-card" style="background-color: #F07A3B;border-radius: 10px;"><!-- Card Body -->
+                    <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" >
+
+                        <div class="media">
+                            <i class="icon icon-crm text-white icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
+                            <div class="media-body">
+                                <br>
+                                <button href="#refer_member"  data-toggle="modal"  class="btn btn-outline-info text-white">Refer Member</button>
+
+                                {{--                                <p class="mb-1 h1 text-white">Ksh <br>{{ @number_format($data['savings'],2) }}</p>--}}
+{{--                                <span class="d-block text-black-50">Savings</span>--}}
+                            </div><!-- /media body -->
+                        </div><!-- /media -->
+                    </div><!-- /card body -->
+                </div><!-- /card -->
+            </div>
 
         </div>
     </div>

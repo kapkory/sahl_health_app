@@ -227,7 +227,7 @@
                                 @if(auth()->user()->role == 'provider')
                                     <a href="#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <img class="dt-avatar size-30" src="{{ url('drift') }}/assets/images/user-avatar/domnic-harris.jpg" alt="Domnic Harris">
+                                        <img class="dt-avatar size-30" src="{{ url('frontend/assets/user.png') }}" alt="Provider Avatar">
                                         <span class="dt-avatar-info d-none d-sm-block">
                                             @if(auth()->user()->institution_id)
                                                 <span class="dt-avatar-name">{{ auth()->user()->getInstitutionName() }}</span>

@@ -237,7 +237,7 @@
             },
             "children": [],
             "subs": [
-                "list","add"
+                "list","add","payments"
             ],
             "urls": [
                 "home",

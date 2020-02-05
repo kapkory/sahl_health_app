@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Member\Dependants;
 
 use App\Http\Controllers\Controller;
 use App\Models\Core\Identification;
+use App\Models\Core\MemberPackage;
 use Illuminate\Http\Request;
 
 use App\Models\Core\Dependant;
@@ -16,9 +17,60 @@ class DependantsController extends Controller
          * return dependant's index view
          */
     public function index(){
-        return view($this->folder.'index',[
+        $memberPackage = MemberPackage::where('member_id',auth()->id())
+            ->orderBy('id','desc')->first();
+//        $package =
+        return view($this->folder.'index',compact('memberPackage'));
+    }
 
-        ]);
+    public function viewPayments($code = null){
+        $amount = 0;
+
+        if ($code)
+        {
+            $dependants = Dependant::where('random_code',$code)->get();
+            $count = auth()->user()->countDependants();
+            $amount = $this->calculateAmount($count);
+        }
+        else{
+            $dependants = Dependant::where('user_id',auth()->id())
+                ->where('status','!=',2)
+                ->get();
+
+            $counts = count($dependants);
+            $amount = $this->calculateTotalAmount($counts);
+//            dd($amount,$counts);
+        }
+
+        return view($this->folder.'payment',compact('amount','dependants'));
+
+    }
+
+    public function calculateAmount($count){
+        if ($count < 1)
+            $amount = 2499;
+        else if ($count <= 2){
+            $amount = 1499;
+        }else if($count <= 3)
+            $amount = 999;
+
+        return $amount;
+    }
+
+    public function calculateTotalAmount($count){
+        $amount = 0;
+        if ($count == 1)
+            $amount = 2499;
+        else if ($count == 2){
+            $amount = 1499 + 1499;
+        }else if($count == 3)
+            $amount = 1499 + 999 + 999;
+        elseif($count > 3){
+            $count = $count - 3;
+            $amount = 999 * $count;
+            $amount = $amount +1499 + 999 + 999;
+        }
+        return $amount;
     }
 
     /**
@@ -31,8 +83,15 @@ class DependantsController extends Controller
             if (Schema::hasColumn('dependants', 'user_id'))
                 $data['user_id'] = request()->user()->id;
         }
-        $this->autoSaveModel($data);
-        return redirect()->back();
+        $pay = $data['pay'];
+        unset($data['pay']);
+        $data['random_code'] = rand(999,100000);
+        $dependant = $this->autoSaveModel($data);
+        if ($pay == 0)
+            return redirect()->back()->with('notice',['type'=>'success','message'=>'Dependant Added Successfully']);
+        else{
+            return ['redirect'=>url('member/dependants/payments/'.$dependant->random_code)];
+        }
     }
     //returns api results
     public function addDependant(){

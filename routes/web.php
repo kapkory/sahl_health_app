@@ -64,6 +64,7 @@ Route::post('provider-register','Auth\ProviderRegisterController@registerProvide
 Route::get('agent-register','Agent\IndexController@registration');
 Route::post('agent-register','Agent\IndexController@registerAgent');
 
+
 Route::group(['middleware' => ['auth', 'web', 'member']], function () {
 //    Route::get('/', 'HomeController@index');
 //    Route::get('/home', 'HomeController@index')->name('home');

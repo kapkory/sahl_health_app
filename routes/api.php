@@ -22,6 +22,7 @@ Route::any('reference','Api\ApiController@mpesaCallback');
 
 
 Route::get('vars','Api\VariablesController@listVariables');
+Route::any('dependant/packages/{package_id}','Api\VariablesController@packages');
 
 
 Route::get('services/{institution_id}','Api\ProviderController@listServices');

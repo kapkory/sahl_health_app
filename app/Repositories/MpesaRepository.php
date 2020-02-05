@@ -34,7 +34,7 @@ class MpesaRepository
       return $access_token;
   }
 
-  public function stkPush($payment_id,$phone,$amount){
+  public function stkPush($payment_id,$phone,$amount,$callback_url = null){
     $url = 'https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
       $timestamp = '20'.date("ymdhis");
@@ -42,7 +42,10 @@ class MpesaRepository
     $pass = base64_encode($this->shortCode.$this->passKey.$stamp);
 
     $phone = preg_replace('/^\\D*/', '', $phone);
-    $pay_url = url('api/reference?payment_id='.$payment_id);
+    if (!$callback_url)
+         $pay_url = url('api/reference?payment_id='.$payment_id);
+    else
+        $pay_url = $callback_url;
 //      $amount = '1';
     $curl_post_data = array(
         'BusinessShortCode' => $this->shortCode,

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Core\Dependant;
 use App\Models\Core\FavoriteInstitution;
 use App\Models\Core\Institution;
 use App\Models\Core\Profile;
@@ -87,6 +88,10 @@ class User extends Authenticatable
             return true;
 
         return false;
+    }
+
+    public function countDependants(){
+        return Dependant::where('user_id',$this->id)->count();
     }
 
     public function profile(){

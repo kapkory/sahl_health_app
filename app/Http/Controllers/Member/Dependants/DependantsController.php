@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Member\Dependants;
 use App\Http\Controllers\Controller;
 use App\Models\Core\Identification;
 use App\Models\Core\MemberPackage;
+use App\Repositories\TechpitMessageRepository;
 use Illuminate\Http\Request;
 
 use App\Models\Core\Dependant;
@@ -86,6 +87,14 @@ class DependantsController extends Controller
         unset($data['pay']);
         $data['random_code'] = rand(999,100000);
         $dependant = $this->autoSaveModel($data);
+
+        $count = auth()->user()->countDependants();
+        $amount = $this->calculateAmount($count);
+        $address[]  = preg_replace('/^\\D*/', '', auth()->user()->getFormattedPhone());
+        $message = 'You have added '.\request('first_name').', as your dependant, for them to access Sahlhealth Services, kindly follow this link '.url('member/dependants/payments/'.$dependant->random_code).' to pay '.$amount;
+        $techpitch = new TechpitMessageRepository();
+        $response = $techpitch->execute($message,$address);
+
         if ($pay == 0)
             return redirect()->back()->with('notice',['type'=>'success','message'=>'Dependant Added Successfully']);
         else{
@@ -106,6 +115,8 @@ class DependantsController extends Controller
         }
         $dependant->relationship_type = \request('relationship_type');
         $dependant->save();
+
+
         if (\request('add_dependant') == 0)
             return ['redirect_url'=>url('member/payment')];
 

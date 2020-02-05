@@ -20,6 +20,10 @@ class Institution extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function county(){
+        return $this->belongsTo(County::class);
+    }
     public function institutionServices(){
         return $this->hasMany(InstitutionService::class);
     }

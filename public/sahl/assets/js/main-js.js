@@ -177,7 +177,7 @@ jQuery(document).ready(function($) {
         $('.owl-testimonial').owlCarousel({
 
             loop: false,
-            margin: 10,
+            margin: 20,
             nav: true,
             autoplay: true,
             autoplayTimeout: 8000,
@@ -190,7 +190,7 @@ jQuery(document).ready(function($) {
                     items: 2
                 },
                 1000: {
-                    items: 4
+                    items: 3
                 }
             }
         });

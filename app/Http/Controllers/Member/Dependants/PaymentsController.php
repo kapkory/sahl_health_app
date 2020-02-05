@@ -25,6 +25,7 @@ class PaymentsController extends Controller
             $dp->member_id = auth()->id();
             $dp->payer_id = auth()->id();
             $dp->amount = $amount;
+            $dp->status = 1;//processing
             $dp->comments = 'Payment By '.auth()->user()->name;
             $dp->save();
             $pay_id = $dp->id;

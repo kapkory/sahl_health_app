@@ -24,10 +24,13 @@ class VariablesController extends Controller
 
       $dpPackage = DependantPayment::findOrFail($package_id);
         if ($resp->Body->stkCallback->ResultCode == 0){
-            $dpPackage->status = 1;
+            $dpPackage->status = 2;
             $dpPackage->started_on = Carbon::now();
             $dpPackage->ends_on = Carbon::now()->addMonths(12);
             $dpPackage->save();
+
+            //update where records match
+             Dependant::whereIn('id',$dpPackage->dependant_ids)->update(['status'=>2]);
 
             $user = auth()->user();
             $message= 'Dear '.$user->name.', your payment of KES '.$dpPackage->amount.' for has been received, Thank you';

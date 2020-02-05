@@ -47,9 +47,8 @@ class DependantsController extends Controller
     }
 
     public function calculateAmount($count){
-        if ($count == 1)
-            $amount = 2499;
-        else if ($count <= 2){
+        $amount = 2499;
+        if ($count <= 2){
             $amount = 1499;
         }else if($count <= 3)
             $amount = 999;

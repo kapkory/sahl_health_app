@@ -64,6 +64,39 @@ Route::post('provider-register','Auth\ProviderRegisterController@registerProvide
 Route::get('agent-register','Agent\IndexController@registration');
 Route::post('agent-register','Agent\IndexController@registerAgent');
 
+Route::redirect('cookie-policy','blog/cookie-policy',301);
+Route::redirect('advertising-policy','blog/advertising-policy',301);
+Route::redirect('/advert','blog/advertising-policy',301);
+
+Route::redirect('privacy-policy','blog/privacy-policy',301);
+Route::redirect('privacy','blog/privacy-policy',301);
+
+Route::redirect('/terms','blog/terms',301);
+Route::redirect('/diseases','blog/diseases',301);
+Route::redirect('/diseases/{disease}','blog/diseases/{disease}',301);
+
+Route::redirect('categories/{articleCategory}','blog/categories/{articleCategory}',301);
+Route::redirect('article.category','blog/categories/{articleCategory}',301);
+
+Route::redirect('article-categories/{articleCategory}','blog/article-categories/{articleCategory}',301);
+Route::redirect('main.category','blog/article-categories/{articleCategory}',301);
+
+Route::redirect('search','blog/search',301);
+Route::redirect('letter/{q}','blog/letter/{q}',301);
+
+Route::redirect('autocomplete','blog/autocomplete',301);
+Route::redirect('medical-support','blog/medical-support',301);
+
+//Route::redirect('about','blog/about');
+//Route::redirect('about','blog/about');
+Route::redirect('international-patients','blog/international-patients',301);
+Route::redirect('tools/bmi','blog/tools/bmi',301);
+Route::redirect('bmi','blog/bmi',301);
+Route::redirect('tools/ovulation-calculator','blog/tools/ovulation-calculator',301);
+Route::redirect('ovulation','blog/tools/ovulation-calculator',301);
+
+Route::redirect('contact','blog/contact',301);
+
 
 Route::group(['middleware' => ['auth', 'web', 'member']], function () {
 //    Route::get('/', 'HomeController@index');

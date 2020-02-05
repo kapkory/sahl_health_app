@@ -34,7 +34,7 @@ class PaymentsController extends Controller
 
         $mpesaRepository= new MpesaRepository();
         $phone = auth()->user()->getFormattedPhone();
-//        $amount = '1';
+        $amount = '1';
         $response =  $mpesaRepository->stkPush($pay_id,$phone,$amount,url('api/dependant/packages/'.$pay_id));
         $responses = json_decode($response,true);
 

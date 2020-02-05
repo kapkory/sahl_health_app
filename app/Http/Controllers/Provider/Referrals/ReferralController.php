@@ -20,9 +20,12 @@ class ReferralController extends Controller
          * return referral's index view
          */
     public function index(){
-        return view($this->folder.'index',[
+        $data = [];
+        $data['referral_amount'] = Referral::where([
+                ['referrals.user_id',\auth()->id()]
+            ])->sum('amount');
 
-        ]);
+        return view($this->folder.'index',compact('data'));
     }
 
     //become an agent so that you can recruit members

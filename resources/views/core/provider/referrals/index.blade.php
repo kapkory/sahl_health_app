@@ -3,6 +3,31 @@
 @section('title','Referrals')
 
 @section('content')
+    <style>
+        .dt-content {
+            padding: 1.4rem 3.2rem;
+        }
+        .dt-page__header {
+            margin-bottom: 0.4rem;
+        }
+    </style>
+    <div class="jumbotron p-3 " style="width: 25%">
+        <div class="media">
+            <i class="icon icon-orders-new icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
+            <div class="media-body">
+                <p class="mb-1 h1">Ksh <br>{{ @number_format($data['referral_amount'],2) }}</p>
+                <span class="d-block text-black-50">Savings</span>
+            </div><!-- /media body -->
+        </div><!-- /media -->
+    </div>
+{{--    <div class="col-md-3 col-6"><!-- Card -->--}}
+        <div class="dt-card" style="background: rgba(196, 196, 196, 0.42);border-radius: 10px;"><!-- Card Body -->
+{{--            <div  class="dt-card__body p-xl-8 py-sm-8 py-6 px-4" >--}}
+
+
+{{--            </div><!-- /card body -->--}}
+        </div><!-- /card -->
+{{--    </div>--}}
     @if(auth()->user()->referral_code)
     <a href="#refer_member" class="btn btn-info btn-sm clear-form float-right" data-toggle="modal"><i class="fa fa-plus"></i> Refer Member</a>
         @include('common.bootstrap_table_ajax',[

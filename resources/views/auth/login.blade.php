@@ -7,7 +7,7 @@
     }
 </style>
     <!-- Login Container -->
-    <div class="dt-login--container" style="background-image: url({{ url('sahl/assets/image/family.png') }}); object-fit: cover">
+    <div class="dt-login--container" style="background-image: url({{ url('sahl/assets/image/family.jpg') }}); object-fit: cover">
 
         <!-- Login Content -->
         <div class="dt-login__content-wrapper" >

@@ -175,7 +175,7 @@
                         <h3 class="footer-widget-title">Company</h3>
                         <div class="footer-links">
                             <ul class="list-unstyled" >
-                                <li><a style="color: white" href="#">About us</a></li>
+                                <li><a style="color: white" href="{{ url('about-us') }}">About us</a></li>
                                 <li><a style="color: white" href="#">Careers</a></li>
 
                             </ul>

@@ -16,7 +16,7 @@
             <i class="icon icon-orders-new icon-5x mr-xl-5 mr-3 align-self-center"></i><!-- Media Body -->
             <div class="media-body">
                 <p class="mb-1 h1">Ksh <br>{{ @number_format($data['referral_amount'],2) }}</p>
-                <span class="d-block text-black-50">Savings</span>
+                <span class="d-block text-black-50">Earnings</span>
             </div><!-- /media body -->
         </div><!-- /media -->
     </div>

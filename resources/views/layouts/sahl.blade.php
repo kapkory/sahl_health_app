@@ -90,7 +90,7 @@
         <!-- navigation start -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12 col-sm-12 col-12">
                     <nav class="navbar navbar-expand-lg navbar-classic">
                         <a class="navbar-brand" href="{{ url('/') }}"> <img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="Sahl Health realtor"></a>
                         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-classic" aria-controls="navbar-classic" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,7 @@
                             <span class="icon-bar bottom-bar"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbar-classic">
-                            <ul class="navbar-nav ml-auto mt-2 mt-lg-0 mr-3">
+                            <ul class="navbar-nav ml-4 col-md-10 mt-2 mt-lg-0 mr-0">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/') }}">
                                         Home
@@ -111,6 +111,13 @@
                                         About
                                     </a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/') }}#packages_page">
+                                        Plans
+                                    </a>
+                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('hospitals') }}">
                                         Hospitals
@@ -119,12 +126,12 @@
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('blog') }}">
-                                        Blog
+                                      Health  Blog
                                     </a>
                                 </li>
 
                             </ul>
-                            <div class="header-btn d-xl-block d-lg-none">
+                            <div class="header-btn d-xl-block" style="margin-right: 10px !important;">
 
                                 @guest
                                     <a href="{{ url('login') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Login</a>

@@ -19,9 +19,10 @@ Route::get('institution/{slug}','Frontend\MenuController@hospital');
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('privacy-policy','Frontend\OtherPagesController@privacyPolicy');
-Route::get('advertising-policy','Frontend\OtherPagesController@advertisingPolicy');
+Route::get('privacy-policy','Frontend\OtherPagesController@privacyPolicy')->name('privacy');
+Route::get('advertising-policy','Frontend\OtherPagesController@advertisingPolicy')->name('advertising');
 Route::get('cookie-policy','Frontend\OtherPagesController@cookiePolicy');
+Route::get('terms','Frontend\OtherPagesController@terms');
 
 
 //Route::view('/','core.frontend.home');
@@ -76,7 +77,7 @@ Route::redirect('/advert','blog/advertising-policy',301);
 //Route::redirect('privacy-policy','blog/privacy-policy',301);
 //Route::redirect('privacy','blog/privacy-policy',301);
 
-Route::redirect('/terms','blog/terms',301);
+//Route::redirect('/terms','blog/terms',301);
 Route::redirect('/diseases','blog/diseases',301);
 Route::redirect('/diseases/{disease}','blog/diseases/{disease}',301);
 

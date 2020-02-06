@@ -160,10 +160,10 @@
                         <h3 class="footer-widget-title">Legal use</h3>
                         <div class="footer-links">
                             <ul class="list-unstyled" style="color: white">
-                                <li><a href="{{ url('blog/privacy-policy') }}" style="color: white">Privacy Policy</a></li>
-                                <li><a href="{{ url('blog/terms') }}" style="color: white">Terms of Use</a></li>
-                                <li><a href="{{ url('blog/advertising-policy') }}" style="color: white">Advertising Policy</a></li>
-                                <li><a href="{{ url('blog/cookie-policy') }}" style="color: white">Cookie Policy</a></li>
+                                <li><a href="{{ url('privacy-policy') }}" style="color: white">Privacy Policy</a></li>
+                                <li><a href="{{ url('terms') }}" style="color: white">Terms of Use</a></li>
+                                <li><a href="{{ url('advertising-policy') }}" style="color: white">Advertising Policy</a></li>
+                                <li><a href="{{ url('cookie-policy') }}" style="color: white">Cookie Policy</a></li>
 
                             </ul>
                         </div>

@@ -16,6 +16,7 @@ class OtherPagesController extends Controller
     }
 
     public function cookiePolicy(){
+
         return view($this->folder.'other-pages.cookie');
     }
 

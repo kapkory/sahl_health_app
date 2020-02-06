@@ -22,11 +22,18 @@
             .mobile_packages{
                 width: 100% !important;
             }
+            .hosp_title{
+                display: none;
+            }
         }
         @media screen and (min-width: 768px) {
             .sahl_home{
                 min-height:300px;
-                max-height: 475px;
+                /*max-height: 475px;*/
+            }
+
+            .listing-content-head-title{
+                display: none;
             }
 
         }
@@ -154,7 +161,7 @@
                     </h5>
                 </div>
                 <div class="row " >
-                    <div class="container-fluid offset-md-2 col-md-9 ">
+                    <div class="container-fluid offset-md-1 col-md-10 ">
                       <div class="row">
                           <div class="col-sm-6 col-md-4 col-lg-3 ">
                               <a href="{{ url('hospitals') }}">
@@ -276,10 +283,13 @@
                                <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                    <div class="listing-content-head">
 
-                                       <div class="review-content-rating  "style="right: 10px !important;" >
+                                       <div class="review-content-rating" style="right: 10px !important;" >
                                            <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
+                                            <div class="col-md-7 col-sm-6 col-xs-6" style="overflow: hidden; text-overflow: ellipsis">
+                                                <a style="font-family: Montserrat;font-style: normal;font-weight: bold;font-size: 18px;line-height: 22px; color: #335062" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
 
-                                           <span class="star" style="float: right; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">4.2</span>
+                                            </div>
+                                           <span class="star" style="float: right !important; padding-right: 10px!important; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">4.2</span>
                                        </div>
 
                                        <h3 class="listing-content-head-title" >
@@ -292,11 +302,11 @@
 
                                        <div class="listing-content-head-text py-0">{{ @$featured_hospital->institutionLevel->name }} </div>
 {{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
-                                       <div class="py-0 review-content-rating  " >
-                                           @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)
-                                               <span class="star" style="float: right; color: #7BB37D !important;"></span>
-                                           @endfor
-                                       </div>
+{{--                                       <div class="py-0 review-content-rating  " >--}}
+{{--                                           @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)--}}
+{{--                                               <span class="star" style="float: right; color: #7BB37D !important;"></span>--}}
+{{--                                           @endfor--}}
+{{--                                       </div>--}}
                                    </div>
 
 

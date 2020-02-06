@@ -150,98 +150,153 @@
 
 
 
-        <div class="row">
-            <div class="container-fluid">
-                <div class="text-center my-5 ">
-                    <h3 class="section-heading-title " style="color: #335062">
-                        Looking for Something Else?
-                    </h3>
-                    <h5 style="color: #335062;">
-                        We have over 500 healthcare providers at your service countrywide.
-                    </h5>
-                </div>
-                <div class="row " >
-                    <div class="container-fluid offset-md-1 col-md-10 ">
-                      <div class="row">
-                          <div class="col-sm-6 col-md-4 col-lg-3 ">
-                              <a href="{{ url('hospitals') }}">
-                                  <div class="card  py-5">
-                                      <div class="text-center">
-                                          <img class="lazy" src="{{ url('sahl/assets/image') }}/nearby-hospital.svg" alt="Find A Hospital Near You">
-                                          <h4>Find A Hospital<br> Near You</h4>
-                                      </div>
-                                  </div>
-                              </a>
-
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3 mx-lg-2">
-                              <div class="card py-5">
-                                  <div class="text-center">
-                                      <img class="text-center lazy" src="{{ url('sahl/assets/image') }}/compare-charges.png" alt="Compare Hospital Charges">
-                                      <h4>Compare Hospital Charges</h4>
-                                  </div>
-                              </div>
-
-
-                          </div>
-                          <div class="col-sm-6 col-md-4 col-lg-3 mx-lg-1">
-                              <div class="card  py-5 ">
-                                  <div class="text-center">
-                                      <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
-                                      <h4>Access Service <br> Discounts</h4>
-                                  </div>
-                              </div>
-
-                          </div>
-                      </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-
     <div class="row">
-        <div class="container-fluid" style="background: #F5F5F5">
-            <div class="row mt-2">
-                <div class="col-md-5 offset-md-1" style="float: right">
-                    <div class="col-md-12" style="padding-top: 15%">
-                        <div >
-                            <h4 style="text-align: center">Solutions for all teams sizes</h4>
+        <div class="container-fluid">
+            <div class="text-center my-5 ">
+                <h3 class="section-heading-title " style="color: #335062">
+                    Looking for Something Else?
+                </h3>
+                <h5 style="color: #335062;">
+                    We have over 500 healthcare providers at your service countrywide.
+                </h5>
+            </div>
+            <div class="row " >
+                <div class="container-fluid offset-md-2 col-md-9 ">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-3 ">
+                            <a href="{{ url('hospitals') }}">
+                                <div class="card  py-5">
+                                    <div class="text-center">
+                                        <img class="lazy" src="{{ url('sahl/assets/image') }}/nearby-hospital.svg" alt="Find A Hospital Near You">
+                                        <h4>Find A Hospital<br> Near You</h4>
+                                    </div>
+                                </div>
+                            </a>
 
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut enim quis leo tincidunt tempor at sit amet eros. Nullam consectetur dignissim erat se
-                            </p>
                         </div>
-                        <div class="row" style="padding-left: 20px">
-                           <ul style="list-style-type: none; padding-right: 10px">
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut
-                               </li>
+                        <div class="col-sm-6 col-md-6 col-lg-3 mx-lg-2">
+                            <div class="card py-5">
+                                <div class="text-center">
+                                    <img class="text-center lazy" src="{{ url('sahl/assets/image') }}/compare-charges.png" alt="Compare Hospital Charges">
+                                    <h4>Compare Hospital Charges</h4>
+                                </div>
+                            </div>
 
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut
-                               </li>
 
-                               <li>
-                                   <i class="fa fa-check-circle" ></i>
-                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut
-                               </li>
-
-                           </ul>
-                            <a href="#" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 mx-lg-1">
+                            <div class="card  py-5 ">
+                                <div class="text-center">
+                                    <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
+                                    <h4>Access Service <br> Discounts</h4>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
                 </div>
 
-
-                <div style="padding: 0px !important;" class="col-md-6 mt-4">
-                    <img style="object-fit: cover; width: 100%; max-height: 450px" src="{{ url('sahl/assets/image/sahl-health-user.svg') }}">
-                </div>
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                    <img class="lazy" src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >
+                    <div class="post-imgoverlay-content">
+                        <h4 class="post-title">
+                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                        </h4>
+                        <div class="post-meta">
+                            <div class="meta">
+                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+
+                            </div>
+                            <!-- postmeta close -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                    <img class="lazy" src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >
+                    <div class="post-imgoverlay-content">
+                        <h4 class="post-title">
+                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                        </h4>
+                        <div class="post-meta">
+                            <div class="meta">
+                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+
+                            </div>
+                            <!-- postmeta close -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                    <img class="lazy" src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >
+                    <div class="post-imgoverlay-content">
+                        <h4 class="post-title">
+                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                        </h4>
+                        <div class="post-meta">
+                            <div class="meta">
+                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+
+                            </div>
+                            <!-- postmeta close -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+{{--    <div class="row">--}}
+{{--        <div class="container-fluid" style="background: #F5F5F5">--}}
+{{--            <div class="row mt-2">--}}
+{{--                <div class="col-md-5 offset-md-1" style="float: right">--}}
+{{--                    <div class="col-md-12" style="padding-top: 15%">--}}
+{{--                        <div >--}}
+{{--                            <h4 style="text-align: center">Solutions for all teams sizes</h4>--}}
+
+{{--                            <p>--}}
+{{--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut enim quis leo tincidunt tempor at sit amet eros. Nullam consectetur dignissim erat se--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                        <div class="row" style="padding-left: 20px">--}}
+{{--                           <ul style="list-style-type: none; padding-right: 10px">--}}
+{{--                               <li> <i class="fa fa-check-circle" ></i>--}}
+{{--                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut--}}
+{{--                               </li>--}}
+
+{{--                               <li> <i class="fa fa-check-circle" ></i>--}}
+{{--                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut--}}
+{{--                               </li>--}}
+
+{{--                               <li>--}}
+{{--                                   <i class="fa fa-check-circle" ></i>--}}
+{{--                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut--}}
+{{--                               </li>--}}
+
+{{--                           </ul>--}}
+{{--                            <a href="#" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>--}}
+
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+
+{{--                <div style="padding: 0px !important;" class="col-md-6 mt-4">--}}
+{{--                    <img style="object-fit: cover; width: 100%; max-height: 450px" src="{{ url('sahl/assets/image/sahl-health-user.svg') }}">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 
     <div class="row">

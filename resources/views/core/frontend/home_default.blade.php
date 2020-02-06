@@ -182,6 +182,57 @@
     </div>
 
 
+    <div class="row">
+        <div class="container-fluid">
+            <div class="text-center my-5 ">
+                <h3 class="section-heading-title " style="color: #335062">
+                    Looking for Something Else?
+                </h3>
+                <h5 style="color: #335062;">
+                    We have over 500 healthcare providers at your service countrywide.
+                </h5>
+            </div>
+            <div class="row " >
+                <div class="container-fluid offset-md-1 col-md-10 ">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 ">
+                            <a href="{{ url('hospitals') }}">
+                                <div class="card  py-5">
+                                    <div class="text-center">
+                                        <img class="lazy" src="{{ url('sahl/assets/image') }}/nearby-hospital.svg" alt="Find A Hospital Near You">
+                                        <h4>Find A Hospital<br> Near You</h4>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mx-lg-2">
+                            <div class="card py-5">
+                                <div class="text-center">
+                                    <img class="text-center lazy" src="{{ url('sahl/assets/image') }}/compare-charges.png" alt="Compare Hospital Charges">
+                                    <h4>Compare Hospital Charges</h4>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 mx-lg-1">
+                            <div class="card  py-5 ">
+                                <div class="text-center">
+                                    <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
+                                    <h4>Access Service <br> Discounts</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
     <div class="space-lg space-md space-xs pt-4">
 
         <div class="container">

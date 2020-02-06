@@ -11,7 +11,7 @@ class InstitutionController extends Controller
     public function index($id){
         $institution = Institution::findOrFail($id);
 
-        dd($institution);
+//        dd($institution);
         return view($this->folder.'institution.index',compact('institution'));
     }
 }

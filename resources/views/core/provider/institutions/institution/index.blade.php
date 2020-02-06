@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('title',$institution->name)
 @section('content')
-
+{{--    ,'services','contacts'--}}
         @include('common.auto_tabs',[
         'tabs_folder'=>'core.provider.institutions.institution.tabs',
-        'tabs'=> ['institution','services','contacts'],
+        'tabs'=> ['institution'],
         'base_url'=>'provider/institutions/institution/'.$institution->id
        ])
         @push('footer-scripts')

@@ -26,9 +26,6 @@
                 <div class="rounded">
                     <div class="row py-4">
                         <div class="col-md-8 pt-md-3 mt-md-3">
-                            <h3 class="text-light">
-                                <b>Headline Here </b>
-                            </h3>
 
                         </div>
 

@@ -44,4 +44,8 @@ class MenuController extends Controller
 
         return view($this->folder.'view_hospital',compact('institution'));
     }
+
+    public function aboutUs(){
+        return view($this->folder.'about_us');
+    }
 }

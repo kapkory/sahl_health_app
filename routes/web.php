@@ -20,6 +20,8 @@ Route::get('institution/{slug}','Frontend\MenuController@hospital');
 //    return view('welcome');
 //});
 Route::get('privacy-policy','Frontend\OtherPagesController@privacyPolicy');
+Route::get('advertising-policy','Frontend\OtherPagesController@advertisingPolicy');
+Route::get('cookie-policy','Frontend\OtherPagesController@cookiePolicy');
 
 
 //Route::view('/','core.frontend.home');
@@ -67,8 +69,8 @@ Route::post('provider-register','Auth\ProviderRegisterController@registerProvide
 Route::get('agent-register','Agent\IndexController@registration');
 Route::post('agent-register','Agent\IndexController@registerAgent');
 
-Route::redirect('cookie-policy','blog/cookie-policy',301);
-Route::redirect('advertising-policy','blog/advertising-policy',301);
+//Route::redirect('cookie-policy','blog/cookie-policy',301);
+//Route::redirect('advertising-policy','blog/advertising-policy',301);
 Route::redirect('/advert','blog/advertising-policy',301);
 
 //Route::redirect('privacy-policy','blog/privacy-policy',301);

@@ -207,11 +207,11 @@
                     <img class="lazy" src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >
                     <div class="post-imgoverlay-content">
                         <h4 class="post-title">
-                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                            <a href="#" class="title">Save up to 20% on inpatient bills</a>
                         </h4>
                         <div class="post-meta">
                             <div class="meta">
-                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+                                <a class="btn package_button m-2 " href="{{ url('register') }}" style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>
 
                             </div>
                             <!-- postmeta close -->
@@ -223,11 +223,11 @@
                     <img class="lazy" src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >
                     <div class="post-imgoverlay-content">
                         <h4 class="post-title">
-                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                            <a href="#" class="title">Save up to 20% on outpatient bills</a>
                         </h4>
                         <div class="post-meta">
                             <div class="meta">
-                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>
 
                             </div>
                             <!-- postmeta close -->
@@ -239,11 +239,11 @@
                     <img class="lazy" src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >
                     <div class="post-imgoverlay-content">
                         <h4 class="post-title">
-                            <a href="#" class="title">Save up to 20% on on outpatient bills</a>
+                            <a href="#" class="title">Get discounts on our wellness packages</a>
                         </h4>
                         <div class="post-meta">
                             <div class="meta">
-                                <button class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Find More</button>
+                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>
 
                             </div>
                             <!-- postmeta close -->

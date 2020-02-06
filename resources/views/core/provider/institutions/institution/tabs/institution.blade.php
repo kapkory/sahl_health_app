@@ -40,7 +40,7 @@
             <div class="card-title">
                 <span class="text-center mt-3 ml-5">Featured Image</span>
                 <div class="text-center mt-2">
-                    <img class="media-object rounded-circle" alt="64x64" src="{{ url($institution->featured_image) }}" style="width: 84px; height: 84px;">
+                    <img class="media-object rounded-circle" alt="64x64" src="{{ ($institution->featured_image) ? $institution->featured_image : url('frontend/assets/images/default-img-400x240.jpg') }}" style="width: 84px; height: 84px;">
                 </div>
             </div>
             {{--                <div class="card-body">--}}

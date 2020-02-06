@@ -4,7 +4,7 @@
 {{--    ,'services','contacts'--}}
         @include('common.auto_tabs',[
         'tabs_folder'=>'core.provider.institutions.institution.tabs',
-        'tabs'=> ['institution','services'],
+        'tabs'=> ['institution','services','contacts'],
         'base_url'=>'provider/institutions/institution/'.$institution->id
        ])
         @push('footer-scripts')

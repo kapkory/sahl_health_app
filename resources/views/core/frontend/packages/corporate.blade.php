@@ -43,28 +43,67 @@
                     <p>
                         Invest in your employees’ health and wellness.
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                    <h3 style="color: #335062">Why our corporate health and wellness packages are for you.</h3>
 
-                    <ul style="list-style-type: disc">
-                        <li>
-                            They reduce occurrence of lifestyle diseases and rate of absenteeism
-                            </li>
 
-                            <li>
-                                They lower your annual healthcare and insurance costs
-                            </li>
+    <div class="row">
+        <div class="container-fluid" style="background: #F5F5F5">
+            <div class="row mt-2">
+                <div class="col-md-5 offset-md-1" style="float: right">
+                    <div class="col-md-12" style="padding-top: 10%">
+                        <div >
+                            <h4 style="text-align: center">Save up to 10% with Sahl Wellness Packages</h4>
 
-                            <li>
-                               They improve general performance and productivity
-                            </li>
-                            <li>
-                                They inspire more loyalty from your employees
-                            </li>
-                            <li>
-                                They improve your brand image and public relations
-                            </li>
-                    </ul>
+                            <p>
+                                Living well is an ongoing journey that can easily threaten your financial health.  Prevent more and save more with our preventive care and wellness plans.
+                            </p>
+                        </div>
+                        <div class="row" style="padding-left: 20px">
+                            <ul style="list-style-type: disc">
+                                <li>
+                                    They reduce occurrence of lifestyle diseases and rate of absenteeism
+                                </li>
+
+                                <li>
+                                    They lower your annual healthcare and insurance costs
+                                </li>
+
+                                <li>
+                                    They improve general performance and productivity
+                                </li>
+                                <li>
+                                    They inspire more loyalty from your employees
+                                </li>
+                                <li>
+                                    They improve your brand image and public relations
+                                </li>
+                            </ul>
+                            <a href="#" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="padding: 0px !important;" class="col-md-6 mt-4">
+                    <img style="object-fit: cover; width: 100%; max-height: 450px" src="{{ url('sahl/assets/image/sahl-health-user.svg') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row" style="background-color: white">
+        <div class="container-fluid">
+            <div class="col-10 offset-1">
+                <div class="pd-content">
 
                     <h3 style="color: #335062">What kind of package are you looking for?</h3>
                     <ul style="list-style-type: none">

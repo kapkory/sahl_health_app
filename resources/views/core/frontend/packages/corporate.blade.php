@@ -102,7 +102,7 @@
 
     <div class="row" style="background-color: white">
         <div class="container-fluid">
-            <div class="col-10 offset-1">
+            <div class="col-10 offset-1 py-3">
                 <div class="pd-content">
 
                     <h3 style="color: #335062">What kind of package are you looking for?</h3>

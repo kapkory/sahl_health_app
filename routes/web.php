@@ -21,8 +21,10 @@ Route::get('about-us','Frontend\MenuController@aboutUs');
 //    return view('welcome');
 //});
 
+//dummy pages
 Route::view('packages','core.frontend.packages.index');
 Route::view('corporate-packages','core.frontend.packages.corporate');
+Route::view('hospital','core.frontend.hospital');
 
 Route::get('privacy-policy','Frontend\OtherPagesController@privacyPolicy')->name('privacy');
 Route::get('advertising-policy','Frontend\OtherPagesController@advertisingPolicy')->name('advertising');

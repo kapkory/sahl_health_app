@@ -189,7 +189,7 @@
                         <div class="footer-links">
                             <ul class="list-unstyled" >
                                 <li><a style="color: white" href="{{ url('about-us') }}">About us</a></li>
-                                <li><a style="color: white" href="#">Careers</a></li>
+                                <li><a style="color: white" href="{{ url('blog') }}">Blogs</a></li>
 
                             </ul>
                         </div>

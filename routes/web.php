@@ -20,6 +20,10 @@ Route::get('about-us','Frontend\MenuController@aboutUs');
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
+Route::view('packages','core.frontend.packages.index');
+Route::view('corporate-packages','core.frontend.packages.corporate');
+
 Route::get('privacy-policy','Frontend\OtherPagesController@privacyPolicy')->name('privacy');
 Route::get('advertising-policy','Frontend\OtherPagesController@advertisingPolicy')->name('advertising');
 Route::get('cookie-policy','Frontend\OtherPagesController@cookiePolicy');

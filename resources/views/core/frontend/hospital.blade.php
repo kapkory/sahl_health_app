@@ -46,7 +46,7 @@
         <div class="container-fluid" style="padding-top: 100px">
             <div class="col-10 offset-1">
                <div class="row">
-                   <div class="col-4">
+                   <div class="col-md-4 col-sm-12">
                        <h3 style="color: #335062; border-bottom-style:  solid;border-bottom-color: #F07A3B;">General Services</h3>
                        <ul style="list-style-type: disc">
                            <li> Casualty A&E</li>
@@ -58,7 +58,7 @@
                        </ul>
                    </div>
 
-                   <div class="col-4">
+                   <div class="col-md-4 col-sm-12">
                        <h3 style="color: #335062;border-bottom-style:  solid; border-bottom-color: #F07A3B;">Other Services</h3>
                        <ul style="list-style-type: disc">
                            <li> Gynecology and Pelvic Health Clinic</li>
@@ -72,7 +72,7 @@
                    </div>
 
 
-                   <div class="col-4">
+                   <div class="col-md-4 col-sm-12">
                        <h3 style="color: #335062;border-bottom-style:  solid; border-bottom-color: #F07A3B;">Specialized Services</h3>
                        <ul style="list-style-type: disc">
                            <li> Cancer Care</li>

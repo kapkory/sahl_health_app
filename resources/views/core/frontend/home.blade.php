@@ -293,7 +293,7 @@
                                    Health Awareness Workshops
                                </li>
                            </ul>
-                            <a href="#" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>
+                            <a href="#packages_page" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>
 
                         </div>
                     </div>

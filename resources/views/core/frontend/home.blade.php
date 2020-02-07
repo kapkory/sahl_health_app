@@ -99,7 +99,7 @@
         </div>
         <div class="col-md-10 col-sm-12 offset-md-1">
             <p style="text-align: center;color:#FFFFFF; font-family: Montserrat;font-style: normal;font-weight: normal;">
-                The best healthcare costs an arm and a leg, but a Sahl Health Plan means <br> you never have to get to that point.
+                The best healthcare costs an arm and a leg,With a Sahl Health Plan <br> you never have to get to that point.
             </p>
         </div>
     </div>
@@ -156,9 +156,7 @@
                 <h3 class="section-heading-title " style="color: #335062">
                     Looking for Something Else?
                 </h3>
-                <h5 style="color: #335062;">
-                    We have over 500 healthcare providers at your service countrywide.
-                </h5>
+
             </div>
             <div class="row " >
                 <div class="container-fluid offset-md-2 col-md-9 ">
@@ -188,7 +186,7 @@
                             <div class="card  py-5 ">
                                 <div class="text-center">
                                     <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
-                                    <h4>Access Service <br> Discounts</h4>
+                                    <h4>Talk to a health <br> and wellness expert </h4>
                                 </div>
                             </div>
 
@@ -200,110 +198,122 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                    <img class="lazy" src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >
-                    <div class="post-imgoverlay-content">
-                        <h4 class="post-title">
-                            <a href="#" class="title">Save up to 20% on inpatient bills</a>
-                        </h4>
-                        <div class="post-meta">
-                            <div class="meta">
-                                <a class="btn package_button m-2 " href="{{ url('register') }}" style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>
-
-                            </div>
-                            <!-- postmeta close -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                    <img class="lazy" src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >
-                    <div class="post-imgoverlay-content">
-                        <h4 class="post-title">
-                            <a href="#" class="title">Save up to 20% on outpatient bills</a>
-                        </h4>
-                        <div class="post-meta">
-                            <div class="meta">
-                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>
-
-                            </div>
-                            <!-- postmeta close -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
-                    <img class="lazy" src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >
-                    <div class="post-imgoverlay-content">
-                        <h4 class="post-title">
-                            <a href="#" class="title">Get discounts on our wellness packages</a>
-                        </h4>
-                        <div class="post-meta">
-                            <div class="meta">
-                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>
-
-                            </div>
-                            <!-- postmeta close -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
 {{--    <div class="row">--}}
-{{--        <div class="container-fluid" style="background: #F5F5F5">--}}
-{{--            <div class="row mt-2">--}}
-{{--                <div class="col-md-5 offset-md-1" style="float: right">--}}
-{{--                    <div class="col-md-12" style="padding-top: 15%">--}}
-{{--                        <div >--}}
-{{--                            <h4 style="text-align: center">Solutions for all teams sizes</h4>--}}
+{{--        <div class="container-fluid">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">--}}
+{{--                    <img class="lazy" src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >--}}
+{{--                    <div class="post-imgoverlay-content">--}}
+{{--                        <h4 class="post-title">--}}
+{{--                            <a href="#" class="title">Save up to 20% on inpatient bills</a>--}}
+{{--                        </h4>--}}
+{{--                        <div class="post-meta">--}}
+{{--                            <div class="meta">--}}
+{{--                                <a class="btn package_button m-2 " href="{{ url('register') }}" style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>--}}
 
-{{--                            <p>--}}
-{{--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut enim quis leo tincidunt tempor at sit amet eros. Nullam consectetur dignissim erat se--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-{{--                        <div class="row" style="padding-left: 20px">--}}
-{{--                           <ul style="list-style-type: none; padding-right: 10px">--}}
-{{--                               <li> <i class="fa fa-check-circle" ></i>--}}
-{{--                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut--}}
-{{--                               </li>--}}
-
-{{--                               <li> <i class="fa fa-check-circle" ></i>--}}
-{{--                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut--}}
-{{--                               </li>--}}
-
-{{--                               <li>--}}
-{{--                                   <i class="fa fa-check-circle" ></i>--}}
-{{--                                   Lorem ipsum dolor sit amet, consectetu Curabitur ut--}}
-{{--                               </li>--}}
-
-{{--                           </ul>--}}
-{{--                            <a href="#" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>--}}
-
+{{--                            </div>--}}
+{{--                            <!-- postmeta close -->--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 
+{{--                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">--}}
+{{--                    <img class="lazy" src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >--}}
+{{--                    <div class="post-imgoverlay-content">--}}
+{{--                        <h4 class="post-title">--}}
+{{--                            <a href="#" class="title">Save up to 20% on outpatient bills</a>--}}
+{{--                        </h4>--}}
+{{--                        <div class="post-meta">--}}
+{{--                            <div class="meta">--}}
+{{--                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>--}}
 
-{{--                <div style="padding: 0px !important;" class="col-md-6 mt-4">--}}
-{{--                    <img style="object-fit: cover; width: 100%; max-height: 450px" src="{{ url('sahl/assets/image/sahl-health-user.svg') }}">--}}
+{{--                            </div>--}}
+{{--                            <!-- postmeta close -->--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+{{--                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">--}}
+{{--                    <img class="lazy" src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >--}}
+{{--                    <div class="post-imgoverlay-content">--}}
+{{--                        <h4 class="post-title">--}}
+{{--                            <a href="#" class="title">Get discounts on our wellness packages</a>--}}
+{{--                        </h4>--}}
+{{--                        <div class="post-meta">--}}
+{{--                            <div class="meta">--}}
+{{--                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>--}}
+
+{{--                            </div>--}}
+{{--                            <!-- postmeta close -->--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
+
 {{--    </div>--}}
+
+
+    <div class="row">
+        <div class="container-fluid" style="background: #F5F5F5">
+            <div class="row mt-2">
+                <div class="col-md-5 offset-md-1" style="float: right">
+                    <div class="col-md-12" style="padding-top: 10%">
+                        <div >
+                            <h4 style="text-align: center">Save up to 10% with Sahl Wellness Packages</h4>
+
+                            <p>
+                                Living well is an ongoing journey that can easily threaten your financial health.  Prevent more and save more with our preventive care and wellness plans.
+                            </p>
+                        </div>
+                        <div class="row" style="padding-left: 20px">
+                           <ul style="list-style-type: none; padding-right: 10px">
+                               <li> <i class="fa fa-check-circle" ></i>
+                                   Consultation
+                               </li>
+
+                               <li> <i class="fa fa-check-circle" ></i>
+                                   Annual Basic Screening
+                               </li>
+
+                               <li>
+                                   <i class="fa fa-check-circle" ></i>
+                                   Annual Comprehensive Screening
+                               </li>
+                               <li> <i class="fa fa-check-circle" ></i>
+                                   Personal Fitness
+                               </li>
+                               <li> <i class="fa fa-check-circle" ></i>
+                                   Nutrition Support
+                               </li>
+                               <li> <i class="fa fa-check-circle" ></i>
+                                   Pre-Employment Checks
+                               </li>
+                               <li> <i class="fa fa-check-circle" ></i>
+                                   Health Awareness Workshops
+                               </li>
+                           </ul>
+                            <a href="#" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="padding: 0px !important;" class="col-md-6 mt-4">
+                    <img style="object-fit: cover; width: 100%; max-height: 450px" src="{{ url('sahl/assets/image/sahl-health-user.svg') }}">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="row">
         <div class="container-fluid">
             <div class="text-center mt-5">
                 <h3 class="section-heading-title " style="color: #335062">
-                    Popular Service Providers
+                    Discover the best rated Sahl Health Partners
+                    near you
                 </h3>
             </div>
         </div>
@@ -394,9 +404,9 @@
                 <div class="col-md-6" style="float: right">
                     <div class="col-md-12">
                         <div class="mt-4">
-                            <h4>Would prefer to get more information first?</h4>
+                            <h4>Would you like to talk to us real quick?</h4>
                             <p>
-                                Get in touch with our friendly staff 24/7
+                                Our friendly staff is on standby 24/7
                             </p>
                         </div>
                         <div class="row">
@@ -414,7 +424,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="email" class="form-control" placeholder="Your Email" >
+                                            <input type="text" name="email" class="form-control" placeholder="Email" >
                                         </div>
                                     </div>
                                 </div>
@@ -422,19 +432,19 @@
                                 <div class="form-row m-3">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input required="required" type="text" name="phone" class="form-control" placeholder="Your Mobile" >
+                                            <input required="required" type="text" name="phone" class="form-control" value="+254" placeholder="Your Mobile" >
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input required="required" type="text" name="location" class="form-control" placeholder="Your Location">
+                                            <input required="required" type="text" name="location" class="form-control" placeholder="Where are you?">
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea name="message" required="required"  placeholder="Write Message" cols="4" rows="6" class="form-control"></textarea>
+                                            <textarea name="message" required="required"  placeholder="Write your Message" cols="4" rows="6" class="form-control"></textarea>
                                             @csrf
                                         </div>
 

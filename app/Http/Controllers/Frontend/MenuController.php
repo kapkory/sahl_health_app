@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class MenuController extends Controller
 {
     public function index(){
-        $featured_hospitals = Institution::where('organization_type_id',1)->where('featured_image','!=',null)->limit(6)->get();
+        $featured_hospitals = Institution::where('organization_type_id',1)->where('featured_image','!=',null)->limit(3)->get();
         $packages = Package::where('status',1)->get();
 
         return view($this->folder.'home',compact('featured_hospitals','packages'));

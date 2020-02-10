@@ -16,9 +16,9 @@
             border-radius: 8px;
          }
         @media screen and (max-width: 768px) {
-            .hero-search-area-caption-text {
-                color: black;
-            }
+            /*.hero-search-area-caption-text {*/
+            /*    color: black;*/
+            /*}*/
             .mobile_packages{
                 width: 100% !important;
             }
@@ -26,6 +26,17 @@
                 display: none;
             }
         }
+
+        @media screen and (max-width: 992px) {
+            .hero-search-area{
+                top: 0px;
+                background: linear-gradient(89.85deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41); !important;
+            }
+            .hero-search-area-caption-title{
+                color: #335062;
+            }
+        }
+
         @media screen and (min-width: 768px) {
             .sahl_home{
                 min-height:300px;
@@ -55,41 +66,103 @@
             text-overflow: ellipsis !important;
             margin-left: 6px !important;
         }
+        .slick-dots{
+            display: none;
+        }
+        .hm_bg_image{
+            background-image: url("{{ url('sahl/assets/image/slider-1.svg') }}");
+            object-fit: cover;
+        }
+        .corporate_section{
+            position: relative;
+
+            display: inline-block;
+        }
+        .hp_text{
+            position: absolute;
+            z-index: 999;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 20%; /* Adjust this value to move the positioned div up and down */
+            text-align: center;
+            /*width: 60%; !* Set the width of the positioned div *!*/
+        }
     </style>
-<!-- header close -->
-   <div class="row sahl_home" style="background: linear-gradient(89.88deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">
+<div class="row">
+    <div class="container-fluid mx-0 px-0" >
+        <!-- hero section start  -->
+        <div class="hero-slider-section">
+            <div class="row">
+                <div class="col-xl-12">
 
-            <img style="width: 100% !important;max-height: 475px; object-fit: cover;" src="{{ url('sahl') }}/assets/image/slider-1.svg" alt="Sahl Health slider" >
+                    <div class="hero-slider">
+                        <!-- hero slider item start  -->
+                        <div class="hero-slider-item">
+                            <img src="{{ url('sahl/assets/image/slider-1.svg') }}" alt="Sahl Healthcare" class="img-fluid">
+                        </div>
+                        <!-- hero slider item close  -->
+                    </div>
+                </div>
+            </div>
+            <!-- hero serach area start  -->
+            <div class="hero-search-area">
+                <div class="row">
+                    <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="hero-search-area-caption">
+                            <h3 class="hero-search-area-caption-title text-center">Now with a Sahl Health Plan, medical bills have no claim on your health and wellness.</h3>
+                            <div class="hero-search-area-form text-center">
+                                <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;">Start My Sahl Health Plan</a>
+                            </div>
+                              <br>
+                            <div class="text-center ">
+                                <a style="text-decoration: underline; color: white"  href="{{ url('hospitals') }}"> Find Discounts Nearby</a>
+                            </div>
+                        </div>
+                    </div>
 
-             <!-- hero serach area start  -->
-             <div class="hero-search-area">
-                 <div class="row">
-                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                         <div class="hero-search-area-caption">
-                             <h1 class="hero-search-area-caption-title" style="font-weight: 400">Now, Medical bills have no claim on your health and wellness.</h1>
-                             <p class="hero-search-area-caption-text">
-                                 Find the best hospitals and wellness clinics near you and save up to 20%
-                                 all year long with My Sahl Health Plan
-                             </p>
-                         </div>
-                         <div class="hero-search-area-form">
-                             <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;">Start My Sahl Health Plan</a>
-                         </div>
-                         <div class="row">
-                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                 <p class="hero-search-area-form-small-text pb-3">
-                                     <a style="text-decoration: underline" href="{{ url('hospitals') }}"> Find Discounts Nearby</a>
-                                 </p>
-                             </div>
-                         </div>
-                     </div>
-{{----}}
-                 </div>
-             </div>
-             <!-- hero serach area close  -->
-{{--         </div>--}}
+                </div>
+            </div>
+            <!-- hero serach area close  -->
+        </div>
+    </div>
 
 </div>
+<!-- header close -->
+{{--   <div class="row sahl_home" style="background: linear-gradient(89.85deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">--}}
+
+{{--       <img style="background: linear-gradient(89.85deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41); !important;width: 100% !important;max-height: 475px; object-fit: cover;" src="{{ url('sahl/assets/image/slider-1.svg') }}" alt="Sahl Health slider">--}}
+
+{{--             <!-- hero serach area start  -->--}}
+{{--             <div class="hero-search-area" >--}}
+
+{{--                 <div class="row">--}}
+{{--                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">--}}
+{{--                         <div class="hero-search-area-caption">--}}
+{{--                             <h1 class="hero-search-area-caption-title" style="font-weight: 400">Now, Medical bills have no claim on your health and wellness.</h1>--}}
+{{--                             <p class="hero-search-area-caption-text">--}}
+{{--                                 Find the best hospitals and wellness clinics near you and save up to 20%--}}
+{{--                                 all year long with My Sahl Health Plan--}}
+{{--                             </p>--}}
+{{--                         </div>--}}
+{{--                         <div class="hero-search-area-form">--}}
+{{--                             <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;">Start My Sahl Health Plan</a>--}}
+{{--                         </div>--}}
+{{--                         <div class="row">--}}
+{{--                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">--}}
+{{--                                 <p class="hero-search-area-form-small-text pb-3">--}}
+{{--                                     <a style="text-decoration: underline" href="{{ url('hospitals') }}"> Find Discounts Nearby</a>--}}
+{{--                                 </p>--}}
+{{--                             </div>--}}
+{{--                         </div>--}}
+{{--                     </div>--}}
+{{----}}
+{{--                 </div>--}}
+{{--             </div>--}}
+{{--             <!-- hero serach area close  -->--}}
+{{--         </div>--}}
+
+{{--</div>--}}
 
     <div class="row clearfix" style="background-color:#335062;">
         <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
@@ -148,9 +221,26 @@
         </div>
     </div>
 
-
-
     <div class="row">
+        <div class="container-fluid mx-0 px-0 corporate_section" >
+            <div class="row">
+                <div class="col-12">
+                    <img  src="{{ url('sahl/assets/image/people.jpg') }}" style="object-fit: cover;  width: 100%; height: 250px">
+                    <div class="col-md-8 offset-md-2 col-sm-12 col-sx-12 hp_text">
+                        <h5 class="text-white">As the saying goes, healthy people make happy and productive employees. save up to 20% on healthcare and insurance costs.</h5>
+                        <div class="text-center">
+                            <a href="{{ url('corporate-packages') }}" class="btn package_button m-2 " style="color: white;">Sahl Corporate Packages</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row" style="background-color: #F5F5F5">
         <div class="container-fluid">
             <div class="text-center my-5 ">
                 <h3 class="section-heading-title " style="color: #335062">
@@ -159,37 +249,41 @@
 
             </div>
             <div class="row " >
-                <div class="container-fluid offset-md-2 col-md-9 ">
+                <div class="container-fluid offset-md-2 col-md-10 ">
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-3 ">
                             <a href="{{ url('hospitals') }}">
-                                <div class="card  py-5">
+                                <div class="py-5">
                                     <div class="text-center">
-                                        <img class="lazy" src="{{ url('sahl/assets/image') }}/nearby-hospital.svg" alt="Find A Hospital Near You">
+                                        <img class="lazy" src="{{ url('sahl/assets/image') }}/location.svg" alt="Find A Hospital Near You">
                                         <h4>Find A Hospital<br> Near You</h4>
                                     </div>
                                 </div>
                             </a>
 
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mx-lg-2">
-                            <div class="card py-5">
-                                <div class="text-center">
-                                    <img class="text-center lazy" src="{{ url('sahl/assets/image') }}/compare-charges.png" alt="Compare Hospital Charges">
-                                    <h4>Compare Hospital Charges</h4>
-                                </div>
-                            </div>
 
+                        <div class="col-sm-6 col-md-6 col-lg-3 ">
+                            <a href="{{ url('hospitals') }}">
+                                <div class="py-5">
+                                    <div class="text-center">
+                                        <img class="lazy" src="{{ url('sahl/assets/image') }}/compare.svg" alt="Find A Hospital Near You">
+                                        <h4>Compare<br> hospital charges</h4>
+                                    </div>
+                                </div>
+                            </a>
 
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mx-lg-1">
-                            <div class="card  py-5 ">
-                                <div class="text-center">
-                                    <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">
-                                    <h4>Talk to a health <br> and wellness expert </h4>
-                                </div>
-                            </div>
 
+                        <div class="col-sm-6 col-md-6 col-lg-3 ">
+                            <a href="{{ url('hospitals') }}">
+                                <div class="py-5">
+                                    <div class="text-center">
+                                        <img class="lazy pt-5" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Find A Hospital Near You">
+                                        <h4>Talk to a Health and<br> wellness expert</h4>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -197,115 +291,57 @@
             </div>
         </div>
     </div>
-
-{{--    <div class="row">--}}
-{{--        <div class="container-fluid">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">--}}
-{{--                    <img class="lazy" src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >--}}
-{{--                    <div class="post-imgoverlay-content">--}}
-{{--                        <h4 class="post-title">--}}
-{{--                            <a href="#" class="title">Save up to 20% on inpatient bills</a>--}}
-{{--                        </h4>--}}
-{{--                        <div class="post-meta">--}}
-{{--                            <div class="meta">--}}
-{{--                                <a class="btn package_button m-2 " href="{{ url('register') }}" style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>--}}
-
-{{--                            </div>--}}
-{{--                            <!-- postmeta close -->--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">--}}
-{{--                    <img class="lazy" src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >--}}
-{{--                    <div class="post-imgoverlay-content">--}}
-{{--                        <h4 class="post-title">--}}
-{{--                            <a href="#" class="title">Save up to 20% on outpatient bills</a>--}}
-{{--                        </h4>--}}
-{{--                        <div class="post-meta">--}}
-{{--                            <div class="meta">--}}
-{{--                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>--}}
-
-{{--                            </div>--}}
-{{--                            <!-- postmeta close -->--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">--}}
-{{--                    <img class="lazy" src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >--}}
-{{--                    <div class="post-imgoverlay-content">--}}
-{{--                        <h4 class="post-title">--}}
-{{--                            <a href="#" class="title">Get discounts on our wellness packages</a>--}}
-{{--                        </h4>--}}
-{{--                        <div class="post-meta">--}}
-{{--                            <div class="meta">--}}
-{{--                                <a href="{{ url('register') }}" class="btn package_button m-2 " style="color: white;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)">Get Started</a>--}}
-
-{{--                            </div>--}}
-{{--                            <!-- postmeta close -->--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--    </div>--}}
-
 
     <div class="row">
-        <div class="container-fluid" style="background: #F5F5F5">
-            <div class="row mt-2">
-                <div class="col-md-5 offset-md-1" style="float: right">
-                    <div class="col-md-12" style="padding-top: 10%">
-                        <div >
-                            <h4 style="text-align: center">Save up to 10% with Sahl Wellness Packages</h4>
-
-                            <p>
-                                Living well is an ongoing journey that can easily threaten your financial health.  Prevent more and save more with our preventive care and wellness plans.
-                            </p>
-                        </div>
-                        <div class="row" style="padding-left: 20px">
-                           <ul style="list-style-type: none; padding-right: 10px">
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Consultation
-                               </li>
-
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Annual Basic Screening
-                               </li>
-
-                               <li>
-                                   <i class="fa fa-check-circle" ></i>
-                                   Annual Comprehensive Screening
-                               </li>
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Personal Fitness
-                               </li>
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Nutrition Support
-                               </li>
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Pre-Employment Checks
-                               </li>
-                               <li> <i class="fa fa-check-circle" ></i>
-                                   Health Awareness Workshops
-                               </li>
-                           </ul>
-                            <a href="#packages_page" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>
-
-                        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12">
+                    <div class="text-center my-5 ">
+                        <h3 class="section-heading-title " style="color: #335062">
+                            Save up to 10% on your ongoing journey to wellness. Our wellness mantra is: Prevent More, Save More.
+                        </h3>
                     </div>
                 </div>
 
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                    <img class="lazy" src="{{ url('sahl') }}/assets/image/inpatient.svg" alt="Save More at Sahl Health" style="height: 350px;object-fit: cover; border-radius: 0px; max-width: 100%" >
+                    <div class="post-imgoverlay-content">
+                        <h4 class="post-title">
+                            <a href="#" class="title text-center">Basic Wellness <br> Package </a>
+                        </h4>
+                    </div>
+                </div>
 
-                <div style="padding: 0px !important;" class="col-md-6 mt-4">
-                    <img style="object-fit: cover; width: 100%; max-height: 450px" src="{{ url('sahl/assets/image/sahl-health-user.svg') }}">
+                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                    <img class="lazy" src="{{ url('sahl') }}/assets/image/outpatient.svg" alt="Save More at Sahl Health" style="height: 350px; max-width: 100%; object-fit: cover; border-radius: 0px" >
+                    <div class="post-imgoverlay-content">
+                        <h4 class="post-title">
+                            <a href="#" class="title">Fitness & Nutrition <br> package </a>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-11" style="border-style: none;background: linear-gradient(358.96deg, rgba(3, 3, 3, 0.97) 0.63%, rgba(255, 255, 255, 0) 98.25%);">
+                    <img class="lazy" src="{{ url('sahl') }}/assets/image/save-more.svg" alt="Save More at Sahl Health" style="height: 350px;max-width: 100%;object-fit: cover; border-radius: 0px" >
+                    <div class="post-imgoverlay-content">
+                        <h4 class="post-title">
+                            <a href="#" class="title">Comprehensive Screening <br>Package</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid my-3">
+                <div class="text-center">
+                    <a href="{{ url('#') }}" class="btn package_button" >View All</a>
                 </div>
             </div>
         </div>
+
     </div>
+
+
 
 
     <div class="row">

@@ -11852,7 +11852,8 @@ a.text-dark:focus {
     width: 100%;
     z-index: 9;
     opacity: 1;
-    background: linear-gradient(to top, rgba(35, 35, 37, 0.55) 0%, rgba(35, 35, 37, 0.55) 35%, rgba(35, 35, 37, 0.55) 60%, rgba(35, 35, 37, 0.55) 100%);
+    background: linear-gradient(89.85deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);;
+    /*background: linear-gradient(to top, rgba(35, 35, 37, 0.55) 0%, rgba(35, 35, 37, 0.55) 35%, rgba(35, 35, 37, 0.55) 60%, rgba(35, 35, 37, 0.55) 100%);*/
 }
 
 
@@ -16510,7 +16511,7 @@ blockquote {
 
     .hero-search-area {
         position: absolute;
-        bottom: 180px;
+        bottom: 120px;
         width: 100%;
         padding: 0px 30px;
     }
@@ -16596,9 +16597,10 @@ blockquote {
     }
 
     .hero-search-area {
-        position: relative;
-        bottom: 20px;
-        padding: 0px 10px;
+        position: absolute;
+        bottom: 80px;
+        width: 100%;
+        padding: 0px 30px;
     }
 
     .hero-search-area-caption {
@@ -16674,7 +16676,11 @@ blockquote {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width:992px) {
-
+    .hero-search-area {
+        position: relative;
+        bottom: -20px;
+        width: 100%;
+    }
 }
 
 /* Small Devices, Tablets */

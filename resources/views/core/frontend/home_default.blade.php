@@ -124,6 +124,38 @@
         {{--            </div>--}}
         {{--        </div>--}}
     </div>
+{{--    <div class="row">--}}
+{{--        <div class="col-sm-6 col-md-6 col-lg-3 ">--}}
+{{--            <a href="{{ url('hospitals') }}">--}}
+{{--                <div class="card  py-5">--}}
+{{--                    <div class="text-center">--}}
+{{--                        <img class="lazy" src="{{ url('sahl/assets/image') }}/nearby-hospital.svg" alt="Find A Hospital Near You">--}}
+{{--                        <h4>Find A Hospital<br> Near You</h4>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </a>--}}
+
+{{--        </div>--}}
+{{--        <div class="col-sm-6 col-md-6 col-lg-3 mx-lg-2">--}}
+{{--            <div class="card py-5">--}}
+{{--                <div class="text-center">--}}
+{{--                    <img class="text-center lazy" src="{{ url('sahl/assets/image') }}/compare-charges.png" alt="Compare Hospital Charges">--}}
+{{--                    <h4>Compare Hospital Charges</h4>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+
+{{--        </div>--}}
+{{--        <div class="col-sm-6 col-md-6 col-lg-3 mx-lg-1">--}}
+{{--            <div class="card  py-5 ">--}}
+{{--                <div class="text-center">--}}
+{{--                    <img class="lazy" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Talk to a Wellness Expert">--}}
+{{--                    <h4>Talk to a health <br> and wellness expert </h4>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
 
 
     <div class="row">
@@ -229,8 +261,63 @@
                 </div>
 
             </div>
+
         </div>
     </div>
+
+    <div class="row">
+        <div class="container-fluid" style="background: #F5F5F5">
+            <div class="row mt-2">
+                <div class="col-md-5 offset-md-1" style="float: right">
+                    <div class="col-md-12" style="padding-top: 10%">
+                        <div >
+                            <h4 style="text-align: center">Save up to 10% with Sahl Wellness Packages</h4>
+
+                            <p>
+                                Living well is an ongoing journey that can easily threaten your financial health.  Prevent more and save more with our preventive care and wellness plans.
+                            </p>
+                        </div>
+                        <div class="row" style="padding-left: 20px">
+                            <ul style="list-style-type: none; padding-right: 10px">
+                                <li> <i class="fa fa-check-circle" ></i>
+                                    Consultation
+                                </li>
+
+                                <li> <i class="fa fa-check-circle" ></i>
+                                    Annual Basic Screening
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-check-circle" ></i>
+                                    Annual Comprehensive Screening
+                                </li>
+                                <li> <i class="fa fa-check-circle" ></i>
+                                    Personal Fitness
+                                </li>
+                                <li> <i class="fa fa-check-circle" ></i>
+                                    Nutrition Support
+                                </li>
+                                <li> <i class="fa fa-check-circle" ></i>
+                                    Pre-Employment Checks
+                                </li>
+                                <li> <i class="fa fa-check-circle" ></i>
+                                    Health Awareness Workshops
+                                </li>
+                            </ul>
+                            <a href="#packages_page" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Explore The Packages</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="padding: 0px !important;" class="col-md-6 mt-4">
+                    <img style="object-fit: cover; width: 100%; max-height: 450px" src="{{ url('sahl/assets/image/sahl-health-user.svg') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <div class="space-lg space-md space-xs pt-4">

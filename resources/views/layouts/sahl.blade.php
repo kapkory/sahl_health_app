@@ -27,7 +27,7 @@
         <script src="{{ url('sahl/assets') }}/js/jquery.lazy.min.js"></script>
 
     <style type="text/css">
-        @media only screen and (min-width: 600px) {
+            @media only screen and (min-width: 600px) {
             .institution_image{
                 height: 179px !important;
                 width: 269px!important;
@@ -70,6 +70,13 @@
         .bg-dark-myimg{
             background-image: url("{{ url('frontend/assets/sahl/background.svg') }}");
             object-fit: cover;
+        }
+
+        @media only screen and (min-width: 992px){
+            .sh_home{
+                margin-top: -30px !important;padding-top: 30px !important;
+                /*padding-bottom: 17px*/
+            }
         }
     </style>
 @yield('styles')
@@ -134,7 +141,7 @@
                             <div class="header-btn d-xl-block" style="margin-right: 10px !important;">
 
                                 @guest
-                                    <a href="{{ url('login') }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Login</a>
+                                    <a href="{{ url('login') }}" class="sh_home btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white;">Login</a>
                                 @else
                                     <a href="{{ url(auth()->user()->role) }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Dashboard</a>
                                 @endguest

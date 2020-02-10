@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Core\ContactUs;
 use App\Models\Core\PackageCategory;
 use App\Models\Core\Referral;
+use App\Models\Core\Request as Requests;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,5 +65,19 @@ class IndexController extends Controller
         $contact->message = \request('message');
         $contact->save();
         return redirect('/')->with('status', 'Thank you for your feedback, we shall Reach back as soon as possible');
+    }
+
+    public function savePackageRequests(){
+        $this->validate(\request(),['name'=>'required','email'=>'required','company'=>'required','phone'=>'required','title'=>'required','employees'=>'required']);
+        $contact = new Requests();
+        $contact->name = \request('name');
+        $contact->email = \request('email');
+        $contact->phone_number = \request('phone');
+        $contact->job_title = \request('title');
+        $contact->company_name = \request('company');
+        $contact->employees = \request('employees');
+        $contact->save();
+        return redirect('corporate-packages')->with('status', 'Thank you for your feedback, we shall Reach back as soon as possible');
+
     }
 }

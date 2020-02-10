@@ -24,6 +24,8 @@ Route::get('about-us','Frontend\MenuController@aboutUs');
 //dummy pages
 Route::view('packages','core.frontend.packages.index');
 Route::view('corporate-packages','core.frontend.packages.corporate');
+Route::post('corporate-packages','Frontend\IndexController@savePackageRequests');
+
 Route::view('hospital','core.frontend.hospital');
 
 Route::get('privacy-policy','Frontend\OtherPagesController@privacyPolicy')->name('privacy');

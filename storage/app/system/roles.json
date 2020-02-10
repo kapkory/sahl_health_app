@@ -167,6 +167,20 @@
             ]
         },
         {
+            "type": "single",
+            "name": "packages",
+            "slug": "packages",
+            "menus": {
+                "label": "Package Requests",
+                "url": "admin/requests",
+                "icon": "basic-components"
+            },
+            "children": [],
+
+            "subs": ["list", ""],
+            "urls": ["admin/"]
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "manage_admin_departments",

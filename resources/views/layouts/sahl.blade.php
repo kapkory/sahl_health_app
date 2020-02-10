@@ -218,12 +218,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="tiny-footer-links">
-                            <ul>
-                                <li><a href="#">Privacy</a></li>
-                                <li><a href="#">Terms</a></li>
-                                <li><a href="#">Cookies</a></li>
-                                <li><a href="#">FAQ</a></li>
-                            </ul>
+                            <p>Developed by <a href="https://www.thebhub.co.ke/">Teams@TheBhub</a> </p>
                         </div>
                     </div>
                 </div>

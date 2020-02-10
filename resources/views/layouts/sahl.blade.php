@@ -158,78 +158,73 @@
      @yield('content')
 
 
-<div class="row">
-    <div class="footer-dark" style="border-radius: 0px">
-        <div class="container-fluid" >
-            <div class="row" style="width: 100% !important;">
-                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
-                    <!-- footer widget  -->
-                    <div class="footer-widget pl-2 ml-2" style="color: white">
-                        <div class="brand-logo"><img style="height: 60px" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="spacely realtor directory listing bootstrap template"></div>
-                        <p class="footer-widget-text" style="color: white">Sahl health is an innovative health company that seeks to lower the medical cost incurred by customers by providing effective digital solutions.</p>
-                        <div class="footer-location">
-                            <p class="phone-numbers" style="color: white">+254 769 687 287 / +254 731 434 140</p>
-                            <p class="address" style="color: white">Address: Sahl Health Limited, Pine Tree Plaza</p>
-                        </div>
-
+<div class="row"  style="background-color: #335062">
+{{--    <div class="footer-dark ">--}}
+        <div class="container-fluid footer-dark" style="width: 100% !important;">
+            <div class="row pt-3 " style="padding-left: 10% !important;">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <!-- footer widget  -->
+                <div class="footer-widget" style="color: white">
+                    <h3 class="footer-widget-title">Legal use</h3>
+                    <div class="footer-links">
+                        <ul class="list-unstyled" style="color: white">
+                            <li><a href="{{ url('privacy-policy') }}" style="color: white">Privacy Policy</a></li>
+                            <li><a href="{{ url('terms') }}" style="color: white">Terms of Use</a></li>
+                            <li><a href="{{ url('advertising-policy') }}" style="color: white">Advertising Policy</a></li>
+                            <li><a href="{{ url('cookie-policy') }}" style="color: white">Cookie Policy</a></li>
+                        </ul>
                     </div>
                 </div>
-                {{--                <!-- footer widget  -->--}}
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <div class="footer-widget">
-                        <h3 class="footer-widget-title">Legal use</h3>
-                        <div class="footer-links">
-                            <ul class="list-unstyled" style="color: white">
-                                <li><a href="{{ url('privacy-policy') }}" style="color: white">Privacy Policy</a></li>
-                                <li><a href="{{ url('terms') }}" style="color: white">Terms of Use</a></li>
-                                <li><a href="{{ url('advertising-policy') }}" style="color: white">Advertising Policy</a></li>
-                                <li><a href="{{ url('cookie-policy') }}" style="color: white">Cookie Policy</a></li>
-
-                            </ul>
-                        </div>
+            </div>
+                    {{--                <!-- footer widget  -->--}}
+            <div class="col-lg-4 col-md-4 col-sm-11 ">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Legal use</h3>
+                    <div class="footer-links">
+                        <ul class="list-unstyled" style="color: white">
+                            <li><a href="{{ url('privacy-policy') }}" style="color: white">Privacy Policy</a></li>
+                            <li><a href="{{ url('terms') }}" style="color: white">Terms of Use</a></li>
+                            <li><a href="{{ url('advertising-policy') }}" style="color: white">Advertising Policy</a></li>
+                            <li><a href="{{ url('cookie-policy') }}" style="color: white">Cookie Policy</a></li>
+                        </ul>
                     </div>
                 </div>
-                {{--                <!-- footer widget  -->--}}
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                    <div class="footer-widget">
-                        <h3 class="footer-widget-title">Company</h3>
-                        <div class="footer-links">
-                            <ul class="list-unstyled" >
-                                <li><a style="color: white" href="{{ url('about-us') }}">About us</a></li>
-                                <li><a style="color: white" href="{{ url('blog') }}">Blogs</a></li>
+            </div>
+                    {{--                <!-- footer widget  -->--}}
+            <div class="col-lg-3 col-md-3 col-sm-11">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Company</h3>
+                    <div class="footer-links">
+                        <ul class="list-unstyled" >
+                            <li><a style="color: white" href="{{ url('about-us') }}">About us</a></li>
+                            <li><a style="color: white" href="{{ url('blog') }}">Blogs</a></li>
 
-                            </ul>
-                        </div>
-                        <div class="social-media">
-                            <a href="https://www.facebook.com/sahlhealth/"><i class="fab fa-facebook-square"></i></a>
-                            <a href="https://twitter.com/SahlHealth"><i class="fab fa-twitter-square"></i></a>
-                            <a href="https://www.instagram.com/sahlhealth/"><i class="fab fa-instagram"></i></a>
-                        </div>
+                        </ul>
+                    </div>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/sahlhealth/"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/SahlHealth"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/sahlhealth/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- tiny footer  -->
-        <div class="tiny-footer" style="border-radius: 0px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <p class="tiny-footer-text">Copyright © {{ date('Y') }} Sahlhealth Inc. All rights reserved</p>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="tiny-footer-links">
-                            <p>Developed by <a href="https://www.thebhub.co.ke/">Teams@TheBhub</a> </p>
-                        </div>
-                    </div>
+
+
+        <div class="row tiny-footer mx-0" style="width: 100% !important;">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <p class="tiny-footer-text">Copyright © {{ date('Y') }} Sahlhealth Inc. All rights reserved</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="tiny-footer-links float-left">
+                    <p>Developed by <a href="https://www.thebhub.co.ke/">Teams@TheBhub</a> </p>
                 </div>
             </div>
         </div>
-        <!-- footer section close  -->
-    </div>
-    <!-- footer section close -->
-</div>
-</div>
 
+</div>
+</div>
+</div>
 <!-- ============================================================== -->
 <!-- end main wrapper -->
 <!-- ============================================================== -->

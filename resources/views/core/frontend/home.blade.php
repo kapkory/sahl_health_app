@@ -110,9 +110,9 @@
                 <div class="row">
                     <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="hero-search-area-caption">
-                            <h3 class="hero-search-area-caption-title text-center">Now with a Sahl Health Plan, medical bills have no claim on your health and wellness.</h3>
+                            <h3 class="hero-search-area-caption-title text-center" style="font-weight: normal">Now with a Sahl Health Plan, medical bills have no claim on your health and wellness.</h3>
                             <div class="hero-search-area-form text-center">
-                                <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;">Start My Sahl Health Plan</a>
+                                <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;"><b style="font-weight: bolder">START</b> My Sahl Health Plan</a>
                             </div>
                               <br>
                             <div class="text-center ">
@@ -165,15 +165,10 @@
 {{--</div>--}}
 
     <div class="row clearfix" style="background-color:#335062;">
-        <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
-            <h2 class="section-heading-title text-center" style="color: white">
-                My Sahl Health Plan
-            </h2>
-        </div>
-        <div class="col-md-10 col-sm-12 offset-md-1">
-            <p style="text-align: center;color:#FFFFFF; font-family: Montserrat;font-style: normal;font-weight: normal;">
-                The best healthcare costs an arm and a leg,With a Sahl Health Plan <br> you never have to get to that point.
-            </p>
+        <div class="col-md-10 col-sm-12 offset-md-1 mt-4">
+            <p style="text-align: center;color:#FFFFFF; font-family: Montserrat;font-style: normal;font-weight: normal; font-size: 24px">
+                Knock up to 20% off your medical bills all year long <br>
+                with a Sahl Health Plan.            </p>
         </div>
     </div>
     <div class="clearfix">
@@ -195,7 +190,7 @@
 
                                     <div>
                                         <h4>
-                                            Ksh {{ number_format($package->cost,2) }}<br>
+                                            Kshs. {{ $package->cost }}
                                             <small>Per Year</small>
                                         </h4>
 

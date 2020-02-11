@@ -30,12 +30,12 @@ class MessagesController extends Controller
         request()->validate($this->getValidationFields(['message','target']));
         $data = \request()->all();
 
+
+        $users = User::where('role','client')->get();
         if (\request('target') == 'providers'){
             $users = User::where('role','provider')->get();
         }
-        else{
-            $users = User::where('role','client')->get();
-        }
+
 
         $contacts = [];
         foreach ($users as $user){

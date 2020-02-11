@@ -39,6 +39,9 @@ class ApiController extends Controller
             case 'package_categories':
                 $response = PackageCategory::select('id','name')->get();
                 break;
+            case 'identification_type':
+                $response = Identification::where('is_provider',0)->select('id','name')->get();
+                break;
             case 'packages':
                 $resp = Package::select('id','name','package_category_id','cost')->where('status',1)->get();
                 $response = ['packages'=>$resp];

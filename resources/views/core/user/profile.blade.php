@@ -49,7 +49,10 @@
     ])
 
     <script>
-        $('select[name="identification_type"]').val("{{ @$user->profile->identificationType->name }}");
+        $(function () {
+            autoFillSelect('identification_type','{{ url("api/institution/identification_type") }}')
+        });
+        $('select[name="identification_type"]').val("{{ @$user->profile->identificationType->id }}");
         $('input[name="identification_number"]').val("{{ @$user->profile->identification_number }}");
     </script>
 @endsection

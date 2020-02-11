@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\Core\Profile;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -26,9 +27,26 @@ class UserController extends Controller
         $user = request()->user();
         $user->name = request('name');
         $user->email = request('email');
-        $user->identification_type = request('identification_type');
-        $user->identification_number = request('identification_number');
+//        $user->identification_type = request('identification_type');
+//        $user->identification_number = request('identification_number');
         $user->update();
+
+        $profile = Profile::where('user_id',$user->id)->first();
+
+        if ($profile){
+            $profile-> identification_type_id  = \request('identification_type');
+            $profile->identification_number = \request('identification_number');
+            $profile->save();
+        }
+        else{
+          $prof = new Profile();
+          $prof->user_id = auth()->id();
+            $prof->identification_type_id = \request('identification_type');
+            $prof->identification_number = \request('identification_number');
+            $prof->save();
+        }
+
+
         return redirect()->back()->with('notice',['type'=>'success','message'=>'Profile changed successful']);
     }
     public function updateInitialUser(){

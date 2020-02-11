@@ -46,6 +46,7 @@ class MessagesController extends Controller
             if (Schema::hasColumn('messages', 'user_id'))
                 $data['user_id'] = request()->user()->id;
         }
+        unset($data['target']);
         $message = $this->autoSaveModel($data);
 
         foreach ($users as $user){

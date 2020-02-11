@@ -18,9 +18,10 @@ class IndexController extends Controller
      */
     public function listMemberPayments(){
         $memberpayments = MemberPayment::join('packages','packages.id','=','member_payments.package_id')
+            ->join('users','users.id','=','member_payments.member_id')
             ->where([
                 ['member_payments.id','>',0]
-            ])->select('member_payments.*','packages.name as package');
+            ])->select('member_payments.*','packages.name as package','users.name as user');
 
         if(\request('all'))
             return $memberpayments->get();

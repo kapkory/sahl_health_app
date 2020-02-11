@@ -3,7 +3,7 @@
     <a href="#add_payment" class="btn btn-info btn-sm clear-form float-right" data-toggle="modal"><i class="fa fa-plus"></i> Add Payment</a>
 
     @include('common.bootstrap_table_ajax',[
-        'table_headers'=>["id","packages.name"=>"package","amount","reference","payment_mode","status","comment"],
+        'table_headers'=>["id","packages.name"=>"package","users.name"=>"user","amount","reference","payment_mode","status","comment"],
         'data_url'=>'admin/payments/list',
         'base_tbl'=>'member_payments'
         ])

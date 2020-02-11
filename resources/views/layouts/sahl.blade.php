@@ -78,6 +78,12 @@
                 /*padding-bottom: 17px*/
             }
         }
+
+        .navbar-classic .dropdown-toggle::after{
+            color: #F07A3B !important;
+            margin-top: 0px;
+            font-weight: bolder;
+        }
     </style>
 @yield('styles')
 <!-- Start of HubSpot Embed Code -->
@@ -119,10 +125,27 @@
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/') }}#packages_page">
-                                        Plans
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="menu-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Packages
                                     </a>
+                                    <ul class="dropdown-menu" aria-labelledby="menu-4">
+                                        <li class="dropdown-item">
+                                            <a class="dropdown-link" href="{{ url('packages') }}">
+                                                Individual Package
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="dropdown-link" href="{{ url('packages') }}#group_3">
+                                             Group Plan for 3
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="dropdown-link" href="{{ url('packages') }}#group_4">
+                                                Group Plan for 4
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
 
                                 <li class="nav-item">

@@ -181,6 +181,20 @@
             "urls": ["admin/"]
         },
         {
+            "type": "single",
+            "name": "messages",
+            "slug": "Messages",
+            "menus": {
+                "label": "Messages",
+                "url": "admin/messages",
+                "icon": "basic-components"
+            },
+            "children": [],
+
+            "subs": ["list", ""],
+            "urls": ["admin/"]
+        },
+        {
             "type": "hidden",
             "section": "main",
             "slug": "manage_admin_departments",

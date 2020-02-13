@@ -34,6 +34,9 @@ Route::get('cookie-policy','Frontend\OtherPagesController@cookiePolicy');
 Route::get('terms','Frontend\OtherPagesController@terms');
 
 
+Route::get('hospitals/discounts','Frontend\GeneralController@discounts');
+
+
 //Route::view('/','core.frontend.home');
 Route::get('logout',function (){
    Auth::logout();

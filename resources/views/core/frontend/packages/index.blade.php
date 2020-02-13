@@ -16,6 +16,9 @@
                 margin-top: -110px !important;
             }
         }
+        #package_description{
+            text-transform: capitalize;
+        }
     </style>
 
 @endsection
@@ -27,7 +30,7 @@
                    <div class="rounded">
                        <div class="row py-4">
                            <div class="col-md-8 pt-md-3 mt-md-3">
-                               <h3 style="font-weight: 600; color: white">Your health and wellness comes first.</h3>
+                               <h3 style="font-weight: 600; color: white"; id="package_description">Your health and wellness comes first.</h3>
                            </div>
 
                        </div>
@@ -152,12 +155,26 @@
     </div>
 
 
-
+   @isset($_GET['tab'])
+       <style>
+           .bg-dark-myimg{
+               background-image: url("{{ url('sahl/assets/image/about.jpg') }}") !important;
+           }
+       </style>
+       @endisset
 
     <script>
         @isset($_GET['tab'])
+
         // Select tab by name
         $('.nav-tabs a[href="#{{ $_GET['tab'] }}"]').tab('show');
+        @if($_GET['tab'] == 'group_3')
+             $('#package_description').html("The people you care for <br> The most deserve the<br> Best Care");
+        @else
+            $('#package_description').html("The more people you care about,<br> The easier we make it to care <br> For them.");
+        @endif
+
+
         @endisset
 
         function setPackage(package_id) {

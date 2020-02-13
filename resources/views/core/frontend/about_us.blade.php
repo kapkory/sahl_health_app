@@ -25,15 +25,17 @@
 
 @endsection
 @section('content')
-    <div class="container-fluid bg-dark-myimg pb-md-5 mb-md-5 ">
-        <div class="col-md-10 mx-auto">
-            <div class="container py-md-5">
-                <div class="rounded">
-                    <div class="row py-4">
-                        <div class="col-md-8 pt-md-3 mt-md-3">
+    <div class="row">
+        <div class="container-fluid bg-dark-myimg pb-md-5 mb-md-5 ">
+            <div class="col-md-10 mx-auto">
+                <div class="container py-md-5">
+                    <div class="rounded">
+                        <div class="row py-4">
+                            <div class="col-md-8 pt-md-3 mt-md-3">
+
+                            </div>
 
                         </div>
-
                     </div>
                 </div>
             </div>

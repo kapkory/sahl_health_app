@@ -8,13 +8,7 @@
             box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
-        .package_button{
-            color: white;
-            background-color: #F07A3B;
-            border-color: #F07A3B;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 8px;
-         }
+
         @media screen and (max-width: 768px) {
             /*.hero-search-area-caption-text {*/
             /*    color: black;*/

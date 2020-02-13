@@ -84,6 +84,14 @@
             margin-top: 0px;
             font-weight: bolder;
         }
+
+        .package_button{
+            color: white;
+            background-color: #F07A3B;
+            border-color: #F07A3B;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+        }
     </style>
 @yield('styles')
 <!-- Start of HubSpot Embed Code -->
@@ -136,12 +144,12 @@
                                             </a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('packages') }}#group_3">
+                                            <a class="dropdown-link" href="{{ url('packages') }}?tab=group_3">
                                              Group Plan for 3
                                             </a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('packages') }}#group_4">
+                                            <a class="dropdown-link" href="{{ url('packages') }}?tab=group_4">
                                                 Group Plan for 4
                                             </a>
                                         </li>
@@ -161,10 +169,14 @@
                                 </li>
 
                             </ul>
+                            <div class="float-right" style="padding-right: 25px">
+                                <a style="font-size: 15px;line-height: 22px;color:#23263e; white-space: nowrap !important" href="{{ url('register') }}">Join Us</a>
+                            </div>
                             <div class="header-btn d-xl-block" style="margin-right: 10px !important;">
 
+
                                 @guest
-                                    <a href="{{ url('login') }}" class="sh_home btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white;">Login</a>
+                                    <a href="{{ url('login') }}" class="sh_home btn btn-primary" style="background-color: #F07A3B;border-color: #F07A3B; color: white;">Login</a>
                                 @else
                                     <a href="{{ url(auth()->user()->role) }}" class="btn btn-primary" style="background-color: #F07A3B;border-color: inherit; color: white">Dashboard</a>
                                 @endguest

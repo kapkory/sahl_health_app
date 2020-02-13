@@ -22,25 +22,27 @@
 
 @endsection
 @section('content')
-    <div class="container-fluid bg-dark-myimg md-5 md-5 " style="background: rgba(51, 80, 98, 0.7);">
-        <div class="col-md-10 mx-auto" >
-            <div class="container py-md-5" >
-                <div class="rounded">
-                    <div class="row py-4">
-                        <div class="col-md-8 pt-md-3 mt-md-3" >
-                           <h3 style="font-weight: 600; color: white">
-                               MP-Shah Hospital
-                           </h3>
-                            <h5 style="font-weight: 600; color: white">
-                                A leading private hospital in Kenya
-                            </h5>
-                        </div>
+   <div class="row">
+       <div class="container-fluid bg-dark-myimg md-5 md-5 " style="background: rgba(51, 80, 98, 0.7);">
+           <div class="col-md-10 mx-auto" >
+               <div class="container py-md-5" >
+                   <div class="rounded">
+                       <div class="row py-4">
+                           <div class="col-md-8 pt-md-3 mt-md-3" >
+                               <h3 style="font-weight: 600; color: white">
+                                   MP-Shah Hospital
+                               </h3>
+                               <h5 style="font-weight: 600; color: white">
+                                   A leading private hospital in Kenya
+                               </h5>
+                           </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
 
     <div class="row" style="background: rgba(196, 196, 196, 0.2); top: 0px">
         <div class="container-fluid" style="padding-top: 100px">

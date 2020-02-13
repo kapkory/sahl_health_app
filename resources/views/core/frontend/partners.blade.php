@@ -3,7 +3,7 @@
 
     <style>
         .bg-dark-myimg{
-            background-image: url("{{ url('sahl/assets/image/package.png') }}") !important;
+            background-image: url("{{ url('sahl/assets/image/about.jpg') }}") !important;
         }
 
         @media screen and (max-width: 767px) {
@@ -68,6 +68,12 @@
                                 <div class="row" style="background-color: white">
                                     <div class="container-fluid">
                                         <div class="col-md-10 offset-md-1 col-sm-12">
+                                            <div class="row">
+                                                <h2 class="p-2" style="text-transform: capitalize">Welcome to the Sahl Individual<br> Health Plan</h2>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida convallis erat quis sagittis. In placerat fringilla leo, vel varius mauris tempus vel. Morbi vel ligula egestas, pellentesque mi vel, lobortis velit. Etiam ut turpis sapien. Mauris ornare nisl ac nisi cursus, et ornare mauris viverra. Aenean pretium, lectus sit amet pellentesque convallis, sapien sapien efficitur mi, ultricies ultricies massa nunc nec felis. Mauris malesuada ultricies ultricies. Nunc ornare justo non hendrerit tristique. Praesent turpis ex, tincidunt in gravida in,<br> <br>
+                                                </p>
+                                            </div>
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
                                                     <div class="card" style="background:#F5F5F5;border-radius: 8%">

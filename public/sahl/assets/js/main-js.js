@@ -179,12 +179,13 @@ jQuery(document).ready(function($) {
             loop: false,
             margin: 20,
             nav: true,
+            stagePadding:50,
             autoplay: true,
             autoplayTimeout: 8000,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
             responsive: {
                 0: {
-                    items: 2
+                    items: 1
                 },
                 600: {
                     items: 2

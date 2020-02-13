@@ -156,11 +156,24 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('hospitals') }}">
-                                        Hospitals
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="menu-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Our Partners
                                     </a>
+                                    <ul class="dropdown-menu" aria-labelledby="menu-4">
+                                        <li class="dropdown-item">
+                                            <a class="dropdown-link" href="{{ url('partners') }}">
+                                                Partners
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
+
+{{--                                <li class="nav-item">--}}
+{{--                                    <a class="nav-link" href="{{ url('hospitals') }}">--}}
+{{--                                        Hospitals--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('blog') }}">

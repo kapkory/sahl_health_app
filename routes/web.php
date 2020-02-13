@@ -15,6 +15,7 @@ Route::get('/','Frontend\MenuController@index');
 Route::get('hospitals','Frontend\MenuController@hospitals');
 Route::view('about','core.frontend.about');
 Route::view('product','core.frontend.product');
+Route::view('partners','core.frontend.partners');
 Route::get('institution/{slug}','Frontend\MenuController@hospital');
 Route::get('about-us','Frontend\MenuController@aboutUs');
 //Route::get('/', function () {

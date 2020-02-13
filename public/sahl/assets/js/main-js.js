@@ -179,7 +179,7 @@ jQuery(document).ready(function($) {
             loop: false,
             margin: 20,
             nav: true,
-            stagePadding:50,
+            stagePadding:40,
             autoplay: true,
             autoplayTimeout: 8000,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],

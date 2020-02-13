@@ -447,6 +447,22 @@
             "urls": [
                 "home"
             ]
+        },
+        {
+            "type": "single",
+            "slug": "referrals",
+            "menus": {
+                "label": "Bulk SMS",
+                "icon": "breadcrumbs",
+                "url": "provider/messages"
+            },
+            "children": [],
+            "subs": [
+                "list","contacts/list","contacts","contacts/delete","message"
+            ],
+            "urls": [
+                "home"
+            ]
         }
     ],
     "agent": [

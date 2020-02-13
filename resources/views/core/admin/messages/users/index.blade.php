@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title',UserMessages)
+@section('title','UserMessages')
 
 @section('content')
 <a href="#usermessage_modal" class="btn btn-info btn-sm clear-form float-right" data-toggle="modal"><i class="fa fa-plus"></i> ADD USERMESSAGE</a>

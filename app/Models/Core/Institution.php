@@ -32,6 +32,10 @@ class Institution extends Model
         return $this->hasMany(Visit::class);
     }
 
+    public function contacts(){
+        return $this->hasMany(Contact::class);
+    }
+
     public function getRatingCount(){
 	    $rating =  Rating::join('visits','ratings.visit_id','=','visits.id')
             ->where('visits.institution_id',$this->id)

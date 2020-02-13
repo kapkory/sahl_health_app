@@ -54,6 +54,11 @@ class Controller extends BaseController
         if (in_array("file", $fillables)) {
             $validation_array['file'] = 'required|max:50000';
         }
+
+        if (in_array("phone_number", $fillables)) {
+            $validation_array['phone_number'] = 'required|min:10|max:13';
+        }
+
         $validation_array['id'] = '';
         $validation_array['form_model'] = '';
         return $validation_array;

@@ -392,6 +392,7 @@
                 "institution",
                 "list",
                 "services",
+                "images","images/upload","images/list",
                 "services/list",
                 "contacts","contacts/list"
             ],
@@ -453,7 +454,7 @@
             "slug": "referrals",
             "menus": {
                 "label": "Bulk SMS",
-                "icon": "breadcrumbs",
+                "icon": "chat-app2",
                 "url": "provider/messages"
             },
             "children": [],

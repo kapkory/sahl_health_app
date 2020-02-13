@@ -1,10 +1,16 @@
 @extends('layouts.admin')
 @section('title',$institution->name)
 @section('content')
-{{--    ,'services','contacts'--}}
+
+    @push('scripts')
+        <!-- Load Styles -->
+        <link rel="stylesheet" href="{{ url('drift/assets/css') }}/dropzone.min.css">
+
+        <script src="{{ url('drift/assets/js/dropzone.min.js') }}"></script>
+        @endpush
         @include('common.auto_tabs',[
         'tabs_folder'=>'core.provider.institutions.institution.tabs',
-        'tabs'=> ['institution','services','contacts'],
+        'tabs'=> ['institution','services','contacts',"images","upload_images"],
         'base_url'=>'provider/institutions/institution/'.$institution->id
        ])
         @push('footer-scripts')

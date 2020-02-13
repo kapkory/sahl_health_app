@@ -375,22 +375,22 @@
 
                                        <div class="review-content-rating  d-flex flex-row" style="right: 10px !important;" >
                                            <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
-                                            <div  style="overflow: hidden; text-overflow: ellipsis">
-                                                <a style="font-family: Montserrat;font-style: normal;  letter-spacing: -1px; font-size: 18px;line-height: 22px; color: #335062;white-space: nowrap !important" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">&nbsp;{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}&nbsp;</a>
+                                            <span >
+                                                <a style="font-family: Montserrat; overflow: hidden; text-overflow: ellipsis;font-style: normal;  letter-spacing: -1px; font-size: 18px;line-height: 22px; color: #335062;white-space: nowrap !important" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">&nbsp;{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}&nbsp;</a>
 
-                                            </div>
-                                           <span class="star" style="float: right !important; padding-right: 2px!important; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
+                                            </span>
+                                          &nbsp;&nbsp; <span class="star pr-1" style=" color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
                                        </div>
 
                                        <h3 class="listing-content-head-title" >
-                                           <a style="font-weight: normal" href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,22,'...') }}</a>
+                                           <a style="font-weight: normal" href="{{ url('institution/'.$featured_hospital->slug) }}">{{ $featured_hospital->name}}</a>
                                        </h3>
 
                                        <span class="hp_service">
                                            In Patient and Out Patient services
                                        </span>
 
-                                       <div class="listing-content-head-text py-0">{{ $featured_hospital->institutionLevel->name }} </div>
+                                       <div class="listing-content-head-text py-0 h4" style="font-weight: bolder">{{ $featured_hospital->institutionLevel->name }} </div>
 {{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
 {{--                                       <div class="py-0 review-content-rating  " >--}}
 {{--                                           @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)--}}

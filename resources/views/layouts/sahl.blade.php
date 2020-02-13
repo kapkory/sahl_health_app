@@ -183,7 +183,7 @@
 
                             </ul>
                             <div class="float-right" style="padding-right: 25px">
-                                <a style="font-size: 15px;line-height: 22px;color:#23263e; white-space: nowrap !important" href="{{ url('register') }}">Join Us</a>
+                                <a style="font-size: 15px;line-height: 22px;color:#23263e; white-space: nowrap !important" href="{{ url('member-register') }}">Join Us</a>
                             </div>
                             <div class="header-btn d-xl-block" style="margin-right: 10px !important;">
 

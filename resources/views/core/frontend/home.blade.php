@@ -379,7 +379,7 @@
                                                 <a style="font-family: Montserrat;font-style: normal;  letter-spacing: -1px; font-size: 18px;line-height: 22px; color: #335062;white-space: nowrap !important" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">&nbsp;{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}&nbsp;</a>
 
                                             </div>
-                                           <span class="star" style="float: right !important; padding-right: 5px!important; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
+                                           <span class="star" style="float: right !important; padding-right: 2px!important; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
                                        </div>
 
                                        <h3 class="listing-content-head-title" >

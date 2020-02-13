@@ -1,6 +1,17 @@
 @extends('layouts.sahl')
 @section('content')
-
+<style>
+    @media screen and (min-width: 768px) {
+        .listing-content-head-title{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .hosp_title{
+            display: none;
+        }
+    }
+</style>
     <div class="row ">
         <div class="container-fluid">
             <div class="row" style="background-image: url({{ url('sahl/assets/image/hospital-background.svg') }}); height: 150px">
@@ -65,11 +76,9 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
 
                     <div class="row mobile1">
-                        <?php
-                        $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
-                        ?>
+
                         @foreach($hospitals as $featured_hospital)
-                            <div class="mobile_disp col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                            <div class="mobile_disp col-lg-4 col-md-4 col-sm-6 col-xs-6">
                                 <!-- listing block start  -->
                                 <div class="listing-block " style="padding-bottom: 1px">
                                     <div class="listing-img">
@@ -82,18 +91,21 @@
 
                                     <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                         <div class="listing-content-head">
-                                            <button class="btn badge mobile_padding" style="color: white; background-color: {{ @$colors[$loop->index] }}">Nairobi</button>
-                                            <h3 class="listing-content-head-title mobile_heading">
-                                                <a href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
-                                            </h3>
+                                            <div class="review-content-rating" style="right: 10px !important;" >
+                                                <button class="btn badge mobile_padding" style="color: white; border-color: #335062; color: #335062">Nairobi</button>
+                                                <div class="col-md-8 col-sm-6 col-xs-6" style="overflow: hidden; text-overflow: ellipsis">
+                                                    <a style="font-family: Montserrat;font-style: normal;  letter-spacing: -1px; font-size: 18px;line-height: 22px; color: #335062;white-space: nowrap !important" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
 
-                                            <div class="listing-content-head-text py-0">{{ @$featured_hospital->institutionLevel->name }} </div>
-                                            {{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
-                                            <div class="py-0 review-content-rating  " >
-                                                @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)
-                                                    <span class="star" style="float: right; color: #7BB37D !important;"></span>
-                                                @endfor
+                                                </div>
+                                                <span class="star" style="float: right !important; padding-right: 10px!important; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{!! $featured_hospital->getRatingCount() !!}</span>
                                             </div>
+                                            <h3 class="listing-content-head-title mobile_heading">
+                                                <a style="font-weight: normal; white-space: nowrap" href="{{ url('institution/'.$featured_hospital->slug) }}">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
+                                            </h3>
+                                            In Patient Or Out Patient services
+
+                                            <div class="listing-content-head-text py-0 h4">{{ @$featured_hospital->institutionLevel->name }} </div>
+
                                         </div>
 
 

@@ -373,13 +373,13 @@
                                <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                    <div class="listing-content-head">
 
-                                       <div class="review-content-rating" style="right: 10px !important;" >
+                                       <div class="review-content-rating  d-flex flex-row" style="right: 10px !important;" >
                                            <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
-                                            <div class="col-md-8 col-sm-6 col-xs-6" style="overflow: hidden; text-overflow: ellipsis">
+                                            <div  style="overflow: hidden; text-overflow: ellipsis">
                                                 <a style="font-family: Montserrat;font-style: normal;  letter-spacing: -1px; font-size: 18px;line-height: 22px; color: #335062;white-space: nowrap !important" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
 
                                             </div>
-                                           <span class="star" style="float: right !important; padding-right: 10px!important; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">4.2</span>
+                                           <span class="star" style="float: right !important; padding-right: 10px!important; color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
                                        </div>
 
                                        <h3 class="listing-content-head-title" >
@@ -390,7 +390,7 @@
                                            In Patient and Out Patient services
                                        </span>
 
-                                       <div class="listing-content-head-text py-0">{{ @$featured_hospital->institutionLevel->name }} </div>
+                                       <div class="listing-content-head-text py-0">{{ $featured_hospital->institutionLevel->name }} </div>
 {{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
 {{--                                       <div class="py-0 review-content-rating  " >--}}
 {{--                                           @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)--}}

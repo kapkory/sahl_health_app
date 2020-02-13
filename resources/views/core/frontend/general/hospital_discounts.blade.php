@@ -30,7 +30,9 @@
 
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
                     <h2 class="p-2" style="text-transform: capitalize;color: #335062">Hospital Offering Discounts</h2>
-
+                     <p>
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida <br>convallis erat quis sagittis. In p
+                     </p>
                     <div class="row mobile1">
 
                         @foreach($hospitals as $featured_hospital)

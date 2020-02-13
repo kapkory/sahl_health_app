@@ -40,9 +40,7 @@ class MenuController extends Controller
         if (!$institution)
             return redirect('hospitals');
 
-//        dd($institution->institutionServices);
-
-        return view($this->folder.'view_hospital',compact('institution'));
+        return view($this->folder.'hospital',compact('institution'));
     }
 
     public function aboutUs(){

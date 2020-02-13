@@ -375,7 +375,7 @@
 
                                        <div class="review-content-rating" style="right: 10px !important;" >
                                            <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
-                                            <div class="col-md-7 col-sm-6 col-xs-6" style="overflow: hidden; text-overflow: ellipsis">
+                                            <div class="col-md-8 col-sm-6 col-xs-6" style="overflow: hidden; text-overflow: ellipsis">
                                                 <a style="font-family: Montserrat;font-style: normal;  letter-spacing: -1px; font-size: 18px;line-height: 22px; color: #335062;white-space: nowrap !important" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}</a>
 
                                             </div>

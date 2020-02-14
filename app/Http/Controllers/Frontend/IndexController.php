@@ -56,10 +56,13 @@ class IndexController extends Controller
     }
 
     public function saveContacts(){
-        $this->validate(\request(),['name'=>'required','email'=>'required','message'=>'required']);
+        $this->validate(\request(),['name'=>'required','sh_email'=>'required','message'=>'required']);
+
+        if (\request('email') != '')
+            die("Hello Bot");
         $contact = new ContactUs();
         $contact->name = \request('name');
-        $contact->email = \request('email');
+        $contact->email = \request('sh_email');
         $contact->phone = \request('phone');
         $contact->location = \request('location');
         $contact->message = \request('message');

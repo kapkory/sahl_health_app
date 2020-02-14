@@ -51,6 +51,9 @@
 
             /*color: rgba(13, 39, 55, 0.97);*/
         }
+        .contact_form_sh{
+            display: none !important;
+        }
         .hp_heading{
             color: rgb(113, 113, 113) !important;
             flex: 1 1 0% !important;
@@ -191,7 +194,7 @@
                                     </div>
                                     <div class="testimonial-content-text">
                                         <p>
-                                            {{ $package->description }}
+                                            {!! $package->description !!}
                                         </p>
                                     </div>
                                 </div>
@@ -233,7 +236,7 @@
         <div class="container-fluid">
             <div class="text-center my-5 ">
                 <h3 class="section-heading-title " style="color: #335062">
-                    Looking for Something Else?
+                    Are you looking for Something Else?
                 </h3>
 
             </div>
@@ -449,7 +452,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="email" class="form-control" placeholder="Email" >
+                                            <input type="text" name="sh_email" class="form-control" placeholder="Email" >
                                         </div>
                                     </div>
                                 </div>
@@ -461,6 +464,7 @@
 
                                         </div>
                                     </div>
+                                    <input type="email" name="email" value=""  class="contact_form_sh">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <input required="required" type="text" name="location" class="form-control" placeholder="Where are you?">

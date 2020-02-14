@@ -122,19 +122,19 @@
                         </div>
 
 
-                        <div id="contacts" class="tab-pane px-md-5">
+                        <div id="contacts" class="tab-pane pl-md-5">
                             <div class="row mt-5 mb-5">
                                 <div class=" col-xs-12 col-md-6 col-sm-12 pl-0">
                                     <div class="card-body contact h-100 jumbotron p-3 ">
 
-                                        <h5 class="my-4 pb-2 border-bottom font-weight-bold">GET IN TOUCH</h5>
+                                        <h5 class="my-1 border-bottom font-weight-bold">GET IN TOUCH</h5>
                                         <p class="p-2 h5">
                                             Reach us for any inquiries on Health
                                         </p>
                                         <p  class="p-2">
                                             Address: Sahl Health Limited, Pine Tree Plaza <br><br>
                                             P.O. Box 103-00202, Nairobi, Kenya. <br><br>
-                                            Working Hours: 0800 - 1700 HRS <br><br>
+                                            Working Hours: 0800 - 1700 HRS <br>
                                             Mobile: +254 769 687 287 / +254 731 434 140 <br><br>
                                             Email: support@sahlhealth.com <br>
                                             Web: www.sahlhealth.com
@@ -143,9 +143,9 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-md-6 col-sm-12 " >
-                                    <div class="mapouter pt-5">
+                                    <div class="mapouter pt-1">
                                         <div class="gmap_canvas">
-                                            <iframe  height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=western%20heights&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                            <iframe style="width: 100% !important;"  height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=western%20heights&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                                         </div>
                                         <style>.mapouter{position:relative;text-align:right;height:400px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100%;}</style>
                                     </div>

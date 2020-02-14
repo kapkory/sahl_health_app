@@ -135,24 +135,20 @@
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="menu-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Packages
+                                        Our Members
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="menu-4">
                                         <li class="dropdown-item">
                                             <a class="dropdown-link" href="{{ url('packages') }}">
-                                                Individual Package
+                                                Individual Members
                                             </a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('packages') }}?tab=group_3">
-                                             Group Plan for 3
+                                            <a class="dropdown-link" href="{{ url('corporate-packages') }}">
+                                             Corporate Packages
                                             </a>
                                         </li>
-                                        <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('packages') }}?tab=group_4">
-                                                Group Plan for 4
-                                            </a>
-                                        </li>
+
                                     </ul>
                                 </li>
 
@@ -163,7 +159,19 @@
                                     <ul class="dropdown-menu" aria-labelledby="menu-4">
                                         <li class="dropdown-item">
                                             <a class="dropdown-link" href="{{ url('partners') }}">
-                                                Partners
+                                                Health Care service provider
+                                            </a>
+                                        </li>
+
+                                        <li class="dropdown-item">
+                                            <a class="dropdown-link" href="{{ url('partners') }}">
+                                                Insurance Companies
+                                            </a>
+                                        </li>
+
+                                        <li class="dropdown-item">
+                                            <a class="dropdown-link" href="{{ url('partners') }}">
+                                                Health Product Vendor
                                             </a>
                                         </li>
                                     </ul>

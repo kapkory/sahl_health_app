@@ -144,7 +144,7 @@
                                     <ul class="dropdown-menu" aria-labelledby="menu-4">
                                         <li class="dropdown-item">
                                             <a class="dropdown-link" href="{{ url('packages') }}">
-                                                Individual
+                                                Individuals
                                             </a>
                                         </li>
                                         <li class="dropdown-item">

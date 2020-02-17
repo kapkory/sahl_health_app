@@ -145,7 +145,7 @@
                                 <div class="col-xs-12 col-md-6 col-sm-12 " >
                                     <div class="mapouter pt-1">
                                         <div class="gmap_canvas">
-                                            <iframe style="width: 100% !important;"  height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=western%20heights&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                            <iframe style="width: 100% !important;"  height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Sahl%20Health&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                                         </div>
                                         <style>.mapouter{position:relative;text-align:right;height:400px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100%;}</style>
                                     </div>

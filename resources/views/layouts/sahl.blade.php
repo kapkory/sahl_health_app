@@ -221,13 +221,11 @@
             <div class="col-lg-4 col-md-4 col-sm-6  col-xs-5">
                 <!-- footer widget  -->
                 <div class="footer-widget" style="color: white">
-                    <h3 class="footer-widget-title">Legal use</h3>
+                    <h3 class="footer-widget-title">SahlHealth </h3>
                     <div class="footer-links">
-                        <ul class="list-unstyled" style="color: white">
-                            <li><a href="{{ url('privacy-policy') }}" style="color: white">Privacy Policy</a></li>
-                            <li><a href="{{ url('terms') }}" style="color: white">Terms of Use</a></li>
-                            <li><a href="{{ url('advertising-policy') }}" style="color: white">Advertising Policy</a></li>
-                            <li><a href="{{ url('cookie-policy') }}" style="color: white">Cookie Policy</a></li>
+                        <ul class="list-unstyled" style="color: white; list-style-type: none !important;">
+                            <li><a href="{{ url('about') }}" style="color: white">About Us</a></li>
+                            <li><a href="{{ url('blog') }}" style="color: white">News</a></li>
                         </ul>
                     </div>
                 </div>
@@ -237,7 +235,7 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Legal use</h3>
                     <div class="footer-links">
-                        <ul class="list-unstyled" style="color: white">
+                        <ul class="list-unstyled" style="color: white;list-style-type: none !important;">
                             <li><a href="{{ url('privacy-policy') }}" style="color: white">Privacy Policy</a></li>
                             <li><a href="{{ url('terms') }}" style="color: white">Terms of Use</a></li>
                             <li><a href="{{ url('advertising-policy') }}" style="color: white">Advertising Policy</a></li>
@@ -251,8 +249,8 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Company</h3>
                     <div class="footer-links">
-                        <ul class="list-unstyled" >
-                            <li><a style="color: white" href="{{ url('about-us') }}">About us</a></li>
+                        <ul class="list-unstyled" style="list-style-type: none !important;">
+                            <li><a style="color: white" href="{{ url('about') }}">About us</a></li>
                             <li><a style="color: white" href="{{ url('blog') }}">Blogs</a></li>
 
                         </ul>

@@ -12630,13 +12630,13 @@ a.text-dark:focus {
 
 .footer-dark .footer-widget .footer-links ul li {}
 
-.footer-dark .footer-widget .footer-links ul li:before {
-    content: '\f061';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    padding-right: 8px;
-    font-size: 10px;
-}
+/*.footer-dark .footer-widget .footer-links ul li:before {*/
+/*    content: '\f061';*/
+/*    font-family: 'Font Awesome 5 Free';*/
+/*    font-weight: 900;*/
+/*    padding-right: 8px;*/
+/*    font-size: 10px;*/
+/*}*/
 
 .footer-dark .footer-widget .footer-links ul li:hover:before {
     color: #fff;

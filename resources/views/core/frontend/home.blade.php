@@ -267,7 +267,7 @@
                                 <div class="py-3">
                                     <div class="text-center">
                                         <img class="lazy" height="100" src="{{ url('sahl/assets/image') }}/compare.svg" alt="Find A Hospital Near You">
-                                        <h4>Compare<br> hospital Discounts</h4>
+                                        <h4>Find<br> Discounts</h4>
                                     </div>
                                 </div>
                             </a>
@@ -278,7 +278,7 @@
                                 <div class="py-3">
                                     <div class="text-center">
                                         <img class="lazy pt-5" height="100" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Find A Hospital Near You">
-                                        <h4>Talk to a Health and<br> wellness expert</h4>
+                                        <h4>Purchase Health <br>Checkup Packages</h4>
                                     </div>
                                 </div>
                             </a>

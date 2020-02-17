@@ -255,7 +255,7 @@
                                 <div class="py-5">
                                     <div class="text-center">
                                         <img class="lazy" src="{{ url('sahl/assets/image') }}/location.svg" alt="Find A Hospital Near You">
-                                        <h4>Find A Hospital<br> Near You</h4>
+                                        <h4>Find A Health Provider<br> Near You</h4>
                                     </div>
                                 </div>
                             </a>

@@ -252,7 +252,7 @@
                         <ul class="list-unstyled" style="list-style-type: none !important;">
                             <li><a style="color: white" href="{{ url('partners') }}">Health Service Provider</a></li>
                             <li><a style="color: white" href="{{ url('partners') }}">Health Product Vendors</a></li>
-                            <li><a style="color: white" href="{{ url('partners') }}">Digital Health Care Partner</a></li>
+                            <li><a style="color: white" href="{{ url('partners') }}">Digital Health Innovators</a></li>
                         </ul>
                     </div>
 

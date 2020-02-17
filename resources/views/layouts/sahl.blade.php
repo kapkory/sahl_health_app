@@ -65,6 +65,10 @@
                 overflow-wrap: break-word !important;
             }
         }
+
+        .sh_footer:hover{
+            color: grey !important;
+        }
     </style>
     <style>
         .bg-dark-myimg{
@@ -273,8 +277,8 @@
                 <p class="tiny-footer-text">Copyright © {{ date('Y') }} Sahlhealth Inc. All rights reserved</p>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="tiny-footer-links float-left ">
-                    <p class="text-white">Developed by <a href="https://www.thebhub.co.ke/" class="text-white">Teams@TheBhub</a> </p>
+                <div class=" float-left ">
+                    <p class=" tiny-footer-text text-white">Developed by <a href="https://www.thebhub.co.ke/" style="color: white;" class="sh_footer">Teams@TheBhub</a> </p>
                 </div>
             </div>
         </div>

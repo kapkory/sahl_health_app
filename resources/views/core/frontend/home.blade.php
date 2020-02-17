@@ -484,7 +484,7 @@
                                     </div>
 
                                     <div class="col-md-12 mt-2">
-                                        <button type="submit" class="btn" style="color: white; background: #F07A3B;border-radius: 10px;">Submit</button>
+                                        <button type="submit" class="btn" style="color: white; background: #F07A3B;border-radius: 10px;">Get in Touch</button>
                                     </div>
                                 </div>
                             </form>

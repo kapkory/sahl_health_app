@@ -346,8 +346,7 @@
         <div class="container-fluid">
             <div class="text-center mt-5">
                 <h3 class="section-heading-title " style="color: #335062">
-                    Discover the best rated Sahl Health Partners
-                    near you
+                    Discover over 500 of the best healthcare providers <br> offering Sahl discounts countrywide.
                 </h3>
             </div>
         </div>
@@ -427,11 +426,11 @@
     </div>
 
 
-    <div class="row">
+    <div class="row pb-0 mb-0">
         <div class="container-fluid">
             <div class="row mt-2">
                 <div style="padding: 0px !important;" class="col-md-6 mt-4">
-                    <img style="object-fit: cover; width: 100%; max-height: 500px" src="{{ url('sahl/assets/image/contact-us.svg') }}">
+                    <img style="object-fit: cover; width: 100%; max-height: 430px" src="{{ url('sahl/assets/image/contact-us.svg') }}">
                 </div>
                 <div class="col-md-6" style="float: right">
                     <div class="col-md-12">
@@ -477,7 +476,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea name="message" required="required"  placeholder="Write your Message" cols="4" rows="6" class="form-control"></textarea>
+                                            <textarea name="message" required="required"  placeholder="Write your Message" cols="2" rows="3" class="form-control"></textarea>
                                             @csrf
                                         </div>
 

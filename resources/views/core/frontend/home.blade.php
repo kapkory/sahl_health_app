@@ -85,6 +85,11 @@
             text-align: center;
             /*width: 60%; !* Set the width of the positioned div *!*/
         }
+
+        .item{
+            display: table-cell !important;
+            vertical-align: top !important;
+        }
     </style>
 <div class="row">
     <div class="container-fluid mx-0 px-0" >

@@ -16,9 +16,7 @@
             .mobile_packages{
                 width: 100% !important;
             }
-            .hosp_title{
-                display: none;
-            }
+
         }
 
         @media screen and (max-width: 992px) {
@@ -37,9 +35,6 @@
                 /*max-height: 475px;*/
             }
 
-            .listing-content-head-title{
-                display: none;
-            }
 
         }
 
@@ -84,6 +79,18 @@
             top: 20%; /* Adjust this value to move the positioned div up and down */
             text-align: center;
             /*width: 60%; !* Set the width of the positioned div *!*/
+        }
+
+        .hosp_title{
+            font-family: Montserrat;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-style: normal;
+            letter-spacing: -1px;
+            font-size: 18px;
+            line-height: 22px;
+            color: #335062;
+            white-space: nowrap !important
         }
     </style>
 <div class="row">
@@ -219,7 +226,7 @@
                 <div class="col-12">
                     <img  src="{{ url('sahl/assets/image/people.jpg') }}" style="object-fit: cover;  width: 100%; height: 250px">
                     <div class="col-md-8 offset-md-2 col-sm-12 col-sx-12 hp_text">
-                        <h5 class="text-white">As the saying goes, healthy people make happy and productive employees. save up to 20% on healthcare and insurance costs.</h5>
+                        <h3 class="text-white">As the saying goes, healthy people make happy and productive employees. save up to 20% on healthcare and insurance costs.</h3>
                         <div class="text-center">
                             <a href="{{ url('corporate-packages') }}" class="btn package_button m-2 " style="color: white;">Sahl Corporate Packages</a>
                         </div>
@@ -362,7 +369,7 @@
                      $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
                     ?>
                    @foreach($featured_hospitals as $featured_hospital)
-                       <div class="mobile_disp col-lg-4 col-md-5 col-sm-6 col-xs-6">
+                       <div class="mobile_disp col-lg-3 col-md-3 col-sm-6 col-xs-6">
                            <!-- listing block start  -->
                            <div class="listing-block p-1">
                                <div class="listing-img">
@@ -378,19 +385,17 @@
 
                                        <div class="review-content-rating  d-flex flex-row" style="right: 10px !important;" >
                                            <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
-                                            <span >
-                                                <a style="font-family: Montserrat; overflow: hidden; text-overflow: ellipsis;font-style: normal;  letter-spacing: -1px; font-size: 18px;line-height: 22px; color: #335062;white-space: nowrap !important" href="{{ url('institution/'.$featured_hospital->slug) }}" class="hosp_title">&nbsp;{{ \Illuminate\Support\Str::limit($featured_hospital->name,23,'...') }}&nbsp;</a>
-
-                                            </span>
-                                          &nbsp;&nbsp; <span class="star pr-1" style=" color: #F07A3B !important;"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
+                                          <span style="clear:left; position: relative;">
+                                            <span class="float-right star" style=" color: #F07A3B !important; color: #335062;white-space: nowrap !important"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
+                                          </span>
                                        </div>
 
-                                       <h3 class="listing-content-head-title" >
-                                           <a style="font-weight: normal" href="{{ url('institution/'.$featured_hospital->slug) }}">{{ $featured_hospital->name}}</a>
+                                       <h3 class="listing-content-head-title" style="overflow: hidden !important;" >
+                                           <a class="hosp_title" href="{{ url('institution/'.$featured_hospital->slug) }}">{{ $featured_hospital->name}}</a>
                                        </h3>
 
                                        <span class="hp_service">
-                                           In Patient and Out Patient services
+                                           In Patient and Out Patient
                                        </span>
 
                                        <div class="listing-content-head-text py-0 h4" style="font-weight: bolder">{{ $featured_hospital->institutionLevel->name }} </div>

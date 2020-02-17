@@ -218,7 +218,7 @@
 {{--    <div class="footer-dark ">--}}
         <div class="container-fluid footer-dark" style="width: 100% !important;">
             <div class="row pt-3 " style="padding-left: 10% !important;">
-            <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-6  col-xs-5">
                 <!-- footer widget  -->
                 <div class="footer-widget" style="color: white">
                     <h3 class="footer-widget-title">Legal use</h3>
@@ -233,7 +233,7 @@
                 </div>
             </div>
                     {{--                <!-- footer widget  -->--}}
-            <div class="col-lg-4 col-md-4 col-sm-11 ">
+            <div class="col-lg-4 col-md-4 col-sm-6  col-xs-5">
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Legal use</h3>
                     <div class="footer-links">
@@ -247,7 +247,7 @@
                 </div>
             </div>
                     {{--                <!-- footer widget  -->--}}
-            <div class="col-lg-3 col-md-3 col-sm-11">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Company</h3>
                     <div class="footer-links">

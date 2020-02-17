@@ -273,7 +273,7 @@
                 <p class="tiny-footer-text">Copyright © {{ date('Y') }} Sahlhealth Inc. All rights reserved</p>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="tiny-footer-links float-left">
+                <div class="tiny-footer-links float-left text-white">
                     <p>Developed by <a href="https://www.thebhub.co.ke/">Teams@TheBhub</a> </p>
                 </div>
             </div>

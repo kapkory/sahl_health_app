@@ -12656,7 +12656,7 @@ a.text-dark:focus {
 
 .tiny-footer {
     border-radius: 0px 0px 10px 10px;
-    background-color: #1c1d25;
+    background-color: #496A7E;
     padding: 20px 0px;
     margin-top: 30px;
     line-height: 1;
@@ -12666,7 +12666,7 @@ a.text-dark:focus {
 .tiny-footer .tiny-footer-text {
     margin-bottom: 0px;
     line-height: 22px;
-    color: #717385;
+    color: white;
 }
 
 .tiny-footer .tiny-footer-links {

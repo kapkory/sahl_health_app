@@ -295,7 +295,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12">
                     <div class="text-center my-5 ">
-                        <h3 class="section-heading-title pt-4" style="color: #335062">
+                        <h3 class="section-heading-title py-4" style="color: #335062">
                             Save up to 10% on your ongoing journey to wellness. Our wellness mantra is: Prevent More, Save More.
                         </h3>
                     </div>

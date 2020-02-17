@@ -251,13 +251,12 @@
                     <div class="footer-links">
                         <ul class="list-unstyled" style="list-style-type: none !important;">
                             <li><a style="color: white" href="{{ url('partners') }}">Health Service Provider</a></li>
-                            <li><a style="color: white" href="{{ url('partners') }}">Health Product Provider</a></li>
-                            <li><a style="color: white" href="{{ url('partners') }}">Digital Health Information</a></li>
-                            <li><a style="color: white" href="{{ url('corporate-packages') }}">Corporate</a></li>
+                            <li><a style="color: white" href="{{ url('partners') }}">Health Product Vendors</a></li>
+                            <li><a style="color: white" href="{{ url('partners') }}">Digital Health Care Partner</a></li>
                         </ul>
                     </div>
 
-                    <div class="social-media">
+                    <div class="social-media pt-2">
                         <h5 class="text-white">Connect with us on Social Media:</h5>
 
                         <a href="https://www.facebook.com/sahlhealth/"><i class="fab fa-facebook-square fa-2x"></i></a>

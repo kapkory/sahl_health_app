@@ -416,7 +416,7 @@
                    @endforeach
 
                </div>
-                   <div class="container-fluid my-3">
+                   <div class="container-fluid mt-1 mb-2">
                        <div class="text-center">
                            <a href="{{ url('hospitals') }}" class="btn package_button" >View All</a>
                        </div>

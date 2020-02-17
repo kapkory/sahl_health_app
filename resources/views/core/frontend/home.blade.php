@@ -330,7 +330,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid my-3">
+            <div class="container-fluid mt-2 mb-3">
                 <div class="text-center">
                     <a href="{{ url('#') }}" class="btn package_button" >View All</a>
                 </div>

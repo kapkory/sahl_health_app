@@ -221,18 +221,6 @@
             <div class="col-lg-4 col-md-4 col-sm-6  col-xs-5">
                 <!-- footer widget  -->
                 <div class="footer-widget" style="color: white">
-                    <h3 class="footer-widget-title">SahlHealth </h3>
-                    <div class="footer-links">
-                        <ul class="list-unstyled" style="color: white; list-style-type: none !important;">
-                            <li><a href="{{ url('about') }}" style="color: white">About Us</a></li>
-                            <li><a href="{{ url('blog') }}" style="color: white">News</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-                    {{--                <!-- footer widget  -->--}}
-            <div class="col-lg-4 col-md-4 col-sm-6  col-xs-5">
-                <div class="footer-widget">
                     <h3 class="footer-widget-title">Legal use</h3>
                     <div class="footer-links">
                         <ul class="list-unstyled" style="color: white;list-style-type: none !important;">
@@ -245,20 +233,36 @@
                 </div>
             </div>
                     {{--                <!-- footer widget  -->--}}
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            <div class="col-lg-4 col-md-4 col-sm-6  col-xs-5">
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title">Company</h3>
+                    <h3 class="footer-widget-title">SahlHealth </h3>
                     <div class="footer-links">
-                        <ul class="list-unstyled" style="list-style-type: none !important;">
-                            <li><a style="color: white" href="{{ url('about') }}">About us</a></li>
-                            <li><a style="color: white" href="{{ url('blog') }}">Blogs</a></li>
-
+                        <ul class="list-unstyled" style="color: white; list-style-type: none !important;">
+                            <li><a href="{{ url('about') }}" style="color: white">About Us</a></li>
+                            <li><a href="{{ url('blog') }}" style="color: white">News</a></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+                    {{--                <!-- footer widget  -->--}}
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Our Partners</h3>
+                    <div class="footer-links">
+                        <ul class="list-unstyled" style="list-style-type: none !important;">
+                            <li><a style="color: white" href="{{ url('partners') }}">Health Service Provider</a></li>
+                            <li><a style="color: white" href="{{ url('partners') }}">Health Product Provider</a></li>
+                            <li><a style="color: white" href="{{ url('partners') }}">Digital Health Information</a></li>
+                            <li><a style="color: white" href="{{ url('corporate-packages') }}">Corporate</a></li>
+                        </ul>
+                    </div>
+
                     <div class="social-media">
-                        <a href="https://www.facebook.com/sahlhealth/"><i class="fab fa-facebook-square"></i></a>
-                        <a href="https://twitter.com/SahlHealth"><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com/sahlhealth/"><i class="fab fa-instagram"></i></a>
+                        <h5 class="text-white">Connect with us on Social Media:</h5>
+
+                        <a href="https://www.facebook.com/sahlhealth/"><i class="fab fa-facebook-square fa-2x"></i></a>
+                        <a href="https://twitter.com/SahlHealth" class="mx-2"><i class="fab fa-twitter-square fa-2x"></i></a>
+                        <a href="https://www.instagram.com/sahlhealth/"><i class="fab fa-instagram fa-2x"></i></a>
                     </div>
                 </div>
             </div>

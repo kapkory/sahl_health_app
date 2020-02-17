@@ -79,7 +79,7 @@
                                     <i class="fa fa-check-circle"></i> Your brand reputation improves
                                 </li>
                             </ul>
-                            <a href="#" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Start a Corporate Plan</a>
+                            <a href="#start_corporate_plan" class="btn" style="background: #F07A3B;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);border-radius: 8px; color: white">Start a Corporate Plan</a>
 
                         </div>
                     </div>
@@ -178,7 +178,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row"  id="start_corporate_plan">
         <div class="container-fluid">
             <div class="row" style="background: #F5F5F5;">
                 <div style="padding: 0px !important;" class="col-md-6">

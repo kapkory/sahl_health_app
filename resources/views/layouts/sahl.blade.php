@@ -148,7 +148,7 @@
                                             </a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('corporate-packages') }}">
+                                            <a class="dropdown-link" href="{{ url('corporate') }}">
                                              Companies
                                             </a>
                                         </li>

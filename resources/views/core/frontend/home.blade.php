@@ -252,9 +252,9 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-3 ">
                             <a href="{{ url('hospitals') }}">
-                                <div class="py-5">
+                                <div class="py-3">
                                     <div class="text-center">
-                                        <img class="lazy" src="{{ url('sahl/assets/image') }}/location.svg" alt="Find A Hospital Near You">
+                                        <img class="lazy" height="150" src="{{ url('sahl/assets/image') }}/location.svg" alt="Find A Hospital Near You">
                                         <h4>Find A Health Provider<br> Near You</h4>
                                     </div>
                                 </div>
@@ -263,22 +263,21 @@
                         </div>
 
                         <div class="col-sm-6 col-md-6 col-lg-3 ">
-                            <a href="{{ url('hospitals') }}">
-                                <div class="py-5">
+                            <a href="{{ url('hospitals/discounts') }}">
+                                <div class="py-3">
                                     <div class="text-center">
-                                        <img class="lazy" src="{{ url('sahl/assets/image') }}/compare.svg" alt="Find A Hospital Near You">
-                                        <h4>Compare<br> hospital charges</h4>
+                                        <img class="lazy" height="150" src="{{ url('sahl/assets/image') }}/compare.svg" alt="Find A Hospital Near You">
+                                        <h4>Compare<br> hospital Discounts</h4>
                                     </div>
                                 </div>
                             </a>
-
                         </div>
 
                         <div class="col-sm-6 col-md-6 col-lg-3 ">
                             <a href="{{ url('hospitals') }}">
-                                <div class="py-5">
+                                <div class="py-3">
                                     <div class="text-center">
-                                        <img class="lazy pt-5" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Find A Hospital Near You">
+                                        <img class="lazy pt-5" height="150" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Find A Hospital Near You">
                                         <h4>Talk to a Health and<br> wellness expert</h4>
                                     </div>
                                 </div>
@@ -296,7 +295,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-xs-12">
                     <div class="text-center my-5 ">
-                        <h3 class="section-heading-title " style="color: #335062">
+                        <h3 class="section-heading-title pt-4" style="color: #335062">
                             Save up to 10% on your ongoing journey to wellness. Our wellness mantra is: Prevent More, Save More.
                         </h3>
                     </div>

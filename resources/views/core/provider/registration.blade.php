@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <style>
+        .dt-login__bg-section::before,dt-login__bg-section{
+            background-color: #335062
+        }
+    </style>
     <!-- Login Container -->
     <div class="dt-login--container">
 
@@ -16,14 +20,14 @@
                     <h1 class="dt-login__title">Sign Up</h1>
                     <!-- /login title -->
 
-                    <p class="f-16">Register your Health Facility with Sahl Health.</p>
+                    <p class="f-16">Register as a Partner with Sahl Health.</p>
                 </div>
 
 
                 <!-- Brand logo -->
                 <div class="dt-login__logo">
                     <a class="dt-brand__logo-link" href="#">
-                        <img class="dt-brand__logo-img" src="{{ url('frontend/assets/sahl-logo.jpeg') }}" alt="Sahl Health">
+                        <img class="dt-brand__logo-img" src="{{ url('frontend/assets/sahl-logo.png') }}" alt="Sahl Health">
                     </a>
                 </div>
                 <!-- /brand logo -->
@@ -44,7 +48,7 @@
                     <span class="d-inline-block ml-5 m-3">Or connect with</span>
 
                     <button style="background: #FF5A5F; color: white" type="button" class="btn btn-lg btn-block" data-toggle="modal" data-target="#providerSignUpModal">
-                        <i class="icon icon-mail icon-xl"></i> &nbsp;Continue with Email
+                        <i class="icon icon-phone icon-xl"></i> &nbsp;Continue with Phone
                     </button>
 
                 </div>

@@ -156,36 +156,36 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="menu-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Our Partners
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="menu-4">
-                                        <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('partners') }}">
-                                                Health Care service provider
-                                            </a>
-                                        </li>
-
-                                        <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('partners') }}">
-                                                Insurance Companies
-                                            </a>
-                                        </li>
-
-                                        <li class="dropdown-item">
-                                            <a class="dropdown-link" href="{{ url('partners') }}">
-                                                Health Product Vendor
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link" href="{{ url('hospitals') }}">--}}
-{{--                                        Hospitals--}}
+{{--                                <li class="nav-item dropdown">--}}
+{{--                                    <a class="nav-link dropdown-toggle" href="#" id="menu-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                        Our Partners--}}
 {{--                                    </a>--}}
+{{--                                    <ul class="dropdown-menu" aria-labelledby="menu-4">--}}
+{{--                                        <li class="dropdown-item">--}}
+{{--                                            <a class="dropdown-link" href="{{ url('partners') }}">--}}
+{{--                                                Health Care service provider--}}
+{{--                                            </a>--}}
+{{--                                        </li>--}}
+
+{{--                                        <li class="dropdown-item">--}}
+{{--                                            <a class="dropdown-link" href="{{ url('partners') }}">--}}
+{{--                                                Insurance Companies--}}
+{{--                                            </a>--}}
+{{--                                        </li>--}}
+
+{{--                                        <li class="dropdown-item">--}}
+{{--                                            <a class="dropdown-link" href="{{ url('partners') }}">--}}
+{{--                                                Health Product Vendor--}}
+{{--                                            </a>--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
 {{--                                </li>--}}
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('provider-register') }}">
+                                        Partners
+                                    </a>
+                                </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('blog') }}">

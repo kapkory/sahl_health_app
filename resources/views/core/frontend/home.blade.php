@@ -362,7 +362,7 @@
 {{--                </div>--}}
 {{--            </div>--}}
                <div class="col-sm-12">
-                   <div class="row mobile1 py-3 px-5">
+                   <div class="row mobile1 pt-3 pb-0 px-5">
                    <?php
                      $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
                     ?>
@@ -416,7 +416,7 @@
                    @endforeach
 
                </div>
-                   <div class="container-fluid mt-1 mb-2">
+                   <div class="container-fluid  mb-2">
                        <div class="text-center">
                            <a href="{{ url('hospitals') }}" class="btn package_button" >View All</a>
                        </div>

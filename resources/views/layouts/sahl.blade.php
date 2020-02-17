@@ -144,12 +144,12 @@
                                     <ul class="dropdown-menu" aria-labelledby="menu-4">
                                         <li class="dropdown-item">
                                             <a class="dropdown-link" href="{{ url('packages') }}">
-                                                Individual Members
+                                                Individual
                                             </a>
                                         </li>
                                         <li class="dropdown-item">
                                             <a class="dropdown-link" href="{{ url('corporate-packages') }}">
-                                             Corporate Packages
+                                             Companies
                                             </a>
                                         </li>
 

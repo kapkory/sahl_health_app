@@ -226,7 +226,7 @@
                 <div class="col-12">
                     <img  src="{{ url('sahl/assets/image/people.jpg') }}" style="object-fit: cover;  width: 100%; height: 250px">
                     <div class="col-md-8 offset-md-2 col-sm-12 col-sx-12 hp_text">
-                        <h3 class="text-white">As the saying goes, healthy people make happy and productive employees. save up to 20% on healthcare and insurance costs.</h3>
+                        <h3 class="text-white pb-4">As the saying goes, healthy people make happy and productive employees. save up to 20% on healthcare and insurance costs.</h3>
                         <div class="text-center">
                             <a href="{{ url('corporate-packages') }}" class="btn package_button m-2 " style="color: white;">Sahl Corporate Packages</a>
                         </div>

@@ -254,7 +254,7 @@
                             <a href="{{ url('hospitals') }}">
                                 <div class="py-3">
                                     <div class="text-center">
-                                        <img class="lazy" height="150" src="{{ url('sahl/assets/image') }}/location.svg" alt="Find A Hospital Near You">
+                                        <img class="lazy" height="100" src="{{ url('sahl/assets/image') }}/location.svg" alt="Find A Hospital Near You">
                                         <h4>Find A Health Provider<br> Near You</h4>
                                     </div>
                                 </div>
@@ -266,7 +266,7 @@
                             <a href="{{ url('hospitals/discounts') }}">
                                 <div class="py-3">
                                     <div class="text-center">
-                                        <img class="lazy" height="150" src="{{ url('sahl/assets/image') }}/compare.svg" alt="Find A Hospital Near You">
+                                        <img class="lazy" height="100" src="{{ url('sahl/assets/image') }}/compare.svg" alt="Find A Hospital Near You">
                                         <h4>Compare<br> hospital Discounts</h4>
                                     </div>
                                 </div>
@@ -277,7 +277,7 @@
                             <a href="{{ url('hospitals') }}">
                                 <div class="py-3">
                                     <div class="text-center">
-                                        <img class="lazy pt-5" height="150" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Find A Hospital Near You">
+                                        <img class="lazy pt-5" height="100" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Find A Hospital Near You">
                                         <h4>Talk to a Health and<br> wellness expert</h4>
                                     </div>
                                 </div>

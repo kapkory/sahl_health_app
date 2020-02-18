@@ -55,8 +55,9 @@ class FormRepository
 
         $selects_val['role'] = [
             'admin'=>'admin',
-            'account'=>'accounts',
-            'sales'=>'sales'
+            'provider'=>'provider',
+            'agent'=>'agent',
+            'member'=>'member'
         ];
         $selects_val['taxable'] = [
             '0'=>'No',

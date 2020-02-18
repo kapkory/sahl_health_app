@@ -16,6 +16,9 @@
             .mobile_packages{
                 width: 100% !important;
             }
+            .corporate_section{
+                margin-bottom: 50px;
+            }
 
         }
 
@@ -92,6 +95,19 @@
             color: #335062;
             white-space: nowrap !important
         }
+
+
+        .owl-carousel .owl-stage {
+            display: flex;
+        }
+
+        .owl-carousel .item {
+            width: auto;
+            height: 100%;
+        }
+        .testimonial-content-text{
+            display: flex;
+        }
     </style>
 <div class="row">
     <div class="container-fluid mx-0 px-0" >
@@ -132,47 +148,13 @@
     </div>
 
 </div>
-<!-- header close -->
-{{--   <div class="row sahl_home" style="background: linear-gradient(89.85deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41);">--}}
-
-{{--       <img style="background: linear-gradient(89.85deg, rgba(15, 21, 26, 0.52) -2.71%, rgba(51, 80, 98, 0.15) 99.7%), rgba(240, 122, 59, 0.41); !important;width: 100% !important;max-height: 475px; object-fit: cover;" src="{{ url('sahl/assets/image/slider-1.svg') }}" alt="Sahl Health slider">--}}
-
-{{--             <!-- hero serach area start  -->--}}
-{{--             <div class="hero-search-area" >--}}
-
-{{--                 <div class="row">--}}
-{{--                     <div class="offset-xl-1 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">--}}
-{{--                         <div class="hero-search-area-caption">--}}
-{{--                             <h1 class="hero-search-area-caption-title" style="font-weight: 400">Now, Medical bills have no claim on your health and wellness.</h1>--}}
-{{--                             <p class="hero-search-area-caption-text">--}}
-{{--                                 Find the best hospitals and wellness clinics near you and save up to 20%--}}
-{{--                                 all year long with My Sahl Health Plan--}}
-{{--                             </p>--}}
-{{--                         </div>--}}
-{{--                         <div class="hero-search-area-form">--}}
-{{--                             <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;">Start My Sahl Health Plan</a>--}}
-{{--                         </div>--}}
-{{--                         <div class="row">--}}
-{{--                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">--}}
-{{--                                 <p class="hero-search-area-form-small-text pb-3">--}}
-{{--                                     <a style="text-decoration: underline" href="{{ url('hospitals') }}"> Find Discounts Nearby</a>--}}
-{{--                                 </p>--}}
-{{--                             </div>--}}
-{{--                         </div>--}}
-{{--                     </div>--}}
-{{----}}
-{{--                 </div>--}}
-{{--             </div>--}}
-{{--             <!-- hero serach area close  -->--}}
-{{--         </div>--}}
-
-{{--</div>--}}
 
     <div class="row clearfix" style="background-color:#335062;">
         <div class="col-md-10 col-sm-12 offset-md-1 mt-4">
             <p style="text-align: center;color:#FFFFFF; font-family: Montserrat;font-style: normal;font-weight: normal; font-size: 24px">
                 Knock up to 20% off your medical bills all year long <br>
-                with a Sahl Health Plan.            </p>
+                with a Sahl Health Plan.
+            </p>
         </div>
     </div>
     <div class="clearfix">
@@ -203,11 +185,12 @@
                                         <p>
                                             {!! $package->description !!}
                                         </p>
+                                        <br><br><br>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="text-center pb-3">
+                            <div class="text-center" style="margin-bottom: 10px !important;">
                                 <button onclick="setPackage({{ $package->id }})" class="btn package_button m-2 " style="color: white;">Start My Plan</button>
                             </div>
                             <!-- testimonial close  -->
@@ -228,7 +211,7 @@
                     <div class="col-md-8 offset-md-2 col-sm-12 col-sx-12 hp_text">
                         <h3 class="text-white pb-4">As the saying goes, healthy people make happy and productive employees. save up to 20% on healthcare and insurance costs.</h3>
                         <div class="text-center">
-                            <a href="{{ url('corporate') }}" class="btn package_button m-2 " style="color: white;">Sahl Corporate Packages</a>
+                            <a href="{{ url('corporate') }}" class="btn package_button m-2 my-xs-4" style="color: white;">Sahl Corporate Packages</a>
                         </div>
                     </div>
 
@@ -239,7 +222,7 @@
 
 
 
-    <div class="row" style="background-color: #F5F5F5">
+    <div class="row mt-xs-4" style="background-color: #F5F5F5">
         <div class="container-fluid">
             <div class="text-center my-5 ">
                 <h3 class="section-heading-title " style="color: #335062">

@@ -85,12 +85,8 @@ class UserController extends Controller
 
     public function storeUser(){
 
-        request()->validate($this->getValidationFields(['name','email']));
+        request()->validate($this->getValidationFields(['name','phone_number','role','email']));
         $data = \request()->all();
-        if(isset($data['user_id'])){
-            if(!$data['user_id'])
-                $data['user_id'] = request()->user()->id;
-        }
 
 //        $data['role'] = \request()->user_role;
 //        unset($data['user_role']);
@@ -99,14 +95,15 @@ class UserController extends Controller
         }
 
         if(!\request('id')){
-            $data['password'] = bcrypt($data['email']);
+            $data['password'] = bcrypt($data['password']);
         }
+
         $user = $this->autoSaveModel($data);
 //        $token = app('auth.password.broker')->createToken($user);
 //        $url = "password/reset/" . $token;
 //        $notification = new InitialAccount($token, $url, $user->name);
 //        $user->notify($notification);
-        return redirect()->back();
+        return redirect()->back()->with('notice',['type'=>'success','message'=>'User has been successfully created']);
     }
 
     public function updateUserPassword($id){

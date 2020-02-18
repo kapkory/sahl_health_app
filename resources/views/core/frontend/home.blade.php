@@ -17,7 +17,7 @@
                 width: 100% !important;
             }
             .corporate_section{
-                margin-bottom: 50px;
+                margin-bottom: 70px;
             }
 
         }
@@ -105,9 +105,7 @@
             width: auto;
             height: 100%;
         }
-        .testimonial-content-text{
-            display: flex;
-        }
+
     </style>
 <div class="row">
     <div class="container-fluid mx-0 px-0" >
@@ -185,7 +183,7 @@
                                         <p>
                                             {!! $package->description !!}
                                         </p>
-                                        <br><br><br>
+
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +205,7 @@
         <div class="container-fluid mx-0 px-0 corporate_section" >
             <div class="row">
                 <div class="col-12">
-                    <img  src="{{ url('sahl/assets/image/people.jpg') }}" style="object-fit: cover;  width: 100%; height: 250px">
+                    <img  src="{{ url('sahl/assets/image/people.jpg') }}" style="object-fit: cover;  width: 100%; height: 300px">
                     <div class="col-md-8 offset-md-2 col-sm-12 col-sx-12 hp_text">
                         <h3 class="text-white pb-4">As the saying goes, healthy people make happy and productive employees. save up to 20% on healthcare and insurance costs.</h3>
                         <div class="text-center">
@@ -364,11 +362,13 @@
                                <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
                                    <div class="listing-content-head">
 
-                                       <div class="review-content-rating  d-flex flex-row" style="right: 10px !important;" >
+                                       <div class="review-content-rating  d-flex flex-row" >
                                            <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
-                                          <span style="clear:left; position: relative;">
+                                           <div class="col-md-6 col-sm-1">
+
+                                           </div>
                                             <span class="float-right star" style=" color: #F07A3B !important; color: #335062;white-space: nowrap !important"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
-                                          </span>
+
                                        </div>
 
                                        <h3 class="listing-content-head-title" style="overflow: hidden !important;" >

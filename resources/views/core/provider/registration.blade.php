@@ -63,21 +63,26 @@
                                 </button>
                             </div>
                             <div class="modal-body">
+                                <h4 class="text-center text-info"> Institution Administrator Page</h4>
+                                <p class="text-info">
+                                    Kindly Fill with Hospital Email Address and Phone Number as it Will be publicly visible
+                                </p>
                                 <form class="ajax-post" id="providerRegistration" method="post" action="{{ url('provider-register') }}">
                                     <div class="form-group">
-                                        <label for="email_address">Email Address</label>
+                                        <label for="email_address">Institution Email Address</label>
                                         <input type="email" name="email" class="form-control" id="email_address" placeholder="Email Address">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="first_name">First Name</label>
-                                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+                                        <label for="full_name">Your Full Names</label>
+                                        <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Full Names">
                                     </div>
 
                                     @csrf
+
                                     <div class="form-group">
-                                        <label for="last_name">Last Name</label>
-                                        <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+                                        <label for="phone_number">Institution Phone Nunmber</label>
+                                        <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Phone Number">
                                     </div>
 
                                     <div class="form-group">
@@ -86,15 +91,10 @@
                                     </div>
                                     <input type="hidden" name="type" value="providers">
 
-                                    <div class="form-group">
-                                        <label>Birthday</label>
-                                        <input type="date" name="dob" class="form-control">
-                                        <small>To sign up, you need to be at least 18. Other people who use Sahl Health won’t see your birthday</small>
-                                    </div>
 
                                     <div class="form-group">
                                         <button  style="background: #FF5A5F; color: white" type="submit" class="btn btn-lg btn-block submit-btn">
-                                            &nbsp;Sign up
+                                            &nbsp;Continue to Institution
                                         </button>
                                     </div>
 

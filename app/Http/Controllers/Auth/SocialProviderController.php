@@ -50,6 +50,9 @@ class SocialProviderController extends Controller
         $user = new User;
         $user->name = $getInfo->name;
         $user->email = $getInfo->email;
+        if($role)
+            $user->role = $role;
+
         if ($provider == 'google')
             $user->google_id = $getInfo->id;
 

@@ -14,16 +14,17 @@ class ProviderRegisterController extends Controller
     public function registerProvider()
     {
         request()->validate([
-            'first_name'=>'required|string|max:255',
-            'last_name'=>'required|string|max:255',
+            'full_name'=>'required|string|max:255',
             'email'=>'required|string|email|max:255|unique:users',
+            'phone_number'=>'required|min:10',
             'password'=>'required|string|max:255',
 //            'dob'=>'required|before:18 years ago'
         ]);
 
         $data[] = \request()->all();
         $user = User::create([
-            'name' => \request('first_name').' '.\request('last_name'),
+            'name' => \request('full_name'),
+            'phone_number' => \request('phone_number'),
             'email' => \request('email'),
             'role' => 'provider',
             'password' => Hash::make(\request('password')),

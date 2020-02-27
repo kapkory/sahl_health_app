@@ -8,6 +8,7 @@ use App\Models\Core\Institution;
 use App\Models\Core\Visit;
 use App\Repositories\TechpitMessageRepository;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -18,21 +19,50 @@ class IndexController extends Controller
 
     public function searchMembers(){
         $search = \request('search');
-        $users = User::leftJoin('profiles','profiles.user_id','=','users.id')
+        $ids = [];
+        $results = User::join('dependants','users.id','=','dependants.user_id')
+            ->leftJoin('profiles','profiles.user_id','=','users.id')
+            ->where('role','!=','provider')
             ->where([
-                ['users.role','=','member'],
                 ['profiles.identification_number','=',$search],
             ])
-            ->select("users.*")->get();
-        if ($users->isEmpty())
-            $users = User::leftJoin('profiles','profiles.user_id','=','users.id')
-                ->where([
-                    ['users.role','=','member'],
-                    ['users.name','LIKE','%'.$search.'%'],
-                ])
-                ->select("users.*")->get();
+            ->orWhere([
+//                    ['users.member_package_id','!=',null],
+                ['users.phone_number','LIKE','%'.$search.'%'],
+            ])
+            ->orWhere([
+//                    ['users.member_package_id','!=',null],
+                ['users.name','LIKE',$search.'%'],
+            ])
+            ->select("users.*")
+            ->groupBy("users.id");
 
-        return $users;
+        $with_dependants = $results->get();
+        $ids = $results->pluck('id');
+
+
+//        doesntHave doesn't guarantee the results we need'
+        $without_dependants = User::doesntHave('dependants')
+            ->join('member_packages','member_packages.member_id','=','users.id')
+            ->leftJoin('profiles','profiles.user_id','=','users.id')
+            ->where('role','!=','provider')
+            ->where([
+                ['profiles.identification_number','=',$search],
+            ])
+            ->orWhere([
+//                    ['users.member_package_id','!=',null],
+                ['users.phone_number','LIKE','%'.$search.'%'],
+            ])
+            ->orWhere([
+//                    ['users.member_package_id','!=',null],
+                ['users.name','LIKE',$search.'%'],
+            ])
+            ->whereDate('member_packages.ends_at','>=',Carbon::now()->toDateString())
+            ->whereNotIn('users.id',$ids)
+            ->select("users.*")
+            ->get();
+
+        return ['with_dependants'=>$with_dependants,'without_dependants'=>$without_dependants];
     }
 
     public function confirmVisit(){

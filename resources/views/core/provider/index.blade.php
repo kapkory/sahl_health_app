@@ -92,10 +92,10 @@
                 </button>
             </form>
             <!-- /search box -->
-            <div v-if="results.length > 0">
+            <div v-if="with_dependants.length > 0">
 
 
-                <div v-for="result in results">
+                <div v-for="result in with_dependants">
                     <!-- Separator -->
                     <hr class="border-dashed my-6">
                     <!-- /separator -->
@@ -161,10 +161,37 @@
                     <hr class="border-dashed my-6">
                     <!-- /separator -->
                 </div>
+
+
+                <div v-for="result in without_dependants">
+                    <!-- Separator -->
+                    <hr class="border-dashed my-6">
+                    <!-- /separator -->
+
+                    <!-- Search Result-->
+                    <div class="search-result">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span class="dt-avatar bg-dark-blue text-white"> @{{ result.name.match(/\b\w/g).join('') }}</span>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h3 class="search-heading"><a href="javascript:void(0)">@{{ result.name }}</a>
+                                    &nbsp;&nbsp;&nbsp;
+                                </h3>
+
+                            </div>
+
+                            <div class="col-md-2">
+                                <button @click="confirmVisit(result.id,'mb',result.id)" type="button" name="btn" class="btn btn-outline-primary">Confirm Visit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div v-else>
-                <div class="alert alert-info" v-if="result_flag == 1">
-                    We Currently do not have that user in our database
+                <div class="alert alert-info mt-3" v-if="result_flag == 1">
+                    We can not find that user in our Plans, You can also Search by their Identification Number or Phone Number
                 </div>
             </div>
 
@@ -179,8 +206,8 @@
         var app = new Vue({
             el: '#search',
             data: {
-                message: 'Hello Vue!',
-                results:[],
+                with_dependants:[],
+                without_dependants:[],
                 result_flag:0,
                 dependants:[]
             },
@@ -202,7 +229,8 @@
                     $.post(url,{'search':search,'_token':token},function (response) {
                         // console.log(response);
                         self.result_flag = 1;
-                        self.results = response;
+                        self.with_dependants = response.with_dependants;
+                        self.without_dependants = response.without_dependants;
                     })
                 },
                 userDependants:function (user_id) {

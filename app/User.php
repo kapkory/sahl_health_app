@@ -68,6 +68,10 @@ class User extends Authenticatable
         return $this->hasMany(Institution::class);
     }
 
+    public function dependants(){
+        return $this->hasMany(Dependant::class,'user_id');
+    }
+
     public function visits(){
         return $this->hasMany(Visit::class);
     }

@@ -84,28 +84,35 @@
             /*width: 60%; !* Set the width of the positioned div *!*/
         }
 
-        .hosp_title{
-            font-family: Montserrat;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-style: normal;
-            letter-spacing: -1px;
-            font-size: 18px;
-            line-height: 22px;
-            color: #335062;
-            white-space: nowrap !important
+/*<<<<<<< HEAD*/
+/*        .hosp_title{*/
+/*            font-family: Montserrat;*/
+/*            overflow: hidden;*/
+/*            text-overflow: ellipsis;*/
+/*            font-style: normal;*/
+/*            letter-spacing: -1px;*/
+/*            font-size: 18px;*/
+/*            line-height: 22px;*/
+/*            color: #335062;*/
+/*            white-space: nowrap !important*/
+/*        }*/
+
+
+/*        .owl-carousel .owl-stage {*/
+/*            display: flex;*/
+/*        }*/
+
+/*        .owl-carousel .item {*/
+/*            width: auto;*/
+/*            height: 100%;*/
+/*        }*/
+
+/*=======*/
+        .item{
+            display: table-cell !important;
+            vertical-align: top !important;
         }
-
-
-        .owl-carousel .owl-stage {
-            display: flex;
-        }
-
-        .owl-carousel .item {
-            width: auto;
-            height: 100%;
-        }
-
+/*>>>>>>> payments*/
     </style>
 <div class="row">
     <div class="container-fluid mx-0 px-0" >

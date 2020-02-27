@@ -22,7 +22,7 @@ class VariablesController extends Controller
         $payment_id = \request('payment_id');
         $resp =  json_decode(file_get_contents('php://input'));
 
-      $dpPackage = DependantPayment::findOrFail($package_id);
+        $dpPackage = DependantPayment::findOrFail($package_id);
         if ($resp->Body->stkCallback->ResultCode == 0){
             $dpPackage->status = 2;
             $dpPackage->started_on = Carbon::now();

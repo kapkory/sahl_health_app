@@ -150,43 +150,6 @@
                         <li> Increased revenue growth</li>
                     </ul>
 
-                    <h4 class="p-2" style="text-transform: capitalize; color: #335062">
-                        Why Choose S-Connect
-                    </h4>
-                    <ul style="list-style-type: none">
-                        <li class="cp-list-item">
-                            <i class="fa fa-check-circle"></i>
-                            Orchestrate sms campaigns for your clients and other millions of users on the platform and multiple user segments in real-time and in a single workflow.
-                        </li>
-
-                        <li class="cp-list-item">
-                            <i class="fa fa-check-circle"></i>
-                            Automate onboarding of users, re-engage inactive customers, and win back users through built-in Clever campaigns and real-time insights.
-                        </li>
-
-                        <li class="cp-list-item">
-                            <i class="fa fa-check-circle"></i>
-                            Understand complex user interactions and enhance service uptake through personalized drip campaigns
-                        </li>
-
-                        <li class="cp-list-item">
-                            <i class="fa fa-check-circle"></i>
-                            Test your campaigns and continuously optimize for better conversions
-
-                        </li>
-
-
-                        <li class="cp-list-item">
-                            <i class="fa fa-check-circle"></i>
-                            Get access to billions of data points and take quick actions based on customer behavior
-                        </li>
-
-                        <li class="cp-list-item">
-                            <i class="fa fa-check-circle"></i>
-                            Grow client through constant customer engagement and feedback mechanism
-                        </li>
-                    </ul>
-
                     <h3 class="p-2" style="text-transform: capitalize; color: #335062">
                         2. OneApp Smart Queue Management System
                     </h3>

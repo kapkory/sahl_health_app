@@ -84,75 +84,68 @@
             /*width: 60%; !* Set the width of the positioned div *!*/
         }
 
-/*<<<<<<< HEAD*/
-/*        .hosp_title{*/
-/*            font-family: Montserrat;*/
-/*            overflow: hidden;*/
-/*            text-overflow: ellipsis;*/
-/*            font-style: normal;*/
-/*            letter-spacing: -1px;*/
-/*            font-size: 18px;*/
-/*            line-height: 22px;*/
-/*            color: #335062;*/
-/*            white-space: nowrap !important*/
-/*        }*/
-
-
-/*        .owl-carousel .owl-stage {*/
-/*            display: flex;*/
-/*        }*/
-
-/*        .owl-carousel .item {*/
-/*            width: auto;*/
-/*            height: 100%;*/
-/*        }*/
-
-/*=======*/
-        .item{
-            display: table-cell !important;
-            vertical-align: top !important;
+        .hosp_title{
+            font-family: Montserrat;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-style: normal;
+            letter-spacing: -1px;
+            font-size: 18px;
+            line-height: 22px;
+            color: #335062;
+            white-space: nowrap !important
         }
-/*>>>>>>> payments*/
+
+
+        .owl-carousel .owl-stage {
+            display: flex;
+        }
+
+        .owl-carousel .item {
+            width: auto;
+            height: 100%;
+        }
+
     </style>
-<div class="row">
-    <div class="container-fluid mx-0 px-0" >
-        <!-- hero section start  -->
-        <div class="hero-slider-section">
-            <div class="row">
-                <div class="col-xl-12">
-
-                    <div class="hero-slider">
-                        <!-- hero slider item start  -->
-                        <div class="hero-slider-item">
-                            <img src="{{ url('sahl/assets/image/slider-1.svg') }}" alt="Sahl Healthcare" class="img-fluid">
-                        </div>
-                        <!-- hero slider item close  -->
-                    </div>
-                </div>
-            </div>
-            <!-- hero serach area start  -->
-            <div class="hero-search-area">
+    <div class="row">
+        <div class="container-fluid mx-0 px-0" >
+            <!-- hero section start  -->
+            <div class="hero-slider-section">
                 <div class="row">
-                    <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="hero-search-area-caption">
-                            <h3 class="hero-search-area-caption-title text-center" style="font-weight: normal">Now with a Sahl Health Plan, medical bills have no claim on your health and wellness.</h3>
-                            <div class="hero-search-area-form text-center">
-                                <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;"><b style="font-weight: bolder">START</b> My Sahl Health Plan</a>
+                    <div class="col-xl-12">
+
+                        <div class="hero-slider">
+                            <!-- hero slider item start  -->
+                            <div class="hero-slider-item">
+                                <img src="{{ url('sahl/assets/image/slider-1.svg') }}" alt="Sahl Healthcare" class="img-fluid">
                             </div>
-                              <br>
-                            <div class="text-center ">
-                                <a style="text-decoration: underline; color: white"  href="{{ url('hospitals') }}"> Find Discounts Nearby</a>
-                            </div>
+                            <!-- hero slider item close  -->
                         </div>
                     </div>
-
                 </div>
-            </div>
-            <!-- hero serach area close  -->
-        </div>
-    </div>
+                <!-- hero serach area start  -->
+                <div class="hero-search-area">
+                    <div class="row">
+                        <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="hero-search-area-caption">
+                                <h3 class="hero-search-area-caption-title text-center" style="font-weight: normal">Now with a Sahl Health Plan, medical bills have no claim on your health and wellness.</h3>
+                                <div class="hero-search-area-form text-center">
+                                    <a href="#packages_page"  class="btn btn-primary " style="background-color: #F07A3B; border-color:#F07A3B;border-radius: 10px;"><b style="font-weight: bolder">START</b> My Sahl Health Plan</a>
+                                </div>
+                                <br>
+                                <div class="text-center ">
+                                    <a style="text-decoration: underline; color: white"  href="{{ url('hospitals') }}"> Find Discounts Nearby</a>
+                                </div>
+                            </div>
+                        </div>
 
-</div>
+                    </div>
+                </div>
+                <!-- hero serach area close  -->
+            </div>
+        </div>
+
+    </div>
 
     <div class="row clearfix" style="background-color:#335062;">
         <div class="col-md-10 col-sm-12 offset-md-1 mt-4">
@@ -171,35 +164,35 @@
                 <div class="testimonial-carousel">
                     <div class="owl-carousel owl-theme owl-testimonial">
                         @foreach($packages as $package)
-                        <div class="item ">
-                            <!-- testimonial start  -->
-                            <div class="testimonial-block">
-                                <div class="testimonial-content pt-3">
-                                    <h5>{{ $package->name }}</h5>
+                            <div class="item ">
+                                <!-- testimonial start  -->
+                                <div class="testimonial-block">
+                                    <div class="testimonial-content pt-3">
+                                        <h5>{{ $package->name }}</h5>
 
-                                    <img height="90" style="text-align: center !important; display: inline-flex; max-width: 90px" class="lazy" src="{{ ($package->icon) ? url($package->icon) :url('sahl/assets/image/individual.svg') }}" alt="3 Members Plan">
+                                        <img height="90" style="text-align: center !important; display: inline-flex; max-width: 90px" class="lazy" src="{{ ($package->icon) ? url($package->icon) :url('sahl/assets/image/individual.svg') }}" alt="3 Members Plan">
 
-                                    <div>
-                                        <h4>
-                                            Kshs. {{ $package->cost }}
-                                            <small>Per Year</small>
-                                        </h4>
+                                        <div>
+                                            <h4>
+                                                Kshs. {{ $package->cost }}
+                                                <small>Per Year</small>
+                                            </h4>
 
-                                    </div>
-                                    <div class="testimonial-content-text">
-                                        <p>
-                                            {!! $package->description !!}
-                                        </p>
+                                        </div>
+                                        <div class="testimonial-content-text">
+                                            <p>
+                                                {!! $package->description !!}
+                                            </p>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="text-center" style="margin-bottom: 10px !important;">
-                                <button onclick="setPackage({{ $package->id }})" class="btn package_button m-2 " style="color: white;">Start My Plan</button>
+                                <div class="text-center" style="margin-bottom: 10px !important;">
+                                    <button onclick="setPackage({{ $package->id }})" class="btn package_button m-2 " style="color: white;">Start My Plan</button>
+                                </div>
+                                <!-- testimonial close  -->
                             </div>
-                            <!-- testimonial close  -->
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -342,76 +335,76 @@
 
     <div class="row">
         <div class="container-fluid">
-{{--            <div class="row">--}}
-{{--                <div class=" col-12 pt-4">--}}
-{{--                    <h3 class="section-heading-title text-center">--}}
-{{--                       Popular Service Providers--}}
-{{--                    </h3>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-               <div class="col-sm-12">
-                   <div class="row mobile1 pt-3 pb-0 px-5">
-                   <?php
-                     $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
+            {{--            <div class="row">--}}
+            {{--                <div class=" col-12 pt-4">--}}
+            {{--                    <h3 class="section-heading-title text-center">--}}
+            {{--                       Popular Service Providers--}}
+            {{--                    </h3>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            <div class="col-sm-12">
+                <div class="row mobile1 pt-3 pb-0 px-5">
+                    <?php
+                    $colors = ['#7BB37D','#F07A3B','#335062','#335062','#7BB37D','#F07A3B'];
                     ?>
-                   @foreach($featured_hospitals as $featured_hospital)
-                       <div class="mobile_disp col-lg-3 col-md-3 col-sm-6 col-xs-6">
-                           <!-- listing block start  -->
-                           <div class="listing-block p-1">
-                               <div class="listing-img">
-                                   <a href="{{ url('institution/'.$featured_hospital->slug) }}">
-                                       <img style="object-fit: cover;height: 168px" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid  lazy">
-                                   </a>
-                                   <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
+                    @foreach($featured_hospitals as $featured_hospital)
+                        <div class="mobile_disp col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <!-- listing block start  -->
+                            <div class="listing-block p-1">
+                                <div class="listing-img">
+                                    <a href="{{ url('institution/'.$featured_hospital->slug) }}">
+                                        <img style="object-fit: cover;height: 168px" src="{{ url($featured_hospital->featured_image) }}" alt="{{ $featured_hospital->name }}" class="img-fluid  lazy">
+                                    </a>
+                                    <div class="listing-badge"> {{ $featured_hospital->discount }}%</div>
 
-                               </div>
+                                </div>
 
-                               <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
-                                   <div class="listing-content-head">
+                                <div class="listing-content" style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px">
+                                    <div class="listing-content-head">
 
-                                       <div class="review-content-rating  d-flex flex-row" >
-                                           <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
-                                           <div class="col-md-6 col-sm-1">
+                                        <div class="review-content-rating  d-flex flex-row" >
+                                            <button class="btn badge mobile_padding btn-outline-dark" >{{ ($featured_hospital->country) ? $featured_hospital->country->name: 'Nairobi' }}</button>
+                                            <div class="col-md-6 col-sm-1">
 
-                                           </div>
+                                            </div>
                                             <span class="float-right star" style=" color: #F07A3B !important; color: #335062;white-space: nowrap !important"></span> <span style="color:  rgba(13, 39, 55, 0.97)">{{ $featured_hospital->getRatingCount() }}</span>
 
-                                       </div>
+                                        </div>
 
-                                       <h3 class="listing-content-head-title" style="overflow: hidden !important;" >
-                                           <a class="hosp_title" href="{{ url('institution/'.$featured_hospital->slug) }}">{{ $featured_hospital->name}}</a>
-                                       </h3>
+                                        <h3 class="listing-content-head-title" style="overflow: hidden !important;" >
+                                            <a class="hosp_title" href="{{ url('institution/'.$featured_hospital->slug) }}">{{ $featured_hospital->name}}</a>
+                                        </h3>
 
-                                       <span class="hp_service">
+                                        <span class="hp_service">
                                            In Patient and Out Patient
                                        </span>
 
-                                       <div class="listing-content-head-text py-0 h4" style="font-weight: bolder">{{ $featured_hospital->institutionLevel->name }} </div>
-{{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
-{{--                                       <div class="py-0 review-content-rating  " >--}}
-{{--                                           @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)--}}
-{{--                                               <span class="star" style="float: right; color: #7BB37D !important;"></span>--}}
-{{--                                           @endfor--}}
-{{--                                       </div>--}}
-                                   </div>
+                                        <div class="listing-content-head-text py-0 h4" style="font-weight: bolder">{{ $featured_hospital->institutionLevel->name }} </div>
+                                        {{--                                               <small class="lable text-muted" style="padding-left: 10px;"></small>--}}
+                                        {{--                                       <div class="py-0 review-content-rating  " >--}}
+                                        {{--                                           @for($i=0; $i<@$featured_hospital->getRatingCount(); $i++)--}}
+                                        {{--                                               <span class="star" style="float: right; color: #7BB37D !important;"></span>--}}
+                                        {{--                                           @endfor--}}
+                                        {{--                                       </div>--}}
+                                    </div>
 
 
-                               </div>
+                                </div>
 
-                           </div>
+                            </div>
 
-                           <!-- listing block close  -->
-                       </div>
+                            <!-- listing block close  -->
+                        </div>
 
-                   @endforeach
+                    @endforeach
 
-               </div>
-                   <div class="container-fluid  mb-2">
-                       <div class="text-center">
-                           <a href="{{ url('hospitals') }}" class="btn package_button" >View All</a>
-                       </div>
-                   </div>
-           </div>
+                </div>
+                <div class="container-fluid  mb-2">
+                    <div class="text-center">
+                        <a href="{{ url('hospitals') }}" class="btn package_button" >View All</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -484,11 +477,11 @@
         </div>
     </div>
 
-<script type="text/javascript">
-    function setPackage(package_id) {
-      localStorage.setItem('package_id',package_id);
-      window.location.href = "{{ url('register') }}";
-    }
-</script>
+    <script type="text/javascript">
+        function setPackage(package_id) {
+            localStorage.setItem('package_id',package_id);
+            window.location.href = "{{ url('register') }}";
+        }
+    </script>
 
-    @endsection
+@endsection

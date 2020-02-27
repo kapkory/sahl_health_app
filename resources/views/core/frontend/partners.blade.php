@@ -16,209 +16,234 @@
                 margin-top: -110px !important;
             }
         }
-        #package_description{
-            text-transform: capitalize;
-        }
     </style>
 
 @endsection
 @section('content')
-    <div class="row">
-        <div class="container-fluid bg-dark-myimg pb-md-5 mb-md-5 px-0 mx-0" style="background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #F5F5F5, #F5F5F5), #FFFFFF;">
-            <div class="col-md-10 mx-auto">
-                <div class="container py-md-5">
-                    <div class="rounded">
-                        <div class="row py-4">
-                            <div class="col-md-8 pt-md-3 mt-md-3">
-                                <h3 style="font-weight: 600; color: white"; id="package_description">Your health and wellness comes first.</h3>
-                            </div>
+    <div class="container-fluid bg-dark-myimg pb-md-5 mb-md-5 ">
+        <div class="col-md-10 mx-auto">
+            <div class="container py-md-5">
+                <div class="rounded">
+                    <div class="row py-4">
+                        <div class="col-md-8 pt-md-3 mt-md-3">
 
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-md-10 mx-auto">
-        <div class="container mb-0">
+    <div class="row" style="background-color: white">
+        <div class="container-fluid">
+            <div class="col-10 offset-1">
+                <div class="pd-content">
+                    <h2 class="p-2" style="text-transform: capitalize; color: #335062">
+                        S-Connect Partner Network
+                    </h2>
+                    <div>
+                        <p>Thrive in Africa, thrive with S-Connect</p>
+                        <p>
+                            Partner with S-Connect today to grow your customer base, accelerate your profits and create demand for your brand at local, regional and beyond Africa. Get involved through Health Partner Network and the Digital health Smart Practice These include referrals with residual agent commissions and partnerships that enable you to benefit from enhanced operational capabilities.
+                        </p>
+                    </div>
 
-            <div class="mb_about container py-md-3 bg-light shadow-lg">
-                <div class="col-12 mx-auto">
-                    <ul class="nav nav-tabs row">
-                        <li class="nav-item col-md-3 col-sm-12">
-                            <a class="nav-link active" data-toggle="pill" href="#individual_plan">Our Story</a>
-                        </li>
-                        <li class="nav-item col-md-3 col-sm-12">
-                            <a class="nav-link" data-toggle="pill" href="#group_3">Vision, Mission & Values</a>
-                        </li>
-                        <li class="nav-item col-md-3 col-sm-12">
-                            <a class="nav-link" data-toggle="pill" href="#group_4">Working Hours</a>
+                    <h3 style="color: #335062">S-Connect-An African Health Hub</h3>
+                    <div>
+                        <p>
+                            Transforming health everyday everywhere through innovation, information and partnership solutions connecting health consumers and health providers to deliver meaningful customer satisfaction and experience
+                        </p>
+
+                        <ul style="list-style-type: none">
+                            <li> Hospital</li>
+                            <li> Diagnostic and Laboratory</li>
+                            <li> Pharmacy</li>
+                            <li> Insurance</li>
+                            <li> Wellness & Fitness</li>
+                        </ul>
+                    </div>
+                    <h4 style="color: #335062">What we offer</h4>
+                      <div>
+                          There are two ways to get involved with S-Connect -<br>
+                          <ul style="list-style-type: disc">
+                              <li> Health Partner Network</li>
+                              <li>  Digital Smart Practice</li>
+                          </ul>
+                      </div>
+
+                    <h2 class="p-2" style="text-transform: capitalize; color: #335062">
+                        Health Partner Network
+                    </h2>
+                    <div>
+                        <p>
+                            Join the more than 1000 health providers across Africa who delight in helping thousands of people seeking affordable, convenient and quality healthcare towards healthier life through discounted  and smart health offers through tour online health platform
+                        </p>
+                        <h4 style="color: #335062">
+                            As a health partner in our Network, you will:
+                        </h4>
+                        <ul style="list-style-type: none">
+                            <li class="cp-list-item">
+                                <i class="fa fa-check-circle"></i>
+                                Enhance your online presence and gain recognition for your expertise through  client engagement to improve your competitive advantage
+                            </li>
+
+                            <li class="cp-list-item">
+                                <i class="fa fa-check-circle"></i>
+                                Enjoy higher revenue; Improve your bottom line through promoting your services to our growing list of corporate and individual members
+                            </li>
+
+                            <li class="cp-list-item">
+                                <i class="fa fa-check-circle"></i>
+                                Easily access feedback from your clients through our online ratings to help you improve service delivery, receive instant feedback
+                            </li>
+
+                            <li class="cp-list-item">
+                                <i class="fa fa-check-circle"></i>
+                                Expand your client base through attracting customer loyalty and retention improving your bottom line for sustainable growth
+                            </li>
+
+                            <li class="cp-list-item">
+                                <i class="fa fa-check-circle"></i>
+                                Enjoy two slots of health article writing published on the health blog to improve access health information.
+                            </li>
+
+
+                            <li class="cp-list-item">
+                                <i class="fa fa-check-circle"></i>
+                                Exploit our smart health provider tools that improve customer relationship, experience and engagement.
+                            </li>
+
+                            <li class="cp-list-item">
+                                <i class="fa fa-check-circle"></i>
+                                Be automatic S-Connect agents with our robust partner profile and earn through selling Sahl Health membership and get rewarded to accelerate profits.
+                            </li>
+
+                        </ul>
+                        <p>
+                            Health providers on S-Connect must have an unrestricted, active medical business or Individual license in good standing with relevant authorities.<br>
+                            <a href="{{ url('provider-register') }}">Join the Health Partner Network</a>
+
+                        </p>
+
+                    </div>
+                    <h2 class="p-2" style="text-transform: capitalize; color: #335062">
+                        Digital Smart Practice
+                    </h2>
+
+                    <h3 class="p-2" style="text-transform: capitalize; color: #335062">
+                        1. Mobile Marketing System
+
+                    </h3>
+                    <h3>
+                        Mobile Marketing Automation at Scale
+                    </h3>
+                    <p>
+                        With S-Connect hundreds of health provider brands engage users across various touch points and lifecycle stages with our automated inbuilt  partner profile campaigns to boost user retention and long-term growth.
+                    </p>
+                    <h4 class="p-2" style="text-transform: capitalize; color: #335062">
+                        See Improved Metrics with S-Connect
+                    </h4>
+                    <ul style="list-style-type: disc">
+                        <li> Increase in marketing conversions</li>
+                        <li> Increase retention through engagement</li>
+                        <li> Increased revenue growth</li>
+                    </ul>
+
+                    <h4 class="p-2" style="text-transform: capitalize; color: #335062">
+                        Why Choose S-Connect
+                    </h4>
+                    <ul style="list-style-type: none">
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Orchestrate sms campaigns for your clients and other millions of users on the platform and multiple user segments in real-time and in a single workflow.
                         </li>
 
-                        <li class="nav-item col-md-3 col-sm-12">
-                            <a class="nav-link" data-toggle="pill" href="#group_4">Contacts</a>
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Automate onboarding of users, re-engage inactive customers, and win back users through built-in Clever campaigns and real-time insights.
+                        </li>
+
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Understand complex user interactions and enhance service uptake through personalized drip campaigns
+                        </li>
+
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Test your campaigns and continuously optimize for better conversions
+
+                        </li>
+
+
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Get access to billions of data points and take quick actions based on customer behavior
+                        </li>
+
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Grow client through constant customer engagement and feedback mechanism
                         </li>
                     </ul>
-                </div>
-                <div class="col-12 mt-3 mx-auto pb-5" style="background: #FFFFFF">
-                    <div class="tab-content">
-                        <div id="individual_plan" class="tab-pane fade show active">
-                            <div class="col-12 ">
-                                <div class="row" style="background-color: white">
-                                    <div class="container-fluid">
-                                        <div class="col-md-10 offset-md-1 col-sm-12">
-                                            <div class="row">
-                                                <h2 class="p-2" style="text-transform: capitalize">Welcome to the Sahl Individual<br> Health Plan</h2>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida convallis erat quis sagittis. In placerat fringilla leo, vel varius mauris tempus vel. Morbi vel ligula egestas, pellentesque mi vel, lobortis velit. Etiam ut turpis sapien. Mauris ornare nisl ac nisi cursus, et ornare mauris viverra. Aenean pretium, lectus sit amet pellentesque convallis, sapien sapien efficitur mi, ultricies ultricies massa nunc nec felis. Mauris malesuada ultricies ultricies. Nunc ornare justo non hendrerit tristique. Praesent turpis ex, tincidunt in gravida in,<br> <br>
-                                                </p>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/1.svg') }}">
-                                                        <h4 class="text-center  pt-2" style="height: 60px">Preventive Care</h4>
-                                                    </div>
-                                                </div>
 
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/2.svg') }}">
-                                                        <h4 class="text-center  pt-2"style="height: 60px">Basic Pre-employment Checks</h4>
-                                                    </div>
-                                                </div>
+                    <h3 class="p-2" style="text-transform: capitalize; color: #335062">
+                        2. OneApp Smart Queue Management System
+                    </h3>
+                    <h5>
+                        A Smart Management System To ;Save Your Queue Time
 
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/3.svg') }}">
-                                                        <h4 class="text-center pt-2" style="height: 60px"> Comprehensive Pre-employment Checks</h4>
-                                                    </div>
-                                                </div>
+                    </h5>
+                    <p>
+                        OneApp Smart Appointment System offers an effective, convenient queue management solution to schedule appointments and manage lines for superior customer experience, lower costs, reduced walk-away and access to key data
+                    </p>
+                    <p>
+                        A health service center or office is attractive when it is less crowded and with more space. A spacious office always invites a new customer and hence improves the productivity
+                    </p>
+                    <h4>
+                        MAIN SYSTEM FEATURES
+                    </h4>
+                    <ul style="list-style-type: none">
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Eliminate Long Lines & Reduce Walkaways
+                        </li>
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Reduce Customer Complaints
+                        </li>
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Boost Staff Productivity & Operational Efficiencies
+                        </li>
 
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/4.svg') }}">
-                                                        <h4 class="text-center  pt-2" style="height: 60px">Annual Basic Screening</h4>
-                                                    </div>
-                                                </div>
+                        <li class="cp-list-item">
+                            <i class="fa fa-check-circle"></i>
+                            Gain Valuable Insights with Tracking & Reporting
 
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/5.svg') }}">
-                                                        <h4 class="text-center  pt-2"style="height: 60px">Annual Comprehensive Screening</h4>
-                                                    </div>
-                                                </div>
+                        </li>
 
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/6.svg') }}">
-                                                        <h4 class="text-center pt-2" style="height: 60px"> Maternal care</h4>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/4.svg') }}">
-                                                        <h4 class="text-center  pt-2" style="height: 60px">Gym Membership</h4>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/5.svg') }}">
-                                                        <h4 class="text-center  pt-2"style="height: 60px">Nutrition Support</h4>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 col-sm-6 col-xs-6 my-2" >
-                                                    <div class="card" style="background:#F5F5F5;border-radius: 8%">
-                                                        <img style="object-fit: cover; height: 240px" src="{{ url('sahl/assets/image/corporate/6.svg') }}">
-                                                        <h4 class="text-center pt-2" style="height: 60px"> Health Awareness Workshops </h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div id="group_3" class="tab-pane">
-                            <div class="col-10 offset-1">
-                                <div class="pd-content">
-                                    <h2 class="p-2" style="text-transform: capitalize; color: #335062">Welcome to the Sahl Individual<br> Health Plan</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida convallis erat quis sagittis. In placerat fringilla leo, vel varius mauris tempus vel. Morbi vel ligula egestas, pellentesque mi vel, lobortis velit. Etiam ut turpis sapien. Mauris ornare nisl ac nisi cursus, et ornare mauris viverra. Aenean pretium, lectus sit amet pellentesque convallis, sapien sapien efficitur mi, ultricies ultricies massa nunc nec felis. Mauris malesuada ultricies ultricies. Nunc ornare justo non hendrerit tristique. Praesent turpis ex, tincidunt in gravida in,<br> <br>
-                                        venenatis ut neque. Vivamus ultrices, metus feugiat efficitur tempor, arcu ex iaculis augue, vitae malesuada lorem tortor in massa. Donec gue diam. Vestibulum bibendum, nulla vel semper rutrum, libero lacus tristique lectus, in placerat libero orci at magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida convallis erat quis sagittis. In placerat
-                                    </p>
-
-                                    <h3 style="color: #335062">Features</h3>
-                                    <p>
-                                        fringilla leo, vel varius mauris tempus vel. Morbi vel ligula egestas, pellentesque mi vel, lobortis velit. Etiam ut turpis sapien. Mauris ornare nisl ac nisi cursus, et ornare mauris viverra. Aenean pretium, lectus sit am
-                                    </p>
-
-                                    <ul style="list-style-type: decimal">
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="group_4" class="tab-pane">
-                            <div class="col-10 offset-1">
-                                <div class="pd-content">
-                                    <h2 class="p-2" style="text-transform: capitalize; color: #335062">Welcome to the Sahl Individual<br> Health Plan</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida convallis erat quis sagittis. In placerat fringilla leo, vel varius mauris tempus vel. Morbi vel ligula egestas, pellentesque mi vel, lobortis velit. Etiam ut turpis sapien. Mauris ornare nisl ac nisi cursus, et ornare mauris viverra. Aenean pretium, lectus sit amet pellentesque convallis, sapien sapien efficitur mi, ultricies ultricies massa nunc nec felis. Mauris malesuada ultricies ultricies. Nunc ornare justo non hendrerit tristique. Praesent turpis ex, tincidunt in gravida in,<br> <br>
-                                        venenatis ut neque. Vivamus ultrices, metus feugiat efficitur tempor, arcu ex iaculis augue, vitae malesuada lorem tortor in massa. Donec gue diam. Vestibulum bibendum, nulla vel semper rutrum, libero lacus tristique lectus, in placerat libero orci at magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida convallis erat quis sagittis. In placerat
-                                    </p>
-
-                                    <h3 style="color: #335062">Features</h3>
-                                    <p>
-                                        fringilla leo, vel varius mauris tempus vel. Morbi vel ligula egestas, pellentesque mi vel, lobortis velit. Etiam ut turpis sapien. Mauris ornare nisl ac nisi cursus, et ornare mauris viverra. Aenean pretium, lectus sit am
-                                    </p>
-
-                                    <ul style="list-style-type: decimal">
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                        <li> Lorem ipsum dolor sit amet</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    </ul>
+                    <h5>Other Features</h5>
+                    <ul style="list-style-type: circle">
+                        <li>On premises Token Generation</li>
+                        <li>Online Token Generation</li>
+                        <li>Online Token Calling Feature</li>
+                        <li>Call Station Configuration management</li>
+                        <li>Location Management</li>
+                        <li>Section Configuration Management</li>
+                        <li>Department Association Management</li>
+                        <li>Multi-location association Feature</li>
+                        <li>Services Configuration and Management</li>
+                        <li>User Roles and rights Management</li>
+                        <li>Token should get generated for online user after registration.</li>
+                        <li>Provision to display tokens on single/multi-screen at a time.</li>
+                    </ul>
 
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
 
 

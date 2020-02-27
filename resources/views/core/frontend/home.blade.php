@@ -258,7 +258,7 @@
                             <a href="{{ url('hospitals') }}">
                                 <div class="py-3">
                                     <div class="text-center">
-                                        <img class="lazy pt-5" height="100" src="{{ url('sahl/assets/image') }}/wellness.png" alt="Find A Hospital Near You">
+                                        <img class="lazy " height="100" src="{{ url('sahl/assets/image') }}/packages.svg" alt="Find A Hospital Near You">
                                         <h4>Purchase Health <br>Checkup Packages</h4>
                                     </div>
                                 </div>

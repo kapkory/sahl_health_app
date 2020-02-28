@@ -24,7 +24,7 @@ class ProviderController extends Controller
        $message = 'Test Message by Me';
 //        $message = 'Phone Number was sent at '.$user->getFormattedPhone();
         $techpitch = new TechpitMessageRepository();
-        $address = ['254712137367'];
+        $address = ['254712137367','0712137367','+254712137367'];
         $response = $techpitch->execute($message,$address);
         return ['status'=>true];
     }

@@ -35,10 +35,10 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="phone">{{ __('Phone Number/ Email Address') }}</label>
+                            <label for="phone">{{ __('Email Address') }}</label>
 
 
-                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('phone')
                             <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                         <div class="form-group row mb-0">
 
                             <button type="submit" class="btn btn-primary">
-                                {{ __('Send Password Reset Link') }}
+                                {{ __('Send Password Reset Link To Email') }}
                             </button>
 
                         </div>

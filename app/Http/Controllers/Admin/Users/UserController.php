@@ -90,7 +90,7 @@ class UserController extends Controller
 
 //        $data['role'] = \request()->user_role;
 //        unset($data['user_role']);
-        if(\request('password')){
+        if(\request('password') != ''){
             $data['password'] = \request()->password;
         }
 //            dd($data,\request()->password);

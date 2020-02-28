@@ -91,9 +91,9 @@ class UserController extends Controller
 //        $data['role'] = \request()->user_role;
 //        unset($data['user_role']);
         if(\request('password')){
-            $data['password'] = bcrypt(\request()->password);
+            $data['password'] = \request()->password;
         }
-
+//            dd($data,\request()->password);
 //        if(!\request('id')){
 //            $data['password'] = bcrypt($data['password']);
 //        }

@@ -94,9 +94,9 @@ class UserController extends Controller
             $data['password'] = bcrypt(\request()->password);
         }
 
-        if(!\request('id')){
-            $data['password'] = bcrypt($data['password']);
-        }
+//        if(!\request('id')){
+//            $data['password'] = bcrypt($data['password']);
+//        }
 
         $user = $this->autoSaveModel($data);
 //        $token = app('auth.password.broker')->createToken($user);

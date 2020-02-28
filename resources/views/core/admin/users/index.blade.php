@@ -10,7 +10,7 @@
 
     @include('common.auto_tabs',[
      'tabs_folder'=>'core.admin.users.tabs',
-     'tabs'=> ['admins','members',"providers"],
+     'tabs'=> ['admins','members',"providers","agents"],
      'base_url'=>'admin/users'
     ])
 

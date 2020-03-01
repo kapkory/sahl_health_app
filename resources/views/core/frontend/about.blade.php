@@ -74,7 +74,7 @@
                                          “We have healthcare and wellness plans for everyone”
                                      </h4><br>
                                     <h5>
-                                        Sahl Health CEO <br>Mr. James Mabatini
+                                        Sahl Health CEO <br>Mr. Eric Peti
                                     </h5>
                                 </div>
                             </div>

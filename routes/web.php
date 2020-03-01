@@ -25,6 +25,7 @@ Route::get('about-us','Frontend\MenuController@aboutUs');
 //dummy pages
 Route::view('packages','core.frontend.packages.index');
 Route::view('corporate','core.frontend.packages.corporate');
+Route::view('corporate-membership','core.frontend.packages.corporate-membership');
 Route::post('corporate-packages','Frontend\IndexController@savePackageRequests');
 
 Route::view('hospital','core.frontend.hospital');

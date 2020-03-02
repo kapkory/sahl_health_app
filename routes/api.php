@@ -26,6 +26,6 @@ Route::any('dependant/packages/{package_id}','Api\VariablesController@packages')
 
 
 Route::get('services/{institution_id}','Api\ProviderController@listServices');
-Route::get('sendSms','Api\ApiController@sendSms');
+Route::get('sendSms','Api\ProviderController@sendSms');
 
 

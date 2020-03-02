@@ -73,7 +73,7 @@ Route::post('hospitals','Frontend\SearchController@searchHospitals');
 
 
 Route::get('/{provider}/login', 'Auth\SocialProviderController@redirect');
-Route::get('/{provider}/callback', 'Auth\SocialProviderController@callback');
+Route::get('/{provider}/callback/{role?}', 'Auth\SocialProviderController@callback');
 
 //Route::get('complete-registration','Auth\RegisterController@completeRegistration');
 

@@ -12,10 +12,12 @@ use Laravel\Socialite\Facades\Socialite;
 class SocialProviderController extends Controller
 {
     public function redirect($provider){
+        session(['type'=>\request('type')]);
         return Socialite::driver($provider)->redirect();
     }
 
     public function callback($provider){
+
         try {
             $getInfo = Socialite::driver($provider)->user();
             $existUser = User::where('email',$getInfo->email)->first();
@@ -25,10 +27,11 @@ class SocialProviderController extends Controller
             }
             else {
                 $role = 'member';
-                if (\request('type') == 'providers')
+                $type =  session('type');
+                if ($type == 'providers')
                     $role = 'provider';
 
-                if (\request('type') == 'agents')
+                if ($type == 'agents')
                     $role = 'agent';
 
                 $user = $this->createUser($getInfo,$provider,$role);

@@ -43,8 +43,8 @@ class DependantsController extends Controller
             $counts = count($dependants);
             $amount = $this->calculateTotalAmount($counts);
         }
-        $count = auth()->user()->countDependants();
-        $amount = $this->calculateAmount($count);
+//        $count = auth()->user()->countDependants();
+//        $amount = $this->calculateAmount($count);
         return view($this->folder.'payment',compact('amount','dependants'));
     }
 
@@ -53,9 +53,9 @@ class DependantsController extends Controller
         $total_count = Dependant::where('user_id',auth()->id())
                    ->where('status',StatusRepository::getDependantSubscriptionStatus('active'))
                     ->count();
-//        if ()
-        $amount = 2499;
-        if ($total_count <= 2){
+        if ($total_count == 0)
+            $amount = 2499;
+        else if ($total_count <= 2){
             $amount = 1499;
         }else if($total_count > 3)
             $amount = 999;
@@ -65,17 +65,26 @@ class DependantsController extends Controller
 
     //for more than one dependant
     public function calculateTotalAmount($count){
+        $paid_count = Dependant::where('user_id',auth()->id())
+            ->where('status','=',StatusRepository::getDependantSubscriptionStatus('active'))
+            ->count();
+        $total_count = $paid_count + $count;
+
         $amount = 0;
-        if ($count == 1)
+        if ($count == 1 && $paid_count == 0)
             $amount = 2499;
-        else if ($count == 2){
+        elseif ($count == 1 && $paid_count == 1)
+            $amount = 1499;
+        else if ($count == 2 && $paid_count == 0) {
             $amount = 1499 + 1499;
-        }else if($count == 3)
-            $amount = 1499 + 999 + 999;
-        elseif($count > 3){
-            $count = $count - 3;
-            $amount = 999 * $count;
-            $amount = $amount +1499 + 999 + 999;
+        }
+        else if ($count == 2 && $paid_count == 1){
+            $amount = 1499 + 999;
+        }else if($count == 3 && $paid_count ==0){
+             $amount = 1499 + 999 + 999;
+        }
+        elseif($total_count >= 3){
+            $amount =  999 * $count;
         }
         return $amount;
     }

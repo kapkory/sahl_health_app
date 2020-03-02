@@ -12,7 +12,7 @@
 
     @include('common.auto_modal',[
         'modal_id'=>'dependantpayment_modal',
-        'modal_title'=>'DEPENDANTPAYMENT FORM',
+        'modal_title'=>'DEPENDANT PAYMENT FORM',
         'modal_content'=>Form::autoForm(\App\Models\Core\DependantPayment::class,"member/dependants/payments")
     ])
 @endsection

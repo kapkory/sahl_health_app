@@ -21,7 +21,7 @@ class ProviderController extends Controller
 
     public function sendSms(){
 //        $message = 'Phone Number was sent at '.$user->getFormattedPhone();
-       $message = 'Test Message by Me';
+       $message = 'Test Message including non-formatted numbers';
 //        $message = 'Phone Number was sent at '.$user->getFormattedPhone();
         $techpitch = new TechpitMessageRepository();
         $address = ['254712137367','0712137367','+254712137367'];

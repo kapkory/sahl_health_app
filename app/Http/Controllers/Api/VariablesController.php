@@ -30,10 +30,11 @@ class VariablesController extends Controller
             $dpPackage->save();
 
             //update where records match
-             Dependant::whereIn('id',$dpPackage->dependant_ids)->update(['status'=>2]);
+            $dep_ids = json_decode($dpPackage->dependant_ids);
+            Dependant::whereIn('id',$dep_ids)->update(['status'=>2,'expires_on'=>Carbon::now()->addMonths(12)]);
 
             $user = auth()->user();
-            $message= 'Dear '.$user->name.', your payment of KES '.$dpPackage->amount.' for has been received, Thank you';
+            $message= 'Dear '.$user->name.', your payment of KES '.$dpPackage->amount.' has been received, Thank you';
             $phone = preg_replace('/^\\D*/', '', $user->phone_number);
 
             $phone_number [] = $phone;

@@ -265,7 +265,7 @@
             },
             "children": [],
             "subs": [
-                "list","add","payments"
+                "list","add","payments","delete"
             ],
             "urls": [
                 "home",

@@ -7,6 +7,7 @@ use App\Models\Core\FavoriteInstitution;
 use App\Models\Core\Institution;
 use App\Models\Core\Profile;
 use App\Models\Core\Visit;
+use App\Repositories\StatusRepository;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -95,10 +96,21 @@ class User extends Authenticatable
     }
 
     public function countDependants(){
-        return Dependant::where('user_id',$this->id)->count();
+        return Dependant::where('user_id',$this->id)
+            ->where('status','!=',StatusRepository::getDependantSubscriptionStatus('active'))
+            ->count();
+    }
+
+    public function countAllDependants(){
+        return Dependant::where('user_id',$this->id)
+            ->count();
     }
 
     public function profile(){
         return $this->hasOne(Profile::class);
+    }
+
+    public function checkIfPaid(){
+
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Member\Dependants;
 use App\Http\Controllers\Controller;
 use App\Models\Core\Identification;
 use App\Models\Core\MemberPackage;
+use App\Repositories\StatusRepository;
 use App\Repositories\TechpitMessageRepository;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,7 @@ class DependantsController extends Controller
         {
             $dependants = Dependant::where('random_code',$code)->get();
             $count = auth()->user()->countDependants();
+//            $total_count = auth()->user()->countPaidDependants();
             $amount = $this->calculateAmount($count);
         }
         else{
@@ -40,35 +42,49 @@ class DependantsController extends Controller
 
             $counts = count($dependants);
             $amount = $this->calculateTotalAmount($counts);
-//            dd($amount,$counts);
         }
-
+//        $count = auth()->user()->countDependants();
+//        $amount = $this->calculateAmount($count);
         return view($this->folder.'payment',compact('amount','dependants'));
-
     }
 
+    //called when paying for a single dependant
     public function calculateAmount($count){
-        $amount = 2499;
-        if ($count <= 2){
+        $total_count = Dependant::where('user_id',auth()->id())
+                   ->where('status',StatusRepository::getDependantSubscriptionStatus('active'))
+                    ->count();
+        if ($total_count == 0)
+            $amount = 2499;
+        else if ($total_count <= 2){
             $amount = 1499;
-        }else if($count <= 3)
+        }else if($total_count > 3)
             $amount = 999;
 
-        return $amount;
+        return $total_count;
     }
 
+    //for more than one dependant
     public function calculateTotalAmount($count){
+        $paid_count = Dependant::where('user_id',auth()->id())
+            ->where('status','=',StatusRepository::getDependantSubscriptionStatus('active'))
+            ->count();
+        $total_count = $paid_count + $count;
+
         $amount = 0;
-        if ($count == 1)
+        if ($count == 1 && $paid_count == 0)
             $amount = 2499;
-        else if ($count == 2){
+        elseif ($count == 1 && $paid_count == 1)
+            $amount = 1499;
+        else if ($count == 2 && $paid_count == 0) {
             $amount = 1499 + 1499;
-        }else if($count == 3)
-            $amount = 1499 + 999 + 999;
-        elseif($count > 3){
-            $count = $count - 3;
-            $amount = 999 * $count;
-            $amount = $amount +1499 + 999 + 999;
+        }
+        else if ($count == 2 && $paid_count == 1){
+            $amount = 1499 + 999;
+        }else if($count == 3 && $paid_count ==0){
+             $amount = 1499 + 999 + 999;
+        }
+        elseif($total_count >= 3){
+            $amount =  999 * $count;
         }
         return $amount;
     }
@@ -86,14 +102,29 @@ class DependantsController extends Controller
         $pay = $data['pay'];
         unset($data['pay']);
         $data['random_code'] = rand(999,100000);
+
+        //check if user has an active paid package and can add dependants without paying for
+        if (auth()->user()->member_package_id){
+            $memberPackage = MemberPackage::findOrFail(auth()->user()->member_package_id);
+           //prevents activating dependants that exceed current user package number
+            if ($memberPackage->package->number_of_members > auth()->user()->countAllDependants()){
+                $data['status'] = StatusRepository::getDependantSubscriptionStatus('active');
+                $data['expires_on'] = $memberPackage->ends_at;
+            }
+        }
+
         $dependant = $this->autoSaveModel($data);
 
-        $count = auth()->user()->countDependants();
-        $amount = $this->calculateAmount($count);
-        $address[]  = preg_replace('/^\\D*/', '', auth()->user()->getFormattedPhone());
-        $message = 'You have added '.\request('first_name').', as your dependant, for them to access Sahlhealth Services, kindly follow this link '.url('member/dependants/payments/'.$dependant->random_code).' to pay '.$amount;
-        $techpitch = new TechpitMessageRepository();
-        $response = $techpitch->execute($message,$address);
+       //prevent billing active dependants
+        if ($dependant->status !=StatusRepository::getDependantSubscriptionStatus('active') ){
+            $count = auth()->user()->countDependants();
+            $amount = $this->calculateAmount($count);
+            $address[]  = preg_replace('/^\\D*/', '', auth()->user()->getFormattedPhone());
+            $message = 'You have added '.\request('first_name').', as your dependant, for them to access Sahlhealth Services, kindly follow this link '.url('member/dependants/payments/'.$dependant->random_code).' to pay '.$amount;
+            $techpitch = new TechpitMessageRepository();
+            $response = $techpitch->execute($message,$address);
+        }
+
 
         if ($pay == 0)
             return redirect()->back()->with('notice',['type'=>'success','message'=>'Dependant Added Successfully']);
@@ -101,6 +132,7 @@ class DependantsController extends Controller
             return ['redirect'=>url('member/dependants/payments/'.$dependant->random_code)];
         }
     }
+
     //returns api results
     public function addDependant(){
         request()->validate($this->getValidationFields(['first_name','last_name','relationship_type']));

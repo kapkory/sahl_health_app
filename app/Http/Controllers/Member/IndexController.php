@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
+use App\Models\Core\Dependant;
 use App\Models\Core\FavoriteInstitution;
 use App\Models\Core\Institution;
 use App\Models\Core\MemberPackage;
@@ -12,6 +13,7 @@ use App\Models\Core\Profile;
 use App\Models\Core\Referral;
 use App\Models\Core\Visit;
 use App\Repositories\MpesaRepository;
+use App\Repositories\StatusRepository;
 use App\Repositories\TechpitMessageRepository;
 use App\User;
 use Carbon\Carbon;
@@ -111,6 +113,7 @@ class IndexController extends Controller
 
         $mpesaRepository= new MpesaRepository();
         $phone = auth()->user()->getFormattedPhone();
+//        return $this->test_member_payment($payment->id);
 //        $amount = '1';
         $response =  $mpesaRepository->stkPush($payment->id,$phone,$amount);
         $responses = json_decode($response,true);
@@ -124,6 +127,49 @@ class IndexController extends Controller
         }
 
         return ['redirect_url'=>url('member/payment')];
+    }
+
+//this was used to test mpesa callback locally if hit everything works fine
+    public function test_member_payment($payment_id){
+        $pay = MemberPayment::findOrFail($payment_id);
+        $pay->reference = '$resp->Body->stkCallback->CheckoutRequestID';
+        $pay->comment = '$resp->Body->stkCallback->ResultDesc';
+        $pay->status = 2;
+        $pay->save();
+
+        $memberPackage = MemberPackage::where('member_id',$pay->member_id)
+            ->where('package_id',$pay->package_id)
+            ->orderBy('created_at','desc')
+            ->first();
+        $package = Package::findOrFail($pay->package_id);
+        $expiry = Carbon::now()->addMonths($package->duration)->toDateString();
+        $memberPackage->started_on = Carbon::now()->toDateString();
+        $memberPackage->ends_at =$expiry ;
+        $memberPackage->save();
+
+
+        //if package is for 3 people, member is included plus two dependants
+        $package_members = $package->number_of_members;
+        $member_count = $package_members - 1;
+        if ( $package_members > 1 && auth()->user()->dependants()->count() > 0){
+            Dependant::where('user_id',auth()->id())->limit($member_count)
+                ->update(['status'=>StatusRepository::getDependantSubscriptionStatus('active'),
+                    'expires_on'=>$expiry]);
+        }
+
+        $user = User::findOrFail($pay->member_id);
+        $user->member_package_id = $memberPackage->id;
+        $user->save();
+
+        $referral = Referral::where('referral_id',$user->id)->first();
+        if ($referral){
+            $referee = User::findOrFail($referral->user_id);
+            $referee->wallet += $referral->amount;
+            $referee->save();
+
+            $referral->status = 1;
+            $referral->save();
+        }
     }
 
     public function completeRegistration(){
@@ -200,12 +246,17 @@ class IndexController extends Controller
         $package->save();
 
         if($user->phone_number){
-            $address[]  = preg_replace('/^\\D*/', '', $user->phone_number);
-            $message = 'Hi '.$user->name.', thank you for the signing up, complete your registration to save more when seeking medical service through your sahl Membership ';
+            $address[]  = preg_replace('/^\\D*/', '', $user->getFormattedPhone());
+            $message = 'Hi '.$user->name.', thank you for the signing up, complete your registration to save more when seeking medical service through your Sahl Membership ';
             $techpitch = new TechpitMessageRepository();
             $response = @$techpitch->execute($message,$address);
         }
 
+        //redirect individual user to payment, incase he needs to add dependants, he will do so in the backend
+        if ($pack->number_of_members == 1)
+            return ['redirect_url'=>url('member/payment')];
+
+        //if package is for more than one individual
         return ['redirect_url'=>url('member/nominate-dependant')];
     }
 }

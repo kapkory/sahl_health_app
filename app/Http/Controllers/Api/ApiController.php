@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Core\County;
+use App\Models\Core\Dependant;
 use App\Models\Core\Identification;
 use App\Models\Core\InstitutionLevel;
 use App\Models\Core\MemberPackage;
@@ -12,6 +13,7 @@ use App\Models\Core\OrganizationType;
 use App\Models\Core\Package;
 use App\Models\Core\PackageCategory;
 use App\Models\Core\Referral;
+use App\Repositories\StatusRepository;
 use App\Repositories\TechpitMessageRepository;
 use App\User;
 use Carbon\Carbon;
@@ -67,10 +69,20 @@ class ApiController extends Controller
                        ->where('package_id',$pay->package_id)->orderBy('created_at','desc')
                        ->first();
             $package = Package::findOrFail($pay->package_id);
-
+            $expiry = Carbon::now()->addMonths($package->duration)->toDateString();
             $memberPackage->started_on = Carbon::now()->toDateString();
-            $memberPackage->ends_at = Carbon::now()->addMonths($package->duration)->toDateString();
+            $memberPackage->ends_at =$expiry ;
             $memberPackage->save();
+
+
+            //if package is for 3 people, member is included plus two dependants
+            $package_members = $package->number_of_members;
+            $member_count = $package_members - 1;
+            if ( $package_members > 1 && auth()->user()->dependants()->count() > 0){
+                Dependant::where('user_id',auth()->id())->limit($member_count)
+                    ->update(['status'=>StatusRepository::getDependantSubscriptionStatus('active'),
+                        'expires_on'=>$expiry]);
+            }
 
             $user = User::findOrFail($pay->member_id);
             $user->member_package_id = $memberPackage->id;

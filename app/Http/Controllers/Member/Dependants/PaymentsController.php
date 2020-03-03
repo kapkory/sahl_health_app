@@ -5,21 +5,29 @@ namespace App\Http\Controllers\Member\Dependants;
 use App\Http\Controllers\Controller;
 use App\Models\Core\Dependant;
 use App\Models\Core\DependantPayment;
+use App\Models\Core\MemberPackage;
+use App\Models\Core\MemberPayment;
+use App\Models\Core\Package;
+use App\Models\Core\Referral;
 use App\Repositories\MpesaRepository;
+use App\Repositories\StatusRepository;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PaymentsController extends Controller
 {
     public function payment(){
-        $dependant_ids = json_decode(\request('dependant_ids'));
+        $dependant_ids = json_decode(\request('dependant_ids'),true);
         $amount = \request('amount');
 
         $dependants = Dependant::whereIn('id',$dependant_ids)->update(['status'=>1]);
 
-        $dpPayment = DependantPayment::whereIn('dependant_ids',$dependant_ids)->first();
+        $dpPayment = DependantPayment::where('member_id',auth()->id())
+            ->where('dependant_ids',\request('dependant_ids'))
+            ->first();
 
         if (!$dpPayment){
-//            dd($dpPayment)
             $dp = new DependantPayment();
             $dp->dependant_ids =json_encode($dependant_ids);
             $dp->member_id = auth()->id();
@@ -32,6 +40,7 @@ class PaymentsController extends Controller
         }
         else
             $pay_id = $dpPayment->id;
+//         return $this->test_member_payment($pay_id);
 
         $mpesaRepository= new MpesaRepository();
         $phone = auth()->user()->getFormattedPhone();
@@ -49,5 +58,18 @@ class PaymentsController extends Controller
         else
             return ['redirect_url'=>url('member/dependants')];
 
+    }
+
+    //test mpesa callback if dependant callback is hit
+    public function test_dependant_payments_target($package_id){
+        $dpPackage = DependantPayment::findOrFail($package_id);
+        $dpPackage->status = 2;
+        $dpPackage->started_on = Carbon::now();
+        $dpPackage->ends_on = Carbon::now()->addMonths(12);
+        $dpPackage->save();
+        $dep_ids = json_decode($dpPackage->dependant_ids);
+        //update where records match
+        Dependant::whereIn('id',$dep_ids)->update(['status'=>2,'expires_on'=>Carbon::now()->addMonths(12)]);
+        return ['redirect'=>'member'];
     }
 }

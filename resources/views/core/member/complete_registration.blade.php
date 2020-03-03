@@ -119,7 +119,7 @@
     <script>
       $(function () {
           let package_id = localStorage.getItem('package_id');
-          console.log('selected package is '+package_id);
+
           $('input[name="package_id"]').val(package_id);
           let message = localStorage.getItem('package_message');
 

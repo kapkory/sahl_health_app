@@ -58,20 +58,16 @@ class StatusRepository
         return self::returnState($state,$statuses);
     }
 
-    public static function getSubscriptionStatus($state){
+    public static function getDependantSubscriptionStatus($state){
         $statuses = [
-            'expired'=>0,
-            'active'=>1
+            'inactive'=>0,
+            'processing'=>1,
+            'active'=>2,
+            'expired'=>3,
         ];
         return self::returnState($state,$statuses);
     }
-    public static function getInvoiceStatus($state){
-        $statuses = [
-            'pending'=>0,
-            'send'=>1
-        ];
-        return self::returnState($state,$statuses);
-    }
+
     public static function getQuotationStatus($state){
         $statuses = [
             'pending'=>0,

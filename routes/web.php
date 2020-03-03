@@ -50,7 +50,6 @@ Route::get('register','Frontend\IndexController@memberRegistration');
 Route::post('contact-us','Frontend\IndexController@saveContacts');
 Route::post('member-register','Auth\RegisterController@memberRegistration');
 Route::get('member-packages','Frontend\IndexController@memberPackages');
-Route::view('member-complete-registration','core.member.complete_registration');
 Route::post('member/complete-registration','Member\IndexController@completeRegistration');
 
 Route::get('member-referral/{referral_id}/{referral_code}','Frontend\IndexController@referredMember');
@@ -67,6 +66,7 @@ Route::get('member-register/{referral_code?}','Frontend\IndexController@memberRe
 Route::post('member/register','Auth\RegisterController@registerMember');
 Route::post('create-account','Auth\RegisterController@createAccount');
 Route::view('complete-registration','auth.complete_registration');
+Route::view('member-complete-registration','core.member.complete_registration');
 Route::post('member-complete-registration','Member\IndexController@completeMemberRegistration');
 
 Route::post('hospitals','Frontend\SearchController@searchHospitals');

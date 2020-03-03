@@ -5,7 +5,13 @@ namespace App\Http\Controllers\Member\Dependants;
 use App\Http\Controllers\Controller;
 use App\Models\Core\Dependant;
 use App\Models\Core\DependantPayment;
+use App\Models\Core\MemberPackage;
+use App\Models\Core\MemberPayment;
+use App\Models\Core\Package;
+use App\Models\Core\Referral;
 use App\Repositories\MpesaRepository;
+use App\Repositories\StatusRepository;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -31,11 +37,10 @@ class PaymentsController extends Controller
             $dp->comments = 'Payment By '.auth()->user()->name;
             $dp->save();
             $pay_id = $dp->id;
-
         }
         else
             $pay_id = $dpPayment->id;
-//         return $this->test_dependant_payments_target($pay_id);
+//         return $this->test_member_payment($pay_id);
 
         $mpesaRepository= new MpesaRepository();
         $phone = auth()->user()->getFormattedPhone();
@@ -55,6 +60,7 @@ class PaymentsController extends Controller
 
     }
 
+    //test mpesa callback if dependant callback is hit
     public function test_dependant_payments_target($package_id){
         $dpPackage = DependantPayment::findOrFail($package_id);
         $dpPackage->status = 2;
